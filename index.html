@@ -23,8 +23,8 @@
 
 
 
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
 
-    <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
 
 
 
@@ -102,7 +102,7 @@
   }
 
   a {
-    color: #00838F;
+    color: #1E90FF;
   }
 
   .mdl-card__media,
@@ -153,7 +153,7 @@
   }
 
   .post-toc a:hover {
-    color: #00838F;
+    color: #1E90FF;
     text-decoration: underline;
   }
 
@@ -379,9 +379,15 @@
         </button>
         <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
             
-                <a class="index_share-link" href="/about" title="About">
+                <a class="index_share-link" href="/tags" title="云标签">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
-                        About
+                        云标签
+                    </li>
+                </a>
+            
+                <a class="index_share-link" href="/about" title="关于我">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        关于我
                     </li>
                 </a>
             
@@ -393,6 +399,15 @@
             <span class="visuallyhidden">show menu</span>
         </button>
         <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
+            
+                <!-- All Site UV -->
+                <a class="index_share-link" href="#">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        <span id="busuanzi_container_site_uv">
+                            <span id="busuanzi_value_site_uv"></span>&nbsp;浏览量
+                        </span>
+                    </li>
+                </a>
             
 
             
@@ -496,12 +511,6 @@
             
 
             
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/28/Hello World/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
 
             <!-- Post Views -->
             <span class="post_entry-views">
@@ -557,12 +566,6 @@
 
             
 
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/28/hello-world/" class = "cy_cmt_count" ></span>条评论
-                </span>
             
 
             <!-- Post Views -->
@@ -703,11 +706,21 @@
     <!-- Pages  -->
     
         <li>
-            <a href="/about" title="About">
+            <a href="/tags" title="云标签">
+                
+                    <i class="material-icons sidebar-material-icons">subjeck</i>
+                
+                云标签
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于我">
                 
                     <i class="material-icons sidebar-material-icons">person</i>
                 
-                About
+                关于我
             </a>
         </li>
         
@@ -911,12 +924,10 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-   <!-- 畅言公共 js 代码 start -->
-<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=appid">
-</script>
-<!-- 畅言公共 js 代码 end -->
 
 
 

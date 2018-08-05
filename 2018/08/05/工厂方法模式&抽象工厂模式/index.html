@@ -45,7 +45,7 @@
     
     <title>
         
-            Hello World | 
+            工厂方法模式&amp;抽象工厂模式 | 
         
         stormjie&#39;s blog
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="stormjie的博客分享">
-    <meta name="keywords" content="stormjie,随笔">
+    <meta name="keywords" content="stormjie,设计模式">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/07/28/Hello World/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/07/28/Hello World/">
+    <meta property="og:url" content="http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Hello World | stormjie&#39;s blog">
+    <meta property="og:title" content="工厂方法模式&amp;抽象工厂模式 | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
-    <meta property="og:article:tag" content="随笔"> 
+    <meta property="og:article:tag" content="设计模式"> 
 
     
-        <meta property="article:published_time" content="Sat Jul 28 2018 20:37:25 GMT+0800">
-        <meta property="article:modified_time" content="Sat Jul 28 2018 22:55:41 GMT+0800">
+        <meta property="article:published_time" content="Sun Aug 05 2018 09:45:15 GMT+0800">
+        <meta property="article:modified_time" content="Sun Aug 05 2018 11:31:51 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/07/28/Hello World/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/08/05/工厂方法模式&抽象工厂模式/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/07/28/Hello World/index.html",
-    "headline": "Hello World",
-    "datePublished": "Sat Jul 28 2018 20:37:25 GMT+0800",
-    "dateModified": "Sat Jul 28 2018 22:55:41 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/08/05/工厂方法模式&抽象工厂模式/index.html",
+    "headline": "工厂方法模式&抽象工厂模式",
+    "datePublished": "Sun Aug 05 2018 09:45:15 GMT+0800",
+    "dateModified": "Sun Aug 05 2018 11:31:51 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -282,7 +282,7 @@
             "url": "/img/mountains.png"
         }
     },
-    "keywords": ",随笔stormjie",
+    "keywords": ",设计模式stormjie",
     "description": "stormjie的博客分享",
 }
 </script>
@@ -342,6 +342,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、简单工厂模式"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、简单工厂模式</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -371,7 +380,7 @@
         
     
             <p class="article-headline-p">
-                Hello World
+                工厂方法模式&抽象工厂模式
             </p>
         </div>
 
@@ -390,7 +399,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>stormjie</strong>
-        <span>7月 28, 2018</span>
+        <span>8月 05, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -412,7 +421,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXUlEQVR42u3aQW7DMAwEwPz/0+21QBFnSVqyEIxPAewoGh0sZcnXz1dfLzw8PDw8PDw8vMN4r/hKvvX37v/nr+/mv/Jhbnh4eHhbeB9etZfPvLubjDwfAQ8PD+9ZXvKif/d8Pt3eFlLYhPDw8PCO5yUTzdl4eHh4383Lg4O7Igw8PDy803jJH/67goPrKPaxrAUPDw8v5uVFpv2ft9b38PDw8AJe9epFt/MIuDBDPDw8vMW8/EWcH5HnIUVvPnh4eHh7eJOBelHFvCmhEOPi4eHhLeNdf7laxIoig/hujsfDw8M7h9ebUB7FThYODw8P71neJGjID9l5c1USVeDh4eHt5yVDzz/nr/7qwhV6yvDw8PBu4s2LVdfRbQ6etx3g4eHh7eTdW+iKCvzxJpEvBx4eHt4eXrWhqhcW5ODyNpD/Y8DDw8NbwMtL/r0j8iS8aDZd4eHh4S3g9cr8eQmt2ohQ3ahuy1rw8PDwYl4+9R41jy0mLV94eHh4O3mTULUKm8cWUQsXHh4e3mLeXSWoarzbO17j4eHhncOrhgj5sfjeYlszjMDDw8NbzOsdoycFszz4iBYRDw8PbyOv12iVH7XzJah+Cw8PD28nrxfO9lpRRwflOFbGw8PDW817xVevOaAaeVRDEDw8PLyneHkTQLVJKz8oVzeGtxsMHh4e3kbepG00PyL3Dt+F+AMPDw/vSF5vhHy6veYtPDw8vJN5ecm/egRPluDDOHh4eHgbeXcFtb0lyJ8pF8Dw8PDwFvB6EcAkVrh+chJq4OHh4a3mfd+Fh4eHh4eHh4d3wPUL7fldybjs5PcAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC20lEQVR42u3a0U7DMAwF0P3/T8MrElp2bXfQJadPaN3WnCBh7JvH15HXAxsbGxsbGxsbG/uW7Ed8/X5/8srP15+9P7/bWzM2Njb2CewXf/pbpPnWrD+brxkbGxv7HPZ60VeVvbw4rZ9eXjM2NjY29hI8WVCyldjY2NjY1xaw3oAp2bhkwISNjY2NPRkqPXtwcne9HdUI4U9nadjY2Ni3Z1fHQ3f4+R/ybWxsbOxbsstHGOPHVwteXhSbK8fGxsbelD05WNM7xNMLG6qtUXOWho2Njf2x7OQB+ei/FwwkB3qqwTM2Njb2OezeAZr5lk2ee1krgo2Njb0FO28/JkFCb/Sfl1tsbGzsM9n5yGYeBiQNw/qdeXtTDnqxsbGxN2JPYt1enFANHnoNEjY2Nvau7OpX98KAQhwbPyv5JWFjY2Ofw86XlQzoezFAtbWoRgXY2NjYu7LzsdGkMegdtcnjgWhQhY2Njb0pOz8KkyyrVwirYUMzJMbGxsY+gD2JfvNmo9cIJQWyHA9gY2Njb8fuNRLV4zjVcpgf63mxxdjY2NgHsK+NePP2Jv9srx3CxsbG3ptdjWCrg6G8zOR3q5uLjY2NvTd7MrjP25LJgKkaOTTrNjY2NvaHs8vFoHjIJlnW/InloRI2Njb2Fuz8H/3eIctqkzM5NlQ4soONjY29HTtpCdYtxzw8zjeouSpsbGzsrdm9wVD1qpaxfHhUPrKDjY2NvRE7D1x7S7wKn4OxsbGxT2NPSkI+fspJvaM/SciBjY2NfQ67uinVQpgPsHqBcbOAYWNjY38se14Y8oakF0JMGiFsbGzsc9jV6DcvTsn3j4b+eWHDxsbGPoBdLVpJgUni5Ml259uKjY2Njb1eem/0f1VgHI2lsLGxsbHfMDxKSlevWL6xgGFjY2PfmJ0vIikzvVeSZgMbGxsb+6qgd363Ok6qtjTY2NjYJ7DPubCxsbGxsbGxsbFvc30DIrv2SZ+GLV0AAAAASUVORK5CYII=">
     
 </ul>
 
@@ -426,7 +435,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/随笔/">随笔</a>
+        <a class="post_tag-link" href="/tags/设计模式/">设计模式</a>
     </ul>
     
 
@@ -454,7 +463,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hello World&url=http://yoursite.com/2018/07/28/Hello World/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=工厂方法模式&amp;抽象工厂模式&url=http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -463,7 +472,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hello World&url=http://yoursite.com/2018/07/28/Hello World/index.html&via=stormjie" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=工厂方法模式&amp;抽象工厂模式&url=http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/index.html&via=stormjie" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -472,7 +481,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/28/Hello World/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -487,7 +496,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=Hello World&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/07/28/Hello World/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=工厂方法模式&amp;抽象工厂模式&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/05/工厂方法模式&抽象工厂模式/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -506,10 +515,18 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>搭建个人博客的想法一直都有，算起来断断续续也有一年了吧。</p>
-<p>今天心血来潮说做就做了，想起来会很难，但实际做完了才知道其实也挺简单的。东拼西凑，如你所见，博客的雏形大概就出来了。也算完成一个小目标？</p>
-<p>今天是18年7月28日，我的大二暑假快要过半了，而我现在还在整合ssm框架，争取在这个暑假结束时熟悉ssm项目的结构，建立流程以及Maven的使用，能顺便了解一下SpringCloud或者SpringBoot最好，这样我也不算虚度这一个多月。</p>
-<p>很惭愧，还要继续完善这个博客，所以第一篇就写得简单了些，只想再努力些，再加油些，Hello World！</p>
+        <p>先介绍工厂方法模式和抽象工厂模式，这是23种设计模式的其中两种。不过在此之前我想先说说简单工厂模式，它不属于23种设计模式，却是今天要说的两种设计模式的入门。</p>
+<h3 id="一、简单工厂模式"><a href="#一、简单工厂模式" class="headerlink" title="一、简单工厂模式"></a>一、简单工厂模式</h3><p>我们刚开始写代码的时候，如果需要一个类的对象，我们习惯利用关键字new把它直接创建出来，其实这并不是一个好习惯，因为这样不得已把对象的创建和使用绑定在一起，造成对象类和客户端代码非常高的耦合度，这无疑是我们不想看到的结果，那应该怎么办？简单工厂模式在一定程度上能解决这个问题。</p>
+<p>简单工厂模式是<strong>由一个工厂对象决定创建出哪一种产品类的实例</strong>。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一个特殊实现。 </p>
+<p>上面是定义，现在看不懂没关系，下面我来举例。市面上手机有各种各样的品牌，华为，小米，oppo等，不同场景下我们需要的手机品牌不同，那我们要怎么定义这个手机类？有些人可能觉得直接根据品牌定义类就好，华为一个类小米一个类这样，但仔细思考后会发现这样并不可取，因为手机品牌虽然不同，但很多功能都是类似的，重复的代码尽量不要写，这也是我们编码的原则之一，比较好的方法是定义一个抽象的手机类，如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">abstract class Phone &#123;</span><br><span class="line">	//所有手机都有的功能，这里我举打电话这个例子</span><br><span class="line">	public void call() &#123;</span><br><span class="line">        //具体实现省略</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//不同品牌手机不同的功能</span><br><span class="line">	public abstract void method();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在根据具体手机品牌定义各自的类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//华为</span><br><span class="line">class HUAWEI extends Phone &#123;</span><br><span class="line">    public void method() &#123;</span><br><span class="line">    //具体实现</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//小米</span><br><span class="line">class XiaoMi extends Phone &#123;</span><br><span class="line">	public void method() &#123;</span><br><span class="line">    //具体实现</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>这样定义结束后，如果我们需要使用不同品牌的手机对象，根据简单工厂模式我们还需要定义一个工厂类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Factory &#123;</span><br><span class="line">    //静态工厂方法，返回不同手机品牌对象</span><br><span class="line">    public static Phone getPhone(String type) &#123;</span><br><span class="line">        Phone phone = null;</span><br><span class="line">        if(type.equals(&quot;HUAWEI&quot;)) &#123;</span><br><span class="line">            phone = new HUAWEI();</span><br><span class="line">        &#125; else if(type.equals(&quot;XiaoMi&quot;)) &#123;</span><br><span class="line">            phone = new XiaoMi();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            //...</span><br><span class="line">        &#125;</span><br><span class="line">        return phone;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有了这个工厂类我们创建对象就方便了，以下是客户端代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Client &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Phone myPhone1 = Factory.getPhone(&quot;XiaoMi&quot;);</span><br><span class="line">	    Phone myPhone2 = Factory.getPhone(&quot;HUAWEI&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这就是简单工厂模式的常用场景，看完这个例子再看它的定义，会清楚很多，如果你理解了，那恭喜你可以继续学习工厂方法模式了，如果还是不懂的话不建议继续往下看咯。</p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -518,7 +535,7 @@
                             本博客文章除特别声明外，均采用CC BY-NC-SA 3.0许可协议，转载请标明出处！
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="http://yoursite.com/2018/07/28/Hello World/">http://yoursite.com/2018/07/28/Hello World/</a>
+                        <strong>本文链接：</strong><a href="http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/">http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/</a>
                     </p>
                 </blockquote>
         
@@ -540,19 +557,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/03/Servlet/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/08/04/设计模式起篇/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 

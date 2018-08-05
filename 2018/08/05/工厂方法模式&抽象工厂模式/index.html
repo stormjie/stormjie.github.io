@@ -519,14 +519,54 @@
 <h3 id="一、简单工厂模式"><a href="#一、简单工厂模式" class="headerlink" title="一、简单工厂模式"></a>一、简单工厂模式</h3><p>我们刚开始写代码的时候，如果需要一个类的对象，我们习惯利用关键字new把它直接创建出来，其实这并不是一个好习惯，因为这样不得已把对象的创建和使用绑定在一起，造成对象类和客户端代码非常高的耦合度，这无疑是我们不想看到的结果，那应该怎么办？简单工厂模式在一定程度上能解决这个问题。</p>
 <p>简单工厂模式是<strong>由一个工厂对象决定创建出哪一种产品类的实例</strong>。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一个特殊实现。 </p>
 <p>上面是定义，现在看不懂没关系，下面我来举例。市面上手机有各种各样的品牌，华为，小米，oppo等，不同场景下我们需要的手机品牌不同，那我们要怎么定义这个手机类？有些人可能觉得直接根据品牌定义类就好，华为一个类小米一个类这样，但仔细思考后会发现这样并不可取，因为手机品牌虽然不同，但很多功能都是类似的，重复的代码尽量不要写，这也是我们编码的原则之一，比较好的方法是定义一个抽象的手机类，如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">abstract class Phone &#123;</span><br><span class="line">	//所有手机都有的功能，这里我举打电话这个例子</span><br><span class="line">	public void call() &#123;</span><br><span class="line">        //具体实现省略</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//不同品牌手机不同的功能</span><br><span class="line">	public abstract void method();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后在根据具体手机品牌定义各自的类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//华为</span><br><span class="line">class HUAWEI extends Phone &#123;</span><br><span class="line">    public void method() &#123;</span><br><span class="line">    //具体实现</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//小米</span><br><span class="line">class XiaoMi extends Phone &#123;</span><br><span class="line">	public void method() &#123;</span><br><span class="line">    //具体实现</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>这样定义结束后，如果我们需要使用不同品牌的手机对象，根据简单工厂模式我们还需要定义一个工厂类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Factory &#123;</span><br><span class="line">    //静态工厂方法，返回不同手机品牌对象</span><br><span class="line">    public static Phone getPhone(String type) &#123;</span><br><span class="line">        Phone phone = null;</span><br><span class="line">        if(type.equals(&quot;HUAWEI&quot;)) &#123;</span><br><span class="line">            phone = new HUAWEI();</span><br><span class="line">        &#125; else if(type.equals(&quot;XiaoMi&quot;)) &#123;</span><br><span class="line">            phone = new XiaoMi();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            //...</span><br><span class="line">        &#125;</span><br><span class="line">        return phone;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>有了这个工厂类我们创建对象就方便了，以下是客户端代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Client &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Phone myPhone1 = Factory.getPhone(&quot;XiaoMi&quot;);</span><br><span class="line">	    Phone myPhone2 = Factory.getPhone(&quot;HUAWEI&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这就是简单工厂模式的常用场景，看完这个例子再看它的定义，会清楚很多，如果你理解了，那恭喜你可以继续学习工厂方法模式了，如果还是不懂的话不建议继续往下看咯。</p>
+<pre><code>abstract class Phone {
+    //所有手机都有的功能，这里我举打电话这个例子
+    public void call() {
+        //具体实现省略
+    }
+
+    //不同品牌手机不同的功能
+    public abstract void method();
+}
+</code></pre><p>然后在根据具体手机品牌定义各自的类</p>
+<pre><code>//华为
+class HUAWEI extends Phone {
+    public void method() {
+    //具体实现
+    }
+}
+
+//小米
+class XiaoMi extends Phone {
+    public void method() {
+    //具体实现
+    }
+}
+
+...
+</code></pre><p>这样定义结束后，如果我们需要使用不同品牌的手机对象，根据简单工厂模式我们还需要定义一个工厂类</p>
+<pre><code>class Factory {
+    //静态工厂方法，返回不同手机品牌对象
+    public static Phone getPhone(String type) {
+        Phone phone = null;
+        if(type.equals(&quot;HUAWEI&quot;)) {
+            phone = new HUAWEI();
+        } else if(type.equals(&quot;XiaoMi&quot;)) {
+            phone = new XiaoMi();
+        } else {
+            //...
+        }
+        return phone;
+    }
+}
+</code></pre><p>有了这个工厂类我们创建对象就方便了，以下是客户端代码</p>
+<pre><code>class Client {
+    public static void main(String[] args) {
+        Phone myPhone1 = Factory.getPhone(&quot;XiaoMi&quot;);
+        Phone myPhone2 = Factory.getPhone(&quot;HUAWEI&quot;);
+    }
+}
+</code></pre><p>这就是简单工厂模式的常用场景，看完这个例子再看它的定义，会清楚很多，如果你理解了，那恭喜你可以继续学习工厂方法模式了，如果还是不懂的话不建议继续往下看咯。</p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">

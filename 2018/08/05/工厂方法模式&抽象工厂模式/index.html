@@ -241,7 +241,7 @@
 
     
         <meta property="article:published_time" content="Sun Aug 05 2018 09:45:15 GMT+0800">
-        <meta property="article:modified_time" content="Sun Aug 05 2018 11:31:51 GMT+0800">
+        <meta property="article:modified_time" content="Sun Aug 05 2018 12:39:35 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -264,7 +264,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/08/05/工厂方法模式&抽象工厂模式/index.html",
     "headline": "工厂方法模式&抽象工厂模式",
     "datePublished": "Sun Aug 05 2018 09:45:15 GMT+0800",
-    "dateModified": "Sun Aug 05 2018 11:31:51 GMT+0800",
+    "dateModified": "Sun Aug 05 2018 12:39:35 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -348,7 +348,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、简单工厂模式"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、简单工厂模式</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、简单工厂模式"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、简单工厂模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、工厂方法模式"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、工厂方法模式</span></a></li></ol>
     </ul>
     
 
@@ -566,8 +566,38 @@ class XiaoMi extends Phone {
         Phone myPhone2 = Factory.getPhone(&quot;HUAWEI&quot;);
     }
 }
-</code></pre><p>这就是简单工厂模式的常用场景，看完这个例子再看它的定义，会清楚很多，如果你理解了，那恭喜你可以继续学习工厂方法模式了，如果还是不懂的话不建议继续往下看咯。</p>
+</code></pre><p>这就是简单工厂模式的常用场景，你发现没，利用简单工厂模式我们很自然地将对象的创建与使用分开（创建交给工厂类，使用在客户端代码中），看完这个例子再看它的定义，会清楚很多，如果你理解了，那恭喜你可以继续学习工厂方法模式了，如果还是不懂的话不建议继续往下看，请多看相关的其他文章。</p>
+<h3 id="二、工厂方法模式"><a href="#二、工厂方法模式" class="headerlink" title="二、工厂方法模式"></a>二、工厂方法模式</h3><p>简单工厂模式固然简单，但是也有问题，如果我们需要一个手机品牌（例如三星），而工厂类中没有相应的创建代码怎么办？我们就不得不修改我们的工厂类，但是这样就违背了我们的开闭原则，如何在新增手机品牌的情况下而不修改源代码？这时候工厂方法模式就出现了。</p>
+<p>工厂方法模式在简单工厂模式上做出了改进，意义是定义一个创建产品对象的工厂接口，将实际创建工作推迟到子类当中。核心工厂类不再负责产品的创建，这样核心类成为一个抽象工厂角色，仅负责具体工厂子类必须实现的接口，这样进一步抽象化的好处是使得工厂方法模式可以使系统在不修改具体工厂角色的情况下引进新的产品。 </p>
+<p>按照上面说的我们只要将Factory类做些改动，把它变成一个接口</p>
+<pre><code>interface Factory {
+    public Phone getPhone();
+}
+</code></pre><p>然后根据不同手机品牌编写对应的品牌工厂类</p>
+<pre><code>//小米
+class XiaoMiFactory implements Factory {
+    public Phone getPhone() {
+        return new XiaoMi();
+    }
+}
 
+//三星
+class SAMSUNGFactory implements Factory {
+    public Phone getPhone() {
+        return new SAMSUNG();
+    }
+}
+
+...
+</code></pre><p>把工厂类改写成接口，将实际创建工作推迟到子类当中，这样我们需要什么手机品牌的对象，写个品牌工厂实现工厂类接口就行了，不就解决了新手机品牌的问题。不得不说早期提出设计模式的大牛们是多厉害，仰望一下。好了，下面是使用工厂方法模式后的客户端代码</p>
+<pre><code>class Client {
+    public static void main(String[] args) {
+        Factory factory = null;
+        factory = new SAMSUNGFactory();
+        Phone myPhone = factory.getPhone();
+    }
+}
+</code></pre>
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
                     <p><strong>

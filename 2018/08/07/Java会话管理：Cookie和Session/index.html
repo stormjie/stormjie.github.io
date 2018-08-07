@@ -45,7 +45,7 @@
     
     <title>
         
-            工厂方法模式&amp;抽象工厂模式 | 
+            Java会话管理：Cookie和Session | 
         
         stormjie&#39;s blog
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="stormjie的博客分享">
-    <meta name="keywords" content="stormjie,设计模式">
+    <meta name="keywords" content="stormjie,cookie,session">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/">
+    <meta property="og:url" content="http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="工厂方法模式&amp;抽象工厂模式 | stormjie&#39;s blog">
+    <meta property="og:title" content="Java会话管理：Cookie和Session | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
-    <meta property="og:article:tag" content="设计模式"> 
+    <meta property="og:article:tag" content="cookie,session"> 
 
     
-        <meta property="article:published_time" content="Sun Aug 05 2018 09:45:15 GMT+0800">
-        <meta property="article:modified_time" content="Sun Aug 05 2018 15:23:02 GMT+0800">
+        <meta property="article:published_time" content="Tue Aug 07 2018 15:39:52 GMT+0800">
+        <meta property="article:modified_time" content="Tue Aug 07 2018 19:10:29 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/08/05/工厂方法模式&抽象工厂模式/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/08/05/工厂方法模式&抽象工厂模式/index.html",
-    "headline": "工厂方法模式&抽象工厂模式",
-    "datePublished": "Sun Aug 05 2018 09:45:15 GMT+0800",
-    "dateModified": "Sun Aug 05 2018 15:23:02 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html",
+    "headline": "Java会话管理：Cookie和Session",
+    "datePublished": "Tue Aug 07 2018 15:39:52 GMT+0800",
+    "dateModified": "Tue Aug 07 2018 19:10:29 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -282,7 +282,7 @@
             "url": "/img/mountains.png"
         }
     },
-    "keywords": ",设计模式stormjie",
+    "keywords": ",cookie,sessionstormjie",
     "description": "stormjie的博客分享",
 }
 </script>
@@ -348,7 +348,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、简单工厂模式"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、简单工厂模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、工厂方法模式"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、工厂方法模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、抽象工厂模式"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、抽象工厂模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-产品等级结构与产品族"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">1.产品等级结构与产品族</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-抽象工厂模式举例"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">2.抽象工厂模式举例</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-与工厂方法模式的对比"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">3.与工厂方法模式的对比</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、总结</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、Cookie"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、Cookie</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-什么是Cookie"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">1.什么是Cookie</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-Cookie的使用"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">2.Cookie的使用</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-Cookie的安全性"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">3.Cookie的安全性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、Session"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、Session</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-什么是Session"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1.什么是Session</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-Session的使用"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2.Session的使用</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、Cookie和Session的区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、Cookie和Session的区别</span></a></li></ol>
     </ul>
     
 
@@ -380,7 +380,7 @@
         
     
             <p class="article-headline-p">
-                工厂方法模式&抽象工厂模式
+                Java会话管理：Cookie和Session
             </p>
         </div>
 
@@ -399,7 +399,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>stormjie</strong>
-        <span>8月 05, 2018</span>
+        <span>8月 07, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -421,7 +421,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC20lEQVR42u3a0U7DMAwF0P3/T8MrElp2bXfQJadPaN3WnCBh7JvH15HXAxsbGxsbGxsbG/uW7Ed8/X5/8srP15+9P7/bWzM2Njb2CewXf/pbpPnWrD+brxkbGxv7HPZ60VeVvbw4rZ9eXjM2NjY29hI8WVCyldjY2NjY1xaw3oAp2bhkwISNjY2NPRkqPXtwcne9HdUI4U9nadjY2Ni3Z1fHQ3f4+R/ybWxsbOxbsstHGOPHVwteXhSbK8fGxsbelD05WNM7xNMLG6qtUXOWho2Njf2x7OQB+ei/FwwkB3qqwTM2Njb2OezeAZr5lk2ee1krgo2Njb0FO28/JkFCb/Sfl1tsbGzsM9n5yGYeBiQNw/qdeXtTDnqxsbGxN2JPYt1enFANHnoNEjY2Nvau7OpX98KAQhwbPyv5JWFjY2Ofw86XlQzoezFAtbWoRgXY2NjYu7LzsdGkMegdtcnjgWhQhY2Njb0pOz8KkyyrVwirYUMzJMbGxsY+gD2JfvNmo9cIJQWyHA9gY2Njb8fuNRLV4zjVcpgf63mxxdjY2NgHsK+NePP2Jv9srx3CxsbG3ptdjWCrg6G8zOR3q5uLjY2NvTd7MrjP25LJgKkaOTTrNjY2NvaHs8vFoHjIJlnW/InloRI2Njb2Fuz8H/3eIctqkzM5NlQ4soONjY29HTtpCdYtxzw8zjeouSpsbGzsrdm9wVD1qpaxfHhUPrKDjY2NvRE7D1x7S7wKn4OxsbGxT2NPSkI+fspJvaM/SciBjY2NfQ67uinVQpgPsHqBcbOAYWNjY38se14Y8oakF0JMGiFsbGzsc9jV6DcvTsn3j4b+eWHDxsbGPoBdLVpJgUni5Ml259uKjY2Njb1eem/0f1VgHI2lsLGxsbHfMDxKSlevWL6xgGFjY2PfmJ0vIikzvVeSZgMbGxsb+6qgd363Ok6qtjTY2NjYJ7DPubCxsbGxsbGxsbFvc30DIrv2SZ+GLV0AAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1ElEQVR42u3aQU4DMRAEwPz/03BFApbu8UYkdvmERNh1ORKjmfbj48j1wMbGxsbGxsbGxn5J9iNeXz///W9/eM3ok9d7m+0ZGxsb+wT2H//6LwH5htrj+G2H7Z6xsbGxz2HnG71+WV6Q8rfkB42NjY2NHT0iBrSb/rWRwMbGxsa+tYDlzUlS3pI93PBVYWNjYx/Azgc07RZn1DZOeOIsDRsbG/vl2StB73/9/M/5NjY2NvbLsGcrKUvtFZxZMSv2jI2Njb0pOx/9X1PzYVMbA7fBw/DyJTY2Nvbbsmdl5rqYzQZMeSTQhsTY2NjYe7NXilMSA7fx8Kx0Xe8KGxsb+wR2EpfmTcXKk9tAtyiT2NjY2Iex85F9UgJnrUs7nLqhgGFjY2O/IXtllN+GCit/lTc5Rb6NjY2NvRF7NnZvPzlrMPLw4OZUBBsbG/ut2LOwth3lt2FDPmaKjh4bGxt7a/YsQG0HUuuHkocW2NjY2Cez22FNu5WV1qW9xIONjY19Jru9KJkUqvwgZl9JVPawsbGxD2O3o/z82s3wws36E7CxsbEPYCfXK/MxUHsBKL+mmQ+SsLGxsU9jt+uuCzrt8bXhNDY2Nvbe7PbRSaBbhK/lFc+l+BkbGxv7GHY+NsovSs7aiXzMFH1J2NjY2Fuz74pjkxKVM1bKFTY2NvZp7ASWNAN3YZ4yusLGxsY+gJ2XrrsOqw0MVgZh2NjY2Huz88fNwoCVZiYvn9jY2NjYeRsw23SLz8tqffkSGxsbeyN2u9rmZCUeXi9s2NjY2Cew28JQNwALLcTsvdjY2NhnsvMGo20A8rg3KY03FzBsbGzs7dht0Up+mzcV+RHPjgkbGxsbO99K3urkLcpKw4ONjY2NPRvZt1ck85LZHhY2Njb2OexZ85CXluT42rbnumRiY2Njn8N+RtC7Hh6046q6FcHGxsbegn3OwsbGxsbGxsbGxn6Z9QniMWg67ZtzqwAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -435,7 +435,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/设计模式/">设计模式</a>
+        <a class="post_tag-link" href="/tags/cookie-session/">cookie,session</a>
     </ul>
     
 
@@ -454,7 +454,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=工厂方法模式&amp;抽象工厂模式&url=http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Java会话管理：Cookie和Session&url=http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -463,7 +463,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=工厂方法模式&amp;抽象工厂模式&url=http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/index.html&via=stormjie" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Java会话管理：Cookie和Session&url=http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html&via=stormjie" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -472,7 +472,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -487,7 +487,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=工厂方法模式&amp;抽象工厂模式&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/05/工厂方法模式&抽象工厂模式/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=Java会话管理：Cookie和Session&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -506,166 +506,206 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>先介绍工厂方法模式和抽象工厂模式，这是23种设计模式的其中两种。不过在此之前我想先说说简单工厂模式，它不属于23种设计模式，却是今天要说的两种设计模式的入门。</p>
-<h3 id="一、简单工厂模式"><a href="#一、简单工厂模式" class="headerlink" title="一、简单工厂模式"></a>一、简单工厂模式</h3><p>我们刚开始写代码的时候，如果需要一个类的对象，我们习惯利用关键字new把它直接创建出来，其实这并不是一个好习惯，因为这样不得已把对象的创建和使用绑定在一起，造成对象类和客户端代码非常高的耦合度，这无疑是我们不想看到的结果，那应该怎么办？简单工厂模式在一定程度上能解决这个问题。</p>
-<p>简单工厂模式是<strong>由一个工厂对象决定创建出哪一种产品类的实例</strong>。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一个特殊实现。 </p>
-<p>上面是定义，现在看不懂没关系，下面我来举例。市面上手机有各种各样的品牌，华为，小米，oppo等，不同场景下我们需要的手机品牌不同，那我们要怎么定义这个手机类？有些人可能觉得直接根据品牌定义类就好，华为一个类小米一个类这样，但仔细思考后会发现这样并不可取，因为手机品牌虽然不同，但很多功能都是类似的，重复的代码尽量不要写，这也是我们编码的原则之一，比较好的方法是定义一个抽象的手机类，如下</p>
-<pre><code>abstract class Phone {
-    //所有手机都有的功能，这里我举打电话这个例子
-    public void call() {
-        //具体实现省略
-    }
-
-    //不同品牌手机不同的功能
-    public abstract void method();
-}
-</code></pre><p>然后在根据具体手机品牌定义各自的类</p>
-<pre><code>//华为
-class HUAWEI extends Phone {
-    public void method() {
-    //具体实现
-    }
-}
-
-//小米
-class XiaoMi extends Phone {
-    public void method() {
-    //具体实现
-    }
-}
-
-...
-</code></pre><p>这样定义结束后，如果我们需要使用不同品牌的手机对象，根据简单工厂模式我们还需要定义一个工厂类</p>
-<pre><code>class Factory {
-    //静态工厂方法，返回不同手机品牌对象
-    public static Phone getPhone(String type) {
-        Phone phone = null;
-        if(type.equals(&quot;HUAWEI&quot;)) {
-            phone = new HUAWEI();
-        } else if(type.equals(&quot;XiaoMi&quot;)) {
-            phone = new XiaoMi();
-        } else {
-            //...
-        }
-        return phone;
-    }
-}
-</code></pre><p>有了这个工厂类我们创建对象就方便了，以下是客户端代码</p>
-<pre><code>class Client {
-    public static void main(String[] args) {
-        Phone myPhone1 = Factory.getPhone(&quot;XiaoMi&quot;);
-        Phone myPhone2 = Factory.getPhone(&quot;HUAWEI&quot;);
-    }
-}
-</code></pre><p>这就是简单工厂模式的常用场景，你发现没，利用简单工厂模式我们很自然地将对象的创建与使用分开（创建交给工厂类，使用在客户端代码中），看完这个例子再看它的定义，会清楚很多，如果你理解了，那恭喜你可以继续学习工厂方法模式了，如果还是不懂的话不建议继续往下看，请多看相关的其他文章。</p>
-<h3 id="二、工厂方法模式"><a href="#二、工厂方法模式" class="headerlink" title="二、工厂方法模式"></a>二、工厂方法模式</h3><p>简单工厂模式固然简单，但是也有问题，如果我们需要一个手机品牌（例如三星），而工厂类中没有相应的创建代码怎么办？我们就不得不修改我们的工厂类，但是这样就违背了我们的开闭原则，如何在新增手机品牌的情况下而不修改源代码？这时候工厂方法模式就出现了。</p>
-<p>工厂方法模式在简单工厂模式上做出了改进，意义是定义一个创建产品对象的工厂接口，将实际创建工作推迟到子类当中。核心工厂类不再负责产品的创建，这样核心类成为一个抽象工厂角色，仅负责具体工厂子类必须实现的接口，这样进一步抽象化的好处是使得工厂方法模式可以使系统在不修改具体工厂角色的情况下引进新的产品。 </p>
-<p>按照上面说的我们只要将Factory类做些改动，把它变成一个接口</p>
-<pre><code>interface Factory {
-    public Phone getPhone();
-}
-</code></pre><p>然后根据不同手机品牌编写对应的品牌工厂类</p>
-<pre><code>//小米
-class XiaoMiFactory implements Factory {
-    public Phone getPhone() {
-        return new XiaoMi();
-    }
-}
-
-//三星
-class SAMSUNGFactory implements Factory {
-    public Phone getPhone() {
-        return new SAMSUNG();
-    }
-}
-
-...
-</code></pre><p>把工厂类改写成接口，将实际创建工作推迟到子类当中，这样我们需要什么手机品牌的对象，写个品牌工厂实现工厂类接口就行了，不就解决了新手机品牌的问题。不得不说早期提出设计模式的大牛们是多厉害，仰望一下。好了，下面是使用工厂方法模式后的客户端代码</p>
-<pre><code>class Client {
-    public static void main(String[] args) {
-        Factory factory = null;
-        factory = new SAMSUNGFactory();
-        Phone myPhone = factory.getPhone();
-    }
-}
-</code></pre><h3 id="三、抽象工厂模式"><a href="#三、抽象工厂模式" class="headerlink" title="三、抽象工厂模式"></a>三、抽象工厂模式</h3><p>接着我们上面的例子，手机有各式的品牌，然而每个手机品牌也不止只生产手机，比如小米还有充电宝，空气净化器等等，如果都为它们创建工厂类可能会导致系统中存在大量工厂类，这样势必会产生系统开销，此时我们的抽象工厂模式运营而生。</p>
-<h5 id="1-产品等级结构与产品族"><a href="#1-产品等级结构与产品族" class="headerlink" title="1.产品等级结构与产品族"></a>1.产品等级结构与产品族</h5><p>要理解抽象工厂模式，我们就要先来学习一下产品等级结构与产品族是什么。</p>
-<p><img src="http://i4.bvimg.com/656545/c18d26d84d16b2bc.jpg" alt="Markdown"></p>
-<p>上图是产品族与产品等级结构示意图，产品等级结构是产品的继承结构，如我们的抽象类Phone，其子类有XiaoMi，HUAWEI，SAMSUNG，则Phone与XiaoMi,HUAWEI,SAMSUNG之间构成了一个产品等级结构。产品族是指由同一个工厂生产的，位于不同产品等级结构的同一组产品，如小米的手机，充电宝，空气净化器，它们各自属于不同的产品等级结构，因此它们属于一个产品族，即小米。</p>
-<h5 id="2-抽象工厂模式举例"><a href="#2-抽象工厂模式举例" class="headerlink" title="2.抽象工厂模式举例"></a>2.抽象工厂模式举例</h5><p>如果利用工厂方法模式为小米华为的手机，充电宝和空气净化器都创建对象，一共需要6个工厂类，而抽象工厂模式简单许多，我们先为产品族新建一个抽象类（接口也行）</p>
-<pre><code>abstract class AbstractFactory {
-    //为一个产品族创建不同产品等级结构的方法
-    public abstract Phone getPhone();
-    public abstract PowerBank getPowerBank();
-    public abstract AirPurifier getAirPurifier();
-}
-</code></pre><p>对于每个品牌，其代码如下</p>
-<pre><code>//小米
-class XiaoMiFactory extends AbstractFactory {
-    public abstract Phone getPhone() {
-        return new XiaoMi();
-    }
-    public abstract PowerBank getPowerBank() {
-        return new XiaoMiPowerBank();
-    }
-    public abstract AirPurifier getAirPurifier() {
-        return new XiaoMiAirPurifier();
-    }
-}
-
-//华为
-class HUAWEIFactory extends AbstractFactory {
-    public abstract Phone getPhone() {
-        return new HUAWEI();
-    }
-    public abstract PowerBank getPowerBank() {
-        return new HUAWEIPowerBank();
-    }
-    public abstract AirPurifier getAirPurifier() {
-        return new HUAWEIAirPurifier();
-    }
-}
-</code></pre><p>做到这样就可以了，两个产品族我们只要两个具体工厂类，一个抽象工厂类，是不是比工厂方法模式简单？下面是客户端代码</p>
-<pre><code>class Client {
-    public static void main(String[] args) {
-        AbstractFactory factory = null;
-        factory = new XiaoMiFactory();
-        Phone myPhone = factory.getPhone();
-        PowerBank myPower = factory.getPowerBank();
-    }
-}
-</code></pre><h5 id="3-与工厂方法模式的对比"><a href="#3-与工厂方法模式的对比" class="headerlink" title="3.与工厂方法模式的对比"></a>3.与工厂方法模式的对比</h5><p>抽象工厂模式的使用就是上面这样，下面我们来将它与工厂方法模式做个对比</p>
+        <p>http是<strong>无状态</strong>的，一次请求结束，连接断开，下次服务器再收到请求，它就不知道这个请求是哪个用户发过来的。当然它知道是哪个客户端地址发过来的，但是对于我们的应用来说，我们是靠用户来管理，而不是靠客户端。所以对我们的应用而言，它是需要有状态管理的，以便服务端能够准确的知道http请求是哪个用户发起的，从而判断他是否有权限继续这个请求。这个过程就是常说的会话管理。它也可以简单理解为一个用户从登录到退出应用的一段期间。 </p>
+<p>具体解释一下这个“无状态”：</p>
+<ol>
+<li>协议对于事务处理没有记忆能力</li>
+<li>对同一个url请求没有上下文关系</li>
+<li>每次的请求都是独立的，它的执行情况和结果与前面的请求和之后的请求是无直接关系的，它不会受前面的请求应答情况直接影响，也不会直接影响后面的请求应答情况</li>
+<li>服务器中没有保存客户端的状态，客户端必须每次带上自己的状态去请求服务器</li>
+<li><p>人生若只如初见</p>
+<p>这有个具体的生活例子说明了无状态http的不便性：</p>
+</li>
+</ol>
+<p>当我们在一个购物网站上登陆自己的帐号后，我们便开始浏览商品，这时我们发现了心仪的商品，点进去打算看商品详情，发现竟然又要我们登陆帐号，为什么？因为无状态http请求无法保存我们用户信息，点击商品是一个请求，刚刚进入网站主页也是一个请求，这两个请求没有上下文联系，服务器无法判断这是同一个用户的请求，所以我们不得不再输入我们的账号密码，点击添加购物车，这也是一个请求，我们还是得输入帐号密码，还有其它商品操作，还有结算按钮。。。</p>
+<p>没有会话管理技术会给我们生活带来多大不便从上个例子就可以略知一二，Java中我们有Cookie和Session来帮助我们解决这个麻烦。</p>
+<h3 id="一、Cookie"><a href="#一、Cookie" class="headerlink" title="一、Cookie"></a>一、Cookie</h3><h5 id="1-什么是Cookie"><a href="#1-什么是Cookie" class="headerlink" title="1.什么是Cookie"></a>1.什么是Cookie</h5><p>“Cookie是通过客户端保持状态的解决方案。从定义上来说，Cookie就是由服务器发给客户端的特殊信息，而这些信息以文本文件的方式存放在客户端，然后客户端每次向服务器发送请求的时候都会带上这些特殊的信息。让我们说得更具体一些：当用户使用浏览器访问一个支持Cookie的网站的时候，用户会提供包括用户名在内的个人信息并且提交至服务器；接着，服务器在向客户端回传相应的超文本的同时也会发回这些个人信息，当然这些信息并不是存放在HTTP响应体（Response Body）中的，而是存放于HTTP响应头（Response Header）；当客户端浏览器接收到来自服务器的响应之后，浏览器会将这些信息存放在一个统一的位置，对于Windows操作系统而言，我们可以从： [系统盘]:\Documents and Settings[用户名]\Cookies目录中找到存储的Cookie；自此，客户端再向服务器发送请求的时候，都会把相应的Cookie再次发回至服务器。而这次，Cookie信息则存放在HTTP请求头（Request Header）了。 ”这是百度百科上关于Cookie的解释，说得很明了也很详细，下图是利用Cookie与服务器交流的简图：</p>
+<p><img src="http://i1.bvimg.com/656545/4ff99375d4cc1098.png" alt="Markdown"></p>
+<h5 id="2-Cookie的使用"><a href="#2-Cookie的使用" class="headerlink" title="2.Cookie的使用"></a>2.Cookie的使用</h5><p>如何使用Cookie？Java API关于Cookie提供了很多方法</p>
 <table>
 <thead>
 <tr>
-<th>工厂方法模式</th>
-<th>抽象工厂模式</th>
+<th>方法</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>针对的是一个产品等级结构</td>
-<td>针对的是多个产品等级结构</td>
+<td>Cookie(String name, String value)</td>
+<td>实例化<code>Cookie</code>对象，传入<code>Cookie</code>名称和<code>Cookie</code>的值</td>
 </tr>
 <tr>
-<td>一个抽象产品类</td>
-<td>多个抽象产品类</td>
+<td>public String getName()</td>
+<td>取得<code>Cookie</code>的名字</td>
 </tr>
 <tr>
-<td>每个抽象产品类可以派生出多个具体产品类</td>
-<td>每个抽象产品类可以派生出多个具体产品类</td>
+<td>public String getValue()</td>
+<td>取得<code>Cookie</code>的值</td>
 </tr>
 <tr>
-<td>一个抽象工厂类，可以派生出多个具体工厂类</td>
-<td>一个抽象工厂类，可以派生出多个具体工厂类</td>
+<td>public void setValue(String newValue)</td>
+<td>设置<code>Cookie</code>的值</td>
 </tr>
 <tr>
-<td>每个具体工厂类只能创建一个具体产品类的实例</td>
-<td>每个具体工厂类可以创建多个具体产品类的实例</td>
+<td>public void setMaxAge(int expiry)</td>
+<td>设置<code>Cookie</code>的最大保存时间，即<code>Cookie</code>的有效期</td>
+</tr>
+<tr>
+<td>public int getMaxAge()</td>
+<td>获取<code>Cookie</code>的有效期</td>
+</tr>
+<tr>
+<td>public void setPath(String uri)</td>
+<td>设置<code>Cookie</code>的有效路径</td>
+</tr>
+<tr>
+<td>public String getPath()</td>
+<td>获取<code>Cookie</code>的有效路径</td>
+</tr>
+<tr>
+<td>public void setDomain(String pattern)</td>
+<td>设置<code>Cookie</code>的有效域</td>
+</tr>
+<tr>
+<td>public String getDomain()</td>
+<td>获取<code>Cookie</code>的有效域</td>
 </tr>
 </tbody>
 </table>
-<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>无论是简单工厂模式，工厂方法模式，还是抽象工厂模式，他们都属于工厂模式，在形式和特点上也是极为相似的，他们的最终目的都是为了解耦。在使用时，我们不必去在意这个模式到底工厂方法模式还是抽象工厂模式，因为他们之间的演变常常是令人琢磨不透的。经常你会发现，明明使用的工厂方法模式，当新需求来临，稍加修改，加入了一个新方法后，由于类中的产品构成了不同等级结构中的产品族，它就变成抽象工厂模式了；而对于抽象工厂模式，当减少一个方法使的提供的产品不再构成产品族之后，它就演变成了工厂方法模式。 所以，在使用工厂模式时，只需要关心降低耦合度的目的是否达到了。 </p>
+<p>已下是Cookie使用的一个例子，记录用户访问网站信息</p>
+<pre><code>public class CookieServlet extends HttpServlet {
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        //设置服务器端以UTF-8编码进行输出
+        response.setCharacterEncoding(&quot;UTF-8&quot;);
+        //设置浏览器以UTF-8编码进行接收,解决中文乱码问题
+        response.setContentType(&quot;text/html;charset=UTF-8&quot;);
+        PrintWriter out = response.getWriter();
+        //获取浏览器访问访问服务器时传递过来的cookie数组
+        Cookie[] cookies = request.getCookies();
+        //如果用户是第一次访问，那么得到的cookies将是null
+        if (cookies!=null) {
+            out.write(&quot;您上次访问的时间是：&quot;);
+            for (int i = 0; i &lt; cookies.length; i++) {
+                Cookie cookie = cookies[i];
+                if (cookie.getName().equals(&quot;lastAccessTime&quot;)) {
+                    Long lastAccessTime =Long.parseLong(cookie.getValue());
+                    Date date = new Date(lastAccessTime);
+                    out.write(date.toLocaleString());
+                }
+            }
+        }else {
+            out.write(&quot;这是您第一次访问本站！&quot;);
+        }
+
+        //用户访问过之后重新设置用户的访问时间，存储到cookie中，然后发送到客户端浏览器
+        Cookie cookie = new Cookie(&quot;lastAccessTime&quot;, System.currentTimeMillis()+&quot;&quot;);//创建一个cookie，cookie的名字是lastAccessTime
+        //将cookie对象添加到response对象中，这样服务器在输出response对象中的内容时就会把cookie也输出到客户端浏览器
+        response.addCookie(cookie);
+    }
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doGet(request, response);
+    }
+}
+</code></pre><h5 id="3-Cookie的安全性"><a href="#3-Cookie的安全性" class="headerlink" title="3.Cookie的安全性"></a>3.Cookie的安全性</h5><p>Cookie的目的是为用户带来方便，为网站带来增值，一般情况下不会造成严重的安全威胁。Cookie文件不能作为代码执行，也不会传送病毒，它为用户所专有并只能由创建它的服务器来读取。另外，浏览器一般只允许存放300个Cookie，每个站点最多存放20个Cookie，每个Cookie的大小限制为3KB，因此，Cookie不会塞满硬盘，更不会被用作”拒绝服务”攻击手段。</p>
+<p>但是，Cookie作为用户身份的替代，其安全性有时决定了整个系统的安全性，Cookie的安全性问题不容忽视。</p>
+<p>(1)Cookie欺骗</p>
+<p>Cookie记录了用户的帐户ID、密码之类的信息，通常使用MD5方法加密后在网上传递。经过加密处理后的信息即使被网络上一些别有用心的人截获也看不懂。然而，现在存在的问题是，截获Cookie的人不需要知道这些字符串的含义，只要把别人的Cookie向服务器提交，并且能够通过验证，就可以冒充受害人的身份登陆网站，这种行为叫做Cookie欺骗。<br>非法用户通过Cookie欺骗获得相应的加密密钥，从而访问合法用户的所有个性化信息，包括用户的E-mail甚至帐户信息，对个人信息造成严重危害。<br>(2)Cookie截获<br>Cookie以纯文本的形式在浏览器和服务器之间传送，很容易被他人非法截获和利用。任何可以截获Web通信的人都可以读取Cookie。<br>Cookie被非法用户截获后，然后在其有效期内重放，则此非法用户将享有合法用户的权益。例如，对于在线阅读，非法用户可以不支付费用即可享受在线阅读电子杂志。</p>
+<h3 id="二、Session"><a href="#二、Session" class="headerlink" title="二、Session"></a>二、Session</h3><h5 id="1-什么是Session"><a href="#1-什么是Session" class="headerlink" title="1.什么是Session"></a>1.什么是Session</h5><p>Session是另一种记录客户状态的机制，不同的是Cookie保存在客户端浏览器中，而Session保存在服务器上。服务器使用一种类似于散列表的结构（也可能就是使用散列表）来保存信息。当程序需要为某个客户端的请求创建一个Session的时候，服务器首先检查这个客户端的请求里是否已包含了一个Session标识，称为SessionId，如果已包含一个SessionId则说明以前已经为此客户端创建过Session，服务器就按照SessionId把这个Session检索出来使用（如果检索不到，可能会新建一个），如果客户端请求不包含SessionId，则为此客户端创建一个Session并且生成一个与此Session相关联的SessionId，SessionId的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串，这个SessionId将被在本次响应中返回给客户端保存。 保存这个SessionId的方式可以采用Cookie，这样在交互过程中浏览器可以自动的按照规则把这个标识发挥给服务器。 </p>
+<h5 id="2-Session的使用"><a href="#2-Session的使用" class="headerlink" title="2.Session的使用"></a>2.Session的使用</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public String getId()</td>
+<td>获取<code>SessionID</code>值</td>
+</tr>
+<tr>
+<td>public void setAttribute()</td>
+<td>设置属性</td>
+</tr>
+<tr>
+<td>public Object getAttribute()</td>
+<td>获取属性</td>
+</tr>
+<tr>
+<td>public void removeAttribute()</td>
+<td>移除属性</td>
+</tr>
+<tr>
+<td>public []String getAllAttributeNames()</td>
+<td>获取所有的属性名</td>
+</tr>
+<tr>
+<td>public int getMaxInactiveInterval()</td>
+<td>获取最长到期时间</td>
+</tr>
+<tr>
+<td>public void setMaxInactiveInterval()</td>
+<td>设置最长到期事件</td>
+</tr>
+<tr>
+<td>public void  invalidate()</td>
+<td>使该<code>Session</code>对象失效</td>
+</tr>
+<tr>
+<td>public long getCreationTime()</td>
+<td>获取创建时间</td>
+</tr>
+<tr>
+<td>public long getLastAccessedTime()</td>
+<td>获取上次访问时间</td>
+</tr>
+</tbody>
+</table>
+<p>已下是Session使用的一个例子</p>
+<pre><code>//使用Session保存数据
+public class Demo01 extends HttpServlet {
+        public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            response.setContentType(&quot;text/html;charset=UTF-8&quot;);
+            request.setCharacterEncoding(&quot;UTF-8&quot;);
+
+            // 获取参数
+            String username = request.getParameter(&quot;username&quot;);
+
+            // 获取session对象
+            HttpSession session = request.getSession();
+            // 保存数据
+            session.setAttribute(&quot;username&quot;, username);
+            // 打印SessionID
+            System.out.println(session.getId());
+        }
+
+        public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            doGet(request, response);
+        }
+}
+
+//测试获取Session域中的数据
+public class Demo02 extends HttpServlet {
+        public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            response.setContentType(&quot;text/html;charset=UTF-8&quot;);
+            request.setCharacterEncoding(&quot;UTF-8&quot;);
+
+            HttpSession session = request.getSession();
+            String username = (String)session.getAttribute(&quot;username&quot;);
+            // 响应到网页上
+            response.getWriter().write(username + &quot; &quot; + session.getId());
+        }
+
+        public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            doGet(request, response);
+        }
+}
+</code></pre><h3 id="三、Cookie和Session的区别"><a href="#三、Cookie和Session的区别" class="headerlink" title="三、Cookie和Session的区别"></a>三、Cookie和Session的区别</h3><p>1.Session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中； Cookie是把用户的数据写在用户本地浏览器上, 其他网站也可以扫描使用你的Cookie，容易泄露自己网站用户的隐私，而且一般浏览器对单个网站站点有Cookie数量与大小的限制，Cookie也是实现Session的一种方式。 </p>
+<p>2.Session 的运行依赖SessionId，而SessionId 是存在Cookie中的，也就是说，如果浏览器禁用了Cookie ，同时 Session 也会失效（但是可以通过其它方式实现，比如在 url 中传递 SessionId） 。</p>
+<p>3.一般情况，登录信息等重要信息存储在Session中，其他信息存储在Cookie中 。</p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -674,7 +714,7 @@ class HUAWEIFactory extends AbstractFactory {
                             本博客文章除特别声明外，均采用CC BY-NC-SA 3.0许可协议，转载请标明出处！
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/">http://yoursite.com/2018/08/05/工厂方法模式&amp;抽象工厂模式/</a>
+                        <strong>本文链接：</strong><a href="http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/">http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/</a>
                     </p>
                 </blockquote>
         
@@ -696,21 +736,13 @@ class HUAWEIFactory extends AbstractFactory {
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/07/Java会话管理：Cookie和Session/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/08/04/设计模式起篇/" id="post_nav-older" class="next-content">
+        <a href="/2018/08/05/工厂方法模式&抽象工厂模式/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

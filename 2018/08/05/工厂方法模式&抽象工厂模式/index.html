@@ -27,8 +27,6 @@
 
 
 
-        <link rel="dns-prefetch" href="https://cdn-city.livere.com"/>
-
 
 
 
@@ -681,27 +679,31 @@ class HUAWEIFactory extends AbstractFactory {
                 <!-- Post Comments -->
                 
                     
-    <!-- 使用 来必力 -->
-<div id="livere-comment">
-    <div id="lv-container" data-id="city" data-uid="MTAyMC8zODY5MS8xNTIxOQ==">
-	<script type="text/ls-javascript" id="livere-comment-js">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-       if (typeof LivereTower === 'function') { return; }
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-</div>
+    <!-- 使用 gitcoment -->
+<div id="gitment-comment">
+    <!-- Gitment 评论框 -->
+<div id="container"></div>
 </div>
 <style>
-    #livere-comment{
+    #gitment-comment{
         background-color: #eee;
         padding: 2pc;
     }
 </style>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        //id: '页面 ID', // 可选。默认为 location.href
+        owner: 'stormjie',
+        repo: 'stormjie.github.io',
+        oauth: {
+            client_id: '492c1c17f5f630983b90',
+            client_secret: '88b70775dfb5d4f7751316d04a670331e8759b13',
+        },
+    })
+    gitment.render('container')
+</script>
 
                 
             </div>
@@ -1072,7 +1074,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-   
+   <!-- Gitment -->
 
 
 

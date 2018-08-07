@@ -686,7 +686,7 @@ class HUAWEIFactory extends AbstractFactory {
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
     var GUEST_INFO = ['nick','mail','link'];
-    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    var guest_info = 'nick,mail'.split(',').filter(function(item){
         return GUEST_INFO.indexOf(item) > -1
     });
     var notify = 'false' == true;
@@ -697,7 +697,7 @@ class HUAWEIFactory extends AbstractFactory {
         verify: verify,
         appId: "Ihl9iCUYNw9JbrUpw4mPE5LO-gzGzoHsz",
         appKey: "zIPnpmbuwjSMrCp1uhJqatPR",
-        placeholder: "Just go go",
+        placeholder: "欢迎留言告诉我你的想法",
         pageSize:'10',
         avatar:'identicon',
         lang:'zh-cn'

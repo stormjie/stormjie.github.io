@@ -17,7 +17,9 @@
       
         <tags>
             
-            <tag> cookie,session </tag>
+            <tag> cookie </tag>
+            
+            <tag> session </tag>
             
         </tags>
       

@@ -243,7 +243,7 @@
 
     
         <meta property="article:published_time" content="Wed Aug 08 2018 21:42:02 GMT+0800">
-        <meta property="article:modified_time" content="Wed Aug 08 2018 23:59:20 GMT+0800">
+        <meta property="article:modified_time" content="Thu Aug 09 2018 00:08:00 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -266,7 +266,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/08/08/JSP总结/index.html",
     "headline": "JSP总结",
     "datePublished": "Wed Aug 08 2018 21:42:02 GMT+0800",
-    "dateModified": "Wed Aug 08 2018 23:59:20 GMT+0800",
+    "dateModified": "Thu Aug 09 2018 00:08:00 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -636,7 +636,7 @@ String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&q
 <p>5.服务器执行这个.class文件， 将执行结果发送给浏览器进行显示。 </p>
 <p>并不是每次请求都需要重复进行这样的处理。当服务器第一次接收到对某个页面的请求时，JSP引擎就开始按照上述的处理过程来将被请求的JSP文件编译成.class文件。当再次对该页面进行请求时，如果该页面没有任何改动，服务器就会直接调用对应的.class文件来执行，因此当某个JSP页面第一次被请求时，会有一些延迟，而再次访问时会感觉速度快了很多。如果被请求的页面经过了修改，那么服务器会重新编译这个文件，然后再执行。 </p>
 <h3 id="三、JSP基础语法"><a href="#三、JSP基础语法" class="headerlink" title="三、JSP基础语法"></a>三、JSP基础语法</h3><h5 id="1-JSP表达式"><a href="#1-JSP表达式" class="headerlink" title="1.JSP表达式"></a>1.JSP表达式</h5><p>JSP表达式用于向页面中输出信息，其语法格式如下：</p>
-<p>&lt;%= expression %&gt;</p>
+<p><code>&lt;%= expression %&gt;</code></p>
 <p>参数说明：</p>
 <p>expression：可以是任何Java语言的完整表达式，该表达式的最终运算结果将被转换为字符串。</p>
 <p>需要注意 : </p>
@@ -657,8 +657,11 @@ String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&q
 &lt;/p&gt;
 &lt;/body&gt; 
 &lt;/html&gt; 
-</code></pre><h5 id="2-JSP脚本片断"><a href="#2-JSP脚本片断" class="headerlink" title="2.JSP脚本片断"></a>2.JSP脚本片断</h5><p>JSP脚本片断(scriptlet)用于在JSP页面中编写多行Java代码，其语法格式如下：<br>&lt;%         　　　<br>    多行java代码  　　　<br>%&gt;</p>
-<p>需要注意 : </p>
+</code></pre><h5 id="2-JSP脚本片断"><a href="#2-JSP脚本片断" class="headerlink" title="2.JSP脚本片断"></a>2.JSP脚本片断</h5><p>JSP脚本片断(scriptlet)用于在JSP页面中编写多行Java代码，其语法格式如下：</p>
+<pre><code>&lt;%         　　　
+    多行java代码  　　　
+%&gt;
+</code></pre><p>需要注意 : </p>
 <p>(1)在&lt;% %&gt;中可以定义变量，编写语句，不能定义方法。</p>
 <p>(2)JSP脚本片断中只能出现java代码，不能出现其它模板元素，JSP引擎在翻译JSP页面中，会将JSP脚本片断中的Java代码将被原封不动地放到Servlet的_jspService方法中。</p>
 <p>(3)在一个JSP页面中可以有多个脚本片断，在两个或多个脚本片断之间可以嵌入文本、HTML标记和其他JSP元素。</p>
@@ -672,8 +675,10 @@ String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&q
     out.println(&quot;&lt;h1&gt;Sum=&quot;+sum+&quot;&lt;/h1&gt;&quot;);
 %&gt;
 </code></pre><h5 id="3-JSP声明"><a href="#3-JSP声明" class="headerlink" title="3.JSP声明"></a>3.JSP声明</h5><p>JSP页面中编写的所有代码，默认会翻译到Servlet的service方法中， 而JSP声明中的Java代码被翻译到_jspService方法的外面，其语法格式如下：</p>
-<p>&lt;% !        　　　<br>    Java代码  　　　<br>%&gt;</p>
-<p>需要注意 : </p>
+<pre><code>&lt;% !        　　　
+    Java代码  　　　
+%&gt;
+</code></pre><p>需要注意 : </p>
 <p>(1)声明以 “&lt;%!” 开头 , 以 “%&gt;” 结尾 , “%!” 必须紧挨。</p>
 <p>(2)多个静态代码块，变量和函数可以定义在一个JSP声明中，也可以分别单独定义在多个JSP声明中。JSP隐式对象的作用范围仅限于Servlet的_jspService方法，所以在JSP声明中不能使用这些隐式对象。</p>
 <p>程序示例：</p>

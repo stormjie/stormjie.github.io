@@ -47,7 +47,7 @@
     
     <title>
         
-            Servlet总结 | 
+            JSP总结 | 
         
         stormjie&#39;s blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="stormjie的博客分享">
-    <meta name="keywords" content="stormjie,servlet">
+    <meta name="keywords" content="stormjie,jsp">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/03/Servlet/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/08/JSP总结/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -234,16 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/08/03/Servlet/">
+    <meta property="og:url" content="http://yoursite.com/2018/08/08/JSP总结/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Servlet总结 | stormjie&#39;s blog">
+    <meta property="og:title" content="JSP总结 | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
-    <meta property="og:article:tag" content="servlet"> 
+    <meta property="og:article:tag" content="jsp"> 
 
     
-        <meta property="article:published_time" content="Fri Aug 03 2018 16:05:24 GMT+0800">
-        <meta property="article:modified_time" content="Sat Aug 04 2018 10:34:39 GMT+0800">
+        <meta property="article:published_time" content="Wed Aug 08 2018 21:42:02 GMT+0800">
+        <meta property="article:modified_time" content="Wed Aug 08 2018 23:59:20 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -251,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/08/03/Servlet/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/08/08/JSP总结/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -263,10 +263,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/08/03/Servlet/index.html",
-    "headline": "Servlet总结",
-    "datePublished": "Fri Aug 03 2018 16:05:24 GMT+0800",
-    "dateModified": "Sat Aug 04 2018 10:34:39 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/08/08/JSP总结/index.html",
+    "headline": "JSP总结",
+    "datePublished": "Wed Aug 08 2018 21:42:02 GMT+0800",
+    "dateModified": "Wed Aug 08 2018 23:59:20 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -284,7 +284,7 @@
             "url": "/img/mountains.png"
         }
     },
-    "keywords": ",servletstormjie",
+    "keywords": ",jspstormjie",
     "description": "stormjie的博客分享",
 }
 </script>
@@ -350,7 +350,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、什么是Servlet"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、什么是Servlet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、Servlet生命周期"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、Servlet生命周期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-加载和实例化"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1.加载和实例化</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-初始化"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2.初始化</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-请求处理"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">3.请求处理</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-销毁"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">4.销毁</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、servlet配置及其含义"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、servlet配置及其含义</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、什么是JSP"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、什么是JSP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、JSP运行原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、JSP运行原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、JSP基础语法"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、JSP基础语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-JSP表达式"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">1.JSP表达式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-JSP脚本片断"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">2.JSP脚本片断</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-JSP声明"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">3.JSP声明</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-JSP注释"><span class="post-toc-number">3.0.4.</span> <span class="post-toc-text">4.JSP注释</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-JSP指令"><span class="post-toc-number">3.0.5.</span> <span class="post-toc-text">5.JSP指令</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-JSP行为"><span class="post-toc-number">3.0.6.</span> <span class="post-toc-text">6.JSP行为</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-JSP隐含对象"><span class="post-toc-number">3.0.7.</span> <span class="post-toc-text">7.JSP隐含对象</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -382,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                Servlet总结
+                JSP总结
             </p>
         </div>
 
@@ -401,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>stormjie</strong>
-        <span>8月 03, 2018</span>
+        <span>8月 08, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -423,7 +423,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYElEQVR42u3aQVLDMAwF0N7/0nAABudLip2287JiCE39vIjFl14/X3298PDw8PDw8PDw3oz3iq+/f//fc/LfXyy0uDY8PDy8k7zka9bLrd5dL7G3Njw8PLzzvPVh8B9g/YT1EpOn5WvDw8PDe0/e+kWfLHENw8PDw/s+XrUgrhbNeHh4eJ/Fy//hT6i96CE5kDZmLXh4eHgxr9oAO/nzA/09PDw8vCWvOdg0iBt6h1Bz6AoPDw9vA289JtUbwOqVyxev+yCYwMPDwzvDS5ZSfa3PQ4pRqIGHh4d3hJeMRuWRbn5sJKV5FYmHh4d3njcJF3pFc3U0YXQw4OHh4d3Kqz4oiQZGQwDFowUPDw/vKV6OmdydtMou7uLh4eE9ysvbUdVjproR+UgBHh4e3hletcCttvl7wXG1VYaHh4d3npeHuftC3o0HAx4eHt62kjo5HubRQ3JIVLcYDw8P7wwvb9Lnx0CvIK6GFHh4eHjP8vIX/SRiSD6bb1NUUuPh4eFt41WjgWQ78k2pxrsX24SHh4f3KK83gFWNG+4dI8DDw8M7w6tGqNXWVBJJ5NSLzcXDw8M7yOuVs3lcWw2Fe6U8Hh4e3hle3rIaxQTBAEG1eVbu7+Hh4eGNedXr3sB33n7Dw8PDO8+763U8iR7WhXW59MfDw8M7wquWy3fFCnnL7YasBQ8PD28Db73oXuw72YL1puDh4eF9Im9+t/rSj0a+8PDw8N6M1yuC15+aN8bw8PDwnuLlTa99LbRqNIyHh4f3FK/XALtrwLQKuNgIPDw8vM2877vw8PDw8PDw8PDe4PoFCewMN4CKLpwAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aQZLCMAwEQP7/6d0HsISRZDss1TlRFCRuH2LVSI+fr74eeHh4eHh4eHh4H8Z7xNfz7/+49dP3r35/fZ/e2vDw8PBO8t68ap94ySKS5V6vobo2PDw8vPO85PHXh0ROvd6s3trw8PDwPpOXMOZbg4eHh/dNvDyMqBbZvbvh4eHh3cvLC99JSJFTb8ha8PDw8GJetQF28vMN/T08PDy8S15zsClucVVf9IuHrvDw8PA28Kql8Hx8Kt+gXsyBh4eHt5vXa0fNi/Jq4T4qqfHw8PCW8qqt+slwQDUI7oXCeHh4eOd5k8dUW2L5MZDcBw8PD+8krxo3VCOJariQDw3g4eHh3cWbl7m99lhvJW9WhYeHh3eQl7/Wq0Vz74CprgcPDw/vJK/asM8D2XzQqtoke7lBeHh4eJt5o1bT4PtV7a43BwMeHh7eNl4ydDV5lffGC5r/wsPDw9vM6w2b9oKJBLMgzsDDw8M7yLsufPPF5aFDrxBvHgx4eHh4i3h58VoNBXqRblKCv9kOPDw8vM285EiYLLe6fXnk0ZyMwMPDw9vAqy6iOkpVPQyqQTMeHh7eeV41FMhL4XnhjoeHh/c5vOoQwKpRg+q4VbQFeHh4eJt51as6UJU0t3oDWHh4eHh38SZDV/lyqwdPHpQUJiPw8PDwlvIm7f9e0HC9xZM2GB4eHt5JXv6CrsYTSaRbDh3w8PDw/i1v1QhCdchgWX8PDw8PbzNv8irPS/Dqs/Dw8PDu4iVhRC9uyO9W/RceHh7eXbxexDAvxPPxr8JG4OHh4W3mfd+Fh4eHh4eHh4f3AdcvXjkA/OXuZWwAAAAASUVORK5CYII=">
     
 </ul>
 
@@ -437,7 +437,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/servlet/">servlet</a>
+        <a class="post_tag-link" href="/tags/jsp/">jsp</a>
     </ul>
     
 
@@ -456,7 +456,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Servlet总结&url=http://yoursite.com/2018/08/03/Servlet/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JSP总结&url=http://yoursite.com/2018/08/08/JSP总结/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -465,7 +465,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Servlet总结&url=http://yoursite.com/2018/08/03/Servlet/index.html&via=stormjie" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=JSP总结&url=http://yoursite.com/2018/08/08/JSP总结/index.html&via=stormjie" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -474,7 +474,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/03/Servlet/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/08/JSP总结/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -489,7 +489,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=Servlet总结&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/03/Servlet/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=JSP总结&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/08/JSP总结/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -508,39 +508,320 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>这几天忙着玩忙着睡都没有更博，不过也稍微计划了下大概要写些什么，具体就不说了，我不画大饼，没做到尴尬。。</p>
-<p>写技术博客也不是想给谁看，就是个人总结和复习，也当做笔记，以后忘了什么知识点可以来看看，仅此而已。行了，废话也不说了，来说说我们的Servlet。</p>
-<h3 id="一、什么是Servlet"><a href="#一、什么是Servlet" class="headerlink" title="一、什么是Servlet"></a>一、什么是Servlet</h3><p>Servlet是什么？”狭义的Servlet是指Java语言实现的一个接口，广义的Servlet是指任何实现了这个Servlet接口的类，一般情况下，人们将Servlet理解为后者。“这是百度上说的，以我的理解，Servlet就是一个Java接口，是一套处理网络请求的规范 ，我们平时写的Servlet必须实现刚刚那个接口，按它的规范完成我们的编写，这样完成的Java类我们管它叫自己的Servlet。</p>
-<p>好的，Servelt既然是一个接口，那具体是怎样的接口呢，下图详细地解释了Servlet体系与各自的方法。</p>
-<p><img src="http://i2.bvimg.com/656545/782108effef7a4f8.png" alt="Markdown"></p>
-<p>每一个自定义的Servlet都必须实现Servlet的接口，Servlet接口中定义了五个方法，其中比较重要的三个方法涉及到Servlet的生命周期，分别是的init()，service()，destroy()方法。GenericServlet是一个通用的，不特定于任何协议的Servlet，它实现了Servlet接口。而HttpServlet继承于GenericServlet，因此HttpServlet也实现了Servlet接口。HttpServlet在实现Servlet接口时，覆写了service方法，该方法体内的代码会自动判断用户的请求方式，如为GET请求，则调用HttpServlet的doGet()方法，如为Post请求，则调用doPost()方法。所以我们在编写Servlet时，通常只需要覆写doGet()或doPost()方法。 </p>
-<h3 id="二、Servlet生命周期"><a href="#二、Servlet生命周期" class="headerlink" title="二、Servlet生命周期"></a>二、Servlet生命周期</h3><p>说到Servlet不提它的生命周期显然是不行的，要掌握Servlet这个是重点，那么Servlet工作流程分为以下几个阶段：</p>
-<h5 id="1-加载和实例化"><a href="#1-加载和实例化" class="headerlink" title="1.加载和实例化"></a>1.加载和实例化</h5><p>当检测到需要Servlet的第一个请求时，读取xml文件找到要加载的servlet类，创建Servlet实例。 加载一般是在运行Servlet容器时来完成，将servlet类加载到tomcat中，或者是客户端发来请求时也可以。</p>
-<h5 id="2-初始化"><a href="#2-初始化" class="headerlink" title="2.初始化"></a>2.初始化</h5><p>初始化信息一般是读取配置信息、读取初始化参数等，对于每一个servlet实例，init()方法值被调用一次。</p>
-<h5 id="3-请求处理"><a href="#3-请求处理" class="headerlink" title="3.请求处理"></a>3.请求处理</h5><p>调用Servlet的service()方法对请求进行处理，在调用该方法之前，init()方法必须先成功执行。根据请求的到来，service()方法决定请求的请求，常用的是doGet()或doPost()。</p>
-<h5 id="4-销毁"><a href="#4-销毁" class="headerlink" title="4.销毁"></a>4.销毁</h5><p>销毁一般是Servlet的卸载是由容器本身定义和实现，在destroy()方法调用后，容器释放对应的Servlet请求。实例随后会被Java的垃圾收集器所回收，整个Servlet的生命周期结束。一般tomcat关闭，servlet就会被销毁。</p>
-<p>Servlet没有main方法，所有行为由Servlet容器控制，我们最常见的Servlet容器就是Tomcat了。整个流程如下图：<img src="http://i4.bvimg.com/656545/b5d4a154ef91eca4.jpg" alt="Markdown"></p>
-<p>（图来自《Head First Servlets &amp; JSP》，逸夫有，是本入门经典 ，推荐！ ）</p>
-<h3 id="三、servlet配置及其含义"><a href="#三、servlet配置及其含义" class="headerlink" title="三、servlet配置及其含义"></a>三、servlet配置及其含义</h3><p>servlet配置在项目的web.xml下，这里其实最想说的是配置中各节点的含义： </p>
-<pre><code>&lt;!-- 配置一个servlet --&gt;
-&lt;!-- servlet的配置 --&gt;
-&lt;servlet&gt;
-    &lt;!-- servlet的内部名称，自定义。尽量有意义 --&gt;
-    &lt;servlet-name&gt;ServletDemo&lt;/servlet-name&gt;
-    &lt;!-- servlet的类全名： 包名+简单类名 --&gt;
-    &lt;servlet-class&gt;lm.practice.ServletDemo&lt;/servlet-class&gt;
-&lt;/servlet&gt;
-&lt;!-- servlet的映射配置 --&gt;
-&lt;servlet-mapping&gt;
-    &lt;!-- servlet的内部名称，一定要和上面的内部名称保持一致！！ --&gt;
-    &lt;servlet-name&gt;ServletDemo&lt;/servlet-name&gt;
-    &lt;!-- servlet的映射路径（访问servlet的名称） --&gt;
-    &lt;url-pattern&gt;/servlet&lt;/url-pattern&gt;
-&lt;/servlet-mapping&gt;
-</code></pre><p> 可以看到，在配置Servlet时，有两个地方需要配置，一个是&lt;servlet&gt;,另一个是&lt;servlet-Mapping&gt;，这两个一个是配置Servlet，一个是配置其映射信息，其中&lt;servlet&gt;中的&lt;servlet-name&gt;可以随意指定，但要有一定的意义，一般取为类的名称，例如我的类名为ServletDemo，这里取名为ServletDemo,下面的&lt;servlet-class&gt;是类的全路径 ，一定要是全路径！ </p>
-<p>&lt;servlet-Mapping&gt;是映射信息，它也有一个&lt;servlet-name&gt;，里面的名字是对应的Servlet名，也就是我们上面配置的Servlet名字，这里是ServletDemo，下面的是映射路径，也就是访问Servlet的名称，这里也是以方便和有意义为前提的，是我们在访问Servlet在浏览器地址栏后面输入的那个信息。</p>
-<p>注意：这里的映射路径一定不是丢掉/，否则就会出错了，一定要写成/servlet，不能是servlet。</p>
-<p>行了，关于Servlet的知识点目前就想到这么多，其实还有九大内置对象，四个作用域什么的，大家想了解可以参考这个帖子，<a href="https://www.cnblogs.com/sunli0205/p/5896980.html" target="_blank" rel="noopener">了解一下</a>。以后如果想到什么重要的还会添加的，如果有什么疑惑或者错误欢迎联系我。</p>
+        <p>感觉自己三分钟热度要过去了，不想更博想偷懒了，以后不知道能不能做到一周二更，果然做个快乐肥宅太舒服了。。。废话不说，今天讲JSP，下面就开始吧。</p>
+<h3 id="一、什么是JSP"><a href="#一、什么是JSP" class="headerlink" title="一、什么是JSP"></a>一、什么是JSP</h3><p>掌握了编写Servlet程序后，我们有能力让网页“动”起来——根据不同的输入（URL参数、Session等）生成不同的页面内容。但由于Web中大量用到HTML作为展示语言，在Servlet中去拼接HTML代码显然不是一个好办法。Java EE里制定的JSP标准，就是帮助开发者基于HTML/XML来动态生成Web页面内容。 </p>
+<p>JSP全名为Java Server Pages，中文名叫Java服务器页面，其根本是一个简化的Servlet设计，它是由Sun提出的一种动态网页技术标准。在传统的网页HTML（标准通用标记语言的子集）文件中插入Java程序段(Scriptlet)和JSP标记(tag)，从而形成JSP文件。  </p>
+<p>本质上来说，JSP是Servlet的一个更高层的抽象。<strong>Servlet容器会将JSP在运行时转化为Servlet程序</strong>，接下来的处理流程就和Servlet完全一样了。</p>
+<p>下面是一个最简单的一段jsp代码： </p>
+<pre><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;%
+String path = request.getContextPath();
+String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&quot;:&quot;+request.getServerPort()+path+&quot;/&quot;;
+%&gt;
+
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;
+
+    &lt;title&gt;First Jsp&lt;/title&gt;
+
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;%
+        out.print(&quot;Hello Jsp&quot;);
+    %&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p> 对应的，Servlet容器将上面的JSP转化为Servlet如下：</p>
+<pre><code>package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import java.util.*;
+
+public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List _jspx_dependants;
+
+  private javax.el.ExpressionFactory _el_expressionfactory;
+  private org.apache.AnnotationProcessor _jsp_annotationprocessor;
+
+  public Object getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspInit() {
+    _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
+    _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
+  }
+
+  public void _jspDestroy() {
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+
+    try {
+      response.setContentType(&quot;text/html;charset=UTF-8&quot;);
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+                  null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+
+      out.write(&#39;\r&#39;);
+      out.write(&#39;\n&#39;);
+
+String path = request.getContextPath();
+String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&quot;:&quot;+request.getServerPort()+path+&quot;/&quot;;
+
+      out.write(&quot;\r\n&quot;);
+      out.write(&quot;\r\n&quot;);
+      out.write(&quot;&lt;!DOCTYPE HTML PUBLIC \&quot;-//W3C//DTD HTML 4.01 Transitional//EN\&quot;&gt;\r\n&quot;);
+      out.write(&quot;&lt;html&gt;\r\n&quot;);
+      out.write(&quot;  &lt;head&gt;\r\n&quot;);
+      out.write(&quot;    &lt;base href=\&quot;&quot;);
+      out.print(basePath);
+      out.write(&quot;\&quot;&gt;\r\n&quot;);
+      out.write(&quot;    \r\n&quot;);
+      out.write(&quot;    &lt;title&gt;First Jsp&lt;/title&gt;\r\n&quot;);
+      out.write(&quot;\t\r\n&quot;);
+      out.write(&quot;  &lt;/head&gt;\r\n&quot;);
+      out.write(&quot;  \r\n&quot;);
+      out.write(&quot;  &lt;body&gt;\r\n&quot;);
+      out.write(&quot;    &quot;);
+
+        out.print(&quot;Hello Jsp&quot;);
+
+      out.write(&quot;\r\n&quot;);
+      out.write(&quot;  &lt;/body&gt;\r\n&quot;);
+      out.write(&quot;&lt;/html&gt;\r\n&quot;);
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null &amp;&amp; out.getBufferSize() != 0)
+          try { out.clearBuffer(); } catch (java.io.IOException e) {}
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}
+</code></pre><h3 id="二、JSP运行原理"><a href="#二、JSP运行原理" class="headerlink" title="二、JSP运行原理"></a>二、JSP运行原理</h3><p>当客户端浏览器向服务器发出访问一个JSP页面的请求时，服务器根据该请求加载相应的JSP页面，并对该页面进行编译，然后执行。JSP页面的执行过程如下图所示： </p>
+<p><img src="http://i1.bvimg.com/656545/7e78cac60f2aa9e7.png" alt="Markdown"></p>
+<p>1.当用户访问一个JSP页面时，会向一个Servlet容器（Tomcat等）发出请求。</p>
+<p>2.服务器根据接收到的客户端的请求来加载相应的JSP文件。</p>
+<p>3.Web服务器中的JSP引擎会将被加载的JSP文件转化为Servlet(.java文件)。</p>
+<p>4.JSP引擎将生成的Servlet代码编译成.class文件。</p>
+<p>5.服务器执行这个.class文件， 将执行结果发送给浏览器进行显示。 </p>
+<p>并不是每次请求都需要重复进行这样的处理。当服务器第一次接收到对某个页面的请求时，JSP引擎就开始按照上述的处理过程来将被请求的JSP文件编译成.class文件。当再次对该页面进行请求时，如果该页面没有任何改动，服务器就会直接调用对应的.class文件来执行，因此当某个JSP页面第一次被请求时，会有一些延迟，而再次访问时会感觉速度快了很多。如果被请求的页面经过了修改，那么服务器会重新编译这个文件，然后再执行。 </p>
+<h3 id="三、JSP基础语法"><a href="#三、JSP基础语法" class="headerlink" title="三、JSP基础语法"></a>三、JSP基础语法</h3><h5 id="1-JSP表达式"><a href="#1-JSP表达式" class="headerlink" title="1.JSP表达式"></a>1.JSP表达式</h5><p>JSP表达式用于向页面中输出信息，其语法格式如下：</p>
+<p>&lt;%= expression %&gt;</p>
+<p>参数说明：</p>
+<p>expression：可以是任何Java语言的完整表达式，该表达式的最终运算结果将被转换为字符串。</p>
+<p>需要注意 : </p>
+<p>(1)JSP 的表达式中没有分号 !</p>
+<p>(2)”%=” 间不能有空格</p>
+<p>程序示例： </p>
+<pre><code>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;Demo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+   今天的日期是: &lt;%= (new java.util.Date()).toLocaleString()%&gt;
+&lt;/p&gt;
+&lt;/body&gt; 
+&lt;/html&gt; 
+</code></pre><h5 id="2-JSP脚本片断"><a href="#2-JSP脚本片断" class="headerlink" title="2.JSP脚本片断"></a>2.JSP脚本片断</h5><p>JSP脚本片断(scriptlet)用于在JSP页面中编写多行Java代码，其语法格式如下：<br>&lt;%         　　　<br>    多行java代码  　　　<br>%&gt;</p>
+<p>需要注意 : </p>
+<p>(1)在&lt;% %&gt;中可以定义变量，编写语句，不能定义方法。</p>
+<p>(2)JSP脚本片断中只能出现java代码，不能出现其它模板元素，JSP引擎在翻译JSP页面中，会将JSP脚本片断中的Java代码将被原封不动地放到Servlet的_jspService方法中。</p>
+<p>(3)在一个JSP页面中可以有多个脚本片断，在两个或多个脚本片断之间可以嵌入文本、HTML标记和其他JSP元素。</p>
+<p>(4)JSP脚本片断中的Java代码必须严格遵循Java语法，例如，每执行语句后面必须用分号结束。</p>
+<p>程序示例：</p>
+<pre><code>&lt;%
+    int sum=0; 
+    for(int i=1;i&lt;=100;i++) {
+        sum+=i;
+    }
+    out.println(&quot;&lt;h1&gt;Sum=&quot;+sum+&quot;&lt;/h1&gt;&quot;);
+%&gt;
+</code></pre><h5 id="3-JSP声明"><a href="#3-JSP声明" class="headerlink" title="3.JSP声明"></a>3.JSP声明</h5><p>JSP页面中编写的所有代码，默认会翻译到Servlet的service方法中， 而JSP声明中的Java代码被翻译到_jspService方法的外面，其语法格式如下：</p>
+<p>&lt;% !        　　　<br>    Java代码  　　　<br>%&gt;</p>
+<p>需要注意 : </p>
+<p>(1)声明以 “&lt;%!” 开头 , 以 “%&gt;” 结尾 , “%!” 必须紧挨。</p>
+<p>(2)多个静态代码块，变量和函数可以定义在一个JSP声明中，也可以分别单独定义在多个JSP声明中。JSP隐式对象的作用范围仅限于Servlet的_jspService方法，所以在JSP声明中不能使用这些隐式对象。</p>
+<p>程序示例：</p>
+<pre><code>&lt;%! int i = 0; %&gt; 
+&lt;%! int a, b, c; %&gt; 
+&lt;%! Circle a = new Circle(2.0); %&gt;
+</code></pre><h5 id="4-JSP注释"><a href="#4-JSP注释" class="headerlink" title="4.JSP注释"></a>4.JSP注释</h5><p>JSP 程序的注释有隐藏注释、HTML 注释、Java 语言注释</p>
+<p>(1)隐藏注释是 JSP 的标准注释 , 在编写 JSP 程序中 , 在发布网页时完全被忽略, 不发送至客户端。</p>
+<p>语法格式如下 :</p>
+<p><code>&lt;%-- comment --%&gt;</code> </p>
+<p>comment 为被注释内容</p>
+<p>(2)HTML 注释在发布网页时可以在浏览器文件窗口中看到 HTML 注释 , 在这种注释中 , 也可以使用 JSP 的表达式。</p>
+<p>语法格式如下 :</p>
+<p><code>&lt;!-- comment [&lt;%=expression%&gt;]--&gt;</code>　　</p>
+<p>comment 为被注释内容</p>
+<p>(3)Java 注释和隐藏注释相似 , 在浏览器的源文件窗口中也看不到注释内容。</p>
+<p>语法格式如下:</p>
+<p><code>&lt;%// 单行注释 %&gt;</code></p>
+<p><code>&lt;%/* 多行注释 */%&gt;</code></p>
+<h5 id="5-JSP指令"><a href="#5-JSP指令" class="headerlink" title="5.JSP指令"></a>5.JSP指令</h5><p>JSP指令用来设置与整个JSP页面相关的属性。</p>
+<p>JSP指令语法格式：</p>
+<p><code>&lt;%@ directive attribute=&quot;value&quot; %&gt;</code></p>
+<p>这里有三种指令标签：</p>
+<table>
+<thead>
+<tr>
+<th><strong>指令</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;%@ page … %&gt;</td>
+<td>定义页面的依赖属性，比如脚本语言、error页面、缓存需求等等</td>
+</tr>
+<tr>
+<td>&lt;%@ include … %&gt;</td>
+<td>包含其他文件</td>
+</tr>
+<tr>
+<td>&lt;%@ taglib … %&gt;</td>
+<td>引入标签库的定义，可以是自定义标签</td>
+</tr>
+</tbody>
+</table>
+<h5 id="6-JSP行为"><a href="#6-JSP行为" class="headerlink" title="6.JSP行为"></a>6.JSP行为</h5><p>JSP行为标签使用XML语法结构来控制Servlet引擎。它能够动态插入一个文件，重用JavaBean组件，引导用户去另一个页面，为Java插件产生相关的HTML等等。</p>
+<p>行为标签只有一种语法格式，它严格遵守XML标准：</p>
+<p><code>&lt;jsp:action_name attribute=&quot;value&quot; /&gt;</code></p>
+<p>行为标签基本上是一些预先就定义好的函数，下表罗列出了一些可用的JSP行为标签：</p>
+<table>
+<thead>
+<tr>
+<th><strong>语法</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jsp:include</td>
+<td>用于在当前页面中包含静态或动态资源</td>
+</tr>
+<tr>
+<td>jsp:useBean</td>
+<td>寻找和初始化一个JavaBean组件</td>
+</tr>
+<tr>
+<td>jsp:setProperty</td>
+<td>设置 JavaBean组件的值</td>
+</tr>
+<tr>
+<td>jsp:getProperty</td>
+<td>将 JavaBean组件的值插入到 output中</td>
+</tr>
+<tr>
+<td>jsp:forward</td>
+<td>从一个JSP文件向另一个文件传递一个包含用户请求的request对象</td>
+</tr>
+<tr>
+<td>jsp:plugin</td>
+<td>用于在生成的HTML页面中包含Applet和JavaBean对象</td>
+</tr>
+<tr>
+<td>jsp:element</td>
+<td>动态创建一个XML元素</td>
+</tr>
+<tr>
+<td>jsp:attribute</td>
+<td>定义动态创建的XML元素的属性</td>
+</tr>
+<tr>
+<td>jsp:body</td>
+<td>定义动态创建的XML元素的主体</td>
+</tr>
+<tr>
+<td>jsp:text</td>
+<td>用于封装模板数据</td>
+</tr>
+</tbody>
+</table>
+<h5 id="7-JSP隐含对象"><a href="#7-JSP隐含对象" class="headerlink" title="7.JSP隐含对象"></a>7.JSP隐含对象</h5><p>JSP支持九个自动定义的变量，江湖人称隐含对象。这九个隐含对象的简介见下表：</p>
+<table>
+<thead>
+<tr>
+<th><strong>对象</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td><strong>HttpServletRequest</strong>类的实例</td>
+</tr>
+<tr>
+<td>response</td>
+<td><strong>HttpServletResponse</strong>类的实例</td>
+</tr>
+<tr>
+<td>out</td>
+<td><strong>PrintWriter</strong>类的实例，用于把结果输出至网页上</td>
+</tr>
+<tr>
+<td>session</td>
+<td><strong>HttpSession</strong>类的实例</td>
+</tr>
+<tr>
+<td>application</td>
+<td><strong>ServletContext</strong>类的实例，与应用上下文有关</td>
+</tr>
+<tr>
+<td>config</td>
+<td><strong>ServletConfig</strong>类的实例</td>
+</tr>
+<tr>
+<td>pageContext</td>
+<td><strong>PageContext</strong>类的实例，提供对JSP页面所有对象以及命名空间的访问</td>
+</tr>
+<tr>
+<td>page</td>
+<td>类似于Java类中的this关键字</td>
+</tr>
+<tr>
+<td>Exception</td>
+<td><strong>Exception</strong>类的对象，代表发生错误的JSP页面中对应的异常对象</td>
+</tr>
+</tbody>
+</table>
+<p>好了，JSP的内容有点多，我就先介绍到这里了，理论知识很多，记不住就多敲多看，有兴趣的可以再去网上看看EL表达式和自定义标签，但是我不建议花太多时间。以后如果想到什么重要的还会添加的，如果有什么疑惑或者错误欢迎联系我。</p>
+<p>参考文章：<a href="http://www.runoob.com/jsp/jsp-syntax.html" target="_blank" rel="noopener">菜鸟教程–JSP语法</a></p>
 
         
     
@@ -584,21 +865,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/04/设计模式起篇/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/07/28/Hello World/" id="post_nav-older" class="next-content">
+        <a href="/2018/08/07/Java会话管理：Cookie和Session/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

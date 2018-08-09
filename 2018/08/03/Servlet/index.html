@@ -243,7 +243,7 @@
 
     
         <meta property="article:published_time" content="Fri Aug 03 2018 16:05:24 GMT+0800">
-        <meta property="article:modified_time" content="Sat Aug 04 2018 10:34:39 GMT+0800">
+        <meta property="article:modified_time" content="Thu Aug 09 2018 11:04:27 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -266,7 +266,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/08/03/Servlet/index.html",
     "headline": "Servlet总结",
     "datePublished": "Fri Aug 03 2018 16:05:24 GMT+0800",
-    "dateModified": "Sat Aug 04 2018 10:34:39 GMT+0800",
+    "dateModified": "Thu Aug 09 2018 11:04:27 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -512,14 +512,14 @@
 <p>写技术博客也不是想给谁看，就是个人总结和复习，也当做笔记，以后忘了什么知识点可以来看看，仅此而已。行了，废话也不说了，来说说我们的Servlet。</p>
 <h3 id="一、什么是Servlet"><a href="#一、什么是Servlet" class="headerlink" title="一、什么是Servlet"></a>一、什么是Servlet</h3><p>Servlet是什么？”狭义的Servlet是指Java语言实现的一个接口，广义的Servlet是指任何实现了这个Servlet接口的类，一般情况下，人们将Servlet理解为后者。“这是百度上说的，以我的理解，Servlet就是一个Java接口，是一套处理网络请求的规范 ，我们平时写的Servlet必须实现刚刚那个接口，按它的规范完成我们的编写，这样完成的Java类我们管它叫自己的Servlet。</p>
 <p>好的，Servelt既然是一个接口，那具体是怎样的接口呢，下图详细地解释了Servlet体系与各自的方法。</p>
-<p><img src="http://i2.bvimg.com/656545/782108effef7a4f8.png" alt="Markdown"></p>
+<p><img src="http://m.qpic.cn/psb?/V11WkMLA0k2yYW/PFWdbx3er.OwRWffHjwXXa3iwNg94dNTHi*8qMvE1SE!/b/dDUBAAAAAAAA&amp;bo=jgLQAY4C0AEDGTw!&amp;rf=viewer_4" alt="Markdown"></p>
 <p>每一个自定义的Servlet都必须实现Servlet的接口，Servlet接口中定义了五个方法，其中比较重要的三个方法涉及到Servlet的生命周期，分别是的init()，service()，destroy()方法。GenericServlet是一个通用的，不特定于任何协议的Servlet，它实现了Servlet接口。而HttpServlet继承于GenericServlet，因此HttpServlet也实现了Servlet接口。HttpServlet在实现Servlet接口时，覆写了service方法，该方法体内的代码会自动判断用户的请求方式，如为GET请求，则调用HttpServlet的doGet()方法，如为Post请求，则调用doPost()方法。所以我们在编写Servlet时，通常只需要覆写doGet()或doPost()方法。 </p>
 <h3 id="二、Servlet生命周期"><a href="#二、Servlet生命周期" class="headerlink" title="二、Servlet生命周期"></a>二、Servlet生命周期</h3><p>说到Servlet不提它的生命周期显然是不行的，要掌握Servlet这个是重点，那么Servlet工作流程分为以下几个阶段：</p>
 <h5 id="1-加载和实例化"><a href="#1-加载和实例化" class="headerlink" title="1.加载和实例化"></a>1.加载和实例化</h5><p>当检测到需要Servlet的第一个请求时，读取xml文件找到要加载的servlet类，创建Servlet实例。 加载一般是在运行Servlet容器时来完成，将servlet类加载到tomcat中，或者是客户端发来请求时也可以。</p>
 <h5 id="2-初始化"><a href="#2-初始化" class="headerlink" title="2.初始化"></a>2.初始化</h5><p>初始化信息一般是读取配置信息、读取初始化参数等，对于每一个servlet实例，init()方法值被调用一次。</p>
 <h5 id="3-请求处理"><a href="#3-请求处理" class="headerlink" title="3.请求处理"></a>3.请求处理</h5><p>调用Servlet的service()方法对请求进行处理，在调用该方法之前，init()方法必须先成功执行。根据请求的到来，service()方法决定请求的请求，常用的是doGet()或doPost()。</p>
 <h5 id="4-销毁"><a href="#4-销毁" class="headerlink" title="4.销毁"></a>4.销毁</h5><p>销毁一般是Servlet的卸载是由容器本身定义和实现，在destroy()方法调用后，容器释放对应的Servlet请求。实例随后会被Java的垃圾收集器所回收，整个Servlet的生命周期结束。一般tomcat关闭，servlet就会被销毁。</p>
-<p>Servlet没有main方法，所有行为由Servlet容器控制，我们最常见的Servlet容器就是Tomcat了。整个流程如下图：<img src="http://i4.bvimg.com/656545/b5d4a154ef91eca4.jpg" alt="Markdown"></p>
+<p>Servlet没有main方法，所有行为由Servlet容器控制，我们最常见的Servlet容器就是Tomcat了。整个流程如下图：<img src="http://m.qpic.cn/psb?/V11WkMLA0k2yYW/RbhPRWcLJW3jim.zBn2SYvV4xsRwgJ9WSUSSLPX6ANQ!/b/dDQBAAAAAAAA&amp;bo=mAIYApgCGAIRGS4!&amp;rf=viewer_4" alt="Markdown"></p>
 <p>（图来自《Head First Servlets &amp; JSP》，逸夫有，是本入门经典 ，推荐！ ）</p>
 <h3 id="三、servlet配置及其含义"><a href="#三、servlet配置及其含义" class="headerlink" title="三、servlet配置及其含义"></a>三、servlet配置及其含义</h3><p>servlet配置在项目的web.xml下，这里其实最想说的是配置中各节点的含义： </p>
 <pre><code>&lt;!-- 配置一个servlet --&gt;

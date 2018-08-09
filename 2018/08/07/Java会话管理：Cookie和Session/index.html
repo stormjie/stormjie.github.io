@@ -243,7 +243,7 @@
 
     
         <meta property="article:published_time" content="Tue Aug 07 2018 15:39:52 GMT+0800">
-        <meta property="article:modified_time" content="Tue Aug 07 2018 19:14:08 GMT+0800">
+        <meta property="article:modified_time" content="Thu Aug 09 2018 11:05:22 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -266,7 +266,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html",
     "headline": "Java会话管理：Cookie和Session",
     "datePublished": "Tue Aug 07 2018 15:39:52 GMT+0800",
-    "dateModified": "Tue Aug 07 2018 19:14:08 GMT+0800",
+    "dateModified": "Thu Aug 09 2018 11:05:22 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -522,7 +522,7 @@
 <p>当我们在一个购物网站上登陆自己的帐号后，我们便开始浏览商品，这时我们发现了心仪的商品，点进去打算看商品详情，发现竟然又要我们登陆帐号，为什么？因为无状态http请求无法保存我们用户信息，点击商品是一个请求，刚刚进入网站主页也是一个请求，这两个请求没有上下文联系，服务器无法判断这是同一个用户的请求，所以我们不得不再输入我们的账号密码，点击添加购物车，这也是一个请求，我们还是得输入帐号密码，还有其它商品操作，还有结算按钮。。。</p>
 <p>没有会话管理技术会给我们生活带来多大不便从上个例子就可以略知一二，Java中我们有Cookie和Session来帮助我们解决这个麻烦。</p>
 <h3 id="一、Cookie"><a href="#一、Cookie" class="headerlink" title="一、Cookie"></a>一、Cookie</h3><h5 id="1-什么是Cookie"><a href="#1-什么是Cookie" class="headerlink" title="1.什么是Cookie"></a>1.什么是Cookie</h5><p>“Cookie是通过客户端保持状态的解决方案。从定义上来说，Cookie就是由服务器发给客户端的特殊信息，而这些信息以文本文件的方式存放在客户端，然后客户端每次向服务器发送请求的时候都会带上这些特殊的信息。让我们说得更具体一些：当用户使用浏览器访问一个支持Cookie的网站的时候，用户会提供包括用户名在内的个人信息并且提交至服务器；接着，服务器在向客户端回传相应的超文本的同时也会发回这些个人信息，当然这些信息并不是存放在HTTP响应体（Response Body）中的，而是存放于HTTP响应头（Response Header）；当客户端浏览器接收到来自服务器的响应之后，浏览器会将这些信息存放在一个统一的位置，对于Windows操作系统而言，我们可以从： [系统盘]:\Documents and Settings[用户名]\Cookies目录中找到存储的Cookie；自此，客户端再向服务器发送请求的时候，都会把相应的Cookie再次发回至服务器。而这次，Cookie信息则存放在HTTP请求头（Request Header）了。 ”这是百度百科上关于Cookie的解释，说得很明了也很详细，下图是利用Cookie与服务器交流的简图：</p>
-<p><img src="http://i1.bvimg.com/656545/4ff99375d4cc1098.png" alt="Markdown"></p>
+<p><img src="http://m.qpic.cn/psb?/V11WkMLA0k2yYW/dVMSUcMrM2a8ArEg04F7x3KUP8mu*A1I1TdrSbmmS6w!/b/dAgBAAAAAAAA&amp;bo=kAHIAJAByAADGTw!&amp;rf=viewer_4" alt="Markdown"></p>
 <h5 id="2-Cookie的使用"><a href="#2-Cookie的使用" class="headerlink" title="2.Cookie的使用"></a>2.Cookie的使用</h5><p>如何使用Cookie？Java API关于Cookie提供了很多方法</p>
 <table>
 <thead>

@@ -243,7 +243,7 @@
 
     
         <meta property="article:published_time" content="Sun Aug 05 2018 09:45:15 GMT+0800">
-        <meta property="article:modified_time" content="Thu Aug 09 2018 12:12:39 GMT+0800">
+        <meta property="article:modified_time" content="Sat Aug 11 2018 10:20:32 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -266,7 +266,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/08/05/工厂方法模式&抽象工厂模式/index.html",
     "headline": "工厂方法模式&抽象工厂模式",
     "datePublished": "Sun Aug 05 2018 09:45:15 GMT+0800",
-    "dateModified": "Thu Aug 09 2018 12:12:39 GMT+0800",
+    "dateModified": "Sat Aug 11 2018 10:20:32 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -592,7 +592,7 @@ class SAMSUNGFactory implements Factory {
 }
 </code></pre><h3 id="三、抽象工厂模式"><a href="#三、抽象工厂模式" class="headerlink" title="三、抽象工厂模式"></a>三、抽象工厂模式</h3><p>接着我们上面的例子，手机有各式的品牌，然而每个手机品牌也不止只生产手机，比如小米还有充电宝，空气净化器等等，如果都为它们创建工厂类可能会导致系统中存在大量工厂类，这样势必会产生系统开销，此时我们的抽象工厂模式运营而生。</p>
 <h5 id="1-产品等级结构与产品族"><a href="#1-产品等级结构与产品族" class="headerlink" title="1.产品等级结构与产品族"></a>1.产品等级结构与产品族</h5><p>要理解抽象工厂模式，我们就要先来学习一下产品等级结构与产品族是什么。</p>
-<p><img src="http://pic.caigoubao.cc/605769/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-%E4%BA%A7%E5%93%81%E6%97%8F%E4%B8%8E%E4%BA%A7%E5%93%81%E7%AD%89%E7%BA%A7.jpg" alt="Markdown"></p>
+<img src="/2018/08/05/工厂方法模式&抽象工厂模式/抽象工厂模式-产品族与产品等级.jpg">
 <p>上图是产品族与产品等级结构示意图，产品等级结构是产品的继承结构，如我们的抽象类Phone，其子类有XiaoMi，HUAWEI，SAMSUNG，则Phone与XiaoMi,HUAWEI,SAMSUNG之间构成了一个产品等级结构。产品族是指由同一个工厂生产的，位于不同产品等级结构的同一组产品，如小米的手机，充电宝，空气净化器，它们各自属于不同的产品等级结构，因此它们属于一个产品族，即小米。</p>
 <h5 id="2-抽象工厂模式举例"><a href="#2-抽象工厂模式举例" class="headerlink" title="2.抽象工厂模式举例"></a>2.抽象工厂模式举例</h5><p>如果利用工厂方法模式为小米华为的手机，充电宝和空气净化器都创建对象，一共需要6个工厂类，而抽象工厂模式简单许多，我们先为产品族新建一个抽象类（接口也行）</p>
 <pre><code>abstract class AbstractFactory {

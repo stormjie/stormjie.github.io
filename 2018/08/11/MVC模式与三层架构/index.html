@@ -243,7 +243,7 @@
 
     
         <meta property="article:published_time" content="Sat Aug 11 2018 16:08:00 GMT+0800">
-        <meta property="article:modified_time" content="Sat Aug 11 2018 22:06:15 GMT+0800">
+        <meta property="article:modified_time" content="Sat Aug 11 2018 22:13:19 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -266,7 +266,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/08/11/MVC模式与三层架构/index.html",
     "headline": "MVC模式与三层架构",
     "datePublished": "Sat Aug 11 2018 16:08:00 GMT+0800",
-    "dateModified": "Sat Aug 11 2018 22:06:15 GMT+0800",
+    "dateModified": "Sat Aug 11 2018 22:13:19 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -514,7 +514,7 @@
 <p>上面是Model1的流程图，在Model1模型中，是以JSP为中心，它既要做页面显示，又要负责业务逻辑处理和流程控制，对于单一职责的原则来说，这显然不符合，JSP的职责太重，就显得中间部分有些臃肿 。因此Model1不适合开发复杂的大型应用程序。 </p>
 <h5 id="2-Model2-Servlet-JSP-JavaBean"><a href="#2-Model2-Servlet-JSP-JavaBean" class="headerlink" title="2.Model2(Servlet + JSP + JavaBean)"></a>2.Model2(Servlet + JSP + JavaBean)</h5><p>因为Model1的缺点太过明显，在Model1的基础上，Model2对JSP的任务进行分离，将获取参数，流程控制这些和页面显示无关的转到Servlet处理，JSP只做显示即可。</p>
 <img src="/2018/08/11/MVC模式与三层架构/model2.png">
-<p>在Model2中，JSP只负责界面显示，Servlet负责应用的处理过程控制 ，JavaBean负责对数据库操作的类。但是相对于Model1，Model2对程序员的要求要高，各部分之间分工明确，各司其职。结果是开发的粒度较细，代码的复用性提高了，后期维护也容易了，所以Model2模式比较适合大型项目的开发。 </p>
+<p>在Model2中，JSP只负责界面显示，Servlet负责应用的处理过程控制 ，JavaBean负责对数据库操作的类。但是相对于Model1，Model2对程序员的要求要高，各部分之间分工明确，各司其职。结果是开发的粒度较细，代码的复用性提高了，后期维护也容易了，所以Model2比较适合大型项目的开发。 </p>
 <h5 id="3-MVC模式是什么"><a href="#3-MVC模式是什么" class="headerlink" title="3.MVC模式是什么"></a>3.MVC模式是什么</h5><p>MVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范。使用MVC应用程序被分成三个核心部件：模型、视图、控制器。它们各自处理自己的任务。最典型的MVC就是上面说的Model2模型，其实究起来，Model1也实现了MVC模式，只不过view和controller两个角色都由JSP来扮演，实现得并不彻底。</p>
 <p>model:常用JavaBean去实现，通过各种类来对数据库的数据进行获取，并封装在对象当中。</p>
 <p>view:常用JSP来实现，通过可直接观察的JSP页面来展示我们从数据库中获取的数据。</p>
@@ -579,6 +579,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2018/08/13/单例模式/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -678,7 +686,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -696,7 +704,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/JavaEE/">JavaEE<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/个人日记/">个人日记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/JavaEE/">JavaEE<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/个人日记/">个人日记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -732,7 +740,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">7</span>
+                <span class="sidebar-badge">8</span>
             </a>
         </li>
         

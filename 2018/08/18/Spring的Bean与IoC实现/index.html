@@ -574,7 +574,7 @@ public class Text {
 <p>其中比较常用的是singleton和prototype两种作用域。对于singleton作用域的Bean，每次请求该Bean都将获得相同的实例。容器负责跟踪Bean实例的状态，负责维护Bean实例的生命周期行为；如果一个Bean被设置成prototype作用域，程序每次请求该id的Bean，Spring都会新建一个Bean实例，然后返回给程序。在这种情况下，Spring容器仅仅使用new 关键字创建Bean实例，一旦创建成功，容器不在跟踪实例，也不会维护Bean实例的状态。也就是说，初始化生命周期回调方法在所有作用域的Bean是都会调用的，但是销毁生命周期回调方法在prototype作用域的Bean是不会调用的。 </p>
 <p><strong>如果不指定Bean的作用域，Spring默认使用singleton作用域。</strong>Java在创建Java实例时，需要进行内存申请；销毁实例时，需要完成垃圾回收，这些工作都会导致系统开销的增加。因此，prototype作用域Bean的创建、销毁代价比较大。而singleton作用域的Bean实例一旦创建成功，可以重复使用。因此，除非必要，否则尽量避免将Bean被设置成prototype作用域。</p>
 <p><em>这是基于线程安全性的考虑，如果使用有状态的Bean对象用singleton作用域，而无状态的Bean对象用prototype作用域。</em></p>
-<h3 id="四、Bean的生命周期"><a href="#四、Bean的生命周期" class="headerlink" title="四、Bean的生命周期"></a>四、Bean的生命周期</h3>
+<h3 id="四、Bean的生命周期"><a href="#四、Bean的生命周期" class="headerlink" title="四、Bean的生命周期"></a>四、Bean的生命周期</h3><img src="/2018/08/18/Spring的Bean与IoC实现/springbean.png">
 <p>1.Spring对Bean进行实例化（相当于程序中的new Xx()） </p>
 <p>2.Spring将值和Bean的引用注入进Bean对应的属性中</p>
 <p>3.如果Bean实现了BeanNameAware接口，Spring将Bean的ID传递给setBeanName()方法（实现BeanNameAware清主要是为了通过Bean的引用来获得Bean的ID，一般业务中是很少有用到Bean的ID的）</p>

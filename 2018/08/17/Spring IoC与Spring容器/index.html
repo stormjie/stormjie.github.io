@@ -47,7 +47,7 @@
     
     <title>
         
-            单例模式 | 
+            Spring IoC与Spring容器 | 
         
         stormjie&#39;s blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="stormjie的博客分享">
-    <meta name="keywords" content="stormjie,设计模式">
+    <meta name="keywords" content="stormjie,spring">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/13/单例模式/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/17/Spring IoC与Spring容器/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -234,16 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/08/13/单例模式/">
+    <meta property="og:url" content="http://yoursite.com/2018/08/17/Spring IoC与Spring容器/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="单例模式 | stormjie&#39;s blog">
+    <meta property="og:title" content="Spring IoC与Spring容器 | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
-    <meta property="og:article:tag" content="设计模式"> 
+    <meta property="og:article:tag" content="spring"> 
 
     
-        <meta property="article:published_time" content="Mon Aug 13 2018 18:34:22 GMT+0800">
-        <meta property="article:modified_time" content="Mon Aug 13 2018 22:38:54 GMT+0800">
+        <meta property="article:published_time" content="Fri Aug 17 2018 17:47:00 GMT+0800">
+        <meta property="article:modified_time" content="Sat Aug 18 2018 10:28:12 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -251,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/08/13/单例模式/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/08/17/Spring IoC与Spring容器/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -263,10 +263,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/08/13/单例模式/index.html",
-    "headline": "单例模式",
-    "datePublished": "Mon Aug 13 2018 18:34:22 GMT+0800",
-    "dateModified": "Mon Aug 13 2018 22:38:54 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/08/17/Spring IoC与Spring容器/index.html",
+    "headline": "Spring IoC与Spring容器",
+    "datePublished": "Fri Aug 17 2018 17:47:00 GMT+0800",
+    "dateModified": "Sat Aug 18 2018 10:28:12 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -284,7 +284,7 @@
             "url": "/img/mountains.png"
         }
     },
-    "keywords": ",设计模式stormjie",
+    "keywords": ",springstormjie",
     "description": "stormjie的博客分享",
 }
 </script>
@@ -350,7 +350,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、单例模式动机"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、单例模式动机</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、单例模式概述"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、单例模式概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、饿汉式单例与懒汉式单例"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、饿汉式单例与懒汉式单例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-饿汉式单例类"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">1.饿汉式单例类</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-懒汉式单例类"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">2.懒汉式单例类</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-双重检查加锁"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">3.双重检查加锁</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-饿汉式单例类与懒汉式单例类的比较"><span class="post-toc-number">3.0.4.</span> <span class="post-toc-text">4.饿汉式单例类与懒汉式单例类的比较</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、更好的实现方式"><span class="post-toc-number">4.</span> <span class="post-toc-text">三、更好的实现方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-Lazy-initialization-holder-class模式"><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">1.Lazy initialization holder class模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-单元素枚举单例"><span class="post-toc-number">4.0.2.</span> <span class="post-toc-text">2.单元素枚举单例</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、IoC与DI概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、IoC与DI概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、Spring容器"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、Spring容器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-BeanFactory"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1.BeanFactory</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-ApplicationContext"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2.ApplicationContext</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-WebApplicationContext"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">3.WebApplicationContext</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、Spring容器高层视图"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、Spring容器高层视图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、容器启动过程"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、容器启动过程</span></a></li></ol>
     </ul>
     
 
@@ -382,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                单例模式
+                Spring IoC与Spring容器
             </p>
         </div>
 
@@ -401,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>stormjie</strong>
-        <span>8月 13, 2018</span>
+        <span>8月 17, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -423,7 +423,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aMXLDMAwEQP//00mbxsodIdKOs6oyksfmshCRAx5fH3098PDw8PDw8PDw3oz3iK9fvvTy8z/vPHt6fT9fGx4eHt4ZXrL0ZLnt1kyePl0bHh4e3kHes2Vdv9bzA+D6F9uNw8PDw/uLvLYUbstxPDw8vP/DS0KHaKF4eHh4b89rC+X8Vd4GuC/LWvDw8PBiXt5kOv/30f4eHh4eXsCrR5qegPOQIj82FleIh4eHt5mXv4hzfBs9XH+mDoXx8PDwjvDycHZynExGCq43Ag8PD+9VvOsfzodW24i2/UzdAMPDw8O7lZe07Sc/2RbZyRYXBwMeHh7eBl7bcLorAt63HXh4eHi7eXkR3C49j2WTWOSG0QE8PDy8W3ltcJBHA0nh3pbRi/8x4OHh4W3jJeFsElvkT/MBrOTQwsPDw9vNawOCvPxda7PlYwSj/h4eHh7emLcWOiRF9mgIYGkgDA8PD283L/nqyQs9//75yAIeHh7eGV7e9GrD3Mmd0Xbj4eHhbea1YWvbymrv5E0vPDw8vFfx2oZWzs7Hrdowty6p8fDw8LbxipHQpadrw1V1SwwPDw/vIG/eALstUFg6SPDw8PDO8/IF5S/uCfvmMAIPDw/v1hh3fjBExW6w3C2TEXh4eHjbppLyV/la9NAW4m2ki4eHh3eStzZulQDa0DY/GPDw8PDegTd5QbeNsbuGrvDw8PD+Cm8yXrBWWOPh4eF9Ei9q58eFexuFjGbK8PDw8Ma8JIyYxBNrEXCLxMPDwzvDW4sAEkxefCfbFw0Z4OHh4W3mfd6Fh4eHh4eHh4f3Btc38xqGkkTlvDgAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1UlEQVR42u3aS44iMRAFQO5/6ZltSzNNveesbhV2eIWgMA4vSOXn9efI9cLGxsbGxsbGxsZ+JPsVr+RbXz/NX3+387/vj86MjY2NvTX74q//7TPJp8klJqTJmbGxsbFPYE8CUpQMxMHmAlCeGRsbGxs7Z79PMJJkI7kObGxsbOw5u30n2X8tpGFjY2NjtwWatatZC28PqqVhY2NjP56dN02f8/pX+9vY2NjYD2a3qy0wrbUQ5vv8Z2dsbGzsTdltGtCmFmu/tTb6eVGKwsbGxj6A3bZy21QhD4ftVSb7YGNjY+/NTkJFe6A8gN3Wyp3U0rCxsbG3Zk8YkytLBoNua/RiY2Njfyx7EjzWxiXzJCcJqMlpsbGxsU9mJ6GuPUrbDKiLR9jY2NiHsZPAk4/pFIeIw95kNBMbGxv7BPa8VbA2ZJOHpbWxoYtGLzY2NvbW7Pwi2lLU2i/OWxTY2NjYe7PvHWGfF56SglESFLGxsbFPY7dpyVqKkpSl8uvLrxgbGxt7b3bLaEd55mnGbUkONjY29qbsSVKRhKK29JOD8yQEGxsb+wR220BtU4U2CZkPD40yMGxsbOwPZLfDOnkpP/lWEuomTWhsbGzsvdlt0MpDziRQTRKSupaGjY2N/eHsydaTlnAbMtvSVRG3sbGxsbdg3xs88vCWh67k+ToDw8bGxt6OnSQP+SjPWuCZF56i4UtsbGzsTdlt63Rtn7aF0AbIb5/HxsbGPob9EynHPLVYGxLFxsbGPoHdrrZAnxwufyZvOVwEMGxsbOyN2G1gWPvupJXbFpXq/jY2Njb2FuxJC3ZexM+veFJawsbGxj6BnRRo2rCUF5Le77C2sLGxsbHnYzRtK6IdG/qRrgg2Njb2MeykrZunMWvXUSQn2NjY2Aew84QhCVRrYzd5otIWobCxsbH3ZucHWnunLej/UlEJGxsbewv2OQsbGxsbGxsbGxv7MesvCeY0NtuOAFYAAAAASUVORK5CYII=">
     
 </ul>
 
@@ -437,7 +437,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/设计模式/">设计模式</a>
+        <a class="post_tag-link" href="/tags/spring/">spring</a>
     </ul>
     
 
@@ -456,7 +456,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=单例模式&url=http://yoursite.com/2018/08/13/单例模式/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Spring IoC与Spring容器&url=http://yoursite.com/2018/08/17/Spring IoC与Spring容器/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -465,7 +465,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=单例模式&url=http://yoursite.com/2018/08/13/单例模式/index.html&via=stormjie" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Spring IoC与Spring容器&url=http://yoursite.com/2018/08/17/Spring IoC与Spring容器/index.html&via=stormjie" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -474,7 +474,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/13/单例模式/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/17/Spring IoC与Spring容器/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -489,7 +489,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=单例模式&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/13/单例模式/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=Spring IoC与Spring容器&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/17/Spring IoC与Spring容器/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -508,139 +508,74 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="一、单例模式动机"><a href="#一、单例模式动机" class="headerlink" title="一、单例模式动机"></a>一、单例模式动机</h3><p>对于系统中的某些类来说，只有一个实例很重要， 如在Windows中就只能打开一个任务管理器。如果不使用机制对窗口对象进行唯一化，将弹出多个窗口，如果这些窗口显示的内容完全一致，则是重复对象，浪费内存资源；如果这些窗口显示的内容不一致，则意味着在某一瞬间系统有多个状态，与实际不符，也会给用户带来误解，不知道哪一个才是真实的状态。因此有时确保系统中某个对象的唯一性即一个类只能有一个实例非常重要。 </p>
-<p>如何保证一个类只有一个实例并且这个实例易于被访问呢？定义一个全局变量可以确保对象随时都可以被访问，但不能防止我们实例化多个对象。一个更好的解决办法是让类自身负责保存它的唯一实例。这个类可以保证没有其他实例被创建，并且它可以提供一个访问该实例的方法。这就是单例模式的模式动机。 </p>
-<h3 id="二、单例模式概述"><a href="#二、单例模式概述" class="headerlink" title="二、单例模式概述"></a>二、单例模式概述</h3><p>让我们来用单例模式的思想模拟实现任务管理器，下面是具体代码</p>
-<pre><code>public class TaskManager {
-
-    //TaskManager提供的唯一实例
-    private static TaskManager tm = null;
-
-    //私有构造方法使外部类无法使用new关键字创建TaskManager实例
-    private TaskManager() {
-        ...
-    }
-
-    //该方法用于给外部类返回TaskManager唯一实例
-    public static TaskManager getInstance() {
-        if(tm == null) {
-            tm = new TaskManager();
-        }
-        return tm;
-    } 
-
-    //任务管理器功能方法
-    public void display() {
-        ...
-    }
-} 
-</code></pre><p>为什么getInstance()方法要定义为静态方法？因为外部类需要调用getInstance()方法得到唯一TaskManager实例，而调用非成员方法只有两种方式，通过对象调用或者类调用，对象调用肯定不行（我们调用getInstance()方法目的就是要得到对象，就是缺对象），所以只能通过TaskManager类调用，而类只能调用静态成员方法，所以必须将getInstance()定义为静态。</p>
-<p>上述代码是单例模式的一种典型实现方式，理解之后我们再来看看单例模式的定义：<strong>确保一个类只有一个实例，而且自行实例化并向整个系统提供这个类实例，这个类称为单例类，它提供全局访问的方法。</strong></p>
-<p>单例模式有三个要点：一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。 </p>
-<h3 id="三、饿汉式单例与懒汉式单例"><a href="#三、饿汉式单例与懒汉式单例" class="headerlink" title="三、饿汉式单例与懒汉式单例"></a>三、饿汉式单例与懒汉式单例</h3><h5 id="1-饿汉式单例类"><a href="#1-饿汉式单例类" class="headerlink" title="1.饿汉式单例类"></a>1.饿汉式单例类</h5><p>饿汉式单例类是实现起来最简单的单例类，在定义静态变量的时候马上实例化，因此类加载时候就已经创建单例对象，代码如下：</p>
-<pre><code>public class EagerSingleton {
-
-    //唯一实例
-    private static EagerSingleton instance = new EagerSingleton();
-
-    //私有构造方法
-    private EagerSingleton(){}
-
-    //静态工厂方法
-    public static EagerSingleton getInstance() {
-        return instance;
-    }
-}
-</code></pre><p>在这个类被加载时，静态变量instance会被初始化，此时类的私有构造方法会被调用。这时候，单例类的唯一实例就被创建出来了。</p>
-<p>饿汉式是典型的空间换时间，当类装载的时候就会创建类实例，不管你用不用，先创建出来，然后每次调用的时候，就不需要再判断了，节省了运行时间。 </p>
-<h5 id="2-懒汉式单例类"><a href="#2-懒汉式单例类" class="headerlink" title="2.懒汉式单例类"></a>2.懒汉式单例类</h5><p>懒汉式其实是一种比较形象的称谓。既然懒，那么在创建对象实例的时候就不着急。会一直等到马上要使用对象实例的时候才会创建，懒人嘛，总是推脱不开的时候才会真正去执行工作，因此在装载对象的时候不创建对象实例。 </p>
-<pre><code>public class LazySingleton {
-
-    //唯一实例
-    private static LazySingleton instance = null;
-
-    //私有构造方法 
-    private LazySingleton(){}
-
-    // 静态工厂方法
-    public static synchronized LazySingleton getInstance() {
-        if(instance == null){
-            instance = new LazySingleton();
-        }
-        return instance;
-    }
-}
-</code></pre><p>上面的懒汉式单例类实现里对静态工厂方法使用了同步化，以处理多线程环境。 由于懒汉式的实现是线程安全的，这样会降低整个访问的速度，而且每次都要判断。所以对比饿汉式，懒汉式是时间换空间，那么有没有更好的方式实现呢？ </p>
-<h5 id="3-双重检查加锁"><a href="#3-双重检查加锁" class="headerlink" title="3.双重检查加锁"></a>3.双重检查加锁</h5><p>可以使用“双重检查加锁”的方式来实现，就可以既实现线程安全，又能够使性能不受很大的影响。那么什么是“双重检查加锁”机制呢？</p>
-<p>所谓“双重检查加锁”机制，指的是：并不是每次进入getInstance()方法都需要同步，而是先不同步，进入方法后，先检查实例是否存在，如果不存在才进行下面的同步块，这是第一重检查，进入同步块过后，再次检查实例是否存在，如果不存在，就在同步的情况下创建一个实例，这是第二重检查。这样一来，就只需要同步一次了，从而减少了多次在同步情况下进行判断所浪费的时间。</p>
-<p>“双重检查加锁”机制的实现会使用关键字volatile，它的意思是：被volatile修饰的变量的值，将不会被本地线程缓存，所有对该变量的读写都是直接操作共享内存，从而确保多个线程能正确的处理该变量。</p>
-<pre><code>public class Singleton {
-
-    //唯一实例
-    private volatile static Singleton instance = null;
-
-    //私有构造方法
-    private Singleton(){}
-
-    // 静态工厂方法
-    public static Singleton getInstance(){
-        //先检查实例是否存在，如果不存在才进入下面的同步块
-        if(instance == null){
-            //同步块，线程安全的创建实例
-            synchronized (Singleton.class) {
-                //再次检查实例是否存在，如果不存在才真正的创建实例
-                if(instance == null){
-                    instance = new Singleton();
-                }
-            }
-        }
-        return instance;
-    }
-}
-</code></pre><p>这种实现方式既可以实现线程安全地创建实例，而又不会对性能造成太大的影响。它只是第一次创建实例的时候同步，以后就不需要同步了，从而加快了运行速度。 </p>
-<p>提示：由于volatile关键字可能会屏蔽掉虚拟机中一些必要的代码优化，所以运行效率并不是很高。因此一般建议，没有特别的需要，不要使用。也就是说，虽然可以使用“双重检查加锁”机制来实现线程安全的单例，但并不建议大量采用，可以根据情况来选用。 </p>
-<h5 id="4-饿汉式单例类与懒汉式单例类的比较"><a href="#4-饿汉式单例类与懒汉式单例类的比较" class="headerlink" title="4.饿汉式单例类与懒汉式单例类的比较"></a>4.饿汉式单例类与懒汉式单例类的比较</h5><p>饿汉式单例类：无须考虑多个线程同时访问的问题；调用速度和反应时间优于懒汉式单例；资源利用效率不及懒汉式单例；系统加载时间可能会比较长(考虑简单，性能略低)。</p>
-<p>懒汉式单例类：实现了延迟加载；必须处理好多个线程同时访问的问题；需通过双重检查锁定等机制进行控制，将导致系统性能受到一定影响(考虑复杂，资源利用效率高)。</p>
-<h3 id="三、更好的实现方式"><a href="#三、更好的实现方式" class="headerlink" title="三、更好的实现方式"></a>三、更好的实现方式</h3><p>根据上面的分析，常见的两种单例实现方式都存在小小的缺陷，那么有没有一种方案，既能实现延迟加载，又能实现线程安全呢？ </p>
-<h5 id="1-Lazy-initialization-holder-class模式"><a href="#1-Lazy-initialization-holder-class模式" class="headerlink" title="1.Lazy initialization holder class模式"></a>1.Lazy initialization holder class模式</h5><p>大家都知道，在多线程开发中，为了解决并发问题，主要是通过使用synchronized来加互斥锁进行同步控制。但是在某些情况中，JVM已经隐含地为您执行了同步，这些情况下就不用自己再来进行同步控制了。这些情况包括：</p>
-<p>(1)由静态初始化器（在静态字段上或static{}块中的初始化器）初始化数据时</p>
-<p>(2)访问final字段时</p>
-<p>(3)在创建线程之前创建对象时</p>
-<p>(4)线程可以看见它将要处理的对象时</p>
-<p>要想很简单地实现线程安全，可以采用静态初始化器的方式，它可以由JVM来保证线程的安全性。比如前面的饿汉式实现方式。但是这样一来，不是会浪费一定的空间吗？因为这种实现方式，会在类装载的时候就初始化对象，不管你需不需要。</p>
-<p>如果现在有一种方法能够让类装载的时候不去初始化对象，那不就解决问题了？一种可行的方式就是采用类级内部类，在这个类级内部类里面去创建对象实例。这样一来，只要不使用到这个类级内部类，那就不会创建对象实例，从而同时实现延迟加载和线程安全。示例代码如下：</p>
-<pre><code>public class Singleton {
-
-    private Singleton(){}
-    /**
-     *    类级的内部类，也就是静态的成员式内部类，该内部类的实例与外部类的实例
-     *    没有绑定关系，而且只有被调用到时才会装载，从而实现了延迟加载。
-     */
-    private static class SingletonHolder{
-
-        // 静态初始化器，由JVM来保证线程安全
-        private static Singleton instance = new Singleton();
-    }
-
-    public static Singleton getInstance() {
-        return SingletonHolder.instance;
-    }
-}
-</code></pre><p>当getInstance()方法第一次被调用的时候，它第一次读取SingletonHolder.instance，导致SingletonHolder类得到初始化；而这个类在装载并被初始化的时候，会初始化它的静态域，从而创建Singleton的实例，由于是静态的域，因此只会在虚拟机装载类的时候初始化一次，并由虚拟机来保证它的线程安全性。</p>
-<p>这个模式的优势在于，getInstance()方法并没有被同步，并且只是执行一个域的访问，因此延迟初始化并没有增加任何访问成本。</p>
-<h5 id="2-单元素枚举单例"><a href="#2-单元素枚举单例" class="headerlink" title="2.单元素枚举单例"></a>2.单元素枚举单例</h5><p>单例的枚举实现在《Effective Java》中有提到，因为其功能完整、使用简洁、无偿地提供了序列化机制、在面对复杂的序列化或者反射攻击时仍然可以绝对防止多次实例化等优点，单元素的枚举类型被作者认为是实现单例模式的最佳方法。 </p>
-<p> 用枚举来实现单例非常简单，只需要编写一个包含单个元素的枚举类型即可。 </p>
-<pre><code>public enum Singleton {
-
-    // 定义一个枚举的元素，它就代表了Singleton的一个实例
-    uniqueInstance;
-
-    // 单例可以有自己的操作
-    public void singletonOperation(){
-        //功能处理
-    }
-}
-</code></pre><p>使用枚举来实现单实例控制会更加简洁，而且无偿地提供了序列化机制，并由JVM从根本上提供保障，绝对防止多次实例化，是更简洁、高效、安全的实现单例的方式。 </p>
+        <h3 id="一、IoC与DI概念"><a href="#一、IoC与DI概念" class="headerlink" title="一、IoC与DI概念"></a>一、IoC与DI概念</h3><p>控制反转(Inversion of Control ,简称IoC）与依赖注入(Dependency Injection,简称DI)的含义相同，只不过这两个称呼是从两个角度描述的同一概念。对于一个Spring初学者来说，这两个称呼很难理解，下面我们将通过简单语言来描述这两个概念。</p>
+<p>当某个Java对象（调用者）需要调用另一个Java对象（被调用者，即被依赖对象）时，在传统模式下，调用者通常会采用new关键字来创建对象，这种方式会导致调用者与被调用者之间的耦合性增加，不利于后期项目的升级和维护。</p>
+<p>在使用Spring框架之后，对象的实例不再由调用者来创建，而是由Spring容器来创建，Spring容器会负责控制程序之间的关系，而不是由调用者的程序代码直接控制。这样，控制权由应用代码转移到了Spring容器，控制权发生了反转，这就是Spring的控制反转。</p>
+<p>从Spring容器的角度看，Spring容器负责将被依赖对象赋值给调用者的成员变量，这相当于为调用者注入了它依赖的实例，这就是Spring的依赖注入。</p>
+<p><em>提示：以下内容可能对初学者不太友好，可以大概看看，建议有基础后再来看。</em></p>
+<h3 id="二、Spring容器"><a href="#二、Spring容器" class="headerlink" title="二、Spring容器"></a>二、Spring容器</h3><p>Spring 通过一个配置文件描述 Bean 及 Bean 之间的依赖关系，利用 Java 语言的反射功能实例化 Bean 并建立 Bean 之间的依赖关系。 Spring 的 IoC 容器在完成这些底层工作的基础上，还提供了 Bean 实例缓存、生命周期管理、 Bean 实例代理、事件发布、资源装载等高级服务。</p>
+<ul>
+<li>BeanFactory 是 Spring 框架的基础设施，面向 Spring 本身； </li>
+<li>ApplicationContext 面向使用 Spring 框架的开发者，几乎所有的应用场合我们都直接使用 ApplicationContext 而非底层的 BeanFactory。</li>
+</ul>
+<h5 id="1-BeanFactory"><a href="#1-BeanFactory" class="headerlink" title="1.BeanFactory"></a>1.BeanFactory</h5><p>BeanFactory体系架构： </p>
+<img src="/2018/08/17/Spring%20IoC与Spring容器/beanfactory.jpg"> 
+<p>BeanFactory 接口位于类结构树的顶端 ，它最主要的方法就是 getBean(String beanName)，该方法从容器中返回特定名称的 Bean，BeanFactory 的功能通过其他的接口得到不断扩展：</p>
+<ul>
+<li><p>ListableBeanFactory：该接口定义了访问容器中 Bean 基本信息的若干方法，如查看Bean 的个数、获取某一类型 Bean 的配置名、查看容器中是否包括某一 Bean 等方法； </p>
+</li>
+<li><p>HierarchicalBeanFactory：父子级联 IoC 容器的接口，子容器可以通过接口方法访问父容器； 通过 HierarchicalBeanFactory 接口， Spring 的 IoC 容器可以建立父子层级关联的容器体系，子容器可以访问父容器中的 Bean，但父容器不能访问子容器的 Bean。Spring 使用父子容器实现了很多功能，比如在 Spring MVC 中，展现层 Bean 位于一个子容器中，而业务层和持久层的 Bean 位于父容器中。这样，展现层 Bean 就可以引用业务层和持久层的 Bean，而业务层和持久层的 Bean 则看不到展现层的 Bean。</p>
+</li>
+<li><p>ConfigurableBeanFactory：是一个重要的接口，增强了 IoC 容器的可定制性，它定义了设置类装载器、属性编辑器、容器初始化后置处理器等方法； </p>
+</li>
+<li><p>AutowireCapableBeanFactory：定义了将容器中的 Bean 按某种规则（如按名字匹配、按类型匹配等）进行自动装配的方法； </p>
+</li>
+<li><p>SingletonBeanRegistry：定义了允许在运行期间向容器注册单实例 Bean 的方法；</p>
+</li>
+<li><p>BeanDefinitionRegistry： Spring 配置文件中每一个&lt;bean&gt;节点元素在 Spring 容器里都通过一个 BeanDefinition 对象表示，它描述了 Bean 的配置信息。而 BeanDefinitionRegistry 接口提供了向容器手工注册 BeanDefinition 对象的方法。</p>
+</li>
+</ul>
+<h5 id="2-ApplicationContext"><a href="#2-ApplicationContext" class="headerlink" title="2.ApplicationContext"></a>2.ApplicationContext</h5><p>ApplicationContext 由 BeanFactory 派生而来，提供了更多面向实际应用的功能。</p>
+<p>在BeanFactory 中，很多功能需要以编程的方式实现，而在 ApplicationContext 中则可以通过配置的方式实现。</p>
+<img src="/2018/08/17/Spring%20IoC与Spring容器/ApplicationContext.jpg">
+<p>ApplicationContext 继承了 HierarchicalBeanFactory 和 ListableBeanFactory 接口，在此基础上，还通过多个其他的接口扩展了 BeanFactory 的功能： </p>
+<ul>
+<li>ClassPathXmlApplicationContext：默认从类路径加载配置文件</li>
+<li>FileSystemXmlApplicationContext：默认从文件系统中装载配置文件</li>
+<li>ApplicationEventPublisher：让容器拥有发布应用上下文事件的功能，包括容器启动事件、关闭事件等。实现了 ApplicationListener 事件监听接口的 Bean 可以接收到容器事件 ， 并对事件进行响应处理 。 在 ApplicationContext 抽象实现类AbstractApplicationContext 中，我们可以发现存在一个 ApplicationEventMulticaster，它负责保存所有监听器，以便在容器产生上下文事件时通知这些事件监听者。 </li>
+<li>MessageSource：为应用提供 i18n 国际化消息访问的功能； </li>
+<li>ResourcePatternResolver ： 所 有 ApplicationContext 实现类都实现了类似于PathMatchingResourcePatternResolver 的功能，可以通过带前缀的 Ant 风格的资源文件路径装载 Spring 的配置文件。 </li>
+<li>LifeCycle：该接口是 Spring 2.0 加入的，该接口提供了 start()和 stop()两个方法，主要用于控制异步处理过程。在具体使用时，该接口同时被 ApplicationContext 实现及具体 Bean 实现， ApplicationContext 会将 start/stop 的信息传递给容器中所有实现了该接口的 Bean，以达到管理和控制 JMX、任务调度等目的。</li>
+<li>ConfigurableApplicationContext 扩展于 ApplicationContext，它新增加了两个主要的方法： refresh()和 close()，让 ApplicationContext 具有启动、刷新和关闭应用上下文的能力。在应用上下文关闭的情况下调用 refresh()即可启动应用上下文，在已经启动的状态下，调用 refresh()则清除缓存并重新装载配置信息，而调用close()则可关闭应用上下文。这些接口方法为容器的控制管理带来了便利，但作为开发者，我们并不需要过多关心这些方法。</li>
+</ul>
+<p>使用：</p>
+<p>如果配置文件放置在类路径下，用户可以优先使用 ClassPathXmlApplicationContext 实现类：</p>
+<pre><code>ApplicationContext ctx = new ClassPathXmlApplicationContext(String configLocation);
+</code></pre><p>如果配置文件放置在文件系统的路径下，则可以优先考虑使用 FileSystemXmlApplicationContext 实现类：</p>
+<pre><code>ApplicationContext ctx = new FileSystemXmlApplicationContext(String configLocation);
+</code></pre><p>Spring 3.0 支持基于类注解的配置方式，主要功能来自于 Spring 的一个名为 JavaConfig 子项目，目前 JavaConfig已经升级为 Spring核心框架的一部分。</p>
+<p>ApplicationContext 在初始化应用上下文时就实例化所有单实例的 Bean。</p>
+<h5 id="3-WebApplicationContext"><a href="#3-WebApplicationContext" class="headerlink" title="3.WebApplicationContext"></a>3.WebApplicationContext</h5><p>WebApplication体系架构： </p>
+<img src="/2018/08/17/Spring%20IoC与Spring容器/WebApplicationContext.jpg">
+<p>WebApplicationContext 是专门为 Web 应用准备的，它允许从相对于 Web 根目录的路径中装载配置文件完成初始化工作。从WebApplicationContext 中可以获得 ServletContext 的引用，整个 Web 应用上下文对象将作为属性放置到 ServletContext 中，以便 Web 应用环境可以访问 Spring 应用上下文。 WebApplicationContext 定义了一个常量ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE，在上下文启动时， WebApplicationContext 实例即以此为键放置在 ServletContext 的属性列表中，因此我们可以直接通过以下语句从 Web 容器中获取WebApplicationContext： </p>
+<pre><code>WebApplicationContext wac = (WebApplicationContext)servletContext.getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
+</code></pre><p>Spring 和 Web 应用的上下文融合：</p>
+<img src="/2018/08/17/Spring%20IoC与Spring容器/web.jpg">
+<p>WebApplicationContext 的初始化方式：WebApplicationContext 需要 ServletContext 实例，它必须在拥有 Web 容器的前提下才能完成启动的工作。可以在 web.xml 中配置自启动的 Servlet 或定义 Web 容器监听器（ ServletContextListener），借助这两者中的任何一个就可以完成启动 Spring Web 应用上下文的工作。Spring 分别提供了用于启动 WebApplicationContext 的 Servlet 和 Web 容器监听器： </p>
+<ul>
+<li>org.springframework.web.context.ContextLoaderServlet；</li>
+<li>org.springframework.web.context.ContextLoaderListener；</li>
+<li>由于 WebApplicationContext 需要使用日志功能，比如日志框架使用Log4J，用户可以将 Log4J 的配置文件放置到类路径 WEB-INF/classes 下，这时 Log4J 引擎即可顺利启动。如果 Log4J 配置文件放置在其他位置，用户还必须在 web.xml 指定 Log4J 配置文件位置。</li>
+</ul>
+<h3 id="三、Spring容器高层视图"><a href="#三、Spring容器高层视图" class="headerlink" title="三、Spring容器高层视图"></a>三、Spring容器高层视图</h3><p>Spring 启动时读取应用程序提供的Bean配置信息，并在Spring容器中生成一份相应的Bean配置注册表，然后根据这张注册表实例化Bean，装配好Bean之间的依赖关系，为上层应用提供准备就绪的运行环境。 </p>
+<img src="/2018/08/17/Spring%20IoC与Spring容器/Spring.jpg">
+<p>Bean缓存池：HashMap实现 </p>
+<h3 id="四、容器启动过程"><a href="#四、容器启动过程" class="headerlink" title="四、容器启动过程"></a>四、容器启动过程</h3><p>web环境下Spring容器、SpringMVC容器启动过程：</p>
+<p>首先，对于一个web应用，其部署在web容器中，web容器提供其一个全局的上下文环境，这个上下文就是ServletContext，其为后面的spring IoC容器提供宿主环境；</p>
+<p>其次，在web.xml中会提供有contextLoaderListener（或ContextLoaderServlet）。在web容器启动时，会触发容器初始化事件，此时contextLoaderListener会监听到这个事件，其contextInitialized方法会被调用，在这个方法中，spring会初始化一个启动上下文，这个上下文被称为根上下文，即WebApplicationContext，这是一个接口类，确切的说，其实际的实现类是XmlWebApplicationContext。这个就是spring的IoC容器，其对应的Bean定义的配置由web.xml中的context-param标签指定。在这个IoC容器初始化完毕后，spring容器以WebApplicationContext.ROOTWEBAPPLICATIONCONTEXTATTRIBUTE为属性Key，将其存储到ServletContext中，便于获取；</p>
+<p>再次，contextLoaderListener监听器初始化完毕后，开始初始化web.xml中配置的Servlet，这个servlet可以配置多个，以最常见的DispatcherServlet为例（Spring MVC），这个servlet实际上是一个标准的前端控制器，用以转发、匹配、处理每个servlet请求。DispatcherServlet上下文在初始化的时候会建立自己的IoC上下文容器，用以持有spring mvc相关的bean，这个servlet自己持有的上下文默认实现类也是XmlWebApplicationContext。在建立DispatcherServlet自己的IoC上下文时，会利用WebApplicationContext.ROOTWEBAPPLICATIONCONTEXTATTRIBUTE先从ServletContext中获取之前的根上下文(即WebApplicationContext)作为自己上下文的parent上下文（即第2步中初始化的XmlWebApplicationContext作为自己的父容器）。有了这个parent上下文之后，再初始化自己持有的上下文（这个DispatcherServlet初始化自己上下文的工作在其initStrategies方法中可以看到，大概的工作就是初始化处理器映射、视图解析等）。初始化完毕后，spring以与servlet的名字相关(此处不是简单的以servlet名为Key，而是通过一些转换)的属性为属性Key，也将其存到ServletContext中，以便后续使用。这样每个servlet就持有自己的上下文，即拥有自己独立的bean空间，同时各个servlet共享相同的bean，即根上下文定义的那些bean。</p>
+<p>好了，关于Spring知识点有点多，这篇理论我知道让人懵懵的，建议和下篇博文一起食用，以上是经过我自己理解及网上资料对Spring控制反转和容器的总结，如果有什么疑惑或者错误欢迎联系我。</p>
+<p>参考资料：《JavaEE企业级应用开发教程》《Spring 3.x企业应用开发实战》 </p>
 
         
     
@@ -684,7 +619,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/15/Spring入门/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/08/18/Spring的Bean与IoC实现/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -698,7 +633,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2018/08/11/MVC模式与三层架构/" id="post_nav-older" class="next-content">
+        <a href="/2018/08/15/Spring入门/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

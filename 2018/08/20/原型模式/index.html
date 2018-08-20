@@ -47,7 +47,7 @@
     
     <title>
         
-            Servlet总结 | 
+            原型模式 | 
         
         stormjie&#39;s blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="stormjie的博客分享">
-    <meta name="keywords" content="stormjie,servlet">
+    <meta name="keywords" content="stormjie,设计模式">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/03/Servlet/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/20/原型模式/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -234,16 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/08/03/Servlet/">
+    <meta property="og:url" content="http://yoursite.com/2018/08/20/原型模式/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Servlet总结 | stormjie&#39;s blog">
+    <meta property="og:title" content="原型模式 | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
-    <meta property="og:article:tag" content="servlet"> 
+    <meta property="og:article:tag" content="设计模式"> 
 
     
-        <meta property="article:published_time" content="Fri Aug 03 2018 16:05:24 GMT+0800">
-        <meta property="article:modified_time" content="Sat Aug 11 2018 10:14:14 GMT+0800">
+        <meta property="article:published_time" content="Mon Aug 20 2018 15:27:13 GMT+0800">
+        <meta property="article:modified_time" content="Mon Aug 20 2018 16:49:49 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -251,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/08/03/Servlet/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/08/20/原型模式/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -263,10 +263,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/08/03/Servlet/index.html",
-    "headline": "Servlet总结",
-    "datePublished": "Fri Aug 03 2018 16:05:24 GMT+0800",
-    "dateModified": "Sat Aug 11 2018 10:14:14 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/08/20/原型模式/index.html",
+    "headline": "原型模式",
+    "datePublished": "Mon Aug 20 2018 15:27:13 GMT+0800",
+    "dateModified": "Mon Aug 20 2018 16:49:49 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -284,7 +284,7 @@
             "url": "/img/mountains.png"
         }
     },
-    "keywords": ",servletstormjie",
+    "keywords": ",设计模式stormjie",
     "description": "stormjie的博客分享",
 }
 </script>
@@ -350,7 +350,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、什么是Servlet"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、什么是Servlet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、Servlet生命周期"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、Servlet生命周期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-加载和实例化"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1.加载和实例化</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-初始化"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2.初始化</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-请求处理"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">3.请求处理</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-销毁"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">4.销毁</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、servlet配置及其含义"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、servlet配置及其含义</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、原型模式概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、原型模式概述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-通用实现方法"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">1.通用实现方法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-Java语言提供的clone-方法"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">2.Java语言提供的clone()方法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、浅克隆和深克隆"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、浅克隆和深克隆</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-浅克隆"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1.浅克隆</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-深克隆"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2.深克隆</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、原型模式总结"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、原型模式总结</span></a></li></ol>
     </ul>
     
 
@@ -382,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                Servlet总结
+                原型模式
             </p>
         </div>
 
@@ -401,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>stormjie</strong>
-        <span>8月 03, 2018</span>
+        <span>8月 20, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -423,7 +423,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYElEQVR42u3aQVLDMAwF0N7/0nAABudLip2287JiCE39vIjFl14/X3298PDw8PDw8PDw3oz3iq+/f//fc/LfXyy0uDY8PDy8k7zka9bLrd5dL7G3Njw8PLzzvPVh8B9g/YT1EpOn5WvDw8PDe0/e+kWfLHENw8PDw/s+XrUgrhbNeHh4eJ/Fy//hT6i96CE5kDZmLXh4eHgxr9oAO/nzA/09PDw8vCWvOdg0iBt6h1Bz6AoPDw9vA289JtUbwOqVyxev+yCYwMPDwzvDS5ZSfa3PQ4pRqIGHh4d3hJeMRuWRbn5sJKV5FYmHh4d3njcJF3pFc3U0YXQw4OHh4d3Kqz4oiQZGQwDFowUPDw/vKV6OmdydtMou7uLh4eE9ysvbUdVjproR+UgBHh4e3hletcCttvl7wXG1VYaHh4d3npeHuftC3o0HAx4eHt62kjo5HubRQ3JIVLcYDw8P7wwvb9Lnx0CvIK6GFHh4eHjP8vIX/SRiSD6bb1NUUuPh4eFt41WjgWQ78k2pxrsX24SHh4f3KK83gFWNG+4dI8DDw8M7w6tGqNXWVBJJ5NSLzcXDw8M7yOuVs3lcWw2Fe6U8Hh4e3hle3rIaxQTBAEG1eVbu7+Hh4eGNedXr3sB33n7Dw8PDO8+763U8iR7WhXW59MfDw8M7wquWy3fFCnnL7YasBQ8PD28Db73oXuw72YL1puDh4eF9Im9+t/rSj0a+8PDw8N6M1yuC15+aN8bw8PDwnuLlTa99LbRqNIyHh4f3FK/XALtrwLQKuNgIPDw8vM2877vw8PDw8PDw8PDe4PoFCewMN4CKLpwAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACV0lEQVR42u3aQW7DMAwEwPz/0+0D2ri7ksI6wfgUtIHD0UESlnx8ffTzwMPDw8PDw8PDuxnvET+/vOjHf599/+d3rt+zUxseHh7eDO+Prfay3OuC2jcfqA0PDw9vkPesuPxzW1D7W9ffx8PDw7szL78iJ+z2d/Hw8PDel5cgc3YSYeDh4eHdjddegv+IU8sj5BZZCx4eHl7My5tM859H+3t4eHh4Aa8eaSob/2sB7rGhKzw8PLwX8Nauy2vxwVrAUYfCeHh4eOO8NXw+PpUsVj7AioeHhzfPSy64CTt55z44qg0PDw9vkJc0n/Lte+2SnSwWHh4e3v/y8vb8ToM/L3F/OfDw8PBezcuLyJtebSx7fa3Hw8PDuzMvaUq1V/C1sYO2hYaHh4c3ycsZ7RBAwq5LTxYRDw8Pb5DXNv6LaLUc4WrjXTw8PLxJXn4Jbo+QA0MAZZMMDw8Pb5K307DfL/3UABYeHh7eDK+9TF9Hq/mGnrS78kgXDw8Pb5KXbNNt6LDzl0fw1P09PDw8vKO8nXGBtRBhP8xdvFLj4eHhvZjXXnxzZHIsbS0QHh4e3iCv3ZrbZn97PLQHCR4eHt48b+3SnG/iLbt9Dx4eHt4Mr322AtZ4UQ5PRuDh4eEd5e1swW300A4itJEuHh4e3iQvKT3ZvvOGWX1RxsPDw7slr41od2LcU0NXeHh4eO/Cy4tuF6sdVsDDw8N7d16y9e8ExFHQjIeHhzfI24kV8jB35/DAw8PDuw+vjQCSpv7OsZEsWTFThoeHh3eU93kPHh4eHh4eHh7eDZ5vULGvW8SiSjYAAAAASUVORK5CYII=">
     
 </ul>
 
@@ -437,7 +437,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/servlet/">servlet</a>
+        <a class="post_tag-link" href="/tags/设计模式/">设计模式</a>
     </ul>
     
 
@@ -456,7 +456,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Servlet总结&url=http://yoursite.com/2018/08/03/Servlet/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=原型模式&url=http://yoursite.com/2018/08/20/原型模式/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -465,7 +465,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Servlet总结&url=http://yoursite.com/2018/08/03/Servlet/index.html&via=stormjie" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=原型模式&url=http://yoursite.com/2018/08/20/原型模式/index.html&via=stormjie" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -474,7 +474,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/03/Servlet/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/20/原型模式/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -489,7 +489,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=Servlet总结&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/03/Servlet/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=原型模式&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/20/原型模式/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -508,40 +508,227 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>这几天忙着玩忙着睡都没有更博，不过也稍微计划了下大概要写些什么，具体就不说了，我不画大饼，没做到尴尬。。</p>
-<p>写技术博客也不是想给谁看，就是个人总结和复习，也当做笔记，以后忘了什么知识点可以来看看，仅此而已。行了，废话也不说了，来说说我们的Servlet。</p>
-<h3 id="一、什么是Servlet"><a href="#一、什么是Servlet" class="headerlink" title="一、什么是Servlet"></a>一、什么是Servlet</h3><p>Servlet是什么？”狭义的Servlet是指Java语言实现的一个接口，广义的Servlet是指任何实现了这个Servlet接口的类，一般情况下，人们将Servlet理解为后者。“这是百度上说的，以我的理解，Servlet就是一个Java接口，是一套处理网络请求的规范 ，我们平时写的Servlet必须实现刚刚那个接口，按它的规范完成我们的编写，这样完成的Java类我们管它叫自己的Servlet。</p>
-<p>好的，Servelt既然是一个接口，那具体是怎样的接口呢，下图详细地解释了Servlet体系与各自的方法。</p>
-<img src="/2018/08/03/Servlet/servlet1.png">
-<p>每一个自定义的Servlet都必须实现Servlet的接口，Servlet接口中定义了五个方法，其中比较重要的三个方法涉及到Servlet的生命周期，分别是的init()，service()，destroy()方法。GenericServlet是一个通用的，不特定于任何协议的Servlet，它实现了Servlet接口。而HttpServlet继承于GenericServlet，因此HttpServlet也实现了Servlet接口。HttpServlet在实现Servlet接口时，覆写了service方法，该方法体内的代码会自动判断用户的请求方式，如为GET请求，则调用HttpServlet的doGet()方法，如为Post请求，则调用doPost()方法。所以我们在编写Servlet时，通常只需要覆写doGet()或doPost()方法。 </p>
-<h3 id="二、Servlet生命周期"><a href="#二、Servlet生命周期" class="headerlink" title="二、Servlet生命周期"></a>二、Servlet生命周期</h3><p>说到Servlet不提它的生命周期显然是不行的，要掌握Servlet这个是重点，那么Servlet工作流程分为以下几个阶段：</p>
-<h5 id="1-加载和实例化"><a href="#1-加载和实例化" class="headerlink" title="1.加载和实例化"></a>1.加载和实例化</h5><p>当检测到需要Servlet的第一个请求时，读取xml文件找到要加载的servlet类，创建Servlet实例。 加载一般是在运行Servlet容器时来完成，将servlet类加载到tomcat中，或者是客户端发来请求时也可以。</p>
-<h5 id="2-初始化"><a href="#2-初始化" class="headerlink" title="2.初始化"></a>2.初始化</h5><p>初始化信息一般是读取配置信息、读取初始化参数等，对于每一个servlet实例，init()方法值被调用一次。</p>
-<h5 id="3-请求处理"><a href="#3-请求处理" class="headerlink" title="3.请求处理"></a>3.请求处理</h5><p>调用Servlet的service()方法对请求进行处理，在调用该方法之前，init()方法必须先成功执行。根据请求的到来，service()方法决定请求的请求，常用的是doGet()或doPost()。</p>
-<h5 id="4-销毁"><a href="#4-销毁" class="headerlink" title="4.销毁"></a>4.销毁</h5><p>销毁一般是Servlet的卸载是由容器本身定义和实现，在destroy()方法调用后，容器释放对应的Servlet请求。实例随后会被Java的垃圾收集器所回收，整个Servlet的生命周期结束。一般tomcat关闭，servlet就会被销毁。</p>
-<p>Servlet没有main方法，所有行为由Servlet容器控制，我们最常见的Servlet容器就是Tomcat了。整个流程如下图：</p>
-<img src="/2018/08/03/Servlet/servlet2.jpg">
-<p>（图来自《Head First Servlets &amp; JSP》，逸夫有，是本入门经典 ，推荐！ ）</p>
-<h3 id="三、servlet配置及其含义"><a href="#三、servlet配置及其含义" class="headerlink" title="三、servlet配置及其含义"></a>三、servlet配置及其含义</h3><p>servlet配置在项目的web.xml下，这里其实最想说的是配置中各节点的含义： </p>
-<pre><code>&lt;!-- 配置一个servlet --&gt;
-&lt;!-- servlet的配置 --&gt;
-&lt;servlet&gt;
-    &lt;!-- servlet的内部名称，自定义。尽量有意义 --&gt;
-    &lt;servlet-name&gt;ServletDemo&lt;/servlet-name&gt;
-    &lt;!-- servlet的类全名： 包名+简单类名 --&gt;
-    &lt;servlet-class&gt;lm.practice.ServletDemo&lt;/servlet-class&gt;
-&lt;/servlet&gt;
-&lt;!-- servlet的映射配置 --&gt;
-&lt;servlet-mapping&gt;
-    &lt;!-- servlet的内部名称，一定要和上面的内部名称保持一致！！ --&gt;
-    &lt;servlet-name&gt;ServletDemo&lt;/servlet-name&gt;
-    &lt;!-- servlet的映射路径（访问servlet的名称） --&gt;
-    &lt;url-pattern&gt;/servlet&lt;/url-pattern&gt;
-&lt;/servlet-mapping&gt;
-</code></pre><p> 可以看到，在配置Servlet时，有两个地方需要配置，一个是&lt;servlet&gt;,另一个是&lt;servlet-Mapping&gt;，这两个一个是配置Servlet，一个是配置其映射信息，其中&lt;servlet&gt;中的&lt;servlet-name&gt;可以随意指定，但要有一定的意义，一般取为类的名称，例如我的类名为ServletDemo，这里取名为ServletDemo,下面的&lt;servlet-class&gt;是类的全路径 ，一定要是全路径！ </p>
-<p>&lt;servlet-Mapping&gt;是映射信息，它也有一个&lt;servlet-name&gt;，里面的名字是对应的Servlet名，也就是我们上面配置的Servlet名字，这里是ServletDemo，下面的是映射路径，也就是访问Servlet的名称，这里也是以方便和有意义为前提的，是我们在访问Servlet在浏览器地址栏后面输入的那个信息。</p>
-<p>注意：这里的映射路径一定不是丢掉/，否则就会出错了，一定要写成/servlet，不能是servlet。</p>
-<p>行了，关于Servlet的知识点目前就想到这么多，其实还有九大内置对象，四个作用域什么的，大家想了解可以参考这个帖子，<a href="https://www.cnblogs.com/sunli0205/p/5896980.html" target="_blank" rel="noopener">了解一下</a>。以后如果想到什么重要的还会添加的，如果有什么疑惑或者错误欢迎联系我。</p>
+        <p>在开发过程中，有时会遇到为一个类创建多个实例的情况，这些实例内部成员往往完全相同或有细微的差异，而且实例的创建开销比较大或者需要输入较多参数，如果能通过复制一个已创建的对象实例来重复创建多个相同的对象，这就可以大大减少创建对象的开销，这个时候就需要原型模式。 </p>
+<h3 id="一、原型模式概述"><a href="#一、原型模式概述" class="headerlink" title="一、原型模式概述"></a>一、原型模式概述</h3><p>在使用原型模式时，我们需要首先创建一个原型对象，再通过复制这个原型对象来创建更多同类型的对象。原型模式的定义如下：</p>
+<p><strong>原型模式(Prototype  Pattern)：使用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。原型模式是一种对象创建型模式。</strong> </p>
+<p>原型模式的工作原理很简单：将一个原型对象传给那个要发动创建的对象，这个要发动创建的对象通过请求原型对象拷贝自己来实现创建过程。由于在软件系统中我们经常会遇到需要创建多个相同或者相似对象的情况，因此原型模式在真实开发中的使用频率还是非常高的。原型模式是一种“另类”的创建型模式，创建克隆对象的工厂就是原型类自身，工厂方法由克隆方法来实现。</p>
+<p>需要注意的是通过克隆方法所创建的对象是全新的对象，它们在内存中拥有新的地址，通常对克隆所产生的对象进行修改对原型对象不会造成任何影响，每一个克隆对象都是相互独立的。通过不同的方式修改可以得到一系列相似但不完全相同的对象。</p>
+<p>原型模式的结构如图所示： </p>
+<img src="/2018/08/20/原型模式/原型模式.png">
+<p>在原型模式结构图中包含如下几个角色：</p>
+<p>Prototype（抽象原型类）：它是声明克隆方法的接口，是所有具体原型类的公共父类，可以是抽象类也可以是接口，甚至还可以是具体实现类。</p>
+<p>ConcretePrototype（具体原型类）：它实现在抽象原型类中声明的克隆方法，在克隆方法中返回自己的一个克隆对象。</p>
+<p>Client（客户类）：让一个原型对象克隆自身从而创建一个新的对象，在客户类中只需要直接实例化或通过工厂方法等方式创建一个原型对象，再通过调用该对象的克隆方法即可得到多个相同的对象。由于客户类针对抽象原型类Prototype编程，因此用户可以根据需要选择具体原型类，系统具有较好的可扩展性，增加或更换具体原型类都很方便。</p>
+<p>原型模式的核心在于如何实现克隆方法，下面将介绍两种在Java语言中常用的克隆实现方法：</p>
+<h5 id="1-通用实现方法"><a href="#1-通用实现方法" class="headerlink" title="1.通用实现方法"></a>1.通用实现方法</h5><p>通用的克隆实现方法是在具体原型类的克隆方法中实例化一个与自身类型相同的对象并将其返回，并将相关的参数传入新创建的对象中，保证它们的成员属性相同。示意代码如下所示： </p>
+<pre><code>//接口Prototype不写了，它声明了个clone()方法
+class ConcretePrototype implements Prototype {
+
+    private String attr; //成员属性
+
+    public void setAttr(String attr) {
+        this.attr = attr;
+    }
+
+    public String  getAttr() {
+        return this.attr;
+    }
+
+    //实现父接口Prototype方法
+    public Prototype clone() {
+
+        Prototype prototype = new ConcretePrototype(); //创建新对象
+
+        prototype.setAttr(this.attr);
+
+        return prototype;
+    }
+}
+</code></pre><p>在客户类中我们只需要创建一个ConcretePrototype对象作为原型对象，然后调用其clone()方法即可得到对应的克隆对象，如下代码所示： </p>
+<pre><code>Prototype obj1 = new ConcretePrototype();
+
+obj1.setAttr(&quot;Sunny&quot;);
+
+Prototype obj2 = obj1.clone();
+</code></pre><p>这种方法可作为原型模式的通用实现，它与编程语言特性无关，任何面向对象语言都可以使用这种形式来实现对原型的克隆。 </p>
+<h5 id="2-Java语言提供的clone-方法"><a href="#2-Java语言提供的clone-方法" class="headerlink" title="2.Java语言提供的clone()方法"></a>2.Java语言提供的clone()方法</h5><p>学过Java语言的人都知道，所有的Java类都继承自java.lang.Object。事实上，Object类提供一个clone()方法，可以将一个Java对象复制一份。因此在Java中可以直接使用Object提供的clone()方法来实现对象的克隆，Java语言中的原型模式实现很简单。</p>
+<p>需要注意的是能够实现克隆的Java类必须实现一个标识接口Cloneable，表示这个Java类支持被复制。如果一个类没有实现这个接口但是调用了clone()方法，Java编译器将抛出一个CloneNotSupportedException异常。如下代码所示：</p>
+<pre><code>class ConcretePrototype implements Cloneable {
+
+    ……
+    public Prototype clone() {
+
+        Object object = null;
+
+        try {
+            object = super.clone();
+        } catch (CloneNotSupportedException exception) {
+            System.err.println(&quot;Not support cloneable&quot;);
+        }
+        return (Prototype)object;
+        }
+    ……
+}
+</code></pre><p> 在客户端创建原型对象和克隆对象也很简单，如下代码所示： </p>
+<pre><code>Prototype obj1 = new ConcretePrototype();
+
+Prototype obj2 = obj1.clone();
+</code></pre><p>一般而言，Java语言中的clone()方法满足：</p>
+<p>(1)对任何对象x，都有x.clone() != x，即克隆对象与原型对象不是同一个对象；</p>
+<p>(2)对任何对象x，都有x.clone().getClass() == x.getClass()，即克隆对象与原型对象的类型一样；</p>
+<p>(3)如果对象x的equals()方法定义恰当，那么x.clone().equals(x)应该成立。</p>
+<p>为了获取对象的一份拷贝，我们可以直接利用Object类的clone()方法，具体步骤如下：</p>
+<p>(1)在派生类中覆盖基类的clone()方法，并声明为public；</p>
+<p>(2)在派生类的clone()方法中，调用super.clone()；</p>
+<p>(3)派生类需实现Cloneable接口。</p>
+<p>此时，Object类相当于抽象原型类，所有实现了Cloneable接口的类相当于具体原型类。</p>
+<h3 id="二、浅克隆和深克隆"><a href="#二、浅克隆和深克隆" class="headerlink" title="二、浅克隆和深克隆"></a>二、浅克隆和深克隆</h3><p>浅克隆和深克隆，在Java语言中，数据类型分为值类型（基本数据类型）和引用类型，值类型包括int、double、byte、boolean、char等简单数据类型，引用类型包括类、接口、数组等复杂类型。浅克隆和深克隆的主要区别在于是否支持引用类型的成员变量的复制，下面将对两者进行详细介绍。 </p>
+<h5 id="1-浅克隆"><a href="#1-浅克隆" class="headerlink" title="1.浅克隆"></a>1.浅克隆</h5><p>在浅克隆中，如果原型对象的成员变量是值类型，将复制一份给克隆对象；如果原型对象的成员变量是引用类型，则将引用对象的地址复制一份给克隆对象，也就是说原型对象和克隆对象的成员变量指向相同的内存地址。简单来说，在浅克隆中，当对象被复制时只复制它本身和其中包含的值类型的成员变量，而引用类型的成员对象并没有复制。</p>
+<img src="/2018/08/20/原型模式/浅克隆.png">
+<p><strong>在Java语言中，通过覆盖Object类的clone()方法可以实现浅克隆</strong>，即上述的第二种方法，下面举例</p>
+<pre><code>//普通Author类
+public class Author {
+
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+}
+</code></pre><pre><code>//Book类实现Cloneable接口
+class Book implements Cloneable {
+
+    private String title;
+    //Author类成员变量
+    private Author author;
+
+    public Book clone() {
+        Book book = null;
+        try {
+            book = (Book)super.clone();
+        } catch (CloneNotSupportedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return book;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+}
+</code></pre><pre><code>//测试类
+public class PrototypeTest {
+
+    public static void main(String[] args) {
+        Book book1 = new Book();
+        Author author = new Author();
+        author.setName(&quot;stormjie&quot;);
+        book1.setAuthor(author);
+        book1.setTitle(&quot;stormjie&#39;s blog&quot;);
+
+        Book book2 = book1.clone();
+
+        System.out.println(book1 == book2);  // false
+        System.out.println(book1.getTitle() == book2.getTitle());  // true
+        System.out.println(book1.getAuthor() == book2.getAuthor());  // true            
+        }
+}
+</code></pre><p>由输出的结果可以验证说到的结论。由此我们发现：虽然克隆出来的对象重新在堆上开辟了内存空间，但是，对象中各属性确保持相等。对于基本数据类型很好理解，但对于引用数据类型来说，则意味着此引用类型的属性所指向的对象本身是相同的， 并没有重新开辟内存空间存储。换句话说，引用类型的属性所指向的对象并没有克隆。<br>由此，我们将其称之为浅克隆。当克隆后的对象的引用类型的属性所指向的对象也重新得以克隆，此时，称之为深克隆。</p>
+<h5 id="2-深克隆"><a href="#2-深克隆" class="headerlink" title="2.深克隆"></a>2.深克隆</h5><p>在深克隆中，无论原型对象的成员变量是值类型还是引用类型，都将复制一份给克隆对象，深克隆将原型对象的所有引用对象也复制一份给克隆对象。简单来说，在深克隆中，除了对象本身被复制外，对象所包含的所有成员变量也将复制。</p>
+<img src="/2018/08/20/原型模式/深克隆.png">
+<p>在Java语言中，如果需要实现深克隆，可以通过序列化(Serialization)等方式来实现。序列化就是将对象写到流的过程，写到流中的对象是原有对象的一个拷贝，而原对象仍然存在于内存中。通过序列化实现的拷贝不仅可以复制对象本身，而且可以复制其引用的成员对象，因此通过序列化将对象写到一个流中，再从流里将其读出来，可以实现深克隆。需要注意的是能够实现序列化的对象其类必须实现Serializable接口，否则无法实现序列化操作。 下面我们使用深克隆技术来实现上述Book对象和Author对象的复制，由于要将Book对象和Author对象都写入流中，因此两个类均需要实现Serializable接口。</p>
+<pre><code>class Author implements Serializable{
+
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+}
+</code></pre><pre><code>class Book implements Serializable {
+
+    private String title;
+    private Author author;
+
+    public Book deepClone() throws IOException,ClassNotFoundException {
+        // 写入当前对象的二进制流 
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();  
+        ObjectOutputStream oos = new ObjectOutputStream(bos);  
+        oos.writeObject(this);
+
+        // 读出二进制流产生的新对象  
+        ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());  
+        ObjectInputStream ois = new ObjectInputStream(bis);  
+        return (Book)ois.readObject();
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+}
+</code></pre><pre><code>//测试类
+public class PrototypeTest {
+
+    public static void main(String[] args) throws ClassNotFoundException,IOException {
+        Book book1 = new Book();
+        Author author = new Author();
+        author.setName(&quot;stormjie&quot;);
+        book1.setAuthor(author);
+        book1.setTitle(&quot;stormjie&#39;s blog&quot;);
+
+        Book book2 = book1.deepClone();
+
+        System.out.println(book1 == book2);  // false
+        System.out.println(book1.getTitle() == book2.getTitle());  // true
+        System.out.println(book1.getAuthor() == book2.getAuthor());  // false    
+    }
+}
+</code></pre><p>从输出结果中可以看出，深克隆不仅在堆内存上开辟了空间以存储克隆出的对象，甚至连对象中的引用类型的属性所指向的对象也得以克隆，重新开辟了堆空间存储。深克隆技术实现了原型对象和克隆对象的完全独立，对任意克隆对象的修改都不会给其他对象产生影响，是一种更为理想的克隆实现方式。 </p>
+<p>扩展：Java语言提供的Cloneable接口和Serializable接口的代码非常简单，它们都是空接口，这种空接口也称为标识接口，标识接口中没有任何方法的定义，其作用是告诉JRE这些接口的实现类是否具有某个功能，如是否支持克隆、是否支持序列化等。</p>
+<h3 id="三、原型模式总结"><a href="#三、原型模式总结" class="headerlink" title="三、原型模式总结"></a>三、原型模式总结</h3><p>原型模式的优点：</p>
+<p>(1)当创建新的对象实例较为复杂时，使用原型模式可以简化对象的创建过程，通过复制一个已有实例可以提高新实例的创建效率。</p>
+<p>(2)扩展性较好，由于在原型模式中提供了抽象原型类，在客户端可以针对抽象原型类进行编程，而将具体原型类写在配置文件中，增加或减少产品类对原有系统都没有任何影响。</p>
+<p>(3)原型模式提供了简化的创建结构，工厂方法模式常常需要有一个与产品类等级结构相同的工厂等级结构，而原型模式就不需要这样，原型模式中产品的复制是通过封装在原型类中的克隆方法实现的，无须专门的工厂类来创建产品。</p>
+<p>(4)可以使用深克隆的方式保存对象的状态，使用原型模式将对象复制一份并将其状态保存起来，以便在需要的时候使用（如恢复到某一历史状态），可辅助实现撤销操作。</p>
+<p>原型模式的缺点：</p>
+<p>(1)需要为每一个类配备一个克隆方法，而且该克隆方法位于一个类的内部，当对已有的类进行改造时，需要修改源代码，违背了“开闭原则”。</p>
+<p>(2)在实现深克隆时需要编写较为复杂的代码，而且当对象之间存在多重的嵌套引用时，为了实现深克隆，每一层对象对应的类都必须支持深克隆，实现起来可能会比较麻烦。</p>
+<p>参考资料：《设计模式的艺术软件开发人员内功修炼之道》</p>
 
         
     
@@ -585,21 +772,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/04/设计模式起篇/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/07/28/Hello World/" id="post_nav-older" class="next-content">
+        <a href="/2018/08/18/Spring的Bean与IoC实现/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

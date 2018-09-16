@@ -47,7 +47,7 @@
     
     <title>
         
-            归档 | 
+            Spring MVC入门 | 
         
         stormjie&#39;s blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="stormjie的博客分享">
-    <meta name="keywords" content="stormjie">
+    <meta name="keywords" content="stormjie,spring mvc">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -85,6 +85,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -216,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/archives/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/16/Spring MVC入门/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -231,13 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/archives/">
+    <meta property="og:url" content="http://yoursite.com/2018/09/16/Spring MVC入门/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档 | stormjie&#39;s blog">
+    <meta property="og:title" content="Spring MVC入门 | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
-    
+    <meta property="og:article:tag" content="spring mvc"> 
 
+    
+        <meta property="article:published_time" content="Sun Sep 16 2018 10:57:15 GMT+0800">
+        <meta property="article:modified_time" content="Sun Sep 16 2018 22:24:10 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -245,13 +251,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/09/16/Spring MVC入门/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/16/Spring MVC入门/index.html",
+    "headline": "Spring MVC入门",
+    "datePublished": "Sun Sep 16 2018 10:57:15 GMT+0800",
+    "dateModified": "Sun Sep 16 2018 22:24:10 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "stormjie",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "我想我们曾经都很生猛来着"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "stormjie&#39;s blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/mountains.png"
+        }
+    },
+    "keywords": ",spring mvcstormjie",
+    "description": "stormjie的博客分享",
+}
+</script>
 
 
     
@@ -285,652 +321,302 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、Spring-MVC简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、Spring MVC简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、Spring-MVC工作流程"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、Spring MVC工作流程</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 15 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/16/Spring MVC入门/">Spring MVC入门</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            这两天看多线程的几个锁和和并发容器以及优化真的脑壳疼，想起来框架学习真的不难，过阵子吸收完现在学的就去看看源码。现在开始更Spring MVC的基础...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/16/Spring MVC入门/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="stormjie's avatar">
-            </div>
-            <div>
-                <strong>stormjie</strong>
-                <span>9月 16, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/JavaWeb/">JavaWeb</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/14/Spring事务管理/">Spring事务管理</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            最近忙着做课设，抽空看JVM和Java高并发，发现又好久没更博了，真的是忙得不可开交啊。。昨晚就抽空整理了一下Spring的事务管理，现在就讲讲吧。...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/14/Spring事务管理/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="stormjie's avatar">
-            </div>
-            <div>
-                <strong>stormjie</strong>
-                <span>9月 14, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/JavaWeb/">JavaWeb</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/08/适配器模式/">适配器模式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            适配器模式是做什么的？用电器做例子，笔记本电脑的插头一般都是三相的，即除了阳极、阴极外，还有一个地极。而有些地方的电源插座却只有两极，没有地极。电源...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/08/适配器模式/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="stormjie's avatar">
-            </div>
-            <div>
-                <strong>stormjie</strong>
-                <span>9月 08, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/02/Spring AOP总结/">Spring AOP总结</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            关于Spring AOP，我在准备这篇博文的时候发现了一篇讲得非常全面的帖子
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/02/Spring AOP总结/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="stormjie's avatar">
-            </div>
-            <div>
-                <strong>stormjie</strong>
-                <span>9月 02, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/JavaWeb/">JavaWeb</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/08/23/建造者模式/">建造者模式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            今天更下创建性模式的最后一种，也是不那么常见但难度较高的一种设计模式–建造者模式。这篇更完这个暑假大概就不更了，还剩一周多时间我打算放松放松，再完成...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/08/23/建造者模式/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="stormjie's avatar">
-            </div>
-            <div>
-                <strong>stormjie</strong>
-                <span>8月 23, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/08/20/原型模式/">原型模式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            在开发过程中，有时会遇到为一个类创建多个实例的情况，这些实例内部成员往往完全相同或有细微的差异，而且实例的创建开销比较大或者需要输入较多参数，如果能...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/08/20/原型模式/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="stormjie's avatar">
-            </div>
-            <div>
-                <strong>stormjie</strong>
-                <span>8月 20, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/08/18/Spring的Bean与IoC实现/">Spring的Bean与IoC实现</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/08/18/Spring的Bean与IoC实现/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="stormjie's avatar">
-            </div>
-            <div>
-                <strong>stormjie</strong>
-                <span>8月 18, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/JavaWeb/">JavaWeb</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/08/17/Spring IoC与Spring容器/">Spring IoC与Spring容器</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/08/17/Spring IoC与Spring容器/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="stormjie's avatar">
-            </div>
-            <div>
-                <strong>stormjie</strong>
-                <span>8月 17, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/JavaWeb/">JavaWeb</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/08/15/Spring入门/">Spring入门</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            如果你看完我分类中JavaEE的所有内容并且能完成两三个Servlet+JSP+JDBC小项目，你可以正式开始后端框架的学习了。以后...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/08/15/Spring入门/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="stormjie's avatar">
-            </div>
-            <div>
-                <strong>stormjie</strong>
-                <span>8月 15, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/JavaWeb/">JavaWeb</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/08/13/单例模式/">单例模式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/08/13/单例模式/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="stormjie's avatar">
-            </div>
-            <div>
-                <strong>stormjie</strong>
-                <span>8月 13, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 15 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random1/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random1/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Spring MVC入门
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>stormjie</strong>
+        <span>9月 16, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYUlEQVR42u3awW7rMAwEwPz/T79eC7wm3ZUsxilGp8CwZY4PokLx8e9PjwceHh4eHh4eHt7NeI94/DDRf9ef3f/9SvtUGxseHh7eDO+XpfZluEko+TwXxIaHh4c3yEvCenb/fgLI3/XLW/Dw8PBuyUtCTJJE+7Hw8PDwPpd3YtvdfjI8PDy8O/CSP/z5ct8u9G2pAg8PD++9vHzJnv89er6Hh4eHF/DqlqZge51ssl83JbytpwwPDw8v4LXl17wkcVWCyZvA8PDw8CZ5ycM7i/gOrI0WDw8Pb5J34kisbbRqoyoSAx4eHt5FvJ2jr7U00B6b1W/Hw8PDO8yL2pgCzBo4mS1/Fg8PD2+G14bblgl2GraSCOvWATw8PLxjvGSxzgNKZk7eGx3C4eHh4Y3w2kCToE8UeRdrLXh4eHiX8tpiRHtYlYeVlI+jj4uHh4c3wssnXWvPylPF/lYeDw8Pb4aXH1+1V3Y+32KqwMPDwxvktU0Dr2doQ2wbZ+vEgIeHh3cRLw86ZyTFheS9ayVmPDw8vNO8NtCdRX+xLNtu9/Hw8PBuwHvEIy8o5MkgL+Di4eHhzfPy8m6yvd4KMS7yFokBDw8P7zDvqtJqVHhdKtfi4eHhvYvXjnwDnaeTtkhRbKnx8PDwDvDaQkNbzM2PxJIkhIeHh3cfXnvwv9+KuvMp654yPDw8vGO8doGemaE+ZsPDw8P7QF6bDJK34+Hh4X06b21xTwoZ+Sb76R8APDw8vEFeUozIW7WS4Np7ovvx8PDwRnjtxvfa4PZbtfDw8PAmeX9v4OHh4eHh4eHh3WB8AS6/fLjyHchtAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/spring-mvc/">spring mvc</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Spring MVC入门&url=http://yoursite.com/2018/09/16/Spring MVC入门/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Spring MVC入门&url=http://yoursite.com/2018/09/16/Spring MVC入门/index.html&via=stormjie" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/16/Spring MVC入门/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=Spring MVC入门&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/09/16/Spring MVC入门/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>这两天看多线程的几个锁和和并发容器以及优化真的脑壳疼，想起来框架学习真的不难，过阵子吸收完现在学的就去看看源码。现在开始更Spring MVC的基础，第一篇简单点，那就开始吧。</p>
+<h3 id="一、Spring-MVC简介"><a href="#一、Spring-MVC简介" class="headerlink" title="一、Spring MVC简介"></a>一、Spring MVC简介</h3><p>Spring MVC属于SpringFrameWork的后续产品，已经融合在Spring Web Flow里面。Spring框架提供了构建 Web 应用程序的全功能 MVC 模块。使用 Spring 可插入的 MVC 架构，从而在使用Spring进行WEB开发时，可以选择使用Spring的SpringMVC框架或集成其他MVC开发框架，如Struts1(现在一般不用)，Struts2(一般老项目使用)等。 </p>
+<p>我们平时说的Spring框架是狭义的，上面提到的Spring框架是广义的，更好理解为Spring大家族，Spring MVC是Spring大家族的一个表现层框架，很好地实现了MVC模式，与我们平时说的Spring框架关系紧密，毕竟同根同族嘛，这是我找到的关于它们两个关系的帖子<a href="https://www.cnblogs.com/xtdxs/p/6594191.html" target="_blank" rel="noopener">Spring和SpringMVC的区别</a>。</p>
+<h3 id="二、Spring-MVC工作流程"><a href="#二、Spring-MVC工作流程" class="headerlink" title="二、Spring MVC工作流程"></a>二、Spring MVC工作流程</h3><p>说到Spring MVC工作流程那就必须得贴上这张经典的图了，学过Spring MVC肯定都看过这张或者类似的图</p>
+<img src="/2018/09/16/Spring%20MVC入门/1.png">
+<p>具体解释下：</p>
+<ol>
+<li>用户通过浏览器向服务器发起请求，请求会被Spring MVC的前端控制器DispatcherServlet所拦截。</li>
+<li>DispatcherServlet拦截到请求后，会调用处理器映射器HandlerMapping，通过HandlerMapping完成url到controller映射的组件。简单来说，就是将在springmvc.xml中配置的或者注解的url与对应的处理类找到并进行存储，用map&lt;url,handler&gt;这样的方式来存储。</li>
+<li>处理器映射器HandlerMapping有了映射关系，并且根据请求url找到对应的处理器，生成处理器对象返回给DispatcherServlet，在返回前会加上很多拦截器。</li>
+<li>DispatcherServlet会通过返回信息找到合适的处理器适配器HandlerAdapter。</li>
+<li>HandlerAdapter会调用并执行处理器Handler（也叫后端控制器Controller）。</li>
+<li>处理器会返回一个ModelAndView对象给HandlerAdapter。</li>
+<li>通过HandlerAdapter将ModelAndView对象返回给前端控制器DispatcherServlet。</li>
+<li>DispatcherServlet会根据ModelAndView对象选择一个合适的视图解析器ViewResolver去进行视图解析。</li>
+<li>ViewResolver解析后，会向DispatcherServlet中返回具体的视图view。</li>
+<li>DispatcherServlet根据view进行渲染（即将模型数据填充至视图中）。</li>
+<li>视图渲染结果会返回给客户端浏览器显示。</li>
+</ol>
+<p>下面我们对上面出现的一些组件进行解释： </p>
+<ol>
+<li><p>前端控制器DispatcherServlet（不需要程序员开发）。</p>
+<p>作用：接收请求，响应结果，相当于转发器，中央处理器。有了DispatcherServlet减少了其它组件之间的耦合度。</p>
+</li>
+<li><p>处理器映射器HandlerMapping（不需要程序员开发）。</p>
+<p>作用：根据请求的url查找Handler。</p>
+</li>
+<li><p>处理器适配器HandlerAdapter（不需要程序员开发）。</p>
+</li>
+</ol>
+<p>   作用：按照特定规则（HandlerAdapter要求的规则）去执行Handler。</p>
+<ol start="4">
+<li>处理器Handler（需要程序员开发）。</li>
+</ol>
+<p>   注意：编写Handler时按照HandlerAdapter的要求去做，这样适配器才可以去正确执行Handler。</p>
+<ol start="5">
+<li>视图解析器ViewResolver（不需要程序员开发）。</li>
+</ol>
+<p>   作用：进行视图解析，根据逻辑视图名解析成真正的视图（view）。</p>
+<ol start="6">
+<li>视图View（需要程序员开发jsp）。</li>
+</ol>
+<p>   注意：View是一个接口，实现类支持不同的View类型（jsp、freemarker、pdf…）。</p>
+<p><em>ps:不需要程序员开发的，需要程序员自己做一下配置即可。</em></p>
+<p><em>pps:关于处理器映射器的配置，可以看<a href="https://www.cnblogs.com/lhblogs/p/7478800.html" target="_blank" rel="noopener">SpringMVC 学习笔记(处理器映射器的配置)</a></em>、<em><a href="https://blog.csdn.net/u013991521/article/details/53692362" target="_blank" rel="noopener">非注解和注解的处理器映射器和适配器—SpringMVC学习笔记（三）</a>。</em></p>
+<p>好了，本来想写个入门demo，奈何时间太紧，这篇大概就这样结束了（好应付。。</p>
+<p>同样，以后如果想到什么重要的还会添加的，如果有什么疑惑或者错误欢迎联系我，并感谢上面三篇帖子的作者。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' == true;
+    var verify = 'false' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "Ihl9iCUYNw9JbrUpw4mPE5LO-gzGzoHsz",
+        appKey: "zIPnpmbuwjSMrCp1uhJqatPR",
+        placeholder: "欢迎留言告诉我你的想法，网址邮箱不是必填项",
+        pageSize:'10',
+        avatar:'',
+        lang:'zh-cn'
+    });
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/14/Spring事务管理/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -1284,6 +970,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -1296,6 +986,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     

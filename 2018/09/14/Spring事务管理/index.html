@@ -243,7 +243,7 @@
 
     
         <meta property="article:published_time" content="Fri Sep 14 2018 22:35:56 GMT+0800">
-        <meta property="article:modified_time" content="Sat Sep 15 2018 11:02:05 GMT+0800">
+        <meta property="article:modified_time" content="Sat Sep 15 2018 11:05:51 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -266,7 +266,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/09/14/Spring事务管理/index.html",
     "headline": "Spring事务管理",
     "datePublished": "Fri Sep 14 2018 22:35:56 GMT+0800",
-    "dateModified": "Sat Sep 15 2018 11:02:05 GMT+0800",
+    "dateModified": "Sat Sep 15 2018 11:05:51 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -627,7 +627,7 @@
 <h3 id="三、编程式和声明式事务的区别"><a href="#三、编程式和声明式事务的区别" class="headerlink" title="三、编程式和声明式事务的区别"></a>三、编程式和声明式事务的区别</h3><p>编程式事务处理：所谓编程式事务指的是通过编码方式实现事务，允许用户在代码中精确定义事务的边界。即类似于JDBC编程实现事务管理。管理使用TransactionTemplate或者直接使用底层的PlatformTransactionManager。对于编程式事务管理，spring推荐使用TransactionTemplate。</p>
 <p>声明式事务处理：管理建立在AOP之上的。其本质是对方法前后进行拦截，然后在目标方法开始之前创建或者加入一个事务，在执行完目标方法之后根据执行情况提交或者回滚事务。声明式事务最大的优点就是不需要通过编程的方式管理事务，这样就不需要在业务逻辑代码中掺杂事务管理的代码，只需在配置文件中做相关的事务规则声明(或通过基于@Transactional注解的方式)，便可以将事务规则应用到业务逻辑中。</p>
 <p>简单地说，编程式事务侵入到了业务代码里面，但是提供了更加详细的事务管理；而声明式事务由于基于AOP，所以既能起到事务管理的作用，又可以不影响业务代码的具体实现。</p>
-<p>编程式和声明式事务的使用是比较简单的，大家如果不知道或者不熟悉的话可以看这篇帖子<a href="https://www.cnblogs.com/ysocean/p/7617620.html" target="_blank" rel="noopener">Spring详解（八）——事务管理</a>，上面说得很详细，本篇博文很多内容都是参考此帖，在这感谢作者。</p>
+<p>好了，关于Spring事务管理我就讲这么多了，至于编程式和声明式事务的使用是比较简单的，大家如果不知道或者不熟悉的话可以看这篇帖子<a href="https://www.cnblogs.com/ysocean/p/7617620.html" target="_blank" rel="noopener">Spring详解（八）——事务管理</a>，上面说得很详细，本篇博文很多内容都是参考此帖，在这感谢作者。</p>
 
         
     
@@ -670,6 +670,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2018/09/16/Spring MVC入门/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -769,7 +777,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -787,7 +795,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/JavaEE/">JavaEE<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaWeb/">JavaWeb<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/个人日记/">个人日记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/categories/JavaEE/">JavaEE<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaWeb/">JavaWeb<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/个人日记/">个人日记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
@@ -823,7 +831,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">16</span>
+                <span class="sidebar-badge">17</span>
             </a>
         </li>
         

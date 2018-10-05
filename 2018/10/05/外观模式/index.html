@@ -47,7 +47,7 @@
     
     <title>
         
-            单例模式 | 
+            外观模式 | 
         
         stormjie&#39;s blog
     </title>
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/13/单例模式/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/10/05/外观模式/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -234,16 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/08/13/单例模式/">
+    <meta property="og:url" content="http://yoursite.com/2018/10/05/外观模式/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="单例模式 | stormjie&#39;s blog">
+    <meta property="og:title" content="外观模式 | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
     <meta property="og:article:tag" content="设计模式"> 
 
     
-        <meta property="article:published_time" content="Mon Aug 13 2018 18:34:22 GMT+0800">
-        <meta property="article:modified_time" content="Mon Aug 13 2018 22:38:54 GMT+0800">
+        <meta property="article:published_time" content="Fri Oct 05 2018 11:29:45 GMT+0800">
+        <meta property="article:modified_time" content="Fri Oct 05 2018 22:01:06 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -251,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/08/13/单例模式/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/10/05/外观模式/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -263,10 +263,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/08/13/单例模式/index.html",
-    "headline": "单例模式",
-    "datePublished": "Mon Aug 13 2018 18:34:22 GMT+0800",
-    "dateModified": "Mon Aug 13 2018 22:38:54 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/10/05/外观模式/index.html",
+    "headline": "外观模式",
+    "datePublished": "Fri Oct 05 2018 11:29:45 GMT+0800",
+    "dateModified": "Fri Oct 05 2018 22:01:06 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -350,7 +350,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、单例模式动机"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、单例模式动机</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、单例模式概述"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、单例模式概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、饿汉式单例与懒汉式单例"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、饿汉式单例与懒汉式单例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-饿汉式单例类"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">1.饿汉式单例类</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-懒汉式单例类"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">2.懒汉式单例类</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-双重检查加锁"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">3.双重检查加锁</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-饿汉式单例类与懒汉式单例类的比较"><span class="post-toc-number">3.0.4.</span> <span class="post-toc-text">4.饿汉式单例类与懒汉式单例类的比较</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、更好的实现方式"><span class="post-toc-number">4.</span> <span class="post-toc-text">三、更好的实现方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-Lazy-initialization-holder-class模式"><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">1.Lazy initialization holder class模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-单元素枚举单例"><span class="post-toc-number">4.0.2.</span> <span class="post-toc-text">2.单元素枚举单例</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、外观模式概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、外观模式概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、外观模式结构与实现"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、外观模式结构与实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-模式结构"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1.模式结构</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-模式实现"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2.模式实现</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、外观模式的应用"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、外观模式的应用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、外观模式总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、外观模式总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-主要优点"><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">1.主要优点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-主要缺点"><span class="post-toc-number">4.0.2.</span> <span class="post-toc-text">2.主要缺点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-适用场景"><span class="post-toc-number">4.0.3.</span> <span class="post-toc-text">3.适用场景</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -382,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                单例模式
+                外观模式
             </p>
         </div>
 
@@ -401,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>stormjie</strong>
-        <span>8月 13, 2018</span>
+        <span>10月 05, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -423,7 +423,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aMXLDMAwEQP//00mbxsodIdKOs6oyksfmshCRAx5fH3098PDw8PDw8PDw3oz3iK9fvvTy8z/vPHt6fT9fGx4eHt4ZXrL0ZLnt1kyePl0bHh4e3kHes2Vdv9bzA+D6F9uNw8PDw/uLvLYUbstxPDw8vP/DS0KHaKF4eHh4b89rC+X8Vd4GuC/LWvDw8PBiXt5kOv/30f4eHh4eXsCrR5qegPOQIj82FleIh4eHt5mXv4hzfBs9XH+mDoXx8PDwjvDycHZynExGCq43Ag8PD+9VvOsfzodW24i2/UzdAMPDw8O7lZe07Sc/2RbZyRYXBwMeHh7eBl7bcLorAt63HXh4eHi7eXkR3C49j2WTWOSG0QE8PDy8W3ltcJBHA0nh3pbRi/8x4OHh4W3jJeFsElvkT/MBrOTQwsPDw9vNawOCvPxda7PlYwSj/h4eHh7emLcWOiRF9mgIYGkgDA8PD283L/nqyQs9//75yAIeHh7eGV7e9GrD3Mmd0Xbj4eHhbea1YWvbymrv5E0vPDw8vFfx2oZWzs7Hrdowty6p8fDw8LbxipHQpadrw1V1SwwPDw/vIG/eALstUFg6SPDw8PDO8/IF5S/uCfvmMAIPDw/v1hh3fjBExW6w3C2TEXh4eHjbppLyV/la9NAW4m2ki4eHh3eStzZulQDa0DY/GPDw8PDegTd5QbeNsbuGrvDw8PD+Cm8yXrBWWOPh4eF9Ei9q58eFexuFjGbK8PDw8Ma8JIyYxBNrEXCLxMPDwzvDW4sAEkxefCfbFw0Z4OHh4W3mfd6Fh4eHh4eHh4f3Btc38xqGkkTlvDgAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACY0lEQVR42u3aQXKDMBAEQP7/6eSaC2RGQgK7mpOL2ETNAS2ze/x89XHg4eHh4eHh4eG9jHfEx+nlgu//PXP21+vz+drw8PDw9vD+edReLvd6Qe2Vb1gbHh4e3kbe2eKS7yQbwPXVrq+QrA0PDw/vE3l5kZ1sJ3h4eHjfx2vL7mt2ss3g4eHhvY2XvPAncWoLSIrvTVkLHh4eXszLm0z7P2/t7+Hh4eEFvHqkqQwjxgLc24au8PDw8Bbw2nK5jQnmI9o6FMbDw8NbzJsPYfMW18xIQbEt4eHh4S3mjRW+7UDAXeDkt3h4eHg7ecmjeebf522zsRAEDw8Pbz8vKaDHGvz5SMFYnIGHh4f3LK8dk8ojg3ZjuG0yAg8PD2/x0FXbGGvL4jawSJpweHh4eDt5gy/88ULzqLcNdovRATw8PLzFvLyV1S5rrCVWbzZ4eHh4i3l5GDEzSDo4BBAHFnh4eHhv47WhwHzUO3aD8PDw8Pbwcmp+C5KyuB2ELTYhPDw8vMW8Nj5oA9x8IxlrtuHh4eE9xUsaS23U25bmbelcvDHg4eHhLeDNnGnL6GQTmhrtwsPDw9vImxmZahtaM4OqgxsDHh4e3jJeHhbkYcRYRNs23vDw8PD28NojX2JeOkeF8vzoAB4eHt5NvJmHct64ahtdecyBh4eH9xQvb3rl8cRMaJusAQ8PD+8NvPaBnsS1+fkWj4eHh/dZvP2FdVHu4+Hh4X0gL2nwt6V2cR08PDy8jbxisClugI2FF3ljDA8PD+8p3g0RwNC4QHL76iEDPDw8vMW87zvw8PDw8PDw8PBecPwCqU6vW1lggUAAAAAASUVORK5CYII=">
     
 </ul>
 
@@ -456,7 +456,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=单例模式&url=http://yoursite.com/2018/08/13/单例模式/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=外观模式&url=http://yoursite.com/2018/10/05/外观模式/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -465,7 +465,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=单例模式&url=http://yoursite.com/2018/08/13/单例模式/index.html&via=stormjie" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=外观模式&url=http://yoursite.com/2018/10/05/外观模式/index.html&via=stormjie" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -474,7 +474,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/13/单例模式/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/05/外观模式/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -489,7 +489,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=单例模式&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/13/单例模式/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=外观模式&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/10/05/外观模式/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -508,139 +508,172 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="一、单例模式动机"><a href="#一、单例模式动机" class="headerlink" title="一、单例模式动机"></a>一、单例模式动机</h3><p>对于系统中的某些类来说，只有一个实例很重要， 如在Windows中就只能打开一个任务管理器。如果不使用机制对窗口对象进行唯一化，将弹出多个窗口，如果这些窗口显示的内容完全一致，则是重复对象，浪费内存资源；如果这些窗口显示的内容不一致，则意味着在某一瞬间系统有多个状态，与实际不符，也会给用户带来误解，不知道哪一个才是真实的状态。因此有时确保系统中某个对象的唯一性即一个类只能有一个实例非常重要。 </p>
-<p>如何保证一个类只有一个实例并且这个实例易于被访问呢？定义一个全局变量可以确保对象随时都可以被访问，但不能防止我们实例化多个对象。一个更好的解决办法是让类自身负责保存它的唯一实例。这个类可以保证没有其他实例被创建，并且它可以提供一个访问该实例的方法。这就是单例模式的模式动机。 </p>
-<h3 id="二、单例模式概述"><a href="#二、单例模式概述" class="headerlink" title="二、单例模式概述"></a>二、单例模式概述</h3><p>让我们来用单例模式的思想模拟实现任务管理器，下面是具体代码</p>
-<pre><code>public class TaskManager {
-
-    //TaskManager提供的唯一实例
-    private static TaskManager tm = null;
-
-    //私有构造方法使外部类无法使用new关键字创建TaskManager实例
-    private TaskManager() {
-        ...
-    }
-
-    //该方法用于给外部类返回TaskManager唯一实例
-    public static TaskManager getInstance() {
-        if(tm == null) {
-            tm = new TaskManager();
-        }
-        return tm;
-    } 
-
-    //任务管理器功能方法
-    public void display() {
-        ...
-    }
-} 
-</code></pre><p>为什么getInstance()方法要定义为静态方法？因为外部类需要调用getInstance()方法得到唯一TaskManager实例，而调用非成员方法只有两种方式，通过对象调用或者类调用，对象调用肯定不行（我们调用getInstance()方法目的就是要得到对象，就是缺对象），所以只能通过TaskManager类调用，而类只能调用静态成员方法，所以必须将getInstance()定义为静态。</p>
-<p>上述代码是单例模式的一种典型实现方式，理解之后我们再来看看单例模式的定义：<strong>确保一个类只有一个实例，而且自行实例化并向整个系统提供这个类实例，这个类称为单例类，它提供全局访问的方法。</strong></p>
-<p>单例模式有三个要点：一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。 </p>
-<h3 id="三、饿汉式单例与懒汉式单例"><a href="#三、饿汉式单例与懒汉式单例" class="headerlink" title="三、饿汉式单例与懒汉式单例"></a>三、饿汉式单例与懒汉式单例</h3><h5 id="1-饿汉式单例类"><a href="#1-饿汉式单例类" class="headerlink" title="1.饿汉式单例类"></a>1.饿汉式单例类</h5><p>饿汉式单例类是实现起来最简单的单例类，在定义静态变量的时候马上实例化，因此类加载时候就已经创建单例对象，代码如下：</p>
-<pre><code>public class EagerSingleton {
-
-    //唯一实例
-    private static EagerSingleton instance = new EagerSingleton();
-
-    //私有构造方法
-    private EagerSingleton(){}
-
-    //静态工厂方法
-    public static EagerSingleton getInstance() {
-        return instance;
+        <p>国庆放假虽然都在玩，但是至少也要保持一周两更的频率，先水一篇设计模式23333。</p>
+<p>外观模式是一种相对简单且使用频率非常高的结构型设计模式，它通过引入一个外观角色来简化客户端与子系统之间的交互，为复杂的子系统调用提供一个统一的入口，降低子系统与客户端的耦合度，且客户端调用非常方便。 </p>
+<h3 id="一、外观模式概述"><a href="#一、外观模式概述" class="headerlink" title="一、外观模式概述"></a>一、外观模式概述</h3><p>不知道大家有没有比较过自己泡茶和去茶馆喝茶的区别，如果是自己泡茶需要自行准备茶叶、茶具和开水，如图(A)所示，而去茶馆喝茶，最简单的方式就是跟茶馆服务员说想要一杯什么样的茶，是铁观音、碧螺春还是西湖龙井？正因为茶馆有服务员，顾客无须直接和茶叶、茶具、开水等交互，整个泡茶过程由服务员来完成，顾客只需与服务员交互即可，整个过程非常简单省事，如图(B)所示。 </p>
+<img src="/2018/10/05/外观模式/1.jpg">
+<p>在软件开发中，有时候为了完成一项较为复杂的功能，一个客户类需要和多个业务类交互，而这些需要交互的业务类经常会作为一个整体出现，由于涉及到的类比较多，导致使用时代码较为复杂，此时，特别需要一个类似服务员一样的角色，由它来负责和多个业务类进行交互，而客户类只需与该类交互。<strong>外观模式通过引入一个新的外观类(Facade)来实现该功能，外观类充当了软件系统中的“服务员”，它为多个业务类的调用提供了一个统一的入口，简化了类与类之间的交互。在外观模式中，那些需要交互的业务类被称为子系统(Subsystem)</strong>。如果没有外观类，那么每个客户类需要和多个子系统之间进行复杂的交互，系统的耦合度将很大，如图(A)所示；而引入外观类之后，客户类只需要直接与外观类交互，客户类与子系统之间原有的复杂引用关系由外观类来实现，从而降低了系统的耦合度，如图(B)所示。 </p>
+<img src="/2018/10/05/外观模式/3.jpg">
+<p>外观模式中，一个子系统的外部与其内部的通信通过一个统一的外观类进行，外观类将客户类与子系统的内部复杂性分隔开，使得客户类只需要与外观角色打交道，而不需要与子系统内部的很多对象打交道。</p>
+<p>外观模式定义如下：</p>
+<p><strong>外观模式：为子系统中的一组接口提供一个统一的入口。外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。 </strong></p>
+<p>外观模式又称为门面模式，它是一种对象结构型模式。外观模式是迪米特法则的一种具体实现，通过引入一个新的外观角色可以降低原有系统的复杂度，同时降低客户类与子系统的耦合度。 </p>
+<h3 id="二、外观模式结构与实现"><a href="#二、外观模式结构与实现" class="headerlink" title="二、外观模式结构与实现"></a>二、外观模式结构与实现</h3><h5 id="1-模式结构"><a href="#1-模式结构" class="headerlink" title="1.模式结构"></a>1.模式结构</h5><p>外观模式没有一个一般化的类图描述， 下图所示的类图也可以作为描述外观模式的结构图： </p>
+<img src="/2018/10/05/外观模式/4.png">
+<p>由图可知，外观模式包含如下两个角色：</p>
+<ul>
+<li>外观角色(Facade)：在客户端可以调用它的方法，在外观角色中可以知道相关的（一个或者多个）子系统的功能和责任；在正常情况下，它将所有从客户端发来的请求委派到相应的子系统去，传递给相应的子系统对象处理。</li>
+</ul>
+<ul>
+<li>子系统角色(SubSystem)：在软件系统中可以有一个或者多个子系统角色，每一个子系统可以不是一个单独的类，而是一个类的集合，它实现子系统的功能；每一个子系统都可以被客户端直接调用，或者被外观角色调用，它处理由外观类传过来的请求；子系统并不知道外观的存在，对于子系统而言，外观角色仅仅是另外一个客户端而已。</li>
+</ul>
+<h5 id="2-模式实现"><a href="#2-模式实现" class="headerlink" title="2.模式实现"></a>2.模式实现</h5><p>子系统角色中的类：</p>
+<pre><code>public class ModuleA {
+    //示意方法
+    public void testA() {
+        System.out.println(&quot;调用ModuleA中的testA方法&quot;);
     }
 }
-</code></pre><p>在这个类被加载时，静态变量instance会被初始化，此时类的私有构造方法会被调用。这时候，单例类的唯一实例就被创建出来了。</p>
-<p>饿汉式是典型的空间换时间，当类装载的时候就会创建类实例，不管你用不用，先创建出来，然后每次调用的时候，就不需要再判断了，节省了运行时间。 </p>
-<h5 id="2-懒汉式单例类"><a href="#2-懒汉式单例类" class="headerlink" title="2.懒汉式单例类"></a>2.懒汉式单例类</h5><p>懒汉式其实是一种比较形象的称谓。既然懒，那么在创建对象实例的时候就不着急。会一直等到马上要使用对象实例的时候才会创建，懒人嘛，总是推脱不开的时候才会真正去执行工作，因此在装载对象的时候不创建对象实例。 </p>
-<pre><code>public class LazySingleton {
-
-    //唯一实例
-    private static LazySingleton instance = null;
-
-    //私有构造方法 
-    private LazySingleton(){}
-
-    // 静态工厂方法
-    public static synchronized LazySingleton getInstance() {
-        if(instance == null){
-            instance = new LazySingleton();
-        }
-        return instance;
+</code></pre><pre><code>public class ModuleB {
+    //示意方法
+    public void testB() {
+        System.out.println(&quot;调用ModuleB中的testB方法&quot;);
     }
 }
-</code></pre><p>上面的懒汉式单例类实现里对静态工厂方法使用了同步化，以处理多线程环境。 由于懒汉式的实现是线程安全的，这样会降低整个访问的速度，而且每次都要判断。所以对比饿汉式，懒汉式是时间换空间，那么有没有更好的方式实现呢？ </p>
-<h5 id="3-双重检查加锁"><a href="#3-双重检查加锁" class="headerlink" title="3.双重检查加锁"></a>3.双重检查加锁</h5><p>可以使用“双重检查加锁”的方式来实现，就可以既实现线程安全，又能够使性能不受很大的影响。那么什么是“双重检查加锁”机制呢？</p>
-<p>所谓“双重检查加锁”机制，指的是：并不是每次进入getInstance()方法都需要同步，而是先不同步，进入方法后，先检查实例是否存在，如果不存在才进行下面的同步块，这是第一重检查，进入同步块过后，再次检查实例是否存在，如果不存在，就在同步的情况下创建一个实例，这是第二重检查。这样一来，就只需要同步一次了，从而减少了多次在同步情况下进行判断所浪费的时间。</p>
-<p>“双重检查加锁”机制的实现会使用关键字volatile，它的意思是：被volatile修饰的变量的值，将不会被本地线程缓存，所有对该变量的读写都是直接操作共享内存，从而确保多个线程能正确的处理该变量。</p>
-<pre><code>public class Singleton {
-
-    //唯一实例
-    private volatile static Singleton instance = null;
-
-    //私有构造方法
-    private Singleton(){}
-
-    // 静态工厂方法
-    public static Singleton getInstance(){
-        //先检查实例是否存在，如果不存在才进入下面的同步块
-        if(instance == null){
-            //同步块，线程安全的创建实例
-            synchronized (Singleton.class) {
-                //再次检查实例是否存在，如果不存在才真正的创建实例
-                if(instance == null){
-                    instance = new Singleton();
-                }
-            }
-        }
-        return instance;
+</code></pre><pre><code>public class ModuleC {
+    //示意方法
+    public void testC() {
+        System.out.println(&quot;调用ModuleC中的testC方法&quot;);
     }
 }
-</code></pre><p>这种实现方式既可以实现线程安全地创建实例，而又不会对性能造成太大的影响。它只是第一次创建实例的时候同步，以后就不需要同步了，从而加快了运行速度。 </p>
-<p>提示：由于volatile关键字可能会屏蔽掉虚拟机中一些必要的代码优化，所以运行效率并不是很高。因此一般建议，没有特别的需要，不要使用。也就是说，虽然可以使用“双重检查加锁”机制来实现线程安全的单例，但并不建议大量采用，可以根据情况来选用。 </p>
-<h5 id="4-饿汉式单例类与懒汉式单例类的比较"><a href="#4-饿汉式单例类与懒汉式单例类的比较" class="headerlink" title="4.饿汉式单例类与懒汉式单例类的比较"></a>4.饿汉式单例类与懒汉式单例类的比较</h5><p>饿汉式单例类：无须考虑多个线程同时访问的问题；调用速度和反应时间优于懒汉式单例；资源利用效率不及懒汉式单例；系统加载时间可能会比较长(考虑简单，性能略低)。</p>
-<p>懒汉式单例类：实现了延迟加载；必须处理好多个线程同时访问的问题；需通过双重检查锁定等机制进行控制，将导致系统性能受到一定影响(考虑复杂，资源利用效率高)。</p>
-<h3 id="三、更好的实现方式"><a href="#三、更好的实现方式" class="headerlink" title="三、更好的实现方式"></a>三、更好的实现方式</h3><p>根据上面的分析，常见的两种单例实现方式都存在小小的缺陷，那么有没有一种方案，既能实现延迟加载，又能实现线程安全呢？ </p>
-<h5 id="1-Lazy-initialization-holder-class模式"><a href="#1-Lazy-initialization-holder-class模式" class="headerlink" title="1.Lazy initialization holder class模式"></a>1.Lazy initialization holder class模式</h5><p>大家都知道，在多线程开发中，为了解决并发问题，主要是通过使用synchronized来加互斥锁进行同步控制。但是在某些情况中，JVM已经隐含地为您执行了同步，这些情况下就不用自己再来进行同步控制了。这些情况包括：</p>
-<p>(1)由静态初始化器（在静态字段上或static{}块中的初始化器）初始化数据时</p>
-<p>(2)访问final字段时</p>
-<p>(3)在创建线程之前创建对象时</p>
-<p>(4)线程可以看见它将要处理的对象时</p>
-<p>要想很简单地实现线程安全，可以采用静态初始化器的方式，它可以由JVM来保证线程的安全性。比如前面的饿汉式实现方式。但是这样一来，不是会浪费一定的空间吗？因为这种实现方式，会在类装载的时候就初始化对象，不管你需不需要。</p>
-<p>如果现在有一种方法能够让类装载的时候不去初始化对象，那不就解决问题了？一种可行的方式就是采用类级内部类，在这个类级内部类里面去创建对象实例。这样一来，只要不使用到这个类级内部类，那就不会创建对象实例，从而同时实现延迟加载和线程安全。示例代码如下：</p>
-<pre><code>public class Singleton {
-
-    private Singleton(){}
-    /**
-     *    类级的内部类，也就是静态的成员式内部类，该内部类的实例与外部类的实例
-     *    没有绑定关系，而且只有被调用到时才会装载，从而实现了延迟加载。
-     */
-    private static class SingletonHolder{
-
-        // 静态初始化器，由JVM来保证线程安全
-        private static Singleton instance = new Singleton();
-    }
-
-    public static Singleton getInstance() {
-        return SingletonHolder.instance;
+</code></pre><p>外观角色类：</p>
+<pre><code>public class Facade {
+    //示意方法，满足客户端需要的功能
+    public void test(){
+        ModuleA a = new ModuleA();
+        a.testA();
+        ModuleB b = new ModuleB();
+        b.testB();
+        ModuleC c = new ModuleC();
+        c.testC();
     }
 }
-</code></pre><p>当getInstance()方法第一次被调用的时候，它第一次读取SingletonHolder.instance，导致SingletonHolder类得到初始化；而这个类在装载并被初始化的时候，会初始化它的静态域，从而创建Singleton的实例，由于是静态的域，因此只会在虚拟机装载类的时候初始化一次，并由虚拟机来保证它的线程安全性。</p>
-<p>这个模式的优势在于，getInstance()方法并没有被同步，并且只是执行一个域的访问，因此延迟初始化并没有增加任何访问成本。</p>
-<h5 id="2-单元素枚举单例"><a href="#2-单元素枚举单例" class="headerlink" title="2.单元素枚举单例"></a>2.单元素枚举单例</h5><p>单例的枚举实现在《Effective Java》中有提到，因为其功能完整、使用简洁、无偿地提供了序列化机制、在面对复杂的序列化或者反射攻击时仍然可以绝对防止多次实例化等优点，单元素的枚举类型被作者认为是实现单例模式的最佳方法。 </p>
-<p> 用枚举来实现单例非常简单，只需要编写一个包含单个元素的枚举类型即可。 </p>
-<pre><code>public enum Singleton {
+</code></pre><p>客户端角色类：</p>
+<pre><code>public class Client {
 
-    // 定义一个枚举的元素，它就代表了Singleton的一个实例
-    uniqueInstance;
+    public static void main(String[] args) {
 
-    // 单例可以有自己的操作
-    public void singletonOperation(){
-        //功能处理
+        Facade facade = new Facade();
+        facade.test();
+    }
+
+}
+</code></pre><p>Facade类其实相当于A、B、C模块的外观界面，有了这个Facade类，那么客户端就不需要亲自调用子系统中的A、B、C模块了，也不需要知道系统内部的实现细节，甚至都不需要知道A、B、C模块的存在，客户端只需要跟Facade类交互就好了，从而更好地实现了客户端和子系统中A、B、C模块的解耦，让客户端更容易地使用系统。 </p>
+<h3 id="三、外观模式的应用"><a href="#三、外观模式的应用" class="headerlink" title="三、外观模式的应用"></a>三、外观模式的应用</h3><p>使用外观模式还有一个附带的好处，就是能够有选择性地暴露方法。一个模块中定义的方法可以分成两部分，一部分是给子系统外部使用的，一部分是子系统内部模块之间相互调用时使用的。有了Facade类，那么用于子系统内部模块之间相互调用的方法就不用暴露给子系统外部了。</p>
+<p>比如，定义如下A、B、C模块：</p>
+<pre><code>public class ModuleA {
+
+    //提供给子系统外部使用的方法
+    public void a1(){};
+
+    //子系统内部模块之间相互调用时使用的方法
+    public void a2(){};
+    public void a3(){};
+
+}
+</code></pre><pre><code>public class ModuleB {
+
+    //提供给子系统外部使用的方法
+    public void b1(){};
+
+    //子系统内部模块之间相互调用时使用的方法
+    public void b2(){};
+    public void b3(){};
+
+}
+</code></pre><pre><code>public class ModuleC {
+
+    //提供给子系统外部使用的方法
+    public void c1(){};
+
+    //子系统内部模块之间相互调用时使用的方法
+    public void c2(){};
+    public void c3(){};
+
+}
+</code></pre><pre><code>public class ModuleFacade {
+
+    ModuleA a = new ModuleA();
+    ModuleB b = new ModuleB();
+    ModuleC c = new ModuleC();
+
+    //下面这些是A、B、C模块对子系统外部提供的方法   
+    public void a1(){
+        a.a1();
+    }
+    public void b1(){
+        b.b1();
+    }
+    public void c1(){
+        c.c1();
     }
 }
-</code></pre><p>使用枚举来实现单实例控制会更加简洁，而且无偿地提供了序列化机制，并由JVM从根本上提供保障，绝对防止多次实例化，是更简洁、高效、安全的实现单例的方式。 </p>
+</code></pre><p>这样定义一个ModuleFacade类可以有效地屏蔽内部的细节，免得客户端去调用Module类时，发现一些不需要它知道的方法。比如a2()和a3()方法就不需要让客户端知道，否则既暴露了内部的细节，又让客户端迷惑。对客户端来说，他可能还要去思考a2()、a3()方法用来干什么呢？其实a2()和a3()方法是内部模块之间交互的，原本就不是对子系统外部的，所以干脆就不要让客户端知道。</p>
+<p>Tomcat中外观模式使用的很多，因为Tomcat中有很多不同组件，每个组件要相互通信，但是又不能将自己内部数据过多的暴露给其他组件。用外观模式隔离数据是个很好的方法。</p>
+<p>下面是Request上使用的外观模式：</p>
+<img src="/2018/10/05/外观模式/5.png">
+<p>使用过Servlet的人都清楚，除了要在web.xml做相应的配置外，还需继承一个叫HttpServlet的抽象类，并且重写doGet与doPost方法（当然只重写service方法也是可以的）。 </p>
+<pre><code>public class TestServlet extends HttpServlet {
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        this.doPost(request, response);
+
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+    }
+
+}
+</code></pre><p>可以看出doGet与doPost方法有两个参数，参数类型是接口HttpServletRequest与接口HttpServletResponse，那么从Tomcat中传递过来的真实类型到底是什么呢？通过debug会发现，在真正调用TestServlet类之前，会经过很多Tomcat中的方法。如下图所示 ：</p>
+<img src="/2018/10/05/外观模式/6.png">
+<p>注意红色方框圈中的类，StandardWrapperValue类中的invoke方法225行代码如下： </p>
+<pre><code> filterChain.doFilter
+     (request.getRequest(), response.getResponse());
+</code></pre><p>在StandardWrapperValue类中并没有直接将Request对象与Response对象传递给ApplicationFilterChain类的doFilter方法，传递的是RequestFacade与ResponseFacade对象，为什么这么说呢，看一下request.getRequest()与response.getResponse()方法就真相大白了。 </p>
+<p>Request类 </p>
+<pre><code>public HttpServletRequest getRequest() {
+    if (facade == null) {
+        facade = new RequestFacade(this);
+    }
+    return facade;
+}
+</code></pre><p>Response类 </p>
+<pre><code>public HttpServletResponse getResponse() {
+    if (facade == null) {
+        facade = new ResponseFacade(this);
+    }
+    return (facade);
+}
+</code></pre><p>可以看到它们返回都是各自的一个Facade类，那么这样做有什么好处呢？ </p>
+<p>Request对象中的很多方法都是内部组件之间相互交互时使用的，比如setComet、setRequestedSessionId等方法（这里就不一一列举了）。这些方法并不对外部公开，但是又必须设置为public，因为还需要跟内部组件之间交互使用。最好的解决方法就是通过使用一个Facade类，将与内部组件之间交互使用的方法屏蔽掉，只提供给外部程序感兴趣的方法。</p>
+<p>如果不使用Facade类，直接传递的是Request对象和Response对象，那么熟悉容器内部运作的程序员可以分别把ServletRequest和ServletResponse对象向下转换为Request和Response，并调用它们的公共方法。比如拥有Request对象，就可以调用setComet、setRequestedSessionId等方法，这会危害安全性。</p>
+<h3 id="四、外观模式总结"><a href="#四、外观模式总结" class="headerlink" title="四、外观模式总结"></a>四、外观模式总结</h3><p>外观模式是一种使用频率非常高的设计模式，它通过引入一个外观角色来简化客户端与子系统之间的交互，为复杂的子系统调用提供一个统一的入口，使子系统与客户端的耦合度降低，且客户端调用非常方便。外观模式并不给系统增加任何新功能，它仅仅是简化调用接口。在几乎所有的软件中都能够找到外观模式的应用，如绝大多数B/S系统都有一个首页或者导航页面，大部分C/S系统都提供了菜单或者工具栏，在这里，首页和导航页面就是B/S系统的外观角色，而菜单和工具栏就是C/S系统的外观角色，通过它们用户可以快速访问子系统，降低了系统的复杂程度。所有涉及到与多个业务对象交互的场景都可以考虑使用外观模式进行重构。 </p>
+<h5 id="1-主要优点"><a href="#1-主要优点" class="headerlink" title="1.主要优点"></a>1.主要优点</h5><p>外观模式的主要优点如下：</p>
+<p>(1)它对客户端屏蔽了子系统组件，减少了客户端所需处理的对象数目，并使得子系统使用起来更加容易。通过引入外观模式，客户端代码将变得很简单，与之关联的对象也很少。</p>
+<p>(2)它实现了子系统与客户端之间的松耦合关系，这使得子系统的变化不会影响到调用它的客户端，只需要调整外观类即可。</p>
+<p>(3)一个子系统的修改对其他子系统没有任何影响，而且子系统内部变化也不会影响到外观对象。</p>
+<h5 id="2-主要缺点"><a href="#2-主要缺点" class="headerlink" title="2.主要缺点"></a>2.主要缺点</h5><p>外观模式的主要缺点如下：</p>
+<p>(1)不能很好地限制客户端直接使用子系统类，如果对客户端访问子系统类做太多的限制则减少了可变性和灵活 性。</p>
+<p>(2)如果设计不当，增加新的子系统可能需要修改外观类的源代码，违背了开闭原则。</p>
+<h5 id="3-适用场景"><a href="#3-适用场景" class="headerlink" title="3.适用场景"></a>3.适用场景</h5><p>在以下情况下可以考虑使用外观模式：</p>
+<p>(1)当要为访问一系列复杂的子系统提供一个简单入口时可以使用外观模式。</p>
+<p>(2)客户端程序与多个子系统之间存在很大的依赖性。引入外观类可以将子系统与客户端解耦，从而提高子系统的独立性和可移植性。</p>
+<p>(3)在层次化结构中，可以使用外观模式定义系统中每一层的入口，层与层之间不直接产生联系，而通过外观类建立联系，降低层之间的耦合度。</p>
+<p>参考资料：《设计模式的艺术软件开发人员内功修炼之道》</p>
 
         
     
@@ -684,21 +717,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/15/Spring入门/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/08/11/MVC模式与三层架构/" id="post_nav-older" class="next-content">
+        <a href="/2018/09/29/排序算法/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

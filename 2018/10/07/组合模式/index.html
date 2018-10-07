@@ -47,7 +47,7 @@
     
     <title>
         
-            适配器模式 | 
+            组合模式 | 
         
         stormjie&#39;s blog
     </title>
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/08/适配器模式/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/10/07/组合模式/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -234,16 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/09/08/适配器模式/">
+    <meta property="og:url" content="http://yoursite.com/2018/10/07/组合模式/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="适配器模式 | stormjie&#39;s blog">
+    <meta property="og:title" content="组合模式 | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
     <meta property="og:article:tag" content="设计模式"> 
 
     
-        <meta property="article:published_time" content="Sat Sep 08 2018 20:07:13 GMT+0800">
-        <meta property="article:modified_time" content="Sat Sep 08 2018 22:30:31 GMT+0800">
+        <meta property="article:published_time" content="Sun Oct 07 2018 20:34:33 GMT+0800">
+        <meta property="article:modified_time" content="Sun Oct 07 2018 21:37:18 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -251,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/08/适配器模式/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/10/07/组合模式/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -263,10 +263,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/09/08/适配器模式/index.html",
-    "headline": "适配器模式",
-    "datePublished": "Sat Sep 08 2018 20:07:13 GMT+0800",
-    "dateModified": "Sat Sep 08 2018 22:30:31 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/10/07/组合模式/index.html",
+    "headline": "组合模式",
+    "datePublished": "Sun Oct 07 2018 20:34:33 GMT+0800",
+    "dateModified": "Sun Oct 07 2018 21:37:18 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -350,7 +350,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、适配器模式概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、适配器模式概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、对象适配器模式"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、对象适配器模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、类适配器模式"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、类适配器模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、双向适配器模式"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、双向适配器模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、缺省适配器模式"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、缺省适配器模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、总结"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、总结</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、组合模式概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、组合模式概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、安全式组合模式的结构"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、安全式组合模式的结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、透明式组合模式的结构"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、透明式组合模式的结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、两种实现方法的选择"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、两种实现方法的选择</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、组合模式总结"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、组合模式总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-主要优点"><span class="post-toc-number">5.0.1.</span> <span class="post-toc-text">1. 主要优点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-主要缺点"><span class="post-toc-number">5.0.2.</span> <span class="post-toc-text">2.主要缺点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-适用场景"><span class="post-toc-number">5.0.3.</span> <span class="post-toc-text">3.适用场景</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -382,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                适配器模式
+                组合模式
             </p>
         </div>
 
@@ -401,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>stormjie</strong>
-        <span>9月 08, 2018</span>
+        <span>10月 07, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -423,7 +423,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaElEQVR42u3aS27CUBAEQO5/6WQbKcJ0vx8GlVcokPDKC8+kZx4/X3098PDw8PDw8PDwbsZ7xFfyW3/f/f/563fzb3lxNjw8PLwjvBeP2uBALekaNnU2PDw8vIO85EH/7N3rnySY65tSFCE8PDy8W/KSB3deGPLSgoeHh/e5vJmQoi05eHh4eHfm5Y/4pDluQ43rwnAoa8HDw8OLefmQ6fzro/M9PDw8vIBXrzSVw6o8blh14eHh4e3m5Q/ifEyVF56ZwoCHh4f3Ll4y7B9bIJgfhg0uH+Dh4eG9lZeMplYVgPymFAMwPDw8vA28/BBtIZmJZdtRGR4eHt55XvKIn4luVzXf0TIBHh4e3hFe+2//2CJp+/lk7bVuqfHw8PCmeWuHYW2zPrOu+vR78fDw8DbzkofvWAlJDjfTcNctNR4eHt5SXhuzrg0gxtYIigEYHh4e3gbejjCiboWDMyyY7+Hh4eEt5eXhbBvC5oOumdd4eHh4Z3hjoe0MuP3GeqEBDw8PbzMv/6NtiJCUgbFAZEEYgYeHh7eI164FtAVmrOTUEQYeHh7eEV4SKOTN9FjZaG9B0VLj4eHhbeYl4cJYy9uucOWNOB4eHt67eHlrm5SK4lFetuD1fA8PDw9vKa+9ZoLaNoxoVw3w8PDwzvBWRa5tPJEXlaQ44eHh4Z3n5cUgH0rNNNDJGfDw8PDuwGsD3FU3ZWzpCg8PD+8Tee3oa2wRoW738fDw8G7JW9V8t6tXUcyBh4eHd5CXD73WRr15UYlGdHh4eHhHePMRQNtM5+sI7Rnw8PDwdvO+78LDw8PDw8PDw7vB9QvGPT7avdJB3gAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXklEQVR42u3aUW7DQAgFwNz/0u0B0joPsIkTjb8q19nuuNJCgMfPV18PPDw8PDw8PDy8m/Ee8fXHQk+//e/552eO15nsDQ8PD2+H9+KoPeQdb6i38mRveHh4eJu8/zaXH/3HASBZLfm7L8IMHh4e3i151fCQBID8teLh4eF9Ou8sdlLCwMPDw7sbL/nC3yu2Vgu4b6u14OHh4cW83hZ3fl7t7+Hh4eEFvPJIU3xY5ylyvnK0Qzw8PLyLeflBnJRfk9WqhYZyURgPDw/vYl5SFMiT4F45YzKggIeHh/deXrUR1UusJ+Bot3h4eHjrvBPKAcWybP46mmVcPDw8vAt41QR3HiomDbDjfwweHh7eHXjVFteksLs0OoCHh4c35lXHTOfFhV4aHX0KDw8Pb5F3vGivbJEHmN4LwsPDw9vnJZjkfr5Or91VCDZ4eHh4F/MmZdn84G4OARTLGXh4eHibvNGX/yD5zkPF5AXh4eHhvYs3CQa95lYvKW8GBjw8PLwxL/lYdeiqPCZVHBd4EULw8PDwFnnnDgdUiwjVFcpVajw8PLxTefmh3GuJJS+lGqIKgQEPDw9vhRc16U8qKOTg5mQEHh4e3mW8PJHtHe69Em2+Dh4eHt4Obz5W1Rsy6A0ojEYH8PDw8E7iTY7gXiNt8nyUuOPh4eGt8Oatr7yp1kyU8fDw8G7J6x3oeWJ9fH/SDMPDw8P7RN5Zq+UjCHh4eHifxZuUeifljGQ1PDw8vE1edbvJ/erAQbWphoeHh/cuXq8EkGB6B32eUuPh4eHt877vwsPDw8PDw8PDu8H1CzVXXclR6JnBAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -456,7 +456,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=适配器模式&url=http://yoursite.com/2018/09/08/适配器模式/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=组合模式&url=http://yoursite.com/2018/10/07/组合模式/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -465,7 +465,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=适配器模式&url=http://yoursite.com/2018/09/08/适配器模式/index.html&via=stormjie" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=组合模式&url=http://yoursite.com/2018/10/07/组合模式/index.html&via=stormjie" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -474,7 +474,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/08/适配器模式/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/07/组合模式/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -489,7 +489,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=适配器模式&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/09/08/适配器模式/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=组合模式&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/10/07/组合模式/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -508,175 +508,268 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>适配器模式是做什么的？用电器做例子，笔记本电脑的插头一般都是三相的，即除了阳极、阴极外，还有一个地极。而有些地方的电源插座却只有两极，没有地极。电源插座与笔记本电脑的电源插头不匹配使得笔记本电脑无法使用。这时候一个三相到两相的转换器（适配器）就能解决此问题，而这正像是本模式所做的事情。 </p>
-<h3 id="一、适配器模式概述"><a href="#一、适配器模式概述" class="headerlink" title="一、适配器模式概述"></a>一、适配器模式概述</h3><p>与电源适配器相似，在适配器模式中引入了一个被称为适配器(Adapter)的包装类，而它所包装的对象称为适配者(Adaptee)，即被适配的类。适配器的实现就是把客户类的请求转化为对适配者的相应接口的调用。也就是说：当客户类调用适配器的方法时，在适配器类的内部将调用适配者类的方法，而这个过程对客户类是透明的，客户类并不直接访问适配者类。因此，适配器让那些由于接口不兼容而不能交互的类可以一起工作。</p>
-<p>适配器模式可以将一个类的接口和另一个类的接口匹配起来，而无须修改原来的适配者接口和抽象目标类接口。适配器模式定义如下：</p>
-<p><strong>适配器模式(Adapter Pattern)：将一个接口转换成客户希望的另一个接口，使接口不兼容的那些类可以一起工作，其别名为包装器(Wrapper)。适配器模式既可以作为类结构型模式，也可以作为对象结构型模式。</strong> </p>
-<h3 id="二、对象适配器模式"><a href="#二、对象适配器模式" class="headerlink" title="二、对象适配器模式"></a>二、对象适配器模式</h3><p>在适配器模式中，我们通过增加一个新的适配器类来解决接口不兼容的问题，使得原本没有任何关系的类可以协同工作。根据适配器类与适配者类的关系不同，适配器模式可分为对象适配器和类适配器两种，<strong>在对象适配器模式中，适配器与适配者之间是关联关系；在类适配器模式中，适配器与适配者之间是继承（或实现）关系。</strong>在实际开发中，对象适配器的使用频率更高，对象适配器模式结构如图所示： </p>
-<img src="/2018/09/08/适配器模式/1.jpg">
-<p>在对象适配器模式结构图中包含如下几个角色：</p>
+        <h3 id="一、组合模式概述"><a href="#一、组合模式概述" class="headerlink" title="一、组合模式概述"></a>一、组合模式概述</h3><p>树形结构在软件中随处可见，例如操作系统中的目录结构、应用软件中的菜单、办公系统中的公司组织结构等等，如何运用面向对象的方式来处理这种树形结构是组合模式需要解决的问题，组合模式通过一种巧妙的设计方案使得用户可以一致性地处理整个树形结构或者树形结构的一部分，也可以一致性地处理树形结构中的叶子节点（不包含子节点的节点）和容器节点（包含子节点的节点）。 </p>
+<p>比如一个文件系统就是一个典型的组合模式系统。下图是常见的计算机XP文件系统的一部分。 </p>
+<img src="/2018/10/07/组合模式/1.png">
+<p>从上图可以看出，文件系统是一个树结构，树上长有节点。树的节点有两种，一种是树枝节点，即目录，有内部树结构，在图中涂有颜色；另一种是文件，即树叶节点，没有内部树结构。</p>
+<p>显然，可以把目录和文件当做同一种对象同等对待和处理，这也就是组合模式的应用。</p>
+<p>组合模式可以不提供父对象的管理方法，但是组合模式必须在合适的地方提供子对象的管理方法，诸如：add()、remove()、以及getChild()等。</p>
+<p>组合模式定义如下：</p>
+<p><strong>组合模式(Composite Pattern)：组合多个对象形成树形结构以表示具有“整体—部分”关系的层次结构。组合模式对单个对象（即叶子对象）和组合对象（即容器对象）的使用具有一致性，组合模式又可以称为“整体—部分”(Part-Whole)模式，它是一种对象结构型模式。</strong> </p>
+<p>组合模式的实现根据所实现接口的区别分为两种形式，分别称为<strong>安全式</strong>和<strong>透明式</strong>。</p>
+<h3 id="二、安全式组合模式的结构"><a href="#二、安全式组合模式的结构" class="headerlink" title="二、安全式组合模式的结构"></a>二、安全式组合模式的结构</h3><p>安全模式的组合模式要求管理聚集的方法只出现在树枝构件类中，而不出现在树叶构件类中。 </p>
+<img src="/2018/10/07/组合模式/2.png">
+<p>这种形式涉及到三个角色： </p>
 <ul>
-<li>Target（目标抽象类）：目标抽象类定义客户所需接口，可以是一个抽象类或接口，也可以是具体类。</li>
+<li><p>抽象构件(Component)角色：这是一个抽象角色，它给参加组合的对象定义出公共的接口及其默认行为，可以用来管理所有的子对象。合成对象通常把它所包含的子对象当做类型为Component的对象。在安全式的组合模式里，构件角色并不定义出管理子对象的方法，这一定义由树枝构件对象给出。</p>
+</li>
+<li><p>树叶构件(Leaf)角色：树叶对象是没有下级子对象的对象，定义出参加组合的原始对象的行为。</p>
+</li>
+<li><p>树枝构件(Composite)角色：代表参加组合的有下级子对象的对象。树枝构件类给出所有的管理子对象的方法，如add()、remove()以及getChild()。</p>
+</li>
 </ul>
-<ul>
-<li>Adapter（适配器类）：适配器可以调用另一个接口，作为一个转换器，对Adaptee和Target进行适配，适配器类是适配器模式的核心，在对象适配器中，它通过继承Target并关联一个Adaptee对象使二者产生联系。</li>
-</ul>
-<ul>
-<li>Adaptee（适配者类）：适配者即被适配的角色，它定义了一个已经存在的接口，这个接口需要适配，适配者类一般是一个具体类，包含了客户希望使用的业务方法，在某些情况下可能没有适配者类的源代码。</li>
-</ul>
-<p>下面利用具体代码详细说明适配器模式（例子为对象适配器模式）。</p>
-<pre><code>//目标抽象接口
-public interface Target {
+<p>以下是示例代码：</p>
+<pre><code>//抽象构件角色类
+public interface Component {
 
-    //这是适配者Adaptee有的方法
-    public void sampleOperation1(); 
-
-    //这是适配者Adaptee没有的方法
-    public void sampleOperation2(); 
+    // 输出组建自身的名称
+    public void printStruct(String preStr);
 }
-</code></pre><pre><code>//适配者Adaptee类，有目标类所需的sampleOperation1()方法
-public class Adaptee {
+</code></pre><pre><code>//树枝构件角色类
+public class Composite implements Component {
 
-    public void sampleOperation1(){}
+    //用来存储组合对象中包含的子组件对象
+    private List&lt;Component&gt; childComponents = new ArrayList&lt;Component&gt;();
 
-}
-</code></pre><pre><code>//适配器Adapter类，实现目标接口
-public class Adapter implements Target {
-    private Adaptee adaptee;
+    //组合对象的名字
+    private String name;
 
-    public Adapter(Adaptee adaptee) {
-        this.adaptee = adaptee;
+    //构造方法，传入组合对象的名字
+    public Composite(String name) {
+        this.name = name;
     }
-    /**
-     * 适配者Adaptee有方法sampleOperation1
-     * 因此适配器类直接委派即可
-     */
-    public void sampleOperation1(){
-        this.adaptee.sampleOperation1();
+
+    //聚集管理方法，增加一个子构件对象
+    public void addChild(Component child) {
+        childComponents.add(child);
     }
-    /**
-     * 适配者Adaptee没有方法sampleOperation2
-     * 因此由适配器类需要补充此方法
-     */
-    public void sampleOperation2(){
-        //写相关的代码
+
+    //聚集管理方法，删除一个子构件对象
+    public void removeChild(int index) {
+        childComponents.remove(index);
     }
-}
-</code></pre><p>如果你理解了这个例子，这还有一个例子也解释了适配器模式<a href="http://www.runoob.com/design-pattern/adapter-pattern.html" target="_blank" rel="noopener">适配器模式|菜鸟教程</a>，比我上面的稍微复杂了一点，大家尽量理解。</p>
-<h3 id="三、类适配器模式"><a href="#三、类适配器模式" class="headerlink" title="三、类适配器模式"></a>三、类适配器模式</h3><p>除了对象适配器模式之外，适配器模式还有一种形式，那就是类适配器模式，<strong>类适配器模式和对象适配器模式最大的区别在于适配器和适配者之间的关系不同，对象适配器模式中适配器和适配者之间是关联关系，而类适配器模式中适配器和适配者是继承关系</strong>，类适配器模式结构如图所示： </p>
-<img src="/2018/09/08/适配器模式/2.jpg">
-<p>根据类适配器模式结构图，适配器类实现了抽象目标类接口Target，并继承了适配者类，在适配器类的request()方法中调用所继承的适配者类的specificRequest()方法，实现了适配。典型的类适配器代码如下所示：</p>
-<pre><code>class Adapter extends Adaptee implements Target {  
 
-    public void request() {  
-        specificRequest();  
-    }  
-}  
-</code></pre><p>由于Java、C#等语言不支持多重类继承，因此类适配器的使用受到很多限制，例如如果目标抽象类Target不是接口，而是一个类，就无法使用类适配器；此外，如果适配者Adapter为最终(Final)类，也无法使用类适配器。在Java等面向对象编程语言中，大部分情况下我们使用的是对象适配器，类适配器较少使用。 </p>
-<h3 id="四、双向适配器模式"><a href="#四、双向适配器模式" class="headerlink" title="四、双向适配器模式"></a>四、双向适配器模式</h3><p>在对象适配器的使用过程中，如果在适配器中同时包含对目标类和适配者类的引用，适配者可以通过它调用目标类中的方法，目标类也可以通过它调用适配者类中的方法，那么该适配器就是一个双向适配器，其结构示意图如图所示： </p>
-<img src="/2018/09/08/适配器模式/3.jpg">
-<p>双向适配器的实现较为复杂，其典型代码如下所示： </p>
-<pre><code>class Adapter implements Target,Adaptee {  
-    //同时维持对抽象目标类和适配者的引用  
-    private Target target;  
-    private Adaptee adaptee;  
+    //聚集管理方法，返回所有子构件对象
+    public List&lt;Component&gt; getChild() {
+        return childComponents;
+    }
 
-    public Adapter(Target target) {  
-        this.target = target;  
-    }  
-
-    public Adapter(Adaptee adaptee) {  
-        this.adaptee = adaptee;  
-    }  
-
-    public void request() {  
-        adaptee.specificRequest();  
-    }  
-
-    public void specificRequest() {  
-        target.request();  
-    }  
-}  
-</code></pre><p>在实际开发中，我们很少使用双向适配器。 </p>
-<h3 id="五、缺省适配器模式"><a href="#五、缺省适配器模式" class="headerlink" title="五、缺省适配器模式"></a>五、缺省适配器模式</h3><img src="/2018/09/08/适配器模式/4.jpg">
-<p>缺省适配器模式为一个接口提供缺省实现，这样子类型可以从这个缺省实现进行扩展，而不必从原有接口进行扩展。当原接口中定义的方法太多，而其中大部分又不被需要时，这种模式非常实用。<strong>由缺省适配器类直接实现目标角色接口，并为所有方法提供缺省的空实现。用户类就只需要继承适配器类，只实现感兴趣的方法就行了。</strong> 作为适配器模式的一个特例，缺省适配器模式在JAVA语言中有着特殊的应用。 </p>
-<p>以下是实例代码</p>
-<pre><code>//目标接口，部分方法我们需要
-public interface SubjectTarget {
-
-    void learnChinese();
-
-    void learnEnglish();
-
-    void learnMath();
-
-    void learnBiological();
-}
-</code></pre><pre><code>//缺省适配器，为目标接口实现空方法
-public abstract class SubjectAdapter implements SubjectTarget {
+    //输出对象的自身结构
     @Override
-    public void learnChinese() {
-
+    public void printStruct(String preStr) {
+        // 先把自己输出
+        System.out.println(preStr + &quot;+&quot; + this.name);
+        //如果还包含有子组件，那么就输出这些子组件对象
+        if(this.childComponents != null) {
+            //添加两个空格，表示向后缩进两个空格
+            preStr += &quot;  &quot;;
+            //输出当前对象的子对象
+            for(Component c : childComponents) {
+                //递归输出每个子对象
+                c.printStruct(preStr);
+            }
+        }        
     }
 
-    @Override
-    public void learnEnglish() {
+}
+</code></pre><pre><code>//树叶构件角色类
+public class Leaf implements Component {
 
+    //叶子对象的名字
+    private String name;
+
+    //构造方法，传入叶子对象的名称
+    public Leaf(String name) {
+        this.name = name;
     }
 
+    //输出叶子对象的结构，叶子对象没有子对象，也就是输出叶子对象的名字
     @Override
-    public void learnMath() {
-
+    public void printStruct(String preStr) {
+        // TODO Auto-generated method stub
+        System.out.println(preStr + &quot;-&quot; + name);
     }
 
-    @Override
-    public void learnBiological() {
+}
+</code></pre><pre><code>//客户端类
+public class Client {
+    public static void main(String[]args) {
+        Composite root = new Composite(&quot;服装&quot;);
+        Composite c1 = new Composite(&quot;男装&quot;);
+        Composite c2 = new Composite(&quot;女装&quot;);
 
+        Leaf leaf1 = new Leaf(&quot;衬衫&quot;);
+        Leaf leaf2 = new Leaf(&quot;夹克&quot;);
+        Leaf leaf3 = new Leaf(&quot;裙子&quot;);
+        Leaf leaf4 = new Leaf(&quot;套装&quot;);
+
+        root.addChild(c1);
+        root.addChild(c2);
+        c1.addChild(leaf1);
+        c1.addChild(leaf2);
+        c2.addChild(leaf3);
+        c2.addChild(leaf4);
+
+        root.printStruct(&quot;&quot;);
     }
 }
-</code></pre><pre><code>//用户类
-public class StudentA extends SubjectAdapter {
-    @Override
-    public void learnMath() {
-        super.learnMath();
-        System.out.println(&quot;just learn Math&quot;);
-    }
-}
+</code></pre><p>可以看出，树枝构件类(Composite)给出了addChild()、removeChild()以及getChild()等方法的声明和实现，而树叶构件类则没有给出这些方法的声明或实现。这样的做法是安全的做法，由于这个特点，客户端应用程序不可能错误地调用树叶构件的聚集方法，因为树叶构件没有这些方法，调用会导致编译错误。</p>
+<p>安全式组合模式的缺点是不够透明，因为树叶类和树枝类将具有不同的接口。</p>
+<h3 id="三、透明式组合模式的结构"><a href="#三、透明式组合模式的结构" class="headerlink" title="三、透明式组合模式的结构"></a>三、透明式组合模式的结构</h3><p>与安全式的组合模式不同的是，透明式的组合模式要求所有的具体构件类，不论树枝构件还是树叶构件，均符合一个固定接口。 </p>
+<img src="/2018/10/07/组合模式/3.png">
+<p>以下是示例代码：</p>
+<pre><code>//抽象构件角色类
+public abstract class Component {
 
-public class StudentB extends SubjectAdapter {
-    @Override
-    public void learnChinese() {
-        super.learnChinese();
-        System.out.println(&quot;just lear Chinese&quot;);
+    //输出组建自身的名称
+    public abstract void printStruct(String preStr);
+
+    //聚集管理方法，增加一个子构件对象
+    public void addChild(Component child) {
+        /**
+         * 缺省实现，抛出异常，因为叶子对象没有此功能
+         * 或者子组件没有实现这个功能
+         */
+        throw new UnsupportedOperationException(&quot;对象不支持此功能&quot;);
+    }
+
+    //聚集管理方法，删除一个子构件对象
+    public void removeChild(int index) {
+        /**
+         * 缺省实现，抛出异常，因为叶子对象没有此功能
+         * 或者子组件没有实现这个功能
+         */
+        throw new UnsupportedOperationException(&quot;对象不支持此功能&quot;);
+    }
+
+    //聚集管理方法，返回所有子构件对象
+    public List&lt;Component&gt; getChild() {
+        /**
+         * 缺省实现，抛出异常，因为叶子对象没有此功能
+         * 或者子组件没有实现这个功能
+         */
+        throw new UnsupportedOperationException(&quot;对象不支持此功能&quot;);
     }
 }
-</code></pre><h3 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h3><p>适配器模式将现有接口转化为客户类所期望的接口，实现了对现有类的复用，它是一种使用频率非常高的设计模式，在软件开发中得以广泛应用，在spring等开源框架、驱动程序设计（如JDBC中的数据库驱动程序）中也使用了适配器模式。</p>
-<p><strong>1.主要优点</strong></p>
-<p>无论是对象适配器模式还是类适配器模式都具有如下优点：</p>
-<p>(1)将目标类和适配者类解耦，通过引入一个适配器类来重用现有的适配者类，无须修改原有结构。</p>
-<p>(2)增加了类的透明性和复用性，将具体的业务实现过程封装在适配者类中，对于客户端类而言是透明的，而且提高了适配者的复用性，同一个适配者类可以在多个不同的系统中复用。</p>
-<p>(3)灵活性和扩展性都非常好，通过使用配置文件，可以很方便地更换适配器，也可以在不修改原有代码的基础上增加新的适配器类，完全符合“开闭原则”。</p>
-<p>具体来说，<strong>类适配器模式</strong>还有如下优点：</p>
-<p>由于适配器类是适配者类的子类，因此可以在适配器类中置换一些适配者的方法，使得适配器的灵活性更强。</p>
-<p><strong>对象适配器模式</strong>还有如下优点：</p>
-<ul>
-<li>一个对象适配器可以把多个不同的适配者适配到同一个目标；</li>
-</ul>
-<ul>
-<li>可以适配一个适配者的子类，由于适配器和适配者之间是关联关系，根据“里氏代换原则”，适配者的子类也可通过该适配器进行适配。</li>
-</ul>
-<p><strong>2.主要缺点</strong></p>
-<p><strong>类适配器模式</strong>的缺点如下：</p>
-<p>(1)对于Java、C#等不支持多重类继承的语言，一次最多只能适配一个适配者类，不能同时适配多个适配者；</p>
-<p>(2)适配者类不能为最终类，如在Java中不能为final类，C#中不能为sealed类；</p>
-<p>(3)在Java、C#等语言中，类适配器模式中的目标抽象类只能为接口，不能为类，其使用有一定的局限性。</p>
-<p><strong>对象适配器模式</strong>的缺点如下：</p>
-<p>与类适配器模式相比，要在适配器中置换适配者类的某些方法比较麻烦。如果一定要置换掉适配者类的一个或多个方法，可以先做一个适配者类的子类，将适配者类的方法置换掉，然后再把适配者类的子类当做真正的适配者进行适配，实现过程较为复杂。</p>
-<p><strong>3.适用场景</strong></p>
-<p>在以下情况下可以考虑使用适配器模式：</p>
-<p>(1)系统需要使用一些现有的类，而这些类的接口（如方法名）不符合系统的需要，甚至没有这些类的源代码。</p>
-<p>(2)想创建一个可以重复使用的类，用于与一些彼此之间没有太大关联的一些类，包括一些可能在将来引进的类一起工作。</p>
-<p>参考资料：《设计模式的艺术软件开发人员内功修炼之道》</p>
+</code></pre><pre><code>//树枝构件角色类，此类将implements Conponent改为extends Conponent，其他地方无变化。
+public class Composite extends Component {
+
+    //用来存储组合对象中包含的子组件对象
+    private List&lt;Component&gt; childComponents = new ArrayList&lt;Component&gt;();
+
+    //组合对象的名字
+    private String name;
+
+    //构造方法，传入组合对象的名字
+    public Composite(String name) {
+        this.name = name;
+    }
+
+    //聚集管理方法，增加一个子构件对象
+    public void addChild(Component child) {
+        childComponents.add(child);
+    }
+
+    //聚集管理方法，删除一个子构件对象
+    public void removeChild(int index) {
+        childComponents.remove(index);
+    }
+
+    //聚集管理方法，返回所有子构件对象
+    public List&lt;Component&gt; getChild() {
+        return childComponents;
+    }
+
+    //输出对象的自身结构
+    @Override
+    public void printStruct(String preStr) {
+        // 先把自己输出
+        System.out.println(preStr + &quot;+&quot; + this.name);
+        //如果还包含有子组件，那么就输出这些子组件对象
+        if(this.childComponents != null) {
+            //添加两个空格，表示向后缩进两个空格
+            preStr += &quot;  &quot;;
+            //输出当前对象的子对象
+            for(Component c : childComponents) {
+                //递归输出每个子对象
+                c.printStruct(preStr);
+            }
+        }        
+    }
+
+}
+</code></pre><pre><code>//树叶构件角色类，此类将implements Conponent改为extends Conponent，其他地方无变化。
+public class Leaf extends Component {
+
+    //叶子对象的名字
+    private String name;
+
+    //构造方法，传入叶子对象的名称
+    public Leaf(String name) {
+        this.name = name;
+    }
+
+    //输出叶子对象的结构，叶子对象没有子对象，也就是输出叶子对象的名字
+    @Override
+    public void printStruct(String preStr) {
+        // TODO Auto-generated method stub
+        System.out.println(preStr + &quot;-&quot; + name);
+    }
+
+}
+</code></pre><pre><code>//客户端类的主要变化是不再区分Composite对象和Leaf对象。
+public class Client {
+    public static void main(String[]args) {
+        Component root = new Composite(&quot;服装&quot;);
+        Component c1 = new Composite(&quot;男装&quot;);
+        Component c2 = new Composite(&quot;女装&quot;);
+
+        Component leaf1 = new Leaf(&quot;衬衫&quot;);
+        Component leaf2 = new Leaf(&quot;夹克&quot;);
+        Component leaf3 = new Leaf(&quot;裙子&quot;);
+        Component leaf4 = new Leaf(&quot;套装&quot;);
+
+        root.addChild(c1);
+        root.addChild(c2);
+        c1.addChild(leaf1);
+        c1.addChild(leaf2);
+        c2.addChild(leaf3);
+        c2.addChild(leaf4);
+
+        root.printStruct(&quot;&quot;);
+    }
+}
+</code></pre><p>可以看出，客户端无需再区分操作的是树枝对象(Composite)还是树叶对象(Leaf)了；对于客户端而言，操作的都是Component对象。</p>
+<h3 id="四、两种实现方法的选择"><a href="#四、两种实现方法的选择" class="headerlink" title="四、两种实现方法的选择"></a>四、两种实现方法的选择</h3><p><strong>这里所说的安全性组合模式是指：</strong>从客户端使用组合模式上看是否更安全，如果是安全的，那么就不会有发生误操作的可能，能访问的方法都是被支持的。</p>
+<p><strong>这里所说的透明性组合模式是指：</strong>从客户端使用组合模式上，是否需要区分到底是“树枝对象”还是“树叶对象”。如果是透明的，那就不用区分，对于客户而言，都是Compoent对象，具体的类型对于客户端而言是透明的，是无须关心的。</p>
+<p>对于组合模式而言，在安全性和透明性上，<strong>会更看重透明性</strong>，毕竟组合模式的目的是：让客户端不再区分操作的是树枝对象还是树叶对象，而是以一个统一的方式来操作。</p>
+<p>而且对于安全性的实现，需要区分是树枝对象还是树叶对象。有时候，需要将对象进行类型转换，却发现类型信息丢失了，只好强行转换，这种类型转换必然是不够安全的。</p>
+<p>因此在使用组合模式的时候，建议多采用透明性的实现方式。</p>
+<h3 id="五、组合模式总结"><a href="#五、组合模式总结" class="headerlink" title="五、组合模式总结"></a>五、组合模式总结</h3><p>组合模式使用面向对象的思想来实现树形结构的构建与处理，描述了如何将容器对象和叶子对象进行递归组合，实现简单，灵活性好。由于在软件开发中存在大量的树形结构，因此组合模式是一种使用频率较高的结构型设计模式，Java SE中的AWT和Swing包的设计就基于组合模式，在这些界面包中为用户提供了大量的容器构件（如Container）和成员构件（如Checkbox、Button和TextComponent等），其结构如图：</p>
+<img src="/2018/10/07/组合模式/4.jpg">
+<p>在图中，Component类是抽象构件，Checkbox、Button和TextComponent是叶子构件，而Container是容器构件，在AWT中包含的叶子构件还有很多，因为篇幅限制没有在图中一一列出。在一个容器构件中可以包含叶子构件，也可以继续包含容器构件，这些叶子构件和容器构件一起组成了复杂的GUI界面。</p>
+<p>除此以外，在XML解析、组织结构树处理、文件系统设计等领域，组合模式都得到了广泛应用。</p>
+<h5 id="1-主要优点"><a href="#1-主要优点" class="headerlink" title="1. 主要优点"></a>1. 主要优点</h5><p>组合模式的主要优点如下：</p>
+<p>(1)组合模式可以清楚地定义分层次的复杂对象，表示对象的全部或部分层次，它让客户端忽略了层次的差异，方便对整个层次结构进行控制。</p>
+<p>(2)客户端可以一致地使用一个组合结构或其中单个对象，不必关心处理的是单个对象还是整个组合结构，简化了客户端代码。</p>
+<p>(3)在组合模式中增加新的容器构件和叶子构件都很方便，无须对现有类库进行任何修改，符合“开闭原则”。</p>
+<p>(4)组合模式为树形结构的面向对象实现提供了一种灵活的解决方案，通过叶子对象和容器对象的递归组合，可以形成复杂的树形结构，但对树形结构的控制却非常简单。</p>
+<h5 id="2-主要缺点"><a href="#2-主要缺点" class="headerlink" title="2.主要缺点"></a>2.主要缺点</h5><p>组合模式的主要缺点如下：</p>
+<p>在增加新构件时很难对容器中的构件类型进行限制。有时候我们希望一个容器中只能有某些特定类型的对象，例如在某个文件夹中只能包含文本文件，使用组合模式时，不能依赖类型系统来施加这些约束，因为它们都来自于相同的抽象层，在这种情况下，必须通过在运行时进行类型检查来实现，这个实现过程较为复杂。</p>
+<h5 id="3-适用场景"><a href="#3-适用场景" class="headerlink" title="3.适用场景"></a>3.适用场景</h5><p>在以下情况下可以考虑使用组合模式：</p>
+<p>(1)在具有整体和部分的层次结构中，希望通过一种方式忽略整体与部分的差异，客户端可以一致地对待它们。</p>
+<p>(2)在一个使用面向对象语言开发的系统中需要处理一个树形结构。</p>
+<p>(3)在一个系统中能够分离出叶子对象和容器对象，而且它们的类型不固定，需要增加一些新的类型。</p>
 
         
     
@@ -720,21 +813,13 @@ public class StudentB extends SubjectAdapter {
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/14/Spring事务管理/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/02/Spring AOP总结/" id="post_nav-older" class="next-content">
+        <a href="/2018/10/05/外观模式/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

@@ -47,7 +47,7 @@
     
     <title>
         
-            Hello World | 
+            Java基本数据类型与包装类 | 
         
         stormjie&#39;s blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="stormjie的博客分享">
-    <meta name="keywords" content="stormjie,随笔">
+    <meta name="keywords" content="stormjie,Java基础">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/07/28/Hello World/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/10/10/Java基本数据类型与包装类/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -234,16 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/07/28/Hello World/">
+    <meta property="og:url" content="http://yoursite.com/2018/10/10/Java基本数据类型与包装类/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Hello World | stormjie&#39;s blog">
+    <meta property="og:title" content="Java基本数据类型与包装类 | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
-    <meta property="og:article:tag" content="随笔"> 
+    <meta property="og:article:tag" content="Java基础"> 
 
     
-        <meta property="article:published_time" content="Sat Jul 28 2018 20:37:25 GMT+0800">
-        <meta property="article:modified_time" content="Sat Jul 28 2018 22:55:41 GMT+0800">
+        <meta property="article:published_time" content="Wed Oct 10 2018 22:08:31 GMT+0800">
+        <meta property="article:modified_time" content="Fri Oct 12 2018 23:03:35 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -251,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/07/28/Hello World/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/10/10/Java基本数据类型与包装类/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -263,10 +263,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/07/28/Hello World/index.html",
-    "headline": "Hello World",
-    "datePublished": "Sat Jul 28 2018 20:37:25 GMT+0800",
-    "dateModified": "Sat Jul 28 2018 22:55:41 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/10/10/Java基本数据类型与包装类/index.html",
+    "headline": "Java基本数据类型与包装类",
+    "datePublished": "Wed Oct 10 2018 22:08:31 GMT+0800",
+    "dateModified": "Fri Oct 12 2018 23:03:35 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -284,7 +284,7 @@
             "url": "/img/mountains.png"
         }
     },
-    "keywords": ",随笔stormjie",
+    "keywords": ",Java基础stormjie",
     "description": "stormjie的博客分享",
 }
 </script>
@@ -344,6 +344,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、基本数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、基本数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、基本类型的类型转换"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、基本类型的类型转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-自动类型转换"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1.自动类型转换</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-强制类型转换"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2.强制类型转换</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-表达式类型的自动提升"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">3.表达式类型的自动提升</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、包装类"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、包装类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-基本类型与包装类型之间的转换"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">1.基本类型与包装类型之间的转换</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-字符串和基本类型之间的转换"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">2.字符串和基本类型之间的转换</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-包装类中“-”与equals的用法比较"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">3.包装类中“==”与equals的用法比较</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-包装类的常量池"><span class="post-toc-number">3.0.4.</span> <span class="post-toc-text">4.包装类的常量池</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
 
 
 
@@ -373,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                Hello World
+                Java基本数据类型与包装类
             </p>
         </div>
 
@@ -392,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>stormjie</strong>
-        <span>7月 28, 2018</span>
+        <span>10月 10, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +423,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXUlEQVR42u3aQW7DMAwEwPz/0+21QBFnSVqyEIxPAewoGh0sZcnXz1dfLzw8PDw8PDw8vMN4r/hKvvX37v/nr+/mv/Jhbnh4eHhbeB9etZfPvLubjDwfAQ8PD+9ZXvKif/d8Pt3eFlLYhPDw8PCO5yUTzdl4eHh4383Lg4O7Igw8PDy803jJH/67goPrKPaxrAUPDw8v5uVFpv2ft9b38PDw8AJe9epFt/MIuDBDPDw8vMW8/EWcH5HnIUVvPnh4eHh7eJOBelHFvCmhEOPi4eHhLeNdf7laxIoig/hujsfDw8M7h9ebUB7FThYODw8P71neJGjID9l5c1USVeDh4eHt5yVDzz/nr/7qwhV6yvDw8PBu4s2LVdfRbQ6etx3g4eHh7eTdW+iKCvzxJpEvBx4eHt4eXrWhqhcW5ODyNpD/Y8DDw8NbwMtL/r0j8iS8aDZd4eHh4S3g9cr8eQmt2ohQ3ahuy1rw8PDwYl4+9R41jy0mLV94eHh4O3mTULUKm8cWUQsXHh4e3mLeXSWoarzbO17j4eHhncOrhgj5sfjeYlszjMDDw8NbzOsdoycFszz4iBYRDw8PbyOv12iVH7XzJah+Cw8PD28nrxfO9lpRRwflOFbGw8PDW817xVevOaAaeVRDEDw8PLyneHkTQLVJKz8oVzeGtxsMHh4e3kbepG00PyL3Dt+F+AMPDw/vSF5vhHy6veYtPDw8vJN5ecm/egRPluDDOHh4eHgbeXcFtb0lyJ8pF8Dw8PDwFvB6EcAkVrh+chJq4OHh4a3mfd+Fh4eHh4eHh4d3wPUL7fldybjs5PcAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC3UlEQVR42u3awU4jQQwEUP7/p9nrSlmyVfYIZXrenCIIdL+OhHG5v74f+XxhY2NjY2NjY2NjfyT7K37+fv/r638s8/Ld/P3vV2n3jI2Njf0E9n/+9L9s4v0COaY96NmesbGxsZ/Dbhf+6Z35z+abvmDP2NjY2NhBAftpu++Ppi2N2NjY2NjXFrCk8WiPoF0FGxsbG7sOaIKNzkL8/Dh+NUvDxsbG/nj2ftD7+68/Yr6NjY2N/QHs9knC/fz35G3MBStiY2NjH8pOxrRtWJ9HUTm1fecwS8PGxsa+ITv55z4J4mcXffbjhCLwwsbGxj6UvQl3rm1d2mArPzhsbGzss9l56NOWmbw0JuVtH2lhY2Njn82eXZHJm4RNy5HHXqtQCRsbG/u27E0klG+6jYHaVgQbGxsbu411ZuAo+okblSSWwsbGxn4Cu20Vijg+LnXJKps2CRsbG/ts9iyO31zEbEe5l5U3bGxs7Aew22h+diknGS1sWpc6S8PGxsa+OTuJ7POR7exq5iZaKoocNjY29qHspHQlC+cl8Lt82gJZtCLY2NjYh7KvakiuutwzK5l1AcPGxsa+OXt2QScvS1cNdGcNEjY2NvYT2Jtmo417ZhF/+8EUdRsbGxv75uz9sDa/uLkpe0lQVYRK2NjY2Aex21IxGyfkTcX+0C+7qYSNjY19E/Ys4tn/VDtsyL+OjY2N/WR2GzPNGHk5TApkUjKxsbGxz2a3FyKTeKgNm2YhUf3hYWNjYx/KbsvMhpGsMnuwsbGxsdsClsdJ+fFtDnrYgWFjY2MfwZ4ViTy4n7Ux7etodWxsbOyj2bOwZtZUJOsWVyrzYTA2Njb2A9jtFttik5BmY+DVoBcbGxv7Yex27JqUt6Sp2Hwk2NjY2NibFiIPmGbh1AWhEjY2NvZB7H2svxnczqKooqBiY2NjH82eDXqvCpLa8cCwmcHGxsY+lP2cBxsbGxsbGxsbG/tjnj/htK/ykUg3rwAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -428,7 +437,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/随笔/">随笔</a>
+        <a class="post_tag-link" href="/tags/Java基础/">Java基础</a>
     </ul>
     
 
@@ -447,7 +456,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hello World&url=http://yoursite.com/2018/07/28/Hello World/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Java基本数据类型与包装类&url=http://yoursite.com/2018/10/10/Java基本数据类型与包装类/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -456,7 +465,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hello World&url=http://yoursite.com/2018/07/28/Hello World/index.html&via=stormjie" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Java基本数据类型与包装类&url=http://yoursite.com/2018/10/10/Java基本数据类型与包装类/index.html&via=stormjie" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -465,7 +474,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/28/Hello World/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/10/Java基本数据类型与包装类/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -480,7 +489,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=Hello World&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/07/28/Hello World/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=Java基本数据类型与包装类&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/10/10/Java基本数据类型与包装类/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -499,10 +508,254 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>搭建个人博客的想法一直都有，算起来断断续续也有一年了吧。</p>
-<p>今天心血来潮说做就做了，想起来会很难，但实际做完了才知道其实也挺简单的。东拼西凑，如你所见，博客的雏形大概就出来了。也算完成一个小目标？</p>
-<p>今天是18年7月28日，我的大二暑假快要过半了，而我现在还在整合ssm框架，争取在这个暑假结束时熟悉ssm项目的结构，建立流程以及Maven的使用，能顺便了解一下SpringCloud或者SpringBoot最好，这样我也不算虚度这一个多月。</p>
-<p>很惭愧，还要继续完善这个博客，所以第一篇就写得简单了些，只想再努力些，再加油些，Hello World！</p>
+        <p>前几天提到我最近要复习Java基础，所以我又去图书馆借了这本书</p>
+<img src="/2018/10/10/Java基本数据类型与包装类/1.jpg">
+<p>刚好过去整整一年，当初我入门Java就是看这本书，今天的我依然是个Java初学者~</p>
+<p>这篇的主题是基础中的基础了，所以也很容易被人忽略（包括我也是），最近刷起题来才发现细枝末节的东西很多，还是要理一理。</p>
+<h3 id="一、基本数据类型"><a href="#一、基本数据类型" class="headerlink" title="一、基本数据类型"></a>一、基本数据类型</h3><p>Java提供了八种基本类型，六种数值类型（四个整型，两个浮点型），一种字符型，还有一种布尔型。</p>
+<img src="/2018/10/10/Java基本数据类型与包装类/2.png">
+<p><strong>byte：</strong></p>
+<ul>
+<li>byte 数据类型是8位、有符号的以二进制补码表示的整数；</li>
+<li>最小值是 -128（-2^7）；</li>
+<li>最大值是 127（2^7-1）；</li>
+<li>默认值是 0；</li>
+<li>byte 类型用在大型数组中节约空间，主要代替整数，因为 byte 变量占用的空间只有 int 类型的四分之一；</li>
+<li>例子：byte a = 100；byte b = -50；</li>
+</ul>
+<p><strong>short：</strong></p>
+<ul>
+<li>short 数据类型是 16 位、有符号的以二进制补码表示的整数；</li>
+<li>最小值是 -32768（-2^15）；</li>
+<li>最大值是 32767（2^15 - 1）；</li>
+<li>Short 数据类型也可以像 byte 那样节省空间。一个short变量是int型变量所占空间的二分之一；</li>
+<li>默认值是 0；</li>
+<li>例子：short s = 1000；short r = -20000；</li>
+</ul>
+<p><strong>int：</strong></p>
+<ul>
+<li>int 数据类型是32位、有符号的以二进制补码表示的整数；</li>
+<li>最小值是 -2,147,483,648（-2^31）；</li>
+<li>最大值是 2,147,483,647（2^31 - 1）；</li>
+<li>一般地整型变量默认为 int 类型；</li>
+<li>默认值是 0 ；</li>
+<li>例子：int a = 100000；int b = -200000；</li>
+</ul>
+<p><strong>long：</strong></p>
+<ul>
+<li>long 数据类型是 64 位、有符号的以二进制补码表示的整数；</li>
+<li>最小值是 -9,223,372,036,854,775,808（-2^63）；</li>
+<li>最大值是 9,223,372,036,854,775,807（2^63 -1）；</li>
+<li>这种类型主要使用在需要比较大整数的系统上；</li>
+<li>默认值是 0L；</li>
+<li>例子： long a = 100000L；Long b = -200000L；<br>“L”理论上不分大小写，但是若写成”l”容易与数字”1”混淆，不容易分辩。所以最好大写。</li>
+</ul>
+<p><strong>float：</strong></p>
+<ul>
+<li>float 数据类型是单精度、32位、符合IEEE 754标准的浮点数；</li>
+<li>float 在储存大型浮点数组的时候可节省内存空间；</li>
+<li>默认值是 0.0f；</li>
+<li>浮点数不能用来表示精确的值，如货币；</li>
+<li>例子：float f1 = 234.5f；</li>
+</ul>
+<p><strong>double：</strong></p>
+<ul>
+<li>double 数据类型是双精度、64 位、符合IEEE 754标准的浮点数；</li>
+<li>浮点数的默认类型为double类型；</li>
+<li>double类型同样不能表示精确的值，如货币；</li>
+<li>默认值是 0.0d；</li>
+<li>例子：double d1 = 123.4；</li>
+</ul>
+<p><strong>boolean：</strong></p>
+<ul>
+<li>boolean数据类型表示1位的信息；</li>
+<li>只有两个取值：true 和 false；</li>
+<li>这种类型只作为一种标志来记录 true/false 情况；</li>
+<li>默认值是 false；</li>
+<li>例子：boolean one = true；</li>
+</ul>
+<p><strong>char：</strong></p>
+<ul>
+<li>char类型是一个单一的 16 位 Unicode 字符；</li>
+<li>最小值是 \u0000（即为0）；</li>
+<li>最大值是 \uffff（即为65,535）；</li>
+<li>char 数据类型可以储存任何字符；</li>
+<li>例子：char letter = ‘A’；</li>
+</ul>
+<p>注：</p>
+<ul>
+<li>整型默认为int类型，但如果将一个较小的整数值（在byte或short类型的表数范围内）赋给一个byte或short变量，系统会自动把这个整数值当成byte或者short类型来处理。</li>
+<li>如果使用一个很大的整数值（超出int类型的表数范围）时，Java不会自动把这个整数值当成long类型来处理，如果希望把它当成long类型来处理推荐在整数值后加字母L作为后缀。</li>
+<li>Java整数值有四种表示形式：十进制，二进制（0b或0B开头），八进制（0开头），十六进制（0x或0X开头，其中10~15分别以a~f来表示）。</li>
+<li>浮点型默认为较精确的double，如果想使用float应在浮点数后加上尾缀f或F。</li>
+<li>浮点型是不精确的，不能对浮点型进行精确比较，也不能作为switch语句判断条件。</li>
+</ul>
+<h3 id="二、基本类型的类型转换"><a href="#二、基本类型的类型转换" class="headerlink" title="二、基本类型的类型转换"></a>二、基本类型的类型转换</h3><h5 id="1-自动类型转换"><a href="#1-自动类型转换" class="headerlink" title="1.自动类型转换"></a>1.自动类型转换</h5><img src="/2018/10/10/Java基本数据类型与包装类/4.jpg">
+<p>注：</p>
+<ul>
+<li>基本数据类型中，布尔类型boolean占有一个字节，由于其本身所代码的特殊含义，boolean类型与其他基本类型不能进行类型的转换（既不能进行自动类型的提升，也不能强制类型转换）， 否则将编译出错。 </li>
+<li>byte，char，short虽然类型从小到大自动转换，但是byte不能转成char，char也不能转成short。因为byte和short是数值型的变量，char字符型的变量。数值型变量有符号（第一位）而在char中则无正负之分。byte转short自然就是可以的了。</li>
+</ul>
+<h5 id="2-强制类型转换"><a href="#2-强制类型转换" class="headerlink" title="2.强制类型转换"></a>2.强制类型转换</h5><p>如果将上图箭头右边的值转换为左边的值就需要强制类型转换，原因很简单，右边表示的范围大，左边表示的范围小。 当进行强制类型转换时，类似于把一个大瓶子的水倒入小瓶子，如果大瓶子的水不多还好，但如果大瓶子里的水很多就会引起溢出，造成数据丢失。</p>
+<p>《疯狂Java讲义》中有个很好的例子说明强制类型转换后数值是如何改变的，在这贴出来做个记录。</p>
+<img src="/2018/10/10/Java基本数据类型与包装类/5.jpg"><img src="/2018/10/10/Java基本数据类型与包装类/6.jpg">
+<h5 id="3-表达式类型的自动提升"><a href="#3-表达式类型的自动提升" class="headerlink" title="3.表达式类型的自动提升"></a>3.表达式类型的自动提升</h5><p>当一个算术表达式中包含多个基本类型的值时，整个算术表达式的数据类型将发生自动提升。Java定义了如下的自动提升规则。</p>
+<ul>
+<li><p>所有的byte类型、short类型和char类型将被提升到int类型。</p>
+</li>
+<li><p>整个算术表达式的数据类型自动提升到与表达式中最高等级操作数同样的类型。</p>
+</li>
+</ul>
+<p>面试陷阱</p>
+<pre><code>byte b1 = 10;
+byte b2 = 11;
+//错误: 不兼容的类型: 从int转换到byte可能会有损失
+//否则，两个操作数都将转换为int类型。
+byte b3 = b1 + b2 //错误
+byte b3 = (byte)(b1 + b2); //正确
+</code></pre><pre><code>short s1 = 1; 
+s1 = s1 + 1; //错误: 不兼容的类型: 从int转换到short可能会有损失
+short s2 = 1; 
+s2 += 1; // 等同于short s2 = (short)(s2 + (short)1); //正确
+</code></pre><h3 id="三、包装类"><a href="#三、包装类" class="headerlink" title="三、包装类"></a>三、包装类</h3><p>为了满足Java语言面向对象的这一特性，上述基本数据类型中的每一个在java.lang包中都有一个包装类，即将每个基本类型都包装成了一个类。 </p>
+<table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>包装类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+</tbody>
+</table>
+<p>对于包装类说，这些类的用途主要包含三种：</p>
+<ul>
+<li><p>集合不允许存放基本数据类型，故常用包装类。</p>
+</li>
+<li><p>作为和基本数据类型对应的类类型存在，方便涉及到对象的操作。</p>
+</li>
+<li><p>包含每种基本数据类型的相关属性如最大值、最小值等，以及相关的操作方法。</p>
+</li>
+</ul>
+<h5 id="1-基本类型与包装类型之间的转换"><a href="#1-基本类型与包装类型之间的转换" class="headerlink" title="1.基本类型与包装类型之间的转换"></a>1.基本类型与包装类型之间的转换</h5><p>JDK自从1.5版本以后，就引入了自动拆装箱的语法，也就是在进行基本数据类型和对应的包装类转换时，系统将自动进行，这将大大方便我们的代码书写。使用示例代码如下： </p>
+<pre><code>//自动装箱
+int m = 10;
+Integer in = m;
+System.out.println(in); //10
+
+//自动拆箱
+Integer inn = new Integer(10);
+int n = inn;
+System.out.println(n); //10
+</code></pre><h5 id="2-字符串和基本类型之间的转换"><a href="#2-字符串和基本类型之间的转换" class="headerlink" title="2.字符串和基本类型之间的转换"></a>2.字符串和基本类型之间的转换</h5><p>(1)基本类型转换成字符串类型</p>
+<ul>
+<li><p>包装类的toString()方法。</p>
+</li>
+<li><p>String 类的valueOf()方法。</p>
+</li>
+<li><p>空字符串加一个基本类型变量。</p>
+</li>
+</ul>
+<p>(2)字符串类型转换成基本类型</p>
+<ul>
+<li><p>包装类的parseXxx()静态方法。</p>
+</li>
+<li><p>包装类的valueOf()方法。</p>
+</li>
+</ul>
+<h5 id="3-包装类中“-”与equals的用法比较"><a href="#3-包装类中“-”与equals的用法比较" class="headerlink" title="3.包装类中“==”与equals的用法比较"></a>3.包装类中“==”与equals的用法比较</h5><p>值得注意的是，包装类中的equals方法和String类一样，都是重写了Object类中的equals方法，因此比较的是内容而不是地址，而“==”比较的依然是引用变量的地址，只是当包装类型和与之相对应的基本类型进行“==”比较时会先做自动拆箱处理。 </p>
+<pre><code>public static void equalsTest() {
+        // TODO Auto-generated method stub
+        Integer a = new Integer(-100);
+        Integer b = new Integer(-100);
+        int c = -100;
+        System.out.println(a == b);//false
+        System.out.println(a == c);//true
+        System.out.println(b == c);//true
+
+        System.out.println(a.equals(b));//true
+
+        String s1 = new String(&quot;hello&quot;);
+        String s2 = new String(&quot;hello&quot;);
+        System.out.println(s1 == s2);//false
+        System.out.println(s1.equals(s2));//true
+}
+</code></pre><h5 id="4-包装类的常量池"><a href="#4-包装类的常量池" class="headerlink" title="4.包装类的常量池"></a>4.包装类的常量池</h5><p>既然提到String类，必须说说包装类和String类一样，JVM也为其提供了常量池，下面代码具体说明：</p>
+<pre><code>/**
+ * 8种基本类型的包装类和对象池
+ *         包装类：java提供的为原始数据类型的封装类，如：int(基本数据类型)，Integer封装类。
+ *         对象池：为了一定程度上减少频繁创建对象，将一些对象保存到一个&quot;容器&quot;中。
+ * 
+ *     Byte,Short,Integer,Long,Character。这5种整型的包装类的对象池范围在-128~127之间，也就是说，
+ *     超出这个范围的对象都会开辟自己的堆内存。
+ * 
+ *  Boolean也实现了对象池技术。Double,Float两种浮点数类型的包装类则没有实现。
+ *     String也实现了常量池技术。
+ * 
+ * 自动装箱拆箱技术
+ *     JDK5.0及之后允许直接将基本数据类型的数据直接赋值给其对应地包装类。
+ *  如：Integer i = 3;（这就是自动装箱）
+ *  实际编译代码是：Integer i=Integer.valueOf(3); 编译器自动转换
+ *     自动拆箱则与装箱相反：int i = (Integer)5;
+ */
+public class Test {
+    public static void main(String[] args) {
+
+        //基本数据类型常量池范围-128~127
+        Integer n1 = -129;
+        Integer n2 = -129;
+        Long n3 = 100L;
+        Long n4 = 100L;
+        Double n5 =  12.0;
+        Double n6 = 12.0;
+        //false
+        System.out.println(n1 == n2);
+        //true
+        System.out.println(n3 == n4);
+        //false
+        System.out.println(n5 == n6);
+
+        //String常量池技术,注意：这里String不是用new创建的对象
+        String str1 = &quot;abcd&quot;;
+        String str2 = &quot;abcd&quot;;
+        //true
+        System.out.println(str1 == str2);
+    }
+}
+</code></pre><p>想深入了解的话可以看看这两篇帖子<a href="https://blog.csdn.net/l_bestcoder/article/details/75137105" target="_blank" rel="noopener">Java包装类对象比较中存在的问题</a>、<a href="https://www.cnblogs.com/xiongyan/p/4245541.html" target="_blank" rel="noopener">Java包装类的常量池</a>。</p>
+<p>这篇Java基本数据类型与包装类到这就更完了，没想到小细节是真得多，最后感谢上述出现过的帖子的作者以及《疯狂Java讲义》的作者李刚先生。</p>
 
         
     
@@ -546,19 +799,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/03/Servlet/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/10/07/组合模式/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 

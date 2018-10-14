@@ -47,7 +47,7 @@
     
     <title>
         
-            建造者模式 | 
+            抽象类和接口 | 
         
         stormjie&#39;s blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="stormjie的博客分享">
-    <meta name="keywords" content="stormjie,设计模式">
+    <meta name="keywords" content="stormjie,Java基础">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/23/建造者模式/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/10/13/抽象类和接口/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -234,16 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/08/23/建造者模式/">
+    <meta property="og:url" content="http://yoursite.com/2018/10/13/抽象类和接口/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="建造者模式 | stormjie&#39;s blog">
+    <meta property="og:title" content="抽象类和接口 | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
-    <meta property="og:article:tag" content="设计模式"> 
+    <meta property="og:article:tag" content="Java基础"> 
 
     
-        <meta property="article:published_time" content="Thu Aug 23 2018 11:01:32 GMT+0800">
-        <meta property="article:modified_time" content="Thu Aug 23 2018 20:56:22 GMT+0800">
+        <meta property="article:published_time" content="Sat Oct 13 2018 23:08:59 GMT+0800">
+        <meta property="article:modified_time" content="Sun Oct 14 2018 21:57:26 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -251,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/08/23/建造者模式/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/10/13/抽象类和接口/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -263,10 +263,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/08/23/建造者模式/index.html",
-    "headline": "建造者模式",
-    "datePublished": "Thu Aug 23 2018 11:01:32 GMT+0800",
-    "dateModified": "Thu Aug 23 2018 20:56:22 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/10/13/抽象类和接口/index.html",
+    "headline": "抽象类和接口",
+    "datePublished": "Sat Oct 13 2018 23:08:59 GMT+0800",
+    "dateModified": "Sun Oct 14 2018 21:57:26 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -284,7 +284,7 @@
             "url": "/img/mountains.png"
         }
     },
-    "keywords": ",设计模式stormjie",
+    "keywords": ",Java基础stormjie",
     "description": "stormjie的博客分享",
 }
 </script>
@@ -350,7 +350,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、建造者模式概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、建造者模式概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、建造者模式总结"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、建造者模式总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-主要优点"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1.主要优点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-主要缺点"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2.主要缺点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-适用场景"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">3.适用场景</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、抽象类"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、抽象类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-抽象方法和抽象类"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">1.抽象方法和抽象类</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-通过抽象类实现多态"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">2.通过抽象类实现多态</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、接口"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、接口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-接口的定义"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1.接口的定义</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-接口的继承"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2.接口的继承</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、抽象类和接口"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、抽象类和接口</span></a></li></ol>
     </ul>
     
 
@@ -382,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                建造者模式
+                抽象类和接口
             </p>
         </div>
 
@@ -401,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>stormjie</strong>
-        <span>8月 23, 2018</span>
+        <span>10月 13, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -423,7 +423,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aS3bjMAwEQN//0skFxkw3KNEav9Iqzz+xtCCYBl4/X3298PDw8PDw8PDwHsZ7xdc/fujNu+tX3r27fj1fGx4eHt4Z3h9bbbDclrT+7tba8PDw8A7y3m24a8z68zlm/VCSteHh4eE9mddu67PP4OHh4X0fb/Y7bcnBw8PDezKvPeaub5yHGnkcfHvWgoeHhxfz8ibT+b+P9vfw8PDwAl490rQxKDDb+usV4uHh4d3MyzfiNXg2OLVTGPDw8PCewMuDg7xs7AfBycPCw8PDO8nLW1az19sAoo2S8fDw8D7Fa2+Tl439WLY9XuPh4eGd4bUt/J2R1nbItQ2C8fDw8M7wrmqA5aFDsvRhKcLDw8O7mddGDPkRPCkeefOsiIzx8PDwHsBri8TOwEEeGV8wGYGHh4e3zWtDgXxDzxeXjxFEYQQeHh7eDbydgGCnJLS/WRzE8fDw8I7w8mNu2yTLt/52BKFugOHh4eFdxJtt6DvFY/3IkmP6H4dsPDw8vJt5V914Nl6wc3c8PDy8T/H2Gflw1Sz8rcsPHh4e3hFe3rjKh6jaADcvBvV/DHh4eHg389owIm+h5XHt1sPCw8PDO86bNcDyZv+sMGw1wPDw8PAu5bVXEqfOtvu8DODh4eF9ltduym3Lqn1M+8EHHh4e3hleUgzywnBVaNse/fHw8PDO8/J//meh7R1DV3h4eHj/C29WPGZjAW00jIeHh/dMXhvI5gf3Ngq5bHQADw8Pb8RLwoi2VOw0w5LGGB4eHt6neLMIoG10tRv98Ft4eHh4N/O+78LDw8PDw8PDw3vA9QvIexYR9J5O0wAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACcElEQVR42u3aQZLCMAwEQP7/6d3rVlGBGTkxWap94hCwOgdbSHr8fPV64OHh4eHh4eHh3Yz3iNff5w9/+un5o2eSb7Wx4eHh4e3kvTlqD3jPn5MQk9BnseHh4eHt57XbzK6B/BdmseHh4eHdjdeG0h7xycWDh4eH9794Cbh9Pv8WHh4e3t14bVo8LBaMeJtqLXh4eHgxb9YA2/P5Y/09PDw8vANeu5IN8hLD7LJ5EyEeHh7exbyk/JoXWNuCxWw8682+eHh4eBfz8jLrSqDJXrMRLjw8PLxP8dqLYb1x9TroWfqOh4eHt4eXXwMrQ6V5+t5eJEv9PTw8PLzlf+ttCjtLxPOyRVvywMPDw9vDa1tZeRkib/bnLzraFw8PD28LLz+UZ4f1CiC/fvDw8PB28vJEuU2I16n5i8PDw8PbycvBK9/KS72zVhweHh7eTl5SOGhHB/IyRL57FA8eHh7exbw8xNfbtEWKtqlWJP14eHh4W3jtGEFebsjT61m7K7oY8PDw8E7lzY7v9nBvhxJmwwp4eHh4+3lnDV29fkFJYSKPLRpXxcPDwzuV1x7QZ5V62xeUXzl4eHh4e3j5wd0WLJJXOUPWDTA8PDy8k3jJT8zKDXkynafg9cWAh4eHdwGvXS07LzfMku+6v4eHh4e3zHvEK0pnLxtIXapS4+Hh4V3WAMsLB236m4watI2x+h8DHh4e3gW8WVtrJaxzyxB4eHh49+S1jOT6yQsNSyk1Hh4e3kd5+bGel2vXrwQ8PDy8/bz88M0bWiv4WbqPh4eHt4d3wqjTaKQgHx0oXjceHh7exbzvW3h4eHh4eHh4eDdYv0bXkc1dDXkNAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -437,7 +437,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/设计模式/">设计模式</a>
+        <a class="post_tag-link" href="/tags/Java基础/">Java基础</a>
     </ul>
     
 
@@ -456,7 +456,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=建造者模式&url=http://yoursite.com/2018/08/23/建造者模式/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=抽象类和接口&url=http://yoursite.com/2018/10/13/抽象类和接口/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -465,7 +465,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=建造者模式&url=http://yoursite.com/2018/08/23/建造者模式/index.html&via=stormjie" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=抽象类和接口&url=http://yoursite.com/2018/10/13/抽象类和接口/index.html&via=stormjie" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -474,7 +474,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/23/建造者模式/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/13/抽象类和接口/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -489,7 +489,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=建造者模式&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/23/建造者模式/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=抽象类和接口&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/10/13/抽象类和接口/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -508,152 +508,167 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>今天更下创建性模式的最后一种，也是不那么常见但难度较高的一种设计模式–建造者模式。这篇更完这个暑假大概就不更了，还剩一周多时间我打算放松放松，再完成下学校的作业。拾掇拾掇准备开学，下篇更Spring AOP。废话不说，开始吧。</p>
-<p>没有人买车会只买一个轮胎或者方向盘，大家买的都是一辆包含轮胎、方向盘和发动机等多个部件的完整汽车。如何将这些部件组装成一辆完整的汽车并返回给用户，这是建造者模式需要解决的问题。建造者模式又称为生成器模式，它是一种较为复杂、使用频率也相对较低的创建型模式。建造者模式为客户端返回的不是一个简单的产品，而是一个由多个部件组成的复杂产品。</p>
-<h3 id="一、建造者模式概述"><a href="#一、建造者模式概述" class="headerlink" title="一、建造者模式概述"></a>一、建造者模式概述</h3><p>建造者模式是较为复杂的创建型模式，它将客户端与包含多个组成部分（或部件）的复杂对象的创建过程分离，客户端无须知道复杂对象的内部组成部分与装配方式，只需要知道所需建造者的类型即可。它关注如何一步一步创建一个的复杂对象，不同的具体建造者定义了不同的创建过程，且具体建造者相互独立，增加新的建造者非常方便，无须修改已有代码，系统具有较好的扩展性。</p>
-<p><strong>建造者模式(Builder Pattern)：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。建造者模式是一种对象创建型模式。</strong> </p>
-<p> 建造者模式一步一步创建一个复杂的对象，它允许用户只通过指定复杂对象的类型和内容就可以构建它们，用户不需要知道内部的具体构建细节。建造者模式结构如图所示： </p>
-<img src="/2018/08/23/建造者模式/建造者模式.png">
-<p>在建造者模式结构图中包含如下几个角色：</p>
+        <p>我发现刷题有关接口和抽象类的知识点是常考点，也是易错点。今天来总结下，做个记录。</p>
+<h3 id="一、抽象类"><a href="#一、抽象类" class="headerlink" title="一、抽象类"></a>一、抽象类</h3><h5 id="1-抽象方法和抽象类"><a href="#1-抽象方法和抽象类" class="headerlink" title="1.抽象方法和抽象类"></a>1.抽象方法和抽象类</h5><p>抽象方法和抽象类必须使用abstract 修饰符来定义，<strong>有抽象方法的类只能被定义成抽象类，抽象类里可以没有抽象方法。</strong> </p>
+<p>抽象方法和抽象类的规则如下：</p>
 <ul>
-<li><p>Builder（抽象建造者）：它为创建一个产品Product对象的各个部件指定抽象接口，在该接口中一般声明两类方法，一类方法是buildPartX()，它们用于创建复杂对象的各个部件；另一类方法是getResult()，它们用于返回复杂对象。Builder既可以是抽象类，也可以是接口。</p>
+<li><p>抽象类必须使用abstract修饰符来修饰，抽象方法也必须使用abstract修饰符来修饰，抽象方法不能有方法体。</p>
 </li>
-<li><p>ConcreteBuilder（具体建造者）：它实现了Builder接口，实现各个部件的具体构造和装配方法，定义并明确它所创建的复杂对象，也可以提供一个方法返回创建好的复杂产品对象。</p>
-</li>
-<li><p>Product（产品角色）：它是被构建的复杂对象，包含多个组成部件，具体建造者创建该产品的内部表示并定义它的装配过程。</p>
-</li>
-<li><p>Director（指挥者）：指挥者又称为导演类，它负责安排复杂对象的建造次序，指挥者与抽象建造者之间存在关联关系，可以在其construct()建造方法中调用建造者对象的部件构造与装配方法，完成复杂对象的建造。客户端一般只需要与指挥者进行交互，在客户端确定具体建造者的类型，并实例化具体建造者对象（也可以通过配置文件和反射机制），然后通过指挥者类的构造函数或者Setter方法将该对象传入指挥者类中。</p>
+<li><p>抽象类不能被实例化，无法使用new关键字来调用抽象类的构造器创建抽象类的实例。即使抽象类里不包含抽象方法，这个抽象类也不能创建实例。</p>
 </li>
 </ul>
-<p>在建造者模式的定义中提到了复杂对象，那么什么是复杂对象？简单来说，复杂对象是指那些包含多个成员属性的对象，这些成员属性也称为部件或零件，如汽车包括方向盘、发动机、轮胎等部件，电子邮件包括发件人、收件人、主题、内容、附件等部件，一个典型的复杂对象类代码示例如下：</p>
-<pre><code>class Product {
-
-       private String partA; //定义部件，部件可以是任意类型，包括值类型和引用类型
-
-       private String partB;
-
-       private String partC;
-
-       //partA的Getter方法和Setter方法省略
-
-       //partB的Getter方法和Setter方法省略
-
-       //partC的Getter方法和Setter方法省略
-
-}
-</code></pre><p>在抽象建造者类中定义了产品的创建方法和返回方法，其典型代码如下： </p>
-<pre><code>abstract class Builder {
-
-    //创建产品对象
-    protected Product product = new Product();
-
-    public abstract void buildPartA();
-
-    public abstract void buildPartB();
-
-    public abstract void buildPartC();
-
-    //返回产品对象
-    public Product getResult() {
-        return product;
-    }
-}
-</code></pre><p>在抽象类Builder中声明了一系列抽象的buildPartX()方法用于创建复杂产品的各个部件，具体建造过程在ConcreteBuilder中实现，此外还提供了工厂方法getResult()，用于返回一个建造好的完整产品。</p>
-<p>在ConcreteBuilder中实现了buildPartX()方法，通过调用Product的setPartX()方法可以给产品对象的成员属性设值。不同的具体建造者在实现buildPartX()方法时将有所区别，如setPartX()方法的参数可能不一样，在有些具体建造者类中某些setPartX()方法无须实现（提供一个空实现）。而这些对于客户端来说都无须关心，客户端只需知道具体建造者类型即可。</p>
-<pre><code>public class ConcreteBuilder extends Builder {
-
-    /**
-     * 产品零件建造方法A
-     */
-    @Override
-    public void buildPartA() {
-        //构建产品的第一个零件
- 　　　　product.setPartA(&quot;编号：0001&quot;);
-    }
-    /**
-     * 产品零件建造方法B
-     */
-    @Override
-    public void buildPartB() {
-        //构建产品的第二个零件
- 　　　　product.setPartB(&quot;名称：firstTool&quot;);
-    }
-    /**
-     * 产品零件建造方法C
-     */
-    @Override
-    public void buildPartC() {
-        //构建产品的第三个零件
- 　　　　product.setPartC(&quot;日期：20180823&quot;);
-    }
-    /**
-     * 产品返还方法
-     */
-    public Product getResult() {
-        return product;
-    }
-}
-</code></pre><p>在建造者模式的结构中还引入了一个指挥者类Director，该类主要有两个作用：一方面它隔离了客户与创建过程；另一方面它控制产品的创建过程，包括某个buildPartX()方法是否被调用以及多个buildPartX()方法调用的先后次序等。指挥者针对抽象建造者编程，客户端只需要知道具体建造者的类型，即可通过指挥者类调用建造者的相关方法，返回一个完整的产品对象。在实际生活中也存在类似指挥者一样的角色，如一个客户去购买电脑，电脑销售人员相当于指挥者，只要客户确定电脑的类型，电脑销售人员可以通知电脑组装人员给客户组装一台电脑。指挥者类的代码示例如下：</p>
-<pre><code>class Director {
-
-    private Builder builder;
-
-    public Director(Builder builder) {
-        this.builder = builder;
-    }
-
-
-
-    public void setBuilder(Builder builder) {
-        this.builder = builer;
-    }
-
-    //产品构建与组装方法
-    public Product construct() {
-
-        builder.buildPartA();
-
-        builder.buildPartB();
-
-         builder.buildPartC();
-
-         return builder.getResult();
-    }
-}
-</code></pre><p>客户端类Client</p>
-<pre><code>public class Client {
-    public static void main(String []args) {
-        Builder builder = new ConcreteBuilder();
-        Director director = new Director(builder);
-        Product product = director.construct();
-        System.out.println(product.getPartA());
-        System.out.println(product.getPartB());
-        System.out.println(product.getPartC());
-    }
-}
-</code></pre><p>客户端负责创建导演者和具体建造者对象。然后，客户端把具体建造者对象交给导演者，导演者操作具体建造者，开始创建产品。当产品完成后，建造者把产品返还给客户端。把创建具体建造者对象的任务交给客户端而不是导演者对象，是为了将导演者对象与具体建造者对象的耦合变成动态的，从而使导演者对象可以操纵数个具体建造者对象中的任何一个。</p>
-<p>建造者模式分成两个很重要的部分：</p>
 <ul>
-<li><p>一个部分是Builder接口，这里是定义了如何构建各个部件，也就是知道每个部件功能如何实现，以及如何装配这些部件到产品中去；</p>
+<li>抽象类可以包含成员变量、方法（普通方法和抽象方法都可以）、构造器、初始化块、内部类(接口、枚举)5种成分。抽象类的构造器不能用于创建实例，主要是用于被其子类调用。</li>
+</ul>
+<ul>
+<li>含有抽象方法的类（包括直接定义了一个抽象方法；或继承了一个抽象父类，但没有完全实现父类包含的抽象方法；或实现了一个接口，但没有完全实现接口包含的抽象方法三种情况）只能被定义成抽象类。  </li>
+</ul>
+<p>注意：</p>
+<ul>
+<li><p>定义抽象方法只需在普通方法上增加abstract 修饰符，并把普通方法的方法体（也就是方法后花括号括起来的部分）全部去掉，并在方法后增加分号即可。  </p>
 </li>
-<li><p>另外一个部分是Director，Director是知道如何组合来构建产品，也就是说Director负责整体的构建算法，而且通常是分步骤地来执行。</p>
+<li><p>抽象方法和空方法体的方法不是同一个概念。例如，public abstract void test();是一个抽象方法，它根本没有方法体，即方法定义后面没有一对花括号；但public void test(){}方法是一个普通方法，它已经定义了方法体，只是方法体为空，即它的方法体什么也不做，因此这个方法不可使用abstract 来修饰。</p>
 </li>
 </ul>
-<p>不管如何变化，<strong>建造者模式都存在这么两个部分，一个部分是部件构造和产品装配，另一个部分是整体构建的算法</strong>。认识这点是很重要的，因为在建造者模式中，强调的是固定整体构建的算法，而灵活扩展和切换部件的具体构造和产品装配的方式。</p>
-<p>再直白点说，建造者模式的重心在于分离构建算法和具体的构造实现，从而使得构建算法可以重用。具体的构造实现可以很方便地扩展和切换，从而可以灵活地组合来构造出不同的产品对象。</p>
-<h3 id="二、建造者模式总结"><a href="#二、建造者模式总结" class="headerlink" title="二、建造者模式总结"></a>二、建造者模式总结</h3><p>建造者模式的核心在于如何一步步构建一个包含多个组成部件的完整对象，使用相同的构建过程构建不同的产品，在软件开发中，如果我们需要创建复杂对象并希望系统具备很好的灵活性和可扩展性可以考虑使用建造者模式。</p>
-<h5 id="1-主要优点"><a href="#1-主要优点" class="headerlink" title="1.主要优点"></a>1.主要优点</h5><p>建造者模式的主要优点如下：</p>
-<p>(1)在建造者模式中，客户端不必知道产品内部组成的细节，将产品本身与产品的创建过程解耦，使得相同的创建过程可以创建不同的产品对象。</p>
-<p>(2)每一个具体建造者都相对独立，而与其他的具体建造者无关，因此可以很方便地替换具体建造者或增加新的具体建造者，用户使用不同的具体建造者即可得到不同的产品对象。由于指挥者类针对抽象建造者编程，增加新的具体建造者无须修改原有类库的代码，系统扩展方便，符合“开闭原则”。</p>
-<p>(3)可以更加精细地控制产品的创建过程。将复杂产品的创建步骤分解在不同的方法中，使得创建过程更加清晰，也更方便使用程序来控制创建过程。</p>
-<h5 id="2-主要缺点"><a href="#2-主要缺点" class="headerlink" title="2.主要缺点"></a>2.主要缺点</h5><p>建造者模式的主要缺点如下：</p>
-<p>(1)建造者模式所创建的产品一般具有较多的共同点，其组成部分相似，如果产品之间的差异性很大，例如很多组成部分都不相同，不适合使用建造者模式，因此其使用范围受到一定的限制。</p>
-<p>(2)如果产品的内部变化复杂，可能会导致需要定义很多具体建造者类来实现这种变化，导致系统变得很庞大，增加系统的理解难度和运行成本。</p>
-<h5 id="3-适用场景"><a href="#3-适用场景" class="headerlink" title="3.适用场景"></a>3.适用场景</h5><p>在以下情况下可以考虑使用建造者模式：</p>
-<p>(1)需要生成的产品对象有复杂的内部结构，这些产品对象通常包含多个成员属性。</p>
-<p>(2)需要生成的产品对象的属性相互依赖，需要指定其生成顺序。</p>
-<p>(3)对象的创建过程独立于创建该对象的类。在建造者模式中通过引入了指挥者类，将创建过程封装在指挥者类中，而不在建造者类和客户类中。</p>
-<p>(4)隔离复杂对象的创建和使用，并使得相同的创建过程可以创建不同的产品。</p>
+<p>当使用abstract修饰类时，表明这个类只能被继承；当使用abstract修饰方法时，表明这个方法必须由子类提供实现(即重写)。而final修饰的类不能被继承，final 修饰的方法不能被重写。<strong>因此final和abstract永远不能同时使用。</strong></p>
+<p>注意：</p>
+<ul>
+<li>abstract不能用于修饰成员变量，不能用于修饰局部变量，即没有抽象变量、没有抽象成员变量等说法；abstract也不能用于修饰构造器，没有抽象构造器，抽象类里定义的构造器只能是普通构造器。</li>
+</ul>
+<p>除此之外，当使用static修饰一个方法时，表明这个方法属于该类本身，即通过类就可调用该方法，但如果该方法被定义成抽象方法，则将导致通过该类来调用该方法时出现错误（调用了一个没有方法体的方法肯定会引起错误）。<strong>因此static和abstract不能同时修饰某个方法，即没有所谓的类抽象方法。</strong></p>
+<p>注意：</p>
+<ul>
+<li>static和abstract并不是绝对互斥的，static 和abstract虽然不能同时修饰某个方法，但它们可以同时修饰内部类。</li>
+<li>abstract关键字修饰的方法必须被其子类重写才有意义，否则这个方法将永远不会有方法体，因此abstract方法不能定义为private访问权限，即private和abstract不能同时修饰方法。</li>
+</ul>
+<h5 id="2-通过抽象类实现多态"><a href="#2-通过抽象类实现多态" class="headerlink" title="2.通过抽象类实现多态"></a>2.通过抽象类实现多态</h5><pre><code>package com.test;
+
+//抽象Pet类
+public abstract class Pet {
+
+    public abstract void cry();
+
+}
+
+//Dog类继承实现抽象类Pet
+public class Dog extends Pet {
+
+    //实现父类抽象方法cry()
+    public void cry() {
+        System.out.println(&quot;汪汪汪&quot;);
+    }
+}
+
+//Cat类继承实现抽象类Pet
+public class Cat extends Pet {
+
+    //实现父类抽象方法cry()
+    public void cry() {
+        System.out.println(&quot;喵喵喵&quot;);
+    }
+}
+
+//测试类
+public class TestAbstract {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Pet cat = new Cat();
+        Pet dog = new Dog();
+        cat.cry();
+        dog.cry();
+    }
+
+}
+</code></pre><p>上面main()方法中定义了两个Pet类型的引用变量，它们分别指向Cat对象和Dog对象。由于在Pet类中定义了cry()方法，所以程序可以直接调用cat变量和dog变量的cry()方法，无须强制类型转换为其子类类型。</p>
+<p>利用抽象类和抽象方法的优势，可以更好地发挥多态的优势，使得程序更加灵活。</p>
+<h3 id="二、接口"><a href="#二、接口" class="headerlink" title="二、接口"></a>二、接口</h3><h5 id="1-接口的定义"><a href="#1-接口的定义" class="headerlink" title="1.接口的定义"></a>1.接口的定义</h5><p>和类定义不同，定义接口不再使用class关键字，而是使用interface关键字。接口定义的基本语法如下:  </p>
+<pre><code>[修饰符] interface 接口名 extends 父接口1, 父接口2...
+{
+    零个到多个常量定义...
+    零个到名个抽象方法定义...
+    零个到多个内部类、接口、枚举定义...
+    零个到多个默认方法或类方法定义...
+}
+</code></pre><p>对上面语法的详细说明如下：</p>
+<ul>
+<li><p>修饰符可以是public或者省略，如果省略了public访问控制符，则默认采用包权限访问控制符，即只有在相同包结构下才可以访问该接口。</p>
+</li>
+<li><p>接口名应与类名采用相同的命名规则，即如果仅从语法角度来看，接口名只要是合法的标识符即可；如果要遵守Java可读性规范，则接口名应由多个有意义的单词连缀而成，每个单词首字母大写，单词与单词之间无须任何分隔符。接口名通常能够使用形容词。</p>
+</li>
+<li><p>一个接口可以有多个直接父接口，但接口只能继承接口，不能继承类。</p>
+</li>
+</ul>
+<p><strong>在上面语法定义中，只有在Java8以上的版本中才允许在接口中定义默认方法、类方法。</strong></p>
+<p><strong>由于接口定义的是一种规范，因此接口里不能包含构造器和初始化块定义。接口里可以包含成员变量（只能是静态常量）、方法（只能是抽象实例方法、类方法或默认方法）、内部类（包括内部接口、枚举）定义。</strong><br>对比接口和类的定义方式，不难发现接口的成员比类里的成员少了两种，而且接口里的成员变量只能是静态常量，接口里的方法只能是抽象方法、类方法或默认方法。<br>前面已经说过了，接口里定义的是多个类共同的公共行为规范，<strong>因此接口里的所有成员，包括常量、方法、内部类和内部枚举都是public访问权限。</strong>定义接口成员时，可以省略访问控制修饰符，如果指定访问控制修饰符，则只能使用public访问控制修饰符。<br><strong>对于接口里定义的静态常量而言，它们是接口相关的，因此系统会自动为这些成员变量增加static和final两个修饰符。也就是说，在接口中定义成员变量时，不管是否使用public static final 修饰符，接口里的成员变量总是使用这三个修饰符来修饰。而且接口里没有构造器和初始化块，因此接口里定义的成员变量只能在定义时指定默认值。</strong></p>
+<p>接口里定义成员变量采用如下两行代码的结果完全一样。</p>
+<pre><code>//系统自动为接口里定义的成员变量增加public static final修饰符
+
+int MAX_SIZE = 50;
+
+public static final int MAX_SIZE = 50;
+
+</code></pre><p>接口里定义的方法只能是抽象方法、类方法或默认方法，因此如果不是定义默认方法，系统将自动为普通方法增加abstract修饰符；<strong>定义接口里的普通方法时不管是否使用public abstract修饰符，接口里的普通方法总是使用public abstract来修饰。接口里的普通方法不能有方法实现（方法体）；但类方法、默认方法都必须有方法实现（方法体）。</strong></p>
+<p>注意：</p>
+<ul>
+<li>接口里定义的内部类、内部接口，内部枚举默认都采用public static两个修饰符，不管定义时是否指定这两个修饰符，系统都会自动使用public static对它们进行修饰。</li>
+</ul>
+<h5 id="2-接口的继承"><a href="#2-接口的继承" class="headerlink" title="2.接口的继承"></a>2.接口的继承</h5><p>接口的继承和类继承不一样，接口完全支持多继承，即一个接口可以有多个直接父接口。和类继承相似，子接口扩展某个父接口，将会获得父接口里定义的所有抽象方法、常量。<br>一个接口继承多个父接口时，多个父接口排在extends关键字之后，多个父接口之间以英文逗号(,)隔开。下面程序定义了三个接口，第三个接口继承了前面两个接口。</p>
+<pre><code>interface interfaceA {
+    int PROP_ A = 5;
+    void testA();
+}
+
+interface interfaceB {
+    int PROP_ B = 6;
+    void testB();
+}
+
+interface interfaceC extends interfaceA, interfaceB {
+    int PROP_ C = 7;
+    void testC();
+}
+
+public class InterfaceExtendsTest {
+    public static void main(String[] args) {
+        System.out.println(interfaceC.PROP_ A);
+        System.out.println(interfaceC.PROP_ B);
+        System.out.println(interfaceC.PROP_ C);
+    }
+}
+</code></pre><p>上面程序中的itetfaceC接口继承了interfaceA和interfaceB，所以interfaceC中获得了它们的常量，因此在main()方法中看到通过interfaceC来访问PROP_ A、PROP_ B和PROP_C常量。</p>
+<h3 id="三、抽象类和接口"><a href="#三、抽象类和接口" class="headerlink" title="三、抽象类和接口"></a>三、抽象类和接口</h3><p>接口和抽象类很像，它们都具有如下特征。</p>
+<ul>
+<li>接口和抽象类都不能被实例化，它们都位于继承树的顶端，用于被其他类实现和继承。</li>
+</ul>
+<ul>
+<li>接口和抽象类都可以包含抽象方法，实现接口或继承抽象类的普通子类都必须实现这些抽象方法。</li>
+</ul>
+<p>但接口和抽象类之间的差别非常大，这种差别主要体现在二者设计目的上。下面具体分析二者的差别。</p>
+<p>接口作为系统与外界交互的窗口，接口体现的是一种规范。对于接口的实现者而言，接口规定了实现者必须向外提供哪些服务（以方法的形式来提供）；对于接口的调用者而言，接口规定了调用者可以调用哪些服务，以及如何调用这些服务（就是如何来调用方法）。当在一个程序中使用接口时，接口是多个模块间的耦合标准；当在多个应用程序之间使用接口时，接口是多个程序之间的通信标准。</p>
+<p>从某种程度上来看，接口类似于整个系统的“总纲”，它制定了系统各模块应该遵循的标准，因此一个系统中的接口不应该经常改变。一旦接口被改变，对整个系统其至其他系统的影响将是辐射式的，导致系统中大部分类都需要改写。</p>
+<p>抽象类则不一样， 抽象类作为系统中多个子类的共同父类，它所体现的是一种模板式设计。 抽象类作为多个子类的抽象父类，可以被当成系统实现过程中的中间产品，这个中间产品已经实现了系统的部分功能（那些已经提供实现的方法），但这个产品依然不能当成最终产品，必须有更进一步的完善， 这种完兽可能有几种不同方式。</p>
+<p>除此之外，接口和抽象类在用法上也存在如下差别：</p>
+<ul>
+<li><p>接口里只能包含抽象方法、静态方法和默认方法，不能为普通方法提供方法实现；抽象类则完全可以包含普通方法。</p>
+</li>
+<li><p>接口里不能定义静态方法（Java8之前）；抽象类里可以定义静态方法。</p>
+</li>
+</ul>
+<ul>
+<li>接口里只能定义静态常量，不能定义普通成员变量；抽象类里则既可以定义普通成员变量，也可以定义静态常量。</li>
+</ul>
+<ul>
+<li>接口里不包含构造器；抽象类里可以包含构造器，抽象类里的构造器并不是用于创建对象，而是让其子类调用这些构造器来完成属于抽象类的初始化操作。</li>
+</ul>
+<ul>
+<li>接口里不能包含初始化块；但抽象类则完全可以包含初始化块。</li>
+</ul>
+<ul>
+<li>一个类最多只能有一个直接父类， 包括抽象类；但一个类可以直接实现多个接口，通过实现多个接口可以弥补Java单继承的不足。</li>
+</ul>
+<p>好了，关于抽象类和接口的总结我就写这么多了，还想理解的可以看看这两篇帖子<a href="https://www.cnblogs.com/burns/p/4113527.html" target="_blank" rel="noopener">Java 接口和抽象类区别(写的很好，转了）</a>、<a href="https://www.cnblogs.com/dolphin0520/p/3811437.html" target="_blank" rel="noopener">深入理解Java的接口和抽象类</a>。</p>
+<p>参考资料：《Java疯狂讲义》</p>
 
         
     
@@ -697,21 +712,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/02/Spring AOP总结/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/08/20/原型模式/" id="post_nav-older" class="next-content">
+        <a href="/2018/10/10/Java基本数据类型与包装类/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

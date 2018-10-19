@@ -47,7 +47,7 @@
     
     <title>
         
-            Spring IoC与Spring容器 | 
+            JVM垃圾回收总结 | 
         
         stormjie&#39;s blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="stormjie的博客分享">
-    <meta name="keywords" content="stormjie,spring">
+    <meta name="keywords" content="stormjie,jvm">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/17/Spring IoC与Spring容器/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/10/19/JVM垃圾回收总结/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -234,16 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/08/17/Spring IoC与Spring容器/">
+    <meta property="og:url" content="http://yoursite.com/2018/10/19/JVM垃圾回收总结/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Spring IoC与Spring容器 | stormjie&#39;s blog">
+    <meta property="og:title" content="JVM垃圾回收总结 | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
-    <meta property="og:article:tag" content="spring"> 
+    <meta property="og:article:tag" content="jvm"> 
 
     
-        <meta property="article:published_time" content="Fri Aug 17 2018 17:47:00 GMT+0800">
-        <meta property="article:modified_time" content="Sat Aug 18 2018 20:19:56 GMT+0800">
+        <meta property="article:published_time" content="Fri Oct 19 2018 19:14:12 GMT+0800">
+        <meta property="article:modified_time" content="Sat Oct 20 2018 00:29:04 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -251,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/08/17/Spring IoC与Spring容器/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/10/19/JVM垃圾回收总结/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -263,10 +263,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/08/17/Spring IoC与Spring容器/index.html",
-    "headline": "Spring IoC与Spring容器",
-    "datePublished": "Fri Aug 17 2018 17:47:00 GMT+0800",
-    "dateModified": "Sat Aug 18 2018 20:19:56 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/10/19/JVM垃圾回收总结/index.html",
+    "headline": "JVM垃圾回收总结",
+    "datePublished": "Fri Oct 19 2018 19:14:12 GMT+0800",
+    "dateModified": "Sat Oct 20 2018 00:29:04 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -284,7 +284,7 @@
             "url": "/img/mountains.png"
         }
     },
-    "keywords": ",springstormjie",
+    "keywords": ",jvmstormjie",
     "description": "stormjie的博客分享",
 }
 </script>
@@ -350,7 +350,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、IoC与DI概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、IoC与DI概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、Spring容器"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、Spring容器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-BeanFactory"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1.BeanFactory</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-ApplicationContext"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2.ApplicationContext</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-WebApplicationContext"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">3.WebApplicationContext</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、Spring容器高层视图"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、Spring容器高层视图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、容器启动过程"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、容器启动过程</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、哪些内存需要回收？"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、哪些内存需要回收？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-JVM垃圾判定算法"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1.JVM垃圾判定算法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-对象死亡前最后的机会"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2.对象死亡前最后的机会</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、如何回收？"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、如何回收？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-垃圾回收算法"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">1.垃圾回收算法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、使用什么工具回收？"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、使用什么工具回收？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-垃圾回收器简介"><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">1.垃圾回收器简介</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、Java堆内存分配与回收策略"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、Java堆内存分配与回收策略</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-新生代空间的构成与逻辑"><span class="post-toc-number">5.0.1.</span> <span class="post-toc-text">1.新生代空间的构成与逻辑</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-老年代空间的构成与逻辑"><span class="post-toc-number">5.0.2.</span> <span class="post-toc-text">2.老年代空间的构成与逻辑</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -382,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                Spring IoC与Spring容器
+                JVM垃圾回收总结
             </p>
         </div>
 
@@ -401,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>stormjie</strong>
-        <span>8月 17, 2018</span>
+        <span>10月 19, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -423,7 +423,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1UlEQVR42u3aS44iMRAFQO5/6ZltSzNNveesbhV2eIWgMA4vSOXn9efI9cLGxsbGxsbGxsZ+JPsVr+RbXz/NX3+387/vj86MjY2NvTX74q//7TPJp8klJqTJmbGxsbFPYE8CUpQMxMHmAlCeGRsbGxs7Z79PMJJkI7kObGxsbOw5u30n2X8tpGFjY2NjtwWatatZC28PqqVhY2NjP56dN02f8/pX+9vY2NjYD2a3qy0wrbUQ5vv8Z2dsbGzsTdltGtCmFmu/tTb6eVGKwsbGxj6A3bZy21QhD4ftVSb7YGNjY+/NTkJFe6A8gN3Wyp3U0rCxsbG3Zk8YkytLBoNua/RiY2Njfyx7EjzWxiXzJCcJqMlpsbGxsU9mJ6GuPUrbDKiLR9jY2NiHsZPAk4/pFIeIw95kNBMbGxv7BPa8VbA2ZJOHpbWxoYtGLzY2NvbW7Pwi2lLU2i/OWxTY2NjYe7PvHWGfF56SglESFLGxsbFPY7dpyVqKkpSl8uvLrxgbGxt7b3bLaEd55mnGbUkONjY29qbsSVKRhKK29JOD8yQEGxsb+wR220BtU4U2CZkPD40yMGxsbOwPZLfDOnkpP/lWEuomTWhsbGzsvdlt0MpDziRQTRKSupaGjY2N/eHsydaTlnAbMtvSVRG3sbGxsbdg3xs88vCWh67k+ToDw8bGxt6OnSQP+SjPWuCZF56i4UtsbGzsTdlt63Rtn7aF0AbIb5/HxsbGPob9EynHPLVYGxLFxsbGPoHdrrZAnxwufyZvOVwEMGxsbOyN2G1gWPvupJXbFpXq/jY2Njb2FuxJC3ZexM+veFJawsbGxj6BnRRo2rCUF5Le77C2sLGxsbHnYzRtK6IdG/qRrgg2Njb2MeykrZunMWvXUSQn2NjY2Aew84QhCVRrYzd5otIWobCxsbH3ZucHWnunLej/UlEJGxsbewv2OQsbGxsbGxsbGxv7MesvCeY0NtuOAFYAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzUlEQVR42u3aW27CQAwFUPa/6XYBFXBthxKNT74QTTJzBqmWH4+fldcDGxsbGxsbGxsb+5bsR3w9eyr55tlfn33+u+IFe8bGxsY+mv3mX/+Te15j8re9Ptbk/mgVbGxs7AXsXrDpvS1Za74KNjY2NnZ+T35A1TTjdXDCxsbGxv5EAOsdSgLGxsbGxp4XlXqNhKQ4lbz/a7U0bGxs7Nuzc8x9Pv9rfxsbGxv7xuzqlQ/rJOlK3gZOgtabnWNjY2Mfyq6mAXkZqNqgrQbRcikKGxsbew07KQBVDyUv/VQbwMlxY2NjY29gJ8irhnKSlOaq77GxsbE3sKvlpGq7Nz/WScJTHtnBxsbGPog9GZHJw0neNqgGp+QpbGxs7G3sqEATbzpp31YDVV72wsbGxt7GrrZgk4ShOqDTG+KJ3oONjY19NLvaDMgbwNVDqbaNC61ibGxs7EPZ1TQjLw8lG72qbVAuKmFjY2Mfyu4V33PefBCn9yNhY2Nj72FXW6e9IDQJYL2EBxsbG/tsdhKuPhGWqu/vPYuNjY29h50XiSaB7fX9k2ZD8mZsbGzsnexJYyAJkPmhTJrQ2NjY2GezJ63TvDWbH0GSijQbCdjY2NiHsufl+964T69x2/tJsLGxsfew8y1e1b6thsx8qAgbGxt7GzsfwZm0gfNrHgixsbGxd7LzMk0Vkwee/HAvHr7ExsbGPoKdkPJNVNu31aZysjo2Njb2Nva8uFNl58g8XGFjY2NvY8/LPdVUJBnKmYTAKBXBxsbGPojdK9DMi1DV9GM+uIONjY19NruaJORP5SnNfAyomYFhY2NjH8TOl682Za8tHlUDLTY2NjZ2XgbKE5L5mM6XAxg2Njb2oez5IE6ziZsETmxsbOwF7Ly52xvoyYtN1VWi8ImNjY19NLuXYLwp4lwa2HLqR0Z2sLGxsW/M3nNhY2NjY2NjY2Nj3+b6BSF311q2csyvAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -437,7 +437,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/spring/">spring</a>
+        <a class="post_tag-link" href="/tags/jvm/">jvm</a>
     </ul>
     
 
@@ -456,7 +456,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Spring IoC与Spring容器&url=http://yoursite.com/2018/08/17/Spring IoC与Spring容器/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JVM垃圾回收总结&url=http://yoursite.com/2018/10/19/JVM垃圾回收总结/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -465,7 +465,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Spring IoC与Spring容器&url=http://yoursite.com/2018/08/17/Spring IoC与Spring容器/index.html&via=stormjie" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=JVM垃圾回收总结&url=http://yoursite.com/2018/10/19/JVM垃圾回收总结/index.html&via=stormjie" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -474,7 +474,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/17/Spring IoC与Spring容器/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/19/JVM垃圾回收总结/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -489,7 +489,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=Spring IoC与Spring容器&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/17/Spring IoC与Spring容器/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=JVM垃圾回收总结&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/10/19/JVM垃圾回收总结/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -508,74 +508,174 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="一、IoC与DI概念"><a href="#一、IoC与DI概念" class="headerlink" title="一、IoC与DI概念"></a>一、IoC与DI概念</h3><p>控制反转(Inversion of Control ,简称IoC）与依赖注入(Dependency Injection,简称DI)的含义相同，只不过这两个称呼是从两个角度描述的同一概念。对于一个Spring初学者来说，这两个称呼很难理解，下面我们将通过简单语言来描述这两个概念。</p>
-<p>当某个Java对象（调用者）需要调用另一个Java对象（被调用者，即被依赖对象）时，在传统模式下，调用者通常会采用new关键字来创建对象，这种方式会导致调用者与被调用者之间的耦合性增加，不利于后期项目的升级和维护。</p>
-<p>在使用Spring框架之后，对象的实例不再由调用者来创建，而是由Spring容器来创建，Spring容器会负责控制程序之间的关系，而不是由调用者的程序代码直接控制。这样，控制权由应用代码转移到了Spring容器，控制权发生了反转，这就是Spring的控制反转。</p>
-<p>从Spring容器的角度看，Spring容器负责将被依赖对象赋值给调用者的成员变量，这相当于为调用者注入了它依赖的实例，这就是Spring的依赖注入。</p>
-<p><em>提示：以下内容可能对初学者不太友好，可以大概看看，建议有基础后再来看。</em></p>
-<h3 id="二、Spring容器"><a href="#二、Spring容器" class="headerlink" title="二、Spring容器"></a>二、Spring容器</h3><p>Spring 通过一个配置文件描述 Bean 及 Bean 之间的依赖关系，利用 Java 语言的反射功能实例化 Bean 并建立 Bean 之间的依赖关系。 Spring 的 IoC 容器在完成这些底层工作的基础上，还提供了 Bean 实例缓存、生命周期管理、 Bean 实例代理、事件发布、资源装载等高级服务。</p>
+        <p>啥也不说了，这几天下来觉得最重要的还是身体，其他都好说。。</p>
+<p>这两周可能做不到一周二更，以后有机会补上漏的。</p>
+<p>这篇的主题是非常重要的，JVM学习的核心部分，所以这篇我会尽力写得更认真，更全面。</p>
+<h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><p>说起垃圾回收（Garbage Collection，GC），很多人就会自然而然地把它和Java联系起来。事实上，GC的历史比Java久远，早在1960年Lisp这门语言中就使用了内存动态分配和垃圾回收技术。 在Java中，程序员不需要去关心内存动态分配和垃圾回收的问题，顾名思义，垃圾回收就是释放垃圾占用的空间，这一切都交给了JVM来处理。本文主要解答四个问题：</p>
+<p>1、哪些内存需要回收？（对象是否可以被回收的两种经典算法：引用计数法和可达性分析算法） </p>
+<p>2、如何回收？（三种经典垃圾回收算法：标记-清除算法、复制算法、标记-整理算法，以及分代收集算法） </p>
+<p>3、使用什么工具回收？（垃圾收集器）</p>
+<p>4、Java堆内存分配与回收策略是怎样的？（新生代：Eden区、From Survivor、To Survivor，以及老年代）</p>
+<p>在探讨Java垃圾回收机制之前，我们首先应该记住一个单词：Stop The World。Stop The World意味着 JVM由于要执行GC而停止了应用程序的执行，并且这种情形会在任何一种GC算法中发生。当Stop The World发生时，除了GC所需的线程以外，所有线程都处于等待状态直到GC任务完成。事实上，GC优化很多时候就是指减少Stop The World发生的时间，从而使系统具有高吞吐 、低停顿的特点。 </p>
+<h3 id="二、哪些内存需要回收？"><a href="#二、哪些内存需要回收？" class="headerlink" title="二、哪些内存需要回收？"></a>二、哪些内存需要回收？</h3><p>我们都知道JVM的内存结构包括五大区域：程序计数器、Java虚拟机栈、本地方法栈、Java堆、方法区。其中程序计数器、Java虚拟机栈、本地方法栈3个区域随线程而生、随线程而灭，这几个区域的内存分配和回收都具备确定性，就不需要过多考虑回收的问题，因为方法结束或者线程结束时，内存自然就跟随着回收了。<strong>而Java堆和方法区则不一样，这部分内存的分配和回收是动态的，正是垃圾收集器所需关注的部分。</strong></p>
+<p>垃圾收集器在对堆区和方法区进行回收前，首先要确定这些区域的对象哪些可以被回收，哪些暂时还不能回收，这就要用到判断对象是否存活的算法。</p>
+<h5 id="1-JVM垃圾判定算法"><a href="#1-JVM垃圾判定算法" class="headerlink" title="1.JVM垃圾判定算法"></a>1.JVM垃圾判定算法</h5><p>常用的垃圾判定算法包括：引用计数算法，可达性分析算法。 </p>
+<p>(1)引用计数算法</p>
+<p>引用计数算法是垃圾收集器中的早期策略。引用计数算法描述为：给对象增加一个引用计数器，每当有一个地方引用它时，计数器就+1；当引用失效时，计数器就-1；任何时刻计数器为0的对象就是不能再被使用的，即对象已“死”。 </p>
+<p>引用计数法实现简单，判定效率也比较高，在大部分情况下都是一个比较好的算法。比如Python语言就是采用的引用计数法来进行内存管理的。<strong>但是，在主流的JVM中没有选用引用计数法来管理内存，最主要的原因是引用计数法无法解决对象的循环引用问题。</strong> </p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        MyTest test1 = new MyTest();//MyTest实例1的引用计数加1，实例1的引用计数=1；
+        MyTest test2 = new MyTest();//MyTest实例2的引用计数加1，实例2的引用计数=1；
+
+        //test1与test2存在相互引用
+        test1.obj = test2;//MyTest实例2的引用计数加1，实例2的引用计数=2；
+        test2.obj = test1;//MyTest实例1的引用计数加1，实例1的引用计数=2；
+
+        test1 = null;//栈帧中test1不再指向Java堆，MyTest实例1的引用计数减1，结果为1；
+        test2 = null;//栈帧中test2不再指向Java堆，MyTest实例2的引用计数减1，结果为1；
+
+        System.gc();//回收
+        //到此，发现MyTest实例1和实例2的计数引用都不为0，那么如果采用的引用计数算法的话，那么这两个实例所占的内存将得不到释放，这便产生了内存泄露。
+    }
+}
+
+class MyTest{
+    public Object obj = null;
+}
+</code></pre><p>虽然最后将test1和test2赋值为null，也就是说test1和test2指向的对象已经不可能再被访问，但是由于它们互相引用对方，导致它们的引用计数都不为0，那么垃圾收集器就永远不会回收它们。运行程序，从内存分析看到，事实上这两个对象的内存被回收，这也说明了当前主流的JVM都不是采用的引用计数器算法作为垃圾判定算法的。 </p>
+<p>(2)可达性分析算法</p>
+<p>可达性分析算法是从离散数学中的图论引入的，程序把所有的引用关系看作一张图，从一个节点GC ROOT开始，寻找对应的引用节点，找到这个节点以后，继续寻找这个节点的引用节点，当所有的引用节点寻找完毕之后，剩余的节点则被认为是没有被引用到的节点，即无用的节点，无用的节点将会被判定为是可回收的对象。 </p>
+<img src="/2018/10/19/JVM垃圾回收总结/gc-root.png">
+<p>上图红色为无用的节点，可以被回收。</p>
+<p>目前Java中可以作为GC Roots的对象有：</p>
 <ul>
-<li>BeanFactory 是 Spring 框架的基础设施，面向 Spring 本身； </li>
-<li>ApplicationContext 面向使用 Spring 框架的开发者，几乎所有的应用场合我们都直接使用 ApplicationContext 而非底层的 BeanFactory。</li>
+<li><p>虚拟机栈中引用的对象（本地变量表）；</p>
+</li>
+<li><p>方法区中静态属性引用的对象；</p>
+</li>
+<li><p>方法区中常亮引用的对象；</p>
+</li>
+<li><p>本地方法栈中引用的对象（Native对象）；</p>
+</li>
 </ul>
-<h5 id="1-BeanFactory"><a href="#1-BeanFactory" class="headerlink" title="1.BeanFactory"></a>1.BeanFactory</h5><p>BeanFactory体系架构： </p>
-<img src="/2018/08/17/Spring%20IoC与Spring容器/beanfactory.jpg"> 
-<p>BeanFactory 接口位于类结构树的顶端 ，它最主要的方法就是 getBean(String beanName)，该方法从容器中返回特定名称的 Bean，BeanFactory 的功能通过其他的接口得到不断扩展：</p>
+<p>基本所有GC算法都引用可达性分析算法这种概念。</p>
+<h5 id="2-对象死亡前最后的机会"><a href="#2-对象死亡前最后的机会" class="headerlink" title="2.对象死亡前最后的机会"></a>2.对象死亡前最后的机会</h5><p>在可达性分析算法中，不可达的对象，也并非是“非死不可”的，这时候它们暂时处于“缓刑”阶段，要真正宣告一个对象死亡，至少要经历两次标记过程：如果对象在进行可达性分析后发现没有与GC Roots相连接的引用链，那它将会被第一次标记并且进行一次筛选，筛选的条件是此对象是否需要执行finalize()方法。当对象没有覆盖finalize()方法，或者finalize()方法已经被虚拟机调用过，虚拟机将这两种情况都视为“不需要要执行”。注意任何对象的finalize()方法只会被系统自动执行1次。</p>
+<p>如果这个对象被判定为需要执行finalize()方法，那么这个对象将会放置在一个叫做F-Queue的队列之中，并在稍后由一个由虚拟机自动建立的、低优先级的Finalizer线程去执行它。这里所谓的“执行”是指虚拟机会触发这个方法，但并不承诺会等待它运行结束，这样做的原因是，如果一个对象在finalize()方法中执行缓慢，或者发生了死循环，将很可能会导致F-Queue队列中其他对象永久处于等待，甚至导致整个内存回收系统崩溃。因此调用finalize()方法不代表该方法中代码能够完全被执行。</p>
+<p>finalize()方法是对象逃脱死亡命运的最后一次机会，稍后GC将对F-Queue中的对象进行第二次小规模的标记，如果对象要在finalize()中成功拯救自己——只要重新与引用链上的任何一个对象建立关联即可，譬如把自己（this关键字）赋值给某个类变量或者对象的成员变量，那在第二次标记时它将被移除出“即将回收”的集合；如果对象这时候还没有逃脱，那基本上它就真的被回收了。从如下代码中我们可以看到一个对象的finalize()被执行，但是它仍然可以存活。</p>
+<pre><code>/**   
+ * 此代码演示了两点：   
+ * 1.对象可以在被GC时自我拯救。   
+ * 2.这种自救的机会只有一次，因为一个对象的finalize()方法最多只会被系统自动调用一次   
+ */    
+public class FinalizeEscapeGC {    
+
+    public static FinalizeEscapeGC SAVE_HOOK = null;    
+
+    public void isAlive() {    
+        System.out.println(&quot;yes, i am still alive :)&quot;);    
+    }    
+
+    @Override    
+    protected void finalize() throws Throwable {    
+         super.finalize();    
+        System.out.println(&quot;finalize mehtod executed!&quot;);    
+        FinalizeEscapeGC.SAVE_HOOK = this;    
+    }    
+
+    public static void main(String[] args) throws Throwable {    
+        SAVE_HOOK = new FinalizeEscapeGC();    
+
+        //对象第一次成功拯救自己    
+        SAVE_HOOK = null;    
+        System.gc();    
+        //因为finalize方法优先级很低，所以暂停0.5秒以等待它    
+        Thread.sleep(500);    
+        if(SAVE_HOOK != null) {    
+        SAVE_HOOK.isAlive();    
+        } else {    
+            System.out.println(&quot;no, i am dead :(&quot;);    
+        }    
+
+        //下面这段代码与上面的完全相同，但是这次自救却失败了    
+        SAVE_HOOK = null;    
+        System.gc();    
+        //因为finalize方法优先级很低，所以暂停0.5秒以等待它    
+        Thread.sleep(500);    
+        if(SAVE_HOOK != null) {    
+            SAVE_HOOK.isAlive();    
+        } else {    
+            System.out.println(&quot;no, i am dead :(&quot;);    
+        }    
+    }    
+}
+</code></pre><p>运行结果： </p>
+<pre><code>finalize mehtod executed!    
+yes, i am still alive :)    
+no, i am dead :(
+</code></pre><p>从运行结果可以看出，SAVE_HOOK对象的finalize()方法确实被GC收集器调用过，且在被收集前成功逃脱了。另外一个值得注意的地方是，代码中有两段完全一样的代码片段，执行结果却是一次逃脱成功，一次失败，这是因为任何一个对象的finalize()方法都只会被系统自动调用一次，如果对象面临下一次回收，它的finalize()方法不会被再次执行，因此第二段代码的自救行动失败了。 </p>
+<h3 id="三、如何回收？"><a href="#三、如何回收？" class="headerlink" title="三、如何回收？"></a>三、如何回收？</h3><h5 id="1-垃圾回收算法"><a href="#1-垃圾回收算法" class="headerlink" title="1.垃圾回收算法"></a>1.垃圾回收算法</h5><p>(1)标记-清除算法（Mark-Sweep）（DVM使用的算法）</p>
+<p>标记-清除算法采用从根集合（GC Roots）进行扫描，对存活的对象进行标记，标记完毕后，再扫描整个空间中未被标记的对象，进行回收，如下图所示。标记-清除算法不需要进行对象的移动，只需对不存活的对象进行处理，在存活对象比较多的情况下极为高效，但由于标记-清除算法直接回收不存活的对象，因此会造成内存碎片。 </p>
+<img src="/2018/10/19/JVM垃圾回收总结/1.png">
+<p>(2)复制算法（Copying）</p>
+<p>复制算法将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。这种算法适用于对象存活率低的场景，比如新生代。这样使得每次都是对整个半区进行内存回收，内存分配时也就不用考虑内存碎片等复杂情况，只要移动堆顶指针，按顺序分配内存即可，实现简单，运行高效。 </p>
+<img src="/2018/10/19/JVM垃圾回收总结/2.png">
+<p>复制算法在存活对象比较少的时候，极为高效，但是带来的成本是牺牲一半的内存空间用于进行对象的移动。<strong>所以复制算法的使用场景，必须是对象的存活率非常低才行，</strong>而且最重要的是，我们需要克服50%内存的浪费。</p>
+<p>(3)标记-整理算法（Mark-Compact）</p>
+<p>标记-整理算法采用标记-清除算法一样的方式进行对象的标记、清除，但在回收不存活的对象占用的空间后，会将所有存活的对象往左端空闲空间移动，并更新对应的指针。标记-整理算法是在标记-清除算法之上，又进行了对象的移动排序整理，因此成本更高，但却解决了内存碎片的问题。</p>
+<img src="/2018/10/19/JVM垃圾回收总结/3.png">
+<p>标记-整理算法提高了内存的利用率，并且它适合在收集对象存活时间较长的老年代。 </p>
+<p>(4)分代收集算法（Generational Collection） </p>
+<p>当前JVM垃圾收集都采用的是分代收集算法，这个算法并没有新思想，只是根据对象存活周期的不同将内存划分为几块。 </p>
+<p><strong>一般是把Java堆分为新生代和老年代。在新生代中，每次垃圾回收都有大批对象死去，只有少量存活，因此我们采用复制算法，新生代发生的GC也叫做Minor GC；而老年代中对象存活率高、没有额外空间对它进行分配担保，就必须采用标记-清理算法或者标记-整理算法，老年代发生的GC也叫做Major GC即Full GC。</strong></p>
+<p>面试题: 请问了解Minor GC和Full GC么，这两种GC有什么不一样吗？</p>
 <ul>
-<li><p>ListableBeanFactory：该接口定义了访问容器中 Bean 基本信息的若干方法，如查看Bean 的个数、获取某一类型 Bean 的配置名、查看容器中是否包括某一 Bean 等方法； </p>
+<li><p>Minor GC又称为新生代GC : 指的是发生在新生代的垃圾收集。因为Java对象大多都具备朝生夕灭的特性，因此Minor GC（采用复制算法）非常频繁，一般回收速度也比较快。</p>
 </li>
-<li><p>HierarchicalBeanFactory：父子级联 IoC 容器的接口，子容器可以通过接口方法访问父容器； 通过 HierarchicalBeanFactory 接口， Spring 的 IoC 容器可以建立父子层级关联的容器体系，子容器可以访问父容器中的 Bean，但父容器不能访问子容器的 Bean。Spring 使用父子容器实现了很多功能，比如在 Spring MVC 中，展现层 Bean 位于一个子容器中，而业务层和持久层的 Bean 位于父容器中。这样，展现层 Bean 就可以引用业务层和持久层的 Bean，而业务层和持久层的 Bean 则看不到展现层的 Bean。</p>
-</li>
-<li><p>ConfigurableBeanFactory：是一个重要的接口，增强了 IoC 容器的可定制性，它定义了设置类装载器、属性编辑器、容器初始化后置处理器等方法； </p>
-</li>
-<li><p>AutowireCapableBeanFactory：定义了将容器中的 Bean 按某种规则（如按名字匹配、按类型匹配等）进行自动装配的方法； </p>
-</li>
-<li><p>SingletonBeanRegistry：定义了允许在运行期间向容器注册单实例 Bean 的方法；</p>
-</li>
-<li><p>BeanDefinitionRegistry： Spring 配置文件中每一个&lt;bean&gt;节点元素在 Spring 容器里都通过一个 BeanDefinition 对象表示，它描述了 Bean 的配置信息。而 BeanDefinitionRegistry 接口提供了向容器手工注册 BeanDefinition 对象的方法。</p>
+<li><p>Full GC又称为老年代GC或者Major GC : 指发生在老年代的垃圾收集。出现了Major GC，经常会伴随至少一次的Minor GC(并非绝对，在Parallel Scavenge收集器中就有直接进行Full GC的策略选择过程)。Major GC的速度一般会比Minor GC慢10倍以上。</p>
 </li>
 </ul>
-<h5 id="2-ApplicationContext"><a href="#2-ApplicationContext" class="headerlink" title="2.ApplicationContext"></a>2.ApplicationContext</h5><p>ApplicationContext 由 BeanFactory 派生而来，提供了更多面向实际应用的功能。</p>
-<p>在BeanFactory 中，很多功能需要以编程的方式实现，而在 ApplicationContext 中则可以通过配置的方式实现。</p>
-<img src="/2018/08/17/Spring%20IoC与Spring容器/ApplicationContext.jpg">
-<p>ApplicationContext 继承了 HierarchicalBeanFactory 和 ListableBeanFactory 接口，在此基础上，还通过多个其他的接口扩展了 BeanFactory 的功能： </p>
+<h3 id="四、使用什么工具回收？"><a href="#四、使用什么工具回收？" class="headerlink" title="四、使用什么工具回收？"></a>四、使用什么工具回收？</h3><h5 id="1-垃圾回收器简介"><a href="#1-垃圾回收器简介" class="headerlink" title="1.垃圾回收器简介"></a>1.垃圾回收器简介</h5><p>需要注意的是，<strong>每一个回收器都存在Stop The World的问题，</strong>只不过各个回收器在Stop The World时间优化程度、算法的不同，可根据自身需求选择适合的回收器。</p>
+<p>整理一下新生代和老年代的收集器。</p>
+<p>新生代收集器：</p>
 <ul>
-<li>ClassPathXmlApplicationContext：默认从类路径加载配置文件</li>
-<li>FileSystemXmlApplicationContext：默认从文件系统中装载配置文件</li>
-<li>ApplicationEventPublisher：让容器拥有发布应用上下文事件的功能，包括容器启动事件、关闭事件等。实现了 ApplicationListener 事件监听接口的 Bean 可以接收到容器事件 ， 并对事件进行响应处理 。 在 ApplicationContext 抽象实现类AbstractApplicationContext 中，我们可以发现存在一个 ApplicationEventMulticaster，它负责保存所有监听器，以便在容器产生上下文事件时通知这些事件监听者。 </li>
-<li>MessageSource：为应用提供 i18n 国际化消息访问的功能； </li>
-<li>ResourcePatternResolver ： 所 有 ApplicationContext 实现类都实现了类似于PathMatchingResourcePatternResolver 的功能，可以通过带前缀的 Ant 风格的资源文件路径装载 Spring 的配置文件。 </li>
-<li>LifeCycle：该接口是 Spring 2.0 加入的，该接口提供了 start()和 stop()两个方法，主要用于控制异步处理过程。在具体使用时，该接口同时被 ApplicationContext 实现及具体 Bean 实现， ApplicationContext 会将 start/stop 的信息传递给容器中所有实现了该接口的 Bean，以达到管理和控制 JMX、任务调度等目的。</li>
-<li>ConfigurableApplicationContext 扩展于 ApplicationContext，它新增加了两个主要的方法： refresh()和 close()，让 ApplicationContext 具有启动、刷新和关闭应用上下文的能力。在应用上下文关闭的情况下调用 refresh()即可启动应用上下文，在已经启动的状态下，调用 refresh()则清除缓存并重新装载配置信息，而调用close()则可关闭应用上下文。这些接口方法为容器的控制管理带来了便利，但作为开发者，我们并不需要过多关心这些方法。</li>
+<li><p>Serial （-XX:+UseSerialGC）</p>
+</li>
+<li><p>ParNew（-XX:+UseParNewGC）</p>
+</li>
+<li><p>ParallelScavenge（-XX:+UseParallelGC）</p>
+</li>
+<li><p>G1 收集器</p>
+</li>
 </ul>
-<p>使用：</p>
-<p>如果配置文件放置在类路径下，用户可以优先使用 ClassPathXmlApplicationContext 实现类：</p>
-<pre><code>ApplicationContext ctx = new ClassPathXmlApplicationContext(String configLocation);
-</code></pre><p>如果配置文件放置在文件系统的路径下，则可以优先考虑使用 FileSystemXmlApplicationContext 实现类：</p>
-<pre><code>ApplicationContext ctx = new FileSystemXmlApplicationContext(String configLocation);
-</code></pre><p>Spring 3.0 支持基于类注解的配置方式，主要功能来自于 Spring 的一个名为 JavaConfig 子项目，目前 JavaConfig已经升级为 Spring核心框架的一部分。</p>
-<p>ApplicationContext 在初始化应用上下文时就实例化所有单实例的 Bean。</p>
-<h5 id="3-WebApplicationContext"><a href="#3-WebApplicationContext" class="headerlink" title="3.WebApplicationContext"></a>3.WebApplicationContext</h5><p>WebApplication体系架构： </p>
-<img src="/2018/08/17/Spring%20IoC与Spring容器/WebApplicationContext.jpg">
-<p>WebApplicationContext 是专门为 Web 应用准备的，它允许从相对于 Web 根目录的路径中装载配置文件完成初始化工作。从WebApplicationContext 中可以获得 ServletContext 的引用，整个 Web 应用上下文对象将作为属性放置到 ServletContext 中，以便 Web 应用环境可以访问 Spring 应用上下文。 WebApplicationContext 定义了一个常量ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE，在上下文启动时， WebApplicationContext 实例即以此为键放置在 ServletContext 的属性列表中，因此我们可以直接通过以下语句从 Web 容器中获取WebApplicationContext： </p>
-<pre><code>WebApplicationContext wac = (WebApplicationContext)servletContext.getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
-</code></pre><p>Spring 和 Web 应用的上下文融合：</p>
-<img src="/2018/08/17/Spring%20IoC与Spring容器/web.jpg">
-<p>WebApplicationContext 的初始化方式：WebApplicationContext 需要 ServletContext 实例，它必须在拥有 Web 容器的前提下才能完成启动的工作。可以在 web.xml 中配置自启动的 Servlet 或定义 Web 容器监听器（ ServletContextListener），借助这两者中的任何一个就可以完成启动 Spring Web 应用上下文的工作。Spring 分别提供了用于启动 WebApplicationContext 的 Servlet 和 Web 容器监听器： </p>
+<p>老年代收集器：</p>
 <ul>
-<li>org.springframework.web.context.ContextLoaderServlet；</li>
-<li>org.springframework.web.context.ContextLoaderListener；</li>
-<li>由于 WebApplicationContext 需要使用日志功能，比如日志框架使用Log4J，用户可以将 Log4J 的配置文件放置到类路径 WEB-INF/classes 下，这时 Log4J 引擎即可顺利启动。如果 Log4J 配置文件放置在其他位置，用户还必须在 web.xml 指定 Log4J 配置文件位置。</li>
+<li><p>SerialOld（-XX:+UseSerialOldGC）</p>
+</li>
+<li><p>ParallelOld（-XX:+UseParallelOldGC）</p>
+</li>
+<li><p>CMS（-XX:+UseConcMarkSweepGC）</p>
+</li>
+<li><p>G1 收集器</p>
+</li>
 </ul>
-<h3 id="三、Spring容器高层视图"><a href="#三、Spring容器高层视图" class="headerlink" title="三、Spring容器高层视图"></a>三、Spring容器高层视图</h3><p>Spring 启动时读取应用程序提供的Bean配置信息，并在Spring容器中生成一份相应的Bean配置注册表，然后根据这张注册表实例化Bean，装配好Bean之间的依赖关系，为上层应用提供准备就绪的运行环境。 </p>
-<img src="/2018/08/17/Spring%20IoC与Spring容器/Spring.jpg">
-<p>Bean缓存池：HashMap实现 </p>
-<h3 id="四、容器启动过程"><a href="#四、容器启动过程" class="headerlink" title="四、容器启动过程"></a>四、容器启动过程</h3><p>web环境下Spring容器、SpringMVC容器启动过程：</p>
-<p>首先，对于一个web应用，其部署在web容器中，web容器提供其一个全局的上下文环境，这个上下文就是ServletContext，其为后面的spring IoC容器提供宿主环境；</p>
-<p>其次，在web.xml中会提供有contextLoaderListener（或ContextLoaderServlet）。在web容器启动时，会触发容器初始化事件，此时contextLoaderListener会监听到这个事件，其contextInitialized方法会被调用，在这个方法中，spring会初始化一个启动上下文，这个上下文被称为根上下文，即WebApplicationContext，这是一个接口类，确切的说，其实际的实现类是XmlWebApplicationContext。这个就是spring的IoC容器，其对应的Bean定义的配置由web.xml中的context-param标签指定。在这个IoC容器初始化完毕后，spring容器以WebApplicationContext.ROOTWEBAPPLICATIONCONTEXTATTRIBUTE为属性Key，将其存储到ServletContext中，便于获取；</p>
-<p>再次，contextLoaderListener监听器初始化完毕后，开始初始化web.xml中配置的Servlet，这个servlet可以配置多个，以最常见的DispatcherServlet为例（Spring MVC），这个servlet实际上是一个标准的前端控制器，用以转发、匹配、处理每个servlet请求。DispatcherServlet上下文在初始化的时候会建立自己的IoC上下文容器，用以持有spring mvc相关的bean，这个servlet自己持有的上下文默认实现类也是XmlWebApplicationContext。在建立DispatcherServlet自己的IoC上下文时，会利用WebApplicationContext.ROOTWEBAPPLICATIONCONTEXTATTRIBUTE先从ServletContext中获取之前的根上下文(即WebApplicationContext)作为自己上下文的parent上下文（即第2步中初始化的XmlWebApplicationContext作为自己的父容器）。有了这个parent上下文之后，再初始化自己持有的上下文（这个DispatcherServlet初始化自己上下文的工作在其initStrategies方法中可以看到，大概的工作就是初始化处理器映射、视图解析等）。初始化完毕后，spring以与servlet的名字相关(此处不是简单的以servlet名为Key，而是通过一些转换)的属性为属性Key，也将其存到ServletContext中，以便后续使用。这样每个servlet就持有自己的上下文，即拥有自己独立的bean空间，同时各个servlet共享相同的bean，即根上下文定义的那些bean。</p>
-<p>好了，关于Spring知识点有点多，这篇理论我知道让人懵懵的，建议和下篇博文一起食用，以上是经过我自己理解及网上资料对Spring控制反转和容器的总结，如果有什么疑惑或者错误欢迎联系我。</p>
-<p>参考资料：《JavaEE企业级应用开发教程》《Spring 3.x企业应用开发实战》 </p>
+<p>这里就不详细介绍目前的7种垃圾收集器了，贴个博文，写得很详细，<a href="https://www.cnblogs.com/chengxuyuanzhilu/p/7088316.html" target="_blank" rel="noopener">JVM(HotSpot) 7种垃圾收集器的特点及使用场景</a>。</p>
+<h3 id="五、Java堆内存分配与回收策略"><a href="#五、Java堆内存分配与回收策略" class="headerlink" title="五、Java堆内存分配与回收策略"></a>五、Java堆内存分配与回收策略</h3><p>Java堆一般分为2个大的区域： 默认的新生代（Young generation）、老年代（Old generation）。所占空间比例为 1 : 2 。</p>
+<h5 id="1-新生代空间的构成与逻辑"><a href="#1-新生代空间的构成与逻辑" class="headerlink" title="1.新生代空间的构成与逻辑"></a>1.新生代空间的构成与逻辑</h5><p>为了更好的理解GC，我们来学习新生代的构成，它用来保存那些第一次被创建的对象，它被分成三个空间：</p>
+<ul>
+<li><p>一个伊甸园空间（Eden）</p>
+</li>
+<li><p>两个幸存者空间（From Survivor、To Survivor）</p>
+</li>
+</ul>
+<p><strong>默认新生代空间的分配：Eden : From : To = 8 : 1 : 1</strong></p>
+<img src="/2018/10/19/JVM垃圾回收总结/4.png">
+<p>一般情况下，新创建的对象都会被分配到Eden区（一些大对象直接进入老年代），这些对象经过第一次Minor GC后，如果仍然存活，将会被移到From Survivor区。在之后GC开始的时候，对象只会存在于Eden区和名为“From”的Survivor区，Survivor区“To”是空的。紧接着进行GC，经过一次GC每个存活对象年龄+1，Eden区中所有存活的对象都会被复制到“To”，而在“From”区中，仍存活的对象会根据他们的年龄值来决定去向。年龄达到一定值（年龄阈值，可以通过-XX:MaxTenuringThreshold来设置，默认15）的对象会被移动到老年代中，没有达到阈值的对象会被复制到“To”区域。经过这次GC后，Eden区和From区已经被清空。这个时候，“From”和“To”会交换他们的角色，也就是新的“To”就是上次GC前的“From”，新的“From”就是上次GC前的“To”。不管怎样，都会保证名为To的Survivor区域是空的。Minor GC会一直重复这样的过程，直到To区不够容纳来自Eden区和From区的存活对象，就会发生空间分配担保，将To区无法容纳对象直接进入老年代中。  </p>
+<p>从上面的步骤可以发现，<strong>两个Survivor区，必须有一个是保持空的</strong>。如果两个Survivor区都有数据，或两个Survivor区都是空的，那一定是你的系统出现了某种错误。</p>
+<h5 id="2-老年代空间的构成与逻辑"><a href="#2-老年代空间的构成与逻辑" class="headerlink" title="2.老年代空间的构成与逻辑"></a>2.老年代空间的构成与逻辑</h5><p>老年代空间的构成其实很简单，它不像新生代空间那样划分为几个区域，它只有一个区域，里面存储的对象并不像新生代空间绝大部分都是朝闻道，夕死矣。<strong>这里的对象几乎都是从Survivor 空间中熬过来的，它们绝不会轻易的狗带</strong>。因此，Full GC（Major GC）发生的次数不会有Minor GC 那么频繁，并且做一次Major GC 的时间比Minor GC 要更长（约10倍）。</p>
+<hr>
+<p>好了，关于JVM垃圾回收就总结这么多了，还有GC日志如何查看和一些JVM参数可以查看这两篇博文：<a href="https://www.cnblogs.com/sunshisonghit/p/6694590.html" target="_blank" rel="noopener">（转）java中新生代和老年代</a>、<a href="https://blog.csdn.net/u013417227/article/details/79408645" target="_blank" rel="noopener">java堆内存–新生代和老年代</a>。</p>
+<p>参考资料：《深入理解Java虚拟机：JVM高级特性与最佳实践》</p>
 
         
     
@@ -619,21 +719,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/18/Spring的Bean与IoC实现/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/08/15/Spring入门/" id="post_nav-older" class="next-content">
+        <a href="/2018/10/13/抽象类和接口/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

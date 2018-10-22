@@ -47,7 +47,7 @@
     
     <title>
         
-            Java会话管理：Cookie和Session | 
+            Java内存模型 | 
         
         stormjie&#39;s blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="stormjie的博客分享">
-    <meta name="keywords" content="stormjie,cookie,session">
+    <meta name="keywords" content="stormjie,jvm">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/10/21/Java内存模型/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -234,16 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/">
+    <meta property="og:url" content="http://yoursite.com/2018/10/21/Java内存模型/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Java会话管理：Cookie和Session | stormjie&#39;s blog">
+    <meta property="og:title" content="Java内存模型 | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
-    <meta property="og:article:tag" content="cookie"> <meta property="og:article:tag" content="session"> 
+    <meta property="og:article:tag" content="jvm"> 
 
     
-        <meta property="article:published_time" content="Tue Aug 07 2018 15:39:52 GMT+0800">
-        <meta property="article:modified_time" content="Sat Aug 11 2018 10:18:26 GMT+0800">
+        <meta property="article:published_time" content="Sun Oct 21 2018 22:11:33 GMT+0800">
+        <meta property="article:modified_time" content="Tue Oct 23 2018 00:09:21 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -251,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/10/21/Java内存模型/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -263,10 +263,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html",
-    "headline": "Java会话管理：Cookie和Session",
-    "datePublished": "Tue Aug 07 2018 15:39:52 GMT+0800",
-    "dateModified": "Sat Aug 11 2018 10:18:26 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/10/21/Java内存模型/index.html",
+    "headline": "Java内存模型",
+    "datePublished": "Sun Oct 21 2018 22:11:33 GMT+0800",
+    "dateModified": "Tue Oct 23 2018 00:09:21 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -284,7 +284,7 @@
             "url": "/img/mountains.png"
         }
     },
-    "keywords": ",cookie,sessionstormjie",
+    "keywords": ",jvmstormjie",
     "description": "stormjie的博客分享",
 }
 </script>
@@ -350,7 +350,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、Cookie"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、Cookie</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-什么是Cookie"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">1.什么是Cookie</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-Cookie的使用"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">2.Cookie的使用</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-Cookie的安全性"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">3.Cookie的安全性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、Session"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、Session</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-什么是Session"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1.什么是Session</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-Session的使用"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2.Session的使用</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、Cookie和Session的区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、Cookie和Session的区别</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、主内存与工作内存"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、主内存与工作内存</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、内存间交互操作"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、内存间交互操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、重排序"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、重排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五·、Java内存模型特性"><span class="post-toc-number">5.</span> <span class="post-toc-text">五·、Java内存模型特性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-原子性"><span class="post-toc-number">5.0.1.</span> <span class="post-toc-text">1.原子性</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-可见性"><span class="post-toc-number">5.0.2.</span> <span class="post-toc-text">2.可见性</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-有序性"><span class="post-toc-number">5.0.3.</span> <span class="post-toc-text">3.有序性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、volatile关键字"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、volatile关键字</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#七、happens-before原则（先行发生原则）"><span class="post-toc-number">7.</span> <span class="post-toc-text">七、happens-before原则（先行发生原则）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-什么是先行发生原则？"><span class="post-toc-number">7.0.1.</span> <span class="post-toc-text">1.什么是先行发生原则？</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-先行发生原则都有哪些？"><span class="post-toc-number">7.0.2.</span> <span class="post-toc-text">2.先行发生原则都有哪些？</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -382,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                Java会话管理：Cookie和Session
+                Java内存模型
             </p>
         </div>
 
@@ -401,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>stormjie</strong>
-        <span>8月 07, 2018</span>
+        <span>10月 21, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -423,7 +423,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1ElEQVR42u3aQU4DMRAEwPz/03BFApbu8UYkdvmERNh1ORKjmfbj48j1wMbGxsbGxsbGxn5J9iNeXz///W9/eM3ok9d7m+0ZGxsb+wT2H//6LwH5htrj+G2H7Z6xsbGxz2HnG71+WV6Q8rfkB42NjY2NHT0iBrSb/rWRwMbGxsa+tYDlzUlS3pI93PBVYWNjYx/Azgc07RZn1DZOeOIsDRsbG/vl2StB73/9/M/5NjY2NvbLsGcrKUvtFZxZMSv2jI2Njb0pOx/9X1PzYVMbA7fBw/DyJTY2Nvbbsmdl5rqYzQZMeSTQhsTY2NjYe7NXilMSA7fx8Kx0Xe8KGxsb+wR2EpfmTcXKk9tAtyiT2NjY2Iex85F9UgJnrUs7nLqhgGFjY2O/IXtllN+GCit/lTc5Rb6NjY2NvRF7NnZvPzlrMPLw4OZUBBsbG/ut2LOwth3lt2FDPmaKjh4bGxt7a/YsQG0HUuuHkocW2NjY2Cez22FNu5WV1qW9xIONjY19Jru9KJkUqvwgZl9JVPawsbGxD2O3o/z82s3wws36E7CxsbEPYCfXK/MxUHsBKL+mmQ+SsLGxsU9jt+uuCzrt8bXhNDY2Nvbe7PbRSaBbhK/lFc+l+BkbGxv7GHY+NsovSs7aiXzMFH1J2NjY2Fuz74pjkxKVM1bKFTY2NvZp7ASWNAN3YZ4yusLGxsY+gJ2XrrsOqw0MVgZh2NjY2Huz88fNwoCVZiYvn9jY2NjYeRsw23SLz8tqffkSGxsbeyN2u9rmZCUeXi9s2NjY2Cew28JQNwALLcTsvdjY2NhnsvMGo20A8rg3KY03FzBsbGzs7dht0Up+mzcV+RHPjgkbGxsbO99K3urkLcpKw4ONjY2NPRvZt1ck85LZHhY2Njb2OexZ85CXluT42rbnumRiY2Njn8N+RtC7Hh6046q6FcHGxsbegn3OwsbGxsbGxsbGxn6Z9QniMWg67ZtzqwAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaElEQVR42u3aUW6DMBAEUO5/6fYE0Jk1ODR6fEVpQ/Y5kr2Mffx89XXg4eHh4eHh4eG9jHfE19mn8vfPXid3K2rDw8PD28L7Y6q9LPe6oOQ+13era8PDw8PbyDsrLn99XdBs2chrw8PDw/svvLP/v25/83fw8PDwvo+Xt92zyAMPDw/vzbzkgT8PDtqJPo88Hsxa8PDw8GJePmXvf711fw8PDw8v4NVHmuIFIG+R28XgwTNleHh4eAGvjV/bEPauTbXrevDw8PA+y1uJGO6KM5JhLZ4Y8PDw8B7g5Vv4bbntQav8G0+/Fw8PD28LLy8oamrLg1Ozv+Lh4eF9lpcHB+vhb7vk5MOKh4eHt4c3a6NnzXQyiOuRLh4eHt5OXj6tJ7D22EG7IEUtNR4eHt5jvHbqnzXT7eLRDh8eHh7eft5KEe0hrVn4G/0keHh4eFt47Qb/ylGAWcNdhCZ4eHh4D/PyADeKUBcOWiVLUbRU4OHh4b2AN4sqZscC2oG7YWHAw8PDG/HyFjYPKfJ2vK2nCCPw8PDwHuO1jezsyNT6kEXBBx4eHt4W3srUvH4Q4Vi4ojACDw8P7zFe8uF286xdWvINuaUnBjw8PLxbee1xqLyBzjfGimUADw8Pbzuvvdab7HwhaX8GPDw8vD282WN/20DnG10rQTAeHh7eTl4eyLZR7PpQtqEJHh4e3k7eygGCdlqfhRFR1IuHh4f3el6+DZaXOwPj4eHhvZmXRLorcUY7iHh4eHif4iVhRBsr/FFKEEAk98HDw8Pbz7shAijDixny8f09PDw8vID3fRceHh4eHh4eHt4Lrl/8P69bGhvYQwAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -437,7 +437,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/cookie/">cookie</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/session/">session</a>
+        <a class="post_tag-link" href="/tags/jvm/">jvm</a>
     </ul>
     
 
@@ -456,7 +456,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Java会话管理：Cookie和Session&url=http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Java内存模型&url=http://yoursite.com/2018/10/21/Java内存模型/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -465,7 +465,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Java会话管理：Cookie和Session&url=http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html&via=stormjie" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Java内存模型&url=http://yoursite.com/2018/10/21/Java内存模型/index.html&via=stormjie" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -474,7 +474,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/21/Java内存模型/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -489,7 +489,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=Java会话管理：Cookie和Session&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/08/07/Java会话管理：Cookie和Session/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=Java内存模型&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/10/21/Java内存模型/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -508,206 +508,119 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>http是<strong>无状态</strong>的，一次请求结束，连接断开，下次服务器再收到请求，它就不知道这个请求是哪个用户发过来的。当然它知道是哪个客户端地址发过来的，但是对于我们的应用来说，我们是靠用户来管理，而不是靠客户端。所以对我们的应用而言，它是需要有状态管理的，以便服务端能够准确的知道http请求是哪个用户发起的，从而判断他是否有权限继续这个请求。这个过程就是常说的会话管理。它也可以简单理解为一个用户从登录到退出应用的一段期间。 </p>
-<p>具体解释一下这个“无状态”：</p>
-<ol>
-<li>协议对于事务处理没有记忆能力</li>
-<li>对同一个url请求没有上下文关系</li>
-<li>每次的请求都是独立的，它的执行情况和结果与前面的请求和之后的请求是无直接关系的，它不会受前面的请求应答情况直接影响，也不会直接影响后面的请求应答情况</li>
-<li>服务器中没有保存客户端的状态，客户端必须每次带上自己的状态去请求服务器</li>
-<li><p>人生若只如初见</p>
-<p>这有个具体的生活例子说明了无状态http的不便性：</p>
+        <p>这周还是坚持二更了。</p>
+<p>Java内存模型是进阶Java并发编程的基础，也是面试中的重点，概念不好和Java内存区域搞混，今天着重整理一下。</p>
+<h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><p>Java内存模型（即Java Memory Model，简称JMM）本身是一种抽象的概念，并不真实存在，它描述的是一组规则或规范，即在虚拟机中将变量存储到内存和从内存中取出变量这样底层细节。此处的变量与Java编程时所说的变量不一样，指包括了实例字段、静态字段和构成数组对象的元素，但是不包括局部变量与方法参数，后者是线程私有的，不会被共享。 </p>
+<h3 id="二、主内存与工作内存"><a href="#二、主内存与工作内存" class="headerlink" title="二、主内存与工作内存"></a>二、主内存与工作内存</h3><p>在说主内存与工作内存之前，我想说点其他东西。学过计算机组成原理的同学都知道，由于计算机的存储设备与处理器的运算能力之间有几个数量级的差距，所以现代计算机系统都不得不加入一层读写速度尽可能接近处理器运算速度的高速缓存（cache）来作为内存与处理器之间的缓冲：将运算需要使用到的数据复制到缓存中，让运算能快速进行，当运算结束后再从缓存同步回内存之中没这样处理器就无需等待缓慢的内存读写了。</p>
+<p>基于高速缓存的存储交互很好的解决了处理器与内存之间的矛盾，但也引入了新的问题：缓存一致性问题。在多处理器系统中，每个处理器有自己的高速缓存，而他们又共享同一块内存（下文称主存，main memory主要内存），当多个处理器运算都涉及到同一块内存区域的时候，就有可能发生缓存不一致的现象。为了解决这一问题，需要各个处理器运行时都遵循一些协议，在运行时需要将这些协议保证数据的一致性。这类协议包括MSI、MESI、MOSI等。如下图所示： </p>
+<img src="/2018/10/21/Java内存模型/1.jpg">
+<p>主内存与工作内存之间的关系就好像主存和高速缓存之间的关系，如图：</p>
+<img src="/2018/10/21/Java内存模型/2.jpg">
+<p>Java内存模型中规定了所有的变量都存储在主内存中，每条线程还有自己的工作内存，线程的工作内存中保存了该线程使用到的变量到主内存副本拷贝，线程对变量的所有操作（读取、赋值等）都必须在工作内存中进行，而不能直接读写主内存中的变量。不同线程之间无法直接访问对方工作内存中的变量，线程间变量值的传递均需要在主内存来完成，线程、主内存和工作内存的交互关系如上图所示。 </p>
+<p><strong>这里所讲的主内存、工作内存与 Java内存区域中的 Java堆、栈、方法区等并不是同一个层次的内存划分，这两者基本上没有关系，如果两者一定要勉强对应起来，那从变量、主内存、工作内存的定义来看，主内存主要对应于 Java堆中的对象实例数据部分，而工作内存则对应于虚拟机栈中的部分区域。</strong>从更低层次上说，主内存就直接对应于物理硬件内存，而为了获取更好的运行速度，虚拟机可能会让工作内存优先存储于寄存器和高速缓存中，因为程序运行时注意访问读写的是工作内存。 </p>
+<h3 id="三、内存间交互操作"><a href="#三、内存间交互操作" class="headerlink" title="三、内存间交互操作"></a>三、内存间交互操作</h3><p>关于主内存与工作内存之间的具体交互协议，即一个变量如何从主内存拷贝到工作内存、如何从工作内存同步到主内存之间的实现细节，Java内存模型定义了以下八种操作来完成：</p>
+<ul>
+<li>lock（锁定）：作用于主内存的变量，把一个变量标识为一条线程独占状态。</li>
+<li>unlock（解锁）：作用于主内存变量，把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程锁定。</li>
+<li>read（读取）：作用于主内存变量，把一个变量值从主内存传输到线程的工作内存中，以便随后的load动作使用</li>
+<li>load（载入）：作用于工作内存的变量，它把read操作从主内存中得到的变量值放入工作内存的变量副本中。</li>
+<li>use（使用）：作用于工作内存的变量，把工作内存中的一个变量值传递给执行引擎，每当虚拟机遇到一个需要使用变量的值的字节码指令时将会执行这个操作。</li>
+<li>assign（赋值）：作用于工作内存的变量，它把一个从执行引擎接收到的值赋值给工作内存的变量，每当虚拟机遇到一个给变量赋值的字节码指令时执行这个操作。</li>
+<li>store（存储）：作用于工作内存的变量，把工作内存中的一个变量的值传送到主内存中，以便随后的write的操作。</li>
+<li>write（写入）：作用于主内存的变量，它把store操作从工作内存中一个变量的值传送到主内存的变量中。</li>
+</ul>
+<p>如果要把一个变量从主内存中复制到工作内存，就需要按顺寻地执行read和load操作，如果把变量从工作内存中同步回主内存中，就要按顺序地执行store和write操作。Java内存模型只要求上述操作必须按顺序执行，而没有保证必须是连续执行。也就是read和load之间，store和write之间是可以插入其他指令的，如对主内存中的变量a、b进行访问时，可能的顺序是read a、read b、load b、load a。除此之外，Java内存模型还规定了在执行上述八种基本操作时，必须满足如下规则：</p>
+<ul>
+<li>不允许read和load、store和write操作之一单独出现。</li>
+<li>不允许一个线程丢弃它的最近assign的操作，即变量在工作内存中改变了之后必须同步到主内存中。</li>
+<li>不允许一个线程无原因地（没有发生过任何assign操作）把数据从工作内存同步回主内存中。</li>
+<li>一个新的变量只能在主内存中“诞生”，不允许在工作内存中直接使用一个未被初始化（load或assign）的变量。即就是对一个变量实施use和store操作之前，必须先执行过了assign和load操作。</li>
+<li>一个变量在同一时刻只允许一条线程对其进行lock操作，但lock操作可以被同一条线程重复执行多次，lock和unlock必须成对出现。</li>
+<li>如果对一个变量执行lock操作，将会清空工作内存中此变量的值，在执行引擎使用这个变量前需要重新执行load或assign操作初始化变量的值。</li>
+<li>如果一个变量事先没有被lock操作锁定，则不允许对它执行unlock操作，也不允许去unlock一个被其他线程锁定的变量。</li>
+<li>对一个变量执行unlock操作之前，必须先把此变量同步到主内存中（执行store和write操作）。</li>
+</ul>
+<h3 id="四、重排序"><a href="#四、重排序" class="headerlink" title="四、重排序"></a>四、重排序</h3><p>在执行程序时为了提高性能，编译器和处理器经常会对指令进行重排序。重排序分成三种类型：</p>
+<ul>
+<li><p>编译器优化的重排序。编译器在不改变单线程程序语义放入前提下，可以重新安排语句的执行顺序。</p>
 </li>
-</ol>
-<p>当我们在一个购物网站上登陆自己的帐号后，我们便开始浏览商品，这时我们发现了心仪的商品，点进去打算看商品详情，发现竟然又要我们登陆帐号，为什么？因为无状态http请求无法保存我们用户信息，点击商品是一个请求，刚刚进入网站主页也是一个请求，这两个请求没有上下文联系，服务器无法判断这是同一个用户的请求，所以我们不得不再输入我们的账号密码，点击添加购物车，这也是一个请求，我们还是得输入帐号密码，还有其它商品操作，还有结算按钮。。。</p>
-<p>没有会话管理技术会给我们生活带来多大不便从上个例子就可以略知一二，Java中我们有Cookie和Session来帮助我们解决这个麻烦。</p>
-<h3 id="一、Cookie"><a href="#一、Cookie" class="headerlink" title="一、Cookie"></a>一、Cookie</h3><h5 id="1-什么是Cookie"><a href="#1-什么是Cookie" class="headerlink" title="1.什么是Cookie"></a>1.什么是Cookie</h5><p>“Cookie是通过客户端保持状态的解决方案。从定义上来说，Cookie就是由服务器发给客户端的特殊信息，而这些信息以文本文件的方式存放在客户端，然后客户端每次向服务器发送请求的时候都会带上这些特殊的信息。让我们说得更具体一些：当用户使用浏览器访问一个支持Cookie的网站的时候，用户会提供包括用户名在内的个人信息并且提交至服务器；接着，服务器在向客户端回传相应的超文本的同时也会发回这些个人信息，当然这些信息并不是存放在HTTP响应体（Response Body）中的，而是存放于HTTP响应头（Response Header）；当客户端浏览器接收到来自服务器的响应之后，浏览器会将这些信息存放在一个统一的位置，对于Windows操作系统而言，我们可以从： [系统盘]:\Documents and Settings[用户名]\Cookies目录中找到存储的Cookie；自此，客户端再向服务器发送请求的时候，都会把相应的Cookie再次发回至服务器。而这次，Cookie信息则存放在HTTP请求头（Request Header）了。 ”这是百度百科上关于Cookie的解释，说得很明了也很详细，下图是利用Cookie与服务器交流的简图：</p>
-<img src="/2018/08/07/Java会话管理：Cookie和Session/Cookie.png">
-<h5 id="2-Cookie的使用"><a href="#2-Cookie的使用" class="headerlink" title="2.Cookie的使用"></a>2.Cookie的使用</h5><p>如何使用Cookie？Java API关于Cookie提供了很多方法</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Cookie(String name, String value)</td>
-<td>实例化<code>Cookie</code>对象，传入<code>Cookie</code>名称和<code>Cookie</code>的值</td>
-</tr>
-<tr>
-<td>public String getName()</td>
-<td>取得<code>Cookie</code>的名字</td>
-</tr>
-<tr>
-<td>public String getValue()</td>
-<td>取得<code>Cookie</code>的值</td>
-</tr>
-<tr>
-<td>public void setValue(String newValue)</td>
-<td>设置<code>Cookie</code>的值</td>
-</tr>
-<tr>
-<td>public void setMaxAge(int expiry)</td>
-<td>设置<code>Cookie</code>的最大保存时间，即<code>Cookie</code>的有效期</td>
-</tr>
-<tr>
-<td>public int getMaxAge()</td>
-<td>获取<code>Cookie</code>的有效期</td>
-</tr>
-<tr>
-<td>public void setPath(String uri)</td>
-<td>设置<code>Cookie</code>的有效路径</td>
-</tr>
-<tr>
-<td>public String getPath()</td>
-<td>获取<code>Cookie</code>的有效路径</td>
-</tr>
-<tr>
-<td>public void setDomain(String pattern)</td>
-<td>设置<code>Cookie</code>的有效域</td>
-</tr>
-<tr>
-<td>public String getDomain()</td>
-<td>获取<code>Cookie</code>的有效域</td>
-</tr>
-</tbody>
-</table>
-<p>已下是Cookie使用的一个例子，记录用户访问网站信息</p>
-<pre><code>public class CookieServlet extends HttpServlet {
-
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        //设置服务器端以UTF-8编码进行输出
-        response.setCharacterEncoding(&quot;UTF-8&quot;);
-        //设置浏览器以UTF-8编码进行接收,解决中文乱码问题
-        response.setContentType(&quot;text/html;charset=UTF-8&quot;);
-        PrintWriter out = response.getWriter();
-        //获取浏览器访问访问服务器时传递过来的cookie数组
-        Cookie[] cookies = request.getCookies();
-        //如果用户是第一次访问，那么得到的cookies将是null
-        if (cookies!=null) {
-            out.write(&quot;您上次访问的时间是：&quot;);
-            for (int i = 0; i &lt; cookies.length; i++) {
-                Cookie cookie = cookies[i];
-                if (cookie.getName().equals(&quot;lastAccessTime&quot;)) {
-                    Long lastAccessTime =Long.parseLong(cookie.getValue());
-                    Date date = new Date(lastAccessTime);
-                    out.write(date.toLocaleString());
-                }
-            }
-        }else {
-            out.write(&quot;这是您第一次访问本站！&quot;);
-        }
-
-        //用户访问过之后重新设置用户的访问时间，存储到cookie中，然后发送到客户端浏览器
-        Cookie cookie = new Cookie(&quot;lastAccessTime&quot;, System.currentTimeMillis()+&quot;&quot;);//创建一个cookie，cookie的名字是lastAccessTime
-        //将cookie对象添加到response对象中，这样服务器在输出response对象中的内容时就会把cookie也输出到客户端浏览器
-        response.addCookie(cookie);
-    }
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
-    }
-}
-</code></pre><h5 id="3-Cookie的安全性"><a href="#3-Cookie的安全性" class="headerlink" title="3.Cookie的安全性"></a>3.Cookie的安全性</h5><p>Cookie的目的是为用户带来方便，为网站带来增值，一般情况下不会造成严重的安全威胁。Cookie文件不能作为代码执行，也不会传送病毒，它为用户所专有并只能由创建它的服务器来读取。另外，浏览器一般只允许存放300个Cookie，每个站点最多存放20个Cookie，每个Cookie的大小限制为3KB，因此，Cookie不会塞满硬盘，更不会被用作”拒绝服务”攻击手段。</p>
-<p>但是，Cookie作为用户身份的替代，其安全性有时决定了整个系统的安全性，Cookie的安全性问题不容忽视。</p>
-<p>(1)Cookie欺骗</p>
-<p>Cookie记录了用户的帐户ID、密码之类的信息，通常使用MD5方法加密后在网上传递。经过加密处理后的信息即使被网络上一些别有用心的人截获也看不懂。然而，现在存在的问题是，截获Cookie的人不需要知道这些字符串的含义，只要把别人的Cookie向服务器提交，并且能够通过验证，就可以冒充受害人的身份登陆网站，这种行为叫做Cookie欺骗。<br>非法用户通过Cookie欺骗获得相应的加密密钥，从而访问合法用户的所有个性化信息，包括用户的E-mail甚至帐户信息，对个人信息造成严重危害。<br>(2)Cookie截获<br>Cookie以纯文本的形式在浏览器和服务器之间传送，很容易被他人非法截获和利用。任何可以截获Web通信的人都可以读取Cookie。<br>Cookie被非法用户截获后，然后在其有效期内重放，则此非法用户将享有合法用户的权益。例如，对于在线阅读，非法用户可以不支付费用即可享受在线阅读电子杂志。</p>
-<h3 id="二、Session"><a href="#二、Session" class="headerlink" title="二、Session"></a>二、Session</h3><h5 id="1-什么是Session"><a href="#1-什么是Session" class="headerlink" title="1.什么是Session"></a>1.什么是Session</h5><p>Session是另一种记录客户状态的机制，不同的是Cookie保存在客户端浏览器中，而Session保存在服务器上。服务器使用一种类似于散列表的结构（也可能就是使用散列表）来保存信息。当程序需要为某个客户端的请求创建一个Session的时候，服务器首先检查这个客户端的请求里是否已包含了一个Session标识，称为SessionId，如果已包含一个SessionId则说明以前已经为此客户端创建过Session，服务器就按照SessionId把这个Session检索出来使用（如果检索不到，可能会新建一个），如果客户端请求不包含SessionId，则为此客户端创建一个Session并且生成一个与此Session相关联的SessionId，SessionId的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串，这个SessionId将被在本次响应中返回给客户端保存。 保存这个SessionId的方式可以采用Cookie，这样在交互过程中浏览器可以自动的按照规则把这个标识发挥给服务器。 </p>
-<h5 id="2-Session的使用"><a href="#2-Session的使用" class="headerlink" title="2.Session的使用"></a>2.Session的使用</h5><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>public String getId()</td>
-<td>获取<code>SessionID</code>值</td>
-</tr>
-<tr>
-<td>public void setAttribute()</td>
-<td>设置属性</td>
-</tr>
-<tr>
-<td>public Object getAttribute()</td>
-<td>获取属性</td>
-</tr>
-<tr>
-<td>public void removeAttribute()</td>
-<td>移除属性</td>
-</tr>
-<tr>
-<td>public []String getAllAttributeNames()</td>
-<td>获取所有的属性名</td>
-</tr>
-<tr>
-<td>public int getMaxInactiveInterval()</td>
-<td>获取最长到期时间</td>
-</tr>
-<tr>
-<td>public void setMaxInactiveInterval()</td>
-<td>设置最长到期事件</td>
-</tr>
-<tr>
-<td>public void  invalidate()</td>
-<td>使该<code>Session</code>对象失效</td>
-</tr>
-<tr>
-<td>public long getCreationTime()</td>
-<td>获取创建时间</td>
-</tr>
-<tr>
-<td>public long getLastAccessedTime()</td>
-<td>获取上次访问时间</td>
-</tr>
-</tbody>
-</table>
-<p>已下是Session使用的一个例子</p>
-<pre><code>//使用Session保存数据
-public class Demo01 extends HttpServlet {
-        public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            response.setContentType(&quot;text/html;charset=UTF-8&quot;);
-            request.setCharacterEncoding(&quot;UTF-8&quot;);
-
-            // 获取参数
-            String username = request.getParameter(&quot;username&quot;);
-
-            // 获取session对象
-            HttpSession session = request.getSession();
-            // 保存数据
-            session.setAttribute(&quot;username&quot;, username);
-            // 打印SessionID
-            System.out.println(session.getId());
-        }
-
-        public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            doGet(request, response);
-        }
-}
-
-//测试获取Session域中的数据
-public class Demo02 extends HttpServlet {
-        public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            response.setContentType(&quot;text/html;charset=UTF-8&quot;);
-            request.setCharacterEncoding(&quot;UTF-8&quot;);
-
-            HttpSession session = request.getSession();
-            String username = (String)session.getAttribute(&quot;username&quot;);
-            // 响应到网页上
-            response.getWriter().write(username + &quot; &quot; + session.getId());
-        }
-
-        public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            doGet(request, response);
-        }
-}
-</code></pre><h3 id="三、Cookie和Session的区别"><a href="#三、Cookie和Session的区别" class="headerlink" title="三、Cookie和Session的区别"></a>三、Cookie和Session的区别</h3><p>1.Session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中； Cookie是把用户的数据写在用户本地浏览器上, 其他网站也可以扫描使用你的Cookie，容易泄露自己网站用户的隐私，而且一般浏览器对单个网站站点有Cookie数量与大小的限制，Cookie也是实现Session的一种方式。 </p>
-<p>2.Session 的运行依赖SessionId，而SessionId 是存在Cookie中的，也就是说，如果浏览器禁用了Cookie ，同时 Session 也会失效（但是可以通过其它方式实现，比如在 url 中传递 SessionId） 。</p>
-<p>3.一般情况，登录信息等重要信息存储在Session中，其他信息存储在Cookie中 。</p>
+<li><p>指令级并行的重排序。现代处理器采用了指令级并行技术来将多条指令重叠执行。如果不存在数据依赖性，处理器可以改变语句对应机器指令的执行顺序。</p>
+</li>
+<li><p>内存系统的重排序。由于处理器使用缓存和读写缓冲区，这使得加载和存储操作看上去可能是在乱序执行。</p>
+</li>
+</ul>
+<p>从Java源代码到最终实际执行的指令序列，会经过下面三种重排序：</p>
+<img src="/2018/10/21/Java内存模型/3.png">
+<p>为了保证内存的可见性，Java编译器在生成指令序列的适当位置会插入内存屏障指令来禁止特定类型的处理器重排序。Java内存模型把内存屏障分为LoadLoad、LoadStore、StoreLoad和StoreStore四种： </p>
+<img src="/2018/10/21/Java内存模型/4.png">
+<h3 id="五·、Java内存模型特性"><a href="#五·、Java内存模型特性" class="headerlink" title="五·、Java内存模型特性"></a>五·、Java内存模型特性</h3><h5 id="1-原子性"><a href="#1-原子性" class="headerlink" title="1.原子性"></a>1.原子性</h5><p>原子性指的是一个操作是不可中断的，即使是在多线程环境下，一个操作一旦开始就不会被其他线程影响。比如对于一个静态变量int x，两条线程同时对他赋值，线程A赋值为1，而线程B赋值为2，不管线程如何运行，最终x的值要么是1，要么是2，线程A和线程B间的操作是没有干扰的，这就是原子性操作，不可被中断的特点。</p>
+<p>由Java内存模型来直接保证的原子性变量包括read、load、assign、use、store和write，我们大致可以认为基本数据类型的访问读写是具备原子性的。如果应用场景需要一个更大方位的原子性保证，Java内存模型还提供了lock和unlock操作来满足这种需求，尽管虚拟机未把lock和unlock操作直接开放给用户使用，但是却提供了更高层次的字节码指令monitorenter和monitorexit来隐式的使用这两个操作，这两个字节码指令反应到Java代码中就是同步块–synchronized关键字，<strong>因此在synchronized块之间的操作也具备原子性。</strong> </p>
+<p>有点要注意的是，<strong>对于32位系统的来说，基本数据类型byte、short、int、float、boolean、char数据的读写是原子操作，但long类型数据和double类型数据它们的读写并非原子性的，也就是说如果存在两条线程同时对long类型或者double类型的数据进行读写是存在相互干扰的。</strong>因为对于32位虚拟机来说，每次原子读写是32位的，而long和double则是64位的存储单元，这样可能会导致一个线程在写时，操作完前32位的原子操作后，轮到B线程读取时，恰好只读取到了后32位的数据，读取到一个既非原值又不是线程修改值的变量，它可能是“半个变量”的数值。但也不必太担心，因为读取到“半个变量”的情况比较少见，<strong>至少在目前的商用的虚拟机中，几乎都把64位的数据的读写操作作为原子操作来执行，因此对于这个问题不必太在意，</strong>知道这么回事即可。</p>
+<h5 id="2-可见性"><a href="#2-可见性" class="headerlink" title="2.可见性"></a>2.可见性</h5><p>一个线程对共享变量做了修改之后，其他的线程立即能够看到（感知到）该变量这种修改（变化）。</p>
+<p>Java内存模型是通过将在工作内存中的变量修改后的值同步到主内存，在读取变量前从主内存刷新最新值到工作内存中，这种依赖主内存的方式来实现可见性的。</p>
+<p>无论是普通变量还是volatile变量都是如此，区别在于：volatile的特殊规则保证了volatile变量值修改后的新值立刻同步到主内存，每次使用volatile变量前立即从主内存中刷新，因此volatile保证了多线程之间的操作变量的可见性，而普通变量则不能保证这一点。（volatile关键字下面会着重讲解）</p>
+<p><strong>除了volatile关键字能实现可见性之外，还有synchronized、Lock、final也是可以的。</strong></p>
+<p>使用synchronized关键字，在同步方法/同步块开始时（Monitor Enter）,使用共享变量时会从主内存中刷新变量值到工作内存中（即从主内存中读取最新值到线程私有的工作内存中），在同步方法/同步块结束时(Monitor Exit),会将工作内存中的变量值同步到主内存中去（即将线程私有的工作内存中的值写入到主内存进行同步）。</p>
+<p>使用Lock接口的最常用的实现ReentrantLock(重入锁)来实现可见性：当我们在方法的开始位置执行lock.lock()方法，这和synchronized开始位置（Monitor Enter）有相同的语义，即使用共享变量时会从主内存中刷新变量值到工作内存中（即从主内存中读取最新值到线程私有的工作内存中），在方法的最后finally块里执行lock.unlock()方法，和synchronized结束位置（Monitor Exit）有相同的语义,即会将工作内存中的变量值同步到主内存中去（即将线程私有的工作内存中的值写入到主内存进行同步）。</p>
+<p>final关键字的可见性是指：被final修饰的变量，在构造函数数一旦初始化完成，并且在构造函数中并没有把“this”的引用传递出去（“this”引用逃逸是很危险的，其他的线程很可能通过该引用访问到只“初始化一半”的对象），那么其他线程就可以看到final变量的值。</p>
+<h5 id="3-有序性"><a href="#3-有序性" class="headerlink" title="3.有序性"></a>3.有序性</h5><p>对于一个线程的代码而言，我们总是以为代码的执行是从前往后的，依次执行的。这么说不能说完全不对，在单线程程序里，确实会这样执行；但是在多线程并发时，程序的执行就有可能出现乱序。用一句话可以总结为：<strong>在本线程内观察，操作都是有序的；如果在一个线程中观察另外一个线程，所有的操作都是无序的。前半句是指“线程内表现为串行语义（WithIn Thread As-if-Serial Semantics）”,后半句是指“指令重排”现象和“工作内存和主内存同步延迟”现象。</strong></p>
+<p><strong>Java提供了两个关键字volatile和synchronized来保证多线程之间操作的有序性，volatile关键字本身通过加入内存屏障来禁止指令的重排序，而synchronized关键字通过一个变量在同一时间只允许有一个线程对其进行加锁的规则来实现。</strong></p>
+<p><em>介绍完并发的3个特性后，我们发现synchronized关键字在需要这三种特性的时候都可以作为其中一种解决方案。</em></p>
+<h3 id="六、volatile关键字"><a href="#六、volatile关键字" class="headerlink" title="六、volatile关键字"></a>六、volatile关键字</h3><p>关键字volatile可以说是Java虚拟机提供的最轻量级的同步机制，但是它并不容易完全被正确、完整的理解，以至于许多程序员都不习惯去使用它，遇到需要处理多线程的问题的时候一律使用synchronized来进行同步。了解volatile变量的语义对后面了解多线程操作的其他特性很有意义。Java内存模型对volatile专门定义了一些特殊的访问规则，当一个变量被定义成volatile之后，他将具备两种特性： </p>
+<ul>
+<li>保证此变量对所有线程的可见性。<strong>第一保证此变量对所有线程的可见性，这里的“可见性”是指当一条线程修改了这个变量的值，新值对于其他线程来说是可以立即得知的。</strong>而普通变量是做不到这点，普通变量的值在线程在线程间传递均需要通过住内存来完成，例如，线程A修改一个普通变量的值，然后向主内存进行会写，另外一个线程B在线程A回写完成了之后再从主内存进行读取操作，新变量值才会对线程B可见。<strong>另外，Java里面的运算并非原子操作，会导致volatile变量的运算在并发下一样是不安全的，也就是说volatile关键字不能保证原子性。</strong></li>
+<li>禁止指令重排序优化。普通的变量仅仅会保证在该方法的执行过程中所有依赖赋值结果的地方都能获得正确的结果，而不能保证变量赋值操作的顺序与程序中的执行顺序一致，在单线程中，我们是无法感知这一点的。</li>
+</ul>
+<p>由于volatile变量只能保证可见性，<strong>在不符合以下两条规则的运算场景中，我们仍然要通过加锁来保证原子性。</strong> </p>
+<ul>
+<li>运算结果并不依赖变量的当前值，或者能够确保只有单一的线程修改变量的值。</li>
+<li>变量不需要与其他的状态比阿尼浪共同参与不变约束。</li>
+</ul>
+<p>前面讲述了源于volatile关键字的一些使用，下面我们来探讨一下volatile到底如何保证可见性和禁止指令重排序的。</p>
+<p>观察加入volatile关键字和没有加入volatile关键字时所生成的汇编代码发现，加入volatile关键字时，会多出一个lock前缀指令。lock前缀指令实际上相当于一个内存屏障（也成内存栅栏），内存屏障会提供3个功能：</p>
+<ul>
+<li><p>它确保指令重排序时不会把其后面的指令排到内存屏障之前的位置，也不会把前面的指令排到内存屏障的后面；即在执行到内存屏障这句指令时，在它前面的操作已经全部完成。</p>
+</li>
+<li><p>它会强制将对缓存的修改操作立即写入主存。</p>
+</li>
+<li><p>如果是写操作，它会导致其他CPU中对应的缓存行无效。</p>
+</li>
+</ul>
+<h3 id="七、happens-before原则（先行发生原则）"><a href="#七、happens-before原则（先行发生原则）" class="headerlink" title="七、happens-before原则（先行发生原则）"></a>七、happens-before原则（先行发生原则）</h3><p><strong>Java内存模型中定义的两项操作之间的次序关系，如果说操作A先行发生于操作B，操作A产生的影响能被操作B观察到，</strong>“影响”包含了修改了内存中共享变量的值、发送了消息、调用了方法等。</p>
+<p>倘若在程序开发中，仅靠sychronized和volatile关键字来保证有序性，那么编写并发程序可能会显得十分麻烦，幸运的是，并不是所有的操作都是由volatile和synchronized实现的，Java中存在”先行发生“的原则。先行发生原则是判断数据是否存在竞争、线程是否安全的主要依据。 </p>
+<h5 id="1-什么是先行发生原则？"><a href="#1-什么是先行发生原则？" class="headerlink" title="1.什么是先行发生原则？"></a>1.什么是先行发生原则？</h5><p>举例说明： </p>
+<pre><code>//以下操作在线程A中执行
+i = 1;
+//以下操作在线程B中执行
+j = i;
+//以下操作在线程C中执行
+i = 2;
+</code></pre><p>假设线程A中的操作 i=1先行发生于线程B的操作 j=i ，那么可以确定在线程B的操作执行之后，j一定等于1。因为根据先行发生原则，i=1的结果可以被B观察到。</p>
+<p>先行发生原则就是操作A在时间上或者逻辑上比B先发生，如果B能看到A操作带来的影响（修改了共享变量的值等等），那么此时A就是先行发生于B。你可能会说难道B还有可能不会看到A带来的影响吗？A操作先执行的呀！想一想我们上面提到的可见性和有序性 。。</p>
+<h5 id="2-先行发生原则都有哪些？"><a href="#2-先行发生原则都有哪些？" class="headerlink" title="2.先行发生原则都有哪些？"></a>2.先行发生原则都有哪些？</h5><p>下面是Java内存模型下一些”天然的“happens-before关系，这些happens-before关系无须任何同步器协助就已经存在，可以在编码中直接使用。如果两个操作之间的关系不在此列，并且无法从下列规则推导出来的话，它们就没有顺序性保障，虚拟机可以对它们进行随意地重排序。</p>
+<ul>
+<li><p>程序次序规则（Pragram Order Rule）：在一个线程内，按照程序代码顺序，书写在前面的操作先行发生于书写在后面的操作。准确地说应该是控制流顺序而不是程序代码顺序，因为要考虑分支、循环结构。</p>
+</li>
+<li><p>管程锁定规则（Monitor Lock Rule）：一个unlock操作先行发生于后面对同一个锁的lock操作。这里必须强调的是同一个锁，而”后面“是指时间上的先后顺序。</p>
+</li>
+<li><p>volatile变量规则（Volatile Variable Rule）：对一个volatile变量的写操作先行发生于后面对这个变量的读取操作，这里的”后面“同样指时间上的先后顺序。</p>
+</li>
+<li><p>线程启动规则（Thread Start Rule）：Thread对象的start()方法先行发生于此线程的每一个动作。</p>
+</li>
+<li><p>线程终于规则（Thread Termination Rule）：线程中的所有操作都先行发生于对此线程的终止检测，我们可以通过Thread.join()方法结束，Thread.isAlive()的返回值等作段检测到线程已经终止执行。</p>
+</li>
+<li><p>线程中断规则（Thread Interruption Rule）：对线程interrupt()方法的调用先行发生于被中断线程的代码检测到中断事件的发生，可以通过Thread.interrupted()方法检测是否有中断发生。</p>
+</li>
+<li><p>对象终结规则（Finalizer Rule）：一个对象初始化完成（构造方法执行完成）先行发生于它的finalize()方法的开始。</p>
+</li>
+<li><p>传递性（Transitivity）：如果操作A先行发生于操作B，操作B先行发生于操作C，那就可以得出操作A先行发生于操作C的结论。</p>
+</li>
+</ul>
+<p><strong>一个操作”时间上的先发生“不代表这个操作会是”先行发生“，那如果一个操作”先行发生“是否就能推导出这个操作必定是”时间上的先发生 “呢？也是不成立的，一个典型的例子就是指令重排序。所以时间上的先后顺序与先行发生原则之间基本没有什么关系，所以衡量并发安全问题一切必须以先行发生原则为准。</strong></p>
+<hr>
+<p>终于把Java内存模型相关知识点理清楚了，我发现有关JVM的内容都好多啊，赶紧记录下什么时候觉得忘了就翻翻。</p>
+<p>参考博文：<a href="https://www.cnblogs.com/nexiyi/p/java_memory_model_and_thread.html" target="_blank" rel="noopener">Java内存模型</a>、<a href="https://www.cnblogs.com/lewis0077/p/5143268.html" target="_blank" rel="noopener">浅析java内存模型–JMM(Java Memory Model)</a></p>
+<p>参考资料：《深入理解Java虚拟机：JVM高级特性与最佳实践》</p>
 
         
     
@@ -751,21 +664,13 @@ public class Demo02 extends HttpServlet {
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/08/JSP总结/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/08/05/工厂方法模式&抽象工厂模式/" id="post_nav-older" class="next-content">
+        <a href="/2018/10/19/JVM垃圾回收总结/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

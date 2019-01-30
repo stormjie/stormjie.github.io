@@ -47,7 +47,7 @@
     
     <title>
         
-            组合模式 | 
+            深入分析HashMap | 
         
         stormjie&#39;s blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="stormjie的博客分享">
-    <meta name="keywords" content="stormjie,设计模式">
+    <meta name="keywords" content="stormjie,Java集合类">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="stormjie&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/10/07/组合模式/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/10/28/深入分析HashMap/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="stormjie&#39;s blog">
@@ -234,16 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/10/07/组合模式/">
+    <meta property="og:url" content="http://yoursite.com/2018/10/28/深入分析HashMap/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="组合模式 | stormjie&#39;s blog">
+    <meta property="og:title" content="深入分析HashMap | stormjie&#39;s blog">
     <meta property="og:image" content="/img/mountains.png">
     <meta property="og:description" content="stormjie的博客分享">
-    <meta property="og:article:tag" content="设计模式"> 
+    <meta property="og:article:tag" content="Java集合类"> 
 
     
-        <meta property="article:published_time" content="Sun Oct 07 2018 20:34:33 GMT+0800">
-        <meta property="article:modified_time" content="Sun Oct 07 2018 21:37:18 GMT+0800">
+        <meta property="article:published_time" content="Sun Oct 28 2018 19:30:12 GMT+0800">
+        <meta property="article:modified_time" content="Thu Jan 31 2019 01:29:41 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -251,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/10/07/组合模式/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/10/28/深入分析HashMap/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -263,10 +263,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/10/07/组合模式/index.html",
-    "headline": "组合模式",
-    "datePublished": "Sun Oct 07 2018 20:34:33 GMT+0800",
-    "dateModified": "Sun Oct 07 2018 21:37:18 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/10/28/深入分析HashMap/index.html",
+    "headline": "深入分析HashMap",
+    "datePublished": "Sun Oct 28 2018 19:30:12 GMT+0800",
+    "dateModified": "Thu Jan 31 2019 01:29:41 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "stormjie",
@@ -284,7 +284,7 @@
             "url": "/img/mountains.png"
         }
     },
-    "keywords": ",设计模式stormjie",
+    "keywords": ",Java集合类stormjie",
     "description": "stormjie的博客分享",
 }
 </script>
@@ -350,7 +350,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、组合模式概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、组合模式概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、安全式组合模式的结构"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、安全式组合模式的结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、透明式组合模式的结构"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、透明式组合模式的结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、两种实现方法的选择"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、两种实现方法的选择</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、组合模式总结"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、组合模式总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-主要优点"><span class="post-toc-number">5.0.1.</span> <span class="post-toc-text">1. 主要优点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-主要缺点"><span class="post-toc-number">5.0.2.</span> <span class="post-toc-text">2.主要缺点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-适用场景"><span class="post-toc-number">5.0.3.</span> <span class="post-toc-text">3.适用场景</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、HashMap概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、HashMap概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、HashMap的数据结构"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、HashMap的数据结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、容量-capacity-和负载因子-loadFactor"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、容量(capacity)和负载因子(loadFactor)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、HashMap的存取实现"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、HashMap的存取实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-hash的实现和定位"><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">1.hash的实现和定位</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-put的实现"><span class="post-toc-number">4.0.2.</span> <span class="post-toc-text">2.put的实现</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-get的实现"><span class="post-toc-number">4.0.3.</span> <span class="post-toc-text">3.get的实现</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、HashMap的resize（扩容操作）"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、HashMap的resize（扩容操作）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、总结"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、总结</span></a></li></ol>
     </ul>
     
 
@@ -382,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                组合模式
+                深入分析HashMap
             </p>
         </div>
 
@@ -401,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>stormjie</strong>
-        <span>10月 07, 2018</span>
+        <span>10月 28, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -423,7 +423,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXklEQVR42u3aUW7DQAgFwNz/0u0B0joPsIkTjb8q19nuuNJCgMfPV18PPDw8PDw8PDy8m/Ee8fXHQk+//e/552eO15nsDQ8PD2+H9+KoPeQdb6i38mRveHh4eJu8/zaXH/3HASBZLfm7L8IMHh4e3i151fCQBID8teLh4eF9Ou8sdlLCwMPDw7sbL/nC3yu2Vgu4b6u14OHh4cW83hZ3fl7t7+Hh4eEFvPJIU3xY5ylyvnK0Qzw8PLyLeflBnJRfk9WqhYZyURgPDw/vYl5SFMiT4F45YzKggIeHh/deXrUR1UusJ+Bot3h4eHjrvBPKAcWybP46mmVcPDw8vAt41QR3HiomDbDjfwweHh7eHXjVFteksLs0OoCHh4c35lXHTOfFhV4aHX0KDw8Pb5F3vGivbJEHmN4LwsPDw9vnJZjkfr5Or91VCDZ4eHh4F/MmZdn84G4OARTLGXh4eHibvNGX/yD5zkPF5AXh4eHhvYs3CQa95lYvKW8GBjw8PLwxL/lYdeiqPCZVHBd4EULw8PDwFnnnDgdUiwjVFcpVajw8PLxTefmh3GuJJS+lGqIKgQEPDw9vhRc16U8qKOTg5mQEHh4e3mW8PJHtHe69Em2+Dh4eHt4Obz5W1Rsy6A0ojEYH8PDw8E7iTY7gXiNt8nyUuOPh4eGt8Oatr7yp1kyU8fDw8G7J6x3oeWJ9fH/SDMPDw8P7RN5Zq+UjCHh4eHifxZuUeifljGQ1PDw8vE1edbvJ/erAQbWphoeHh/cuXq8EkGB6B32eUuPh4eHt877vwsPDw8PDw8PDu8H1CzVXXclR6JnBAAAAAElFTkSuQmCC">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACbklEQVR42u3aQXICMQwEQP7/6eSaqgQzY6/NhmqfUrCA2wdLkfT4+uj1wMPDw8PDw8PDuxnvEa+fz//xpVOvP3t3bm94eHh4J3kvrtpfvD++dLjd5Bvyoxk/g4eHh3eSlwSDcZAYv7LyfB6o8PDw8O7Ga9PoPJAkx4qHh4f3H3njba28mx8THh4e3n14bVFgXE5NwkD7zPZaCx4eHl7Mm2uAnfn7bf09PDw8vCe8uZUPBCRpcRuoXuwNDw8PbzNvnNomF3GyrTalThpjk0NXeHh4eJfyVoqqRcq73Pp6sU88PDy8I7y2cZWk2iufXSoZ4+Hh4W3m5UXVNuGeO6xxMl2n1Hh4eHjbeJP/9k+90m66Pg48PDy8zbx8Q0kpIQ8VyRHn4QoPDw/vJK+9slc+1RZ550obeHh4eLt5bRlipcA6V66t03o8PDy8zbwkACTp7Mqlvz4ugIeHh/cuXl6kSAoNbWOsbctNNsDw8PDwLuXlZYi5cYF2pKANLXh4eHj34c21wdpiRDs4i4eHh/cu3rXFhXZoYG5MoShG4OHh4W3mtaWBvDyxnkYXQwx4eHh4x3nthtrCa/tkO6yAh4eHd5K3kmrPjQvk5doiTcfDw8M7wmsHrRJMe6Hnx1en1Hh4eHiX8tr1KFd7iHOlEDw8PLyTvLmN5u2rvKnWFiye/goeHh7eEV4SDMZp8QUX+r7AgIeHh7eNlweDuYGqleGtcTqOh4eHd39eHkKSMu7RyQg8PDy847wdF3rbbMPDw8O7Dy8vyCal1Xy8YC4g4eHh4b2Xt9IAW0+C15/Hw8PDO8n7vIWHh4eHh4eHh3eD9Q29AHy4n0BhtwAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -437,7 +437,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/设计模式/">设计模式</a>
+        <a class="post_tag-link" href="/tags/Java集合类/">Java集合类</a>
     </ul>
     
 
@@ -456,7 +456,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=组合模式&url=http://yoursite.com/2018/10/07/组合模式/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=深入分析HashMap&url=http://yoursite.com/2018/10/28/深入分析HashMap/index.html&pic=http://yoursite.com/img/mountains.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -465,7 +465,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=组合模式&url=http://yoursite.com/2018/10/07/组合模式/index.html&via=stormjie" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=深入分析HashMap&url=http://yoursite.com/2018/10/28/深入分析HashMap/index.html&via=stormjie" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -474,7 +474,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/07/组合模式/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/28/深入分析HashMap/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -489,7 +489,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=组合模式&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/10/07/组合模式/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=stormjie&#39;s blog&title=深入分析HashMap&summary=stormjie的博客分享&pics=http://yoursite.com/img/mountains.png&url=http://yoursite.com/2018/10/28/深入分析HashMap/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -508,268 +508,337 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="一、组合模式概述"><a href="#一、组合模式概述" class="headerlink" title="一、组合模式概述"></a>一、组合模式概述</h3><p>树形结构在软件中随处可见，例如操作系统中的目录结构、应用软件中的菜单、办公系统中的公司组织结构等等，如何运用面向对象的方式来处理这种树形结构是组合模式需要解决的问题，组合模式通过一种巧妙的设计方案使得用户可以一致性地处理整个树形结构或者树形结构的一部分，也可以一致性地处理树形结构中的叶子节点（不包含子节点的节点）和容器节点（包含子节点的节点）。 </p>
-<p>比如一个文件系统就是一个典型的组合模式系统。下图是常见的计算机XP文件系统的一部分。 </p>
-<img src="/2018/10/07/组合模式/1.png">
-<p>从上图可以看出，文件系统是一个树结构，树上长有节点。树的节点有两种，一种是树枝节点，即目录，有内部树结构，在图中涂有颜色；另一种是文件，即树叶节点，没有内部树结构。</p>
-<p>显然，可以把目录和文件当做同一种对象同等对待和处理，这也就是组合模式的应用。</p>
-<p>组合模式可以不提供父对象的管理方法，但是组合模式必须在合适的地方提供子对象的管理方法，诸如：add()、remove()、以及getChild()等。</p>
-<p>组合模式定义如下：</p>
-<p><strong>组合模式(Composite Pattern)：组合多个对象形成树形结构以表示具有“整体—部分”关系的层次结构。组合模式对单个对象（即叶子对象）和组合对象（即容器对象）的使用具有一致性，组合模式又可以称为“整体—部分”(Part-Whole)模式，它是一种对象结构型模式。</strong> </p>
-<p>组合模式的实现根据所实现接口的区别分为两种形式，分别称为<strong>安全式</strong>和<strong>透明式</strong>。</p>
-<h3 id="二、安全式组合模式的结构"><a href="#二、安全式组合模式的结构" class="headerlink" title="二、安全式组合模式的结构"></a>二、安全式组合模式的结构</h3><p>安全模式的组合模式要求管理聚集的方法只出现在树枝构件类中，而不出现在树叶构件类中。 </p>
-<img src="/2018/10/07/组合模式/2.png">
-<p>这种形式涉及到三个角色： </p>
+        <p>HashMap大家都会用，说起特点可能也会说出个一二三，但是凭这点想拿offer是远远不能够的，今天我就详细说说这个常用的集合类。</p>
+<h3 id="一、HashMap概述"><a href="#一、HashMap概述" class="headerlink" title="一、HashMap概述"></a>一、HashMap概述</h3><p>HashMap是一个散列表，它存储的内容是键值对(key-value)映射。</p>
+<p>HashMap继承于AbstractMap，实现了Map、Cloneable、java.io.Serializable接口。</p>
+<p>HashMap的实现不是同步的，这意味着它不是线程安全的。如果想要线程安全的HashMap，可以通过Collections类的静态方法synchronizedMap获得线程安全的HashMap。（看过Java并发编程的同学应该很熟悉）</p>
+<p><code>Map map = Collections.synchronizedMap(new HashMap());</code></p>
+<p>它的key、value都可以为null。此外，HashMap中的映射不是有序的。</p>
+<p>主要关注点在下表格：</p>
+<table>
+<thead>
+<tr>
+<th>关  注  点</th>
+<th>结      论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HashMap是否允许null</td>
+<td>key和value都允许为null</td>
+</tr>
+<tr>
+<td>HashMap是否允许重复数据</td>
+<td>key重复会覆盖、value允许重复</td>
+</tr>
+<tr>
+<td>HashMap是否有序</td>
+<td>无序，特别说明这个无序指的是遍历HashMap的时候，得到的元素的顺序基本不可能是put的顺序</td>
+</tr>
+<tr>
+<td>HashMap是否线程安全</td>
+<td>非线程安全</td>
+</tr>
+</tbody>
+</table>
+<h3 id="二、HashMap的数据结构"><a href="#二、HashMap的数据结构" class="headerlink" title="二、HashMap的数据结构"></a>二、HashMap的数据结构</h3><p>先贴一个HashMap定义的成员变量：</p>
+<pre><code>//HashMap是基于hash表来实现Map接口的，HashMap维护了下面几个变量：
+
+    //HashMap默认的初始化大小为16
+    static final int DEFAULT_INITIAL_CAPACITY = 16;
+
+    //HashMap包含键值对的最大容量为2^30,HashMap的容量一定要是2的整数次幂
+    static final int MAXIMUM_CAPACITY = 1 &lt;&lt; 30;
+
+    //默认的加载因子为0.75
+    static final float DEFAULT_LOAD_FACTOR = 0.75f;
+
+    //装载键值对的内部容器Entry数组，长度一定得是2的幂
+    transient Entry[] table;
+
+    //HashMap中包含的键值对的个数
+    transient int size;
+
+    //HashMap的极限 当键值对的个数达到threshold时，数组table要扩容的
+    int threshold;
+
+    //加载因子
+    final float loadFactor;
+
+    //HashMap结构上被改变的次数，结构上的改变包括：键值对的大小的改变，修改HashMap的内部结构（比较进行了rehash操作），此属性用来保持fail-fast
+    transient volatile int modCount;
+</code></pre><p>HashMap实际上是一个“链表的数组”的数据结构，每个元素存放链表头结点的数组，即数组和链表的结合体。 （在数据结构中，一般称之为“散列表”） </p>
+<img src="/2018/10/28/深入分析HashMap/1.png">
+<p>如上图所示，这就是HashMap底层的数据结构。可以发现，HashMap的主干是一个Entry数组。Entry是HashMap的基本组成单元，每一个Entry包含一个key-value键值对。 </p>
+<p>下面我们看一下Entry的实现，Entry&lt;K,V&gt;是HashMap的一个静态内部类 </p>
+<pre><code>/**
+*Entry是HashMap里面承载键值对数据的数据结构，实现了Map接口里面的Entry接口，除了方法recordAccess(HashMap&lt;K,V&gt; m),recordRemoval(HashMap&lt;K,V&gt; m)外，其他方法均为final方法，表示即使是子类也不能覆写这些方法。
+*/
+static class Entry&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; {
+    //键值,被final修饰，表明一旦赋值，不可修改
+    final K key;
+    //value值
+    V value;
+    //下一个键值对的引用
+    Entry&lt;K,V&gt; next;
+    //当前键值对中键值的hash值
+    final int hash;
+
+    //构造方法
+    Entry(int h, K k, V v, Entry&lt;K,V&gt; n) {
+        value = v;
+          next = n;
+        key = k;
+        hash = h;
+    }
+
+    public final K getKey() {
+        return key;
+    }
+
+    public final V getValue() {
+        return value;
+    }
+
+    //设置value值，返回原来的value值
+    public final V setValue(V newValue) {
+        V oldValue = value;
+        value = newValue;
+        return oldValue;
+    }
+
+    //比较键值对是否equals相等，只有键、值都相等的情况下，才equals相等
+    public final boolean equals(Object o) {
+        if (!(o instanceof Map.Entry))
+            return false;
+        Map.Entry e = (Map.Entry)o;
+        Object k1 = getKey();
+        Object k2 = e.getKey();
+        //若k1 == k2(k1,k2引用同一个对象),或者k1.equals(k2)为true时，进而判断value值是否相等
+        if (k1 == k2 || (k1 != null &amp;&amp; k1.equals(k2))) {
+        Object v1 = getValue();
+        Object v2 = e.getValue();
+        //若v1 == v2(v1,v2引用同一个对象)，或者v1.equals(v2)为true时，此时才能说当前的键值对和指定的的对象equals相等
+        if (v1 == v2 || (v1 != null &amp;&amp; v1.equals(v2)))
+            return true;
+        }
+        //其他均为false
+         return false;
+    }
+
+    public final int hashCode() {
+        return (key==null ? 0 : key.hashCode()) ^
+         (value==null ? 0 : value.hashCode());
+    }
+
+    public final String toString() {
+        return getKey() + &quot;=&quot; + getValue();
+    }
+
+    //此方法只有在key已存在的时候调用m.put(key,value)方法时，才会被调用，即覆盖原来key所对应的value值时被调用
+    void recordAccess(HashMap&lt;K,V&gt; m) {}
+    //此方法在当前键值对被remove时调用
+    void recordRemoval(HashMap&lt;K,V&gt; m) {}
+}
+</code></pre><h3 id="三、容量-capacity-和负载因子-loadFactor"><a href="#三、容量-capacity-和负载因子-loadFactor" class="headerlink" title="三、容量(capacity)和负载因子(loadFactor)"></a>三、容量(capacity)和负载因子(loadFactor)</h3><p>简单的说，capacity就是Entry数组的大小，loadFactor就是Entry数组填满程度的最大比例。当Entry数组中的键值对数目（而不是已占用的位置数）大于capacity*loadFactor（即threshold）时就需要扩容，调整Entry数组的大小为当前的2倍。同时，初始化容量的大小也是2的次幂（大于等于设定容量的最小次幂），则Entry数组的大小在扩容前后都将是2的次幂（非常重要，HashMap访问的性能最高，且resize时能带来极大便利）。 </p>
+<p><strong>默认的capacity为16，loadFactor为0.75，</strong>但如果需要优化的话，要考量具体的使用场景。</p>
 <ul>
-<li><p>抽象构件(Component)角色：这是一个抽象角色，它给参加组合的对象定义出公共的接口及其默认行为，可以用来管理所有的子对象。合成对象通常把它所包含的子对象当做类型为Component的对象。在安全式的组合模式里，构件角色并不定义出管理子对象的方法，这一定义由树枝构件对象给出。</p>
+<li><p>如果对迭代性能要求高，不要把capacity设置过大，也不要把loadFactor设置过小，否则会导致Entry数组中的空位置过多，浪费性能。</p>
 </li>
-<li><p>树叶构件(Leaf)角色：树叶对象是没有下级子对象的对象，定义出参加组合的原始对象的行为。</p>
+<li><p>如果对随机访问的性能要求很高的话，不要把loadFactor设置的过大，否则会导致访问时频繁碰撞，时间复杂度向O(n)退化。</p>
 </li>
-<li><p>树枝构件(Composite)角色：代表参加组合的有下级子对象的对象。树枝构件类给出所有的管理子对象的方法，如add()、remove()以及getChild()。</p>
+<li><p>如果数据增长很快的话，或数据规模可预知，可以在创建HashMap时主动设置capacity。</p>
 </li>
 </ul>
-<p>以下是示例代码：</p>
-<pre><code>//抽象构件角色类
-public interface Component {
-
-    // 输出组建自身的名称
-    public void printStruct(String preStr);
+<h3 id="四、HashMap的存取实现"><a href="#四、HashMap的存取实现" class="headerlink" title="四、HashMap的存取实现"></a>四、HashMap的存取实现</h3><p>HashMap在get和put计算下标时，先对hashCode进行hash操作，然后再通过hash值进一步计算下标，所以我们先看看这个hash方法是如何实现的以及下标的计算过程。</p>
+<h5 id="1-hash的实现和定位"><a href="#1-hash的实现和定位" class="headerlink" title="1.hash的实现和定位"></a>1.hash的实现和定位</h5><p>作为API的设计者，不能假定用户实现了良好的hashCode方法，所以通常会对hashCode再计算一次hash，以下是hash方法源码： </p>
+<pre><code>static final int hash(Object key) {
+    int h;
+    return (key == null) ? 0 : (h = key.hashCode()) ^ (h &gt;&gt;&gt; 16);
 }
-</code></pre><pre><code>//树枝构件角色类
-public class Composite implements Component {
-
-    //用来存储组合对象中包含的子组件对象
-    private List&lt;Component&gt; childComponents = new ArrayList&lt;Component&gt;();
-
-    //组合对象的名字
-    private String name;
-
-    //构造方法，传入组合对象的名字
-    public Composite(String name) {
-        this.name = name;
-    }
-
-    //聚集管理方法，增加一个子构件对象
-    public void addChild(Component child) {
-        childComponents.add(child);
-    }
-
-    //聚集管理方法，删除一个子构件对象
-    public void removeChild(int index) {
-        childComponents.remove(index);
-    }
-
-    //聚集管理方法，返回所有子构件对象
-    public List&lt;Component&gt; getChild() {
-        return childComponents;
-    }
-
-    //输出对象的自身结构
-    @Override
-    public void printStruct(String preStr) {
-        // 先把自己输出
-        System.out.println(preStr + &quot;+&quot; + this.name);
-        //如果还包含有子组件，那么就输出这些子组件对象
-        if(this.childComponents != null) {
-            //添加两个空格，表示向后缩进两个空格
-            preStr += &quot;  &quot;;
-            //输出当前对象的子对象
-            for(Component c : childComponents) {
-                //递归输出每个子对象
-                c.printStruct(preStr);
-            }
-        }        
-    }
-
+</code></pre><p>前面已经说过，在get和put计算下标时，先对hashCode进行hash操作，然后再通过hash值进一步计算下标，如下图所示： </p>
+<img src="/2018/10/28/深入分析HashMap/hash-01.png">
+<p>回顾hash方法的源码可知，hash方法大概的作用就是：高16bit不变，低16bit和高16bit做了一个异或。（两者相等为0，不等为1）</p>
+<p>经过hash方法得到的hash值还要通过indexFor方法进一步处理来获取实际的存储位置，以下是indexFor方法源码：  </p>
+<pre><code>static int indexFor(int h, int length) {
+        return h &amp; (length-1);
 }
-</code></pre><pre><code>//树叶构件角色类
-public class Leaf implements Component {
-
-    //叶子对象的名字
-    private String name;
-
-    //构造方法，传入叶子对象的名称
-    public Leaf(String name) {
-        this.name = name;
+</code></pre><p>因为目前的table长度n为2的次幂，所以计算下标的时候，取模<code>%</code>运算等价于按位与<code>&amp;</code>运算，但是&amp;比%具有更高的效率。</p>
+<p>另外，前面说了初始化容量的大小是2的次幂，Entry数组的大小在扩容前后都将是2的次幂，下面说明理由。</p>
+<p>看下图，左边两组是数组长度为16（2的4次方），右边两组是数组长度为15。两组的hash值均为8和9，但是很明显，当右边和1110（15二进制-1）按位与的时候，产生了相同的结果，也就是说它们会定位到数组中的同一个位置上去，这就产生了碰撞，8和9会被放到同一个链表上，那么查询的时候就需要遍历这个链表，得到8或者9，这样就降低了查询的效率。同时，我们也可以发现，当数组长度为15的时候，hash值会与14（1110）进行按位与，那么最后一位永远是0，而0001，0011，0101，1001，1011，0111，1101这几个位置永远都不能存放元素了，空间浪费相当大，更糟的是这种情况中，数组可以使用的位置比数组长度小了很多，这意味着进一步增加了碰撞的几率，减慢了查询的效率！  </p>
+<img src="/2018/10/28/深入分析HashMap/3.jpg">
+<p>所以说，当数组长度为2的n次幂的时候，不同的key算得得index相同的几率较小，那么数据在数组上分布就比较均匀，也就是说碰撞的几率小，相对的，查询的时候就不用遍历某个位置上的链表，这样查询效率也就较高了。  </p>
+<h5 id="2-put的实现"><a href="#2-put的实现" class="headerlink" title="2.put的实现"></a>2.put的实现</h5><p>把hash方法以及下标计算方法讲完，这部分就简单许多，以下是HashMap的put方法实现：</p>
+<pre><code>/**
+*将指定的键key,值value放到HashMap中
+*/
+public V put(K key, V value) {
+    //首先判断键key是否为null,若为null,则调用putForNullKey(V v)方法完成put
+    if (key == null)
+        return putForNullKey(value);
+    //程序走到这，说明key不为null了，先调用hash(int)方法，计算key.hashCode的hash值
+    int hash = hash(key.hashCode());
+    //再调用indexFor(int,int)方法求出此hash值对应在table数组的哪个下标i上 (bucket桶)
+    int i = indexFor(hash, table.length);
+    //遍历bucket桶上面的链表元素，找出HashMap中是否有相同的key存在，若存在，则替换其value值，返回原来的value值
+    for (Entry&lt;K,V&gt; e = table[i]; e != null; e = e.next) {
+        Object k;
+        //若元素e.hash值和上面计算的hash值相等，并且(e.key == 入参key,或者入参key equals 相等 e.key)，则说明HashMap中存在了和入参相同的key了，执行替换操作
+        if (e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) {
+            V oldValue = e.value;
+            e.value = value;
+            //在执行替换操作的时候，调用Entry对象的recordAccess(HashMap&lt;K,V&gt; m)方法，这个上面说过了
+            e.recordAccess(this);
+            return oldValue;
+        }
     }
-
-    //输出叶子对象的结构，叶子对象没有子对象，也就是输出叶子对象的名字
-    @Override
-    public void printStruct(String preStr) {
-        // TODO Auto-generated method stub
-        System.out.println(preStr + &quot;-&quot; + name);
-    }
-
+    //程序走到这，说明原来HashMap中不存在key,则直接将键值对插入即可，由于插入元素，修改了HashMap的结构，因此将modeCount+1
+    modCount++;
+    //调用addEntry(int,K,V,int)方法进行键值对的插入
+    addEntry(hash, key, value, i);
+    //由于原来HashMap中不存在key，则不存在替换value值问题，因此返回null
+    return null;
 }
-</code></pre><pre><code>//客户端类
-public class Client {
-    public static void main(String[]args) {
-        Composite root = new Composite(&quot;服装&quot;);
-        Composite c1 = new Composite(&quot;男装&quot;);
-        Composite c2 = new Composite(&quot;女装&quot;);
-
-        Leaf leaf1 = new Leaf(&quot;衬衫&quot;);
-        Leaf leaf2 = new Leaf(&quot;夹克&quot;);
-        Leaf leaf3 = new Leaf(&quot;裙子&quot;);
-        Leaf leaf4 = new Leaf(&quot;套装&quot;);
-
-        root.addChild(c1);
-        root.addChild(c2);
-        c1.addChild(leaf1);
-        c1.addChild(leaf2);
-        c2.addChild(leaf3);
-        c2.addChild(leaf4);
-
-        root.printStruct(&quot;&quot;);
+</code></pre><p>当key为null时，HashMap是这样进行数据插入的： </p>
+<pre><code>//先看看HashMap中原先是否有key为null的键值对存在，若存在，则替换原来的value值；若不存在，则将key为null的键值对插入到Entry数组的第一个位置table[0]
+private V putForNullKey(V value) {
+    //获取Entry数组的第一个元素:table[0],然后通过e.next进行链表的遍历，若遍历过程中有元素e.key为null,则替换该元素的值
+    for (Entry&lt;K,V&gt; e = table[0]; e != null; e = e.next) {
+        //说明原来之前HashMap中就已经存在key问null的键值对了，现在又插入了一个key为null的新元素，则替换掉原来的key为null的value值
+        if (e.key == null) {
+            V oldValue = e.value;
+            e.value = value;
+            //在执行替换操作的时候，调用Entry对象的recordAccess(HashMap&lt;K,V&gt; m)方法，这个上面说过了
+            e.recordAccess(this);
+            return oldValue;
+        }
     }
+    //程序走到这，说明HashMap中原来没有key为null的键值对，需要直接插入元素，由于插入元素，修改了HashMap的结构，因此将modeCount+1
+    modCount++;
+    //调用addEntry(int,K,V,int)方法进行键值对的插入,这里将入参hash设置为0，K为null,插入的位置index也为0，说明key为null的元素插入在bucket[0]第一个桶上
+    addEntry(0, null, value, 0);
+    return null;
 }
-</code></pre><p>可以看出，树枝构件类(Composite)给出了addChild()、removeChild()以及getChild()等方法的声明和实现，而树叶构件类则没有给出这些方法的声明或实现。这样的做法是安全的做法，由于这个特点，客户端应用程序不可能错误地调用树叶构件的聚集方法，因为树叶构件没有这些方法，调用会导致编译错误。</p>
-<p>安全式组合模式的缺点是不够透明，因为树叶类和树枝类将具有不同的接口。</p>
-<h3 id="三、透明式组合模式的结构"><a href="#三、透明式组合模式的结构" class="headerlink" title="三、透明式组合模式的结构"></a>三、透明式组合模式的结构</h3><p>与安全式的组合模式不同的是，透明式的组合模式要求所有的具体构件类，不论树枝构件还是树叶构件，均符合一个固定接口。 </p>
-<img src="/2018/10/07/组合模式/3.png">
-<p>以下是示例代码：</p>
-<pre><code>//抽象构件角色类
-public abstract class Component {
-
-    //输出组建自身的名称
-    public abstract void printStruct(String preStr);
-
-    //聚集管理方法，增加一个子构件对象
-    public void addChild(Component child) {
-        /**
-         * 缺省实现，抛出异常，因为叶子对象没有此功能
-         * 或者子组件没有实现这个功能
-         */
-        throw new UnsupportedOperationException(&quot;对象不支持此功能&quot;);
-    }
-
-    //聚集管理方法，删除一个子构件对象
-    public void removeChild(int index) {
-        /**
-         * 缺省实现，抛出异常，因为叶子对象没有此功能
-         * 或者子组件没有实现这个功能
-         */
-        throw new UnsupportedOperationException(&quot;对象不支持此功能&quot;);
-    }
-
-    //聚集管理方法，返回所有子构件对象
-    public List&lt;Component&gt; getChild() {
-        /**
-         * 缺省实现，抛出异常，因为叶子对象没有此功能
-         * 或者子组件没有实现这个功能
-         */
-        throw new UnsupportedOperationException(&quot;对象不支持此功能&quot;);
-    }
+</code></pre><p>通过上述源码我们可以清楚知到，HashMap 中可以保存key为null的键值对，且该键值对是唯一的。若再次向其中添加键为null的键值对，将覆盖其原值。此外，如果HashMap中存在键为null的键值对，那么一定在第一个桶中。 </p>
+<p>下面我们看一看实际进行数据添加的操作addEntry方法：</p>
+<pre><code>/**
+*将指定的key,value,hash,bucketIndex 插入键值对，若此时size大于极限threshold,则将Entry数组table扩容到原来容量的两倍
+*/
+void addEntry(int hash, K key, V value, int bucketIndex) {
+    //取出原来bucketIndex处的键值对e
+    Entry&lt;K,V&gt; e = table[bucketIndex];
+    //创建一个新的键值对，使用给定的hash、key、value,并将新键值对的next属性指向e,最后将新键值对放在bucketIndex处
+    table[bucketIndex] = new Entry&lt;K,V&gt;(hash, key, value, e);
+    //将size+1,若此时size 大于极限threshold,则将Entry数组table扩容到原来容量的两倍
+    if (size++ &gt;= threshold)
+        //调用resize(int)方法，进行数组的扩容
+        resize(2 * table.length);
 }
-</code></pre><pre><code>//树枝构件角色类，此类将implements Conponent改为extends Conponent，其他地方无变化。
-public class Composite extends Component {
-
-    //用来存储组合对象中包含的子组件对象
-    private List&lt;Component&gt; childComponents = new ArrayList&lt;Component&gt;();
-
-    //组合对象的名字
-    private String name;
-
-    //构造方法，传入组合对象的名字
-    public Composite(String name) {
-        this.name = name;
+</code></pre><p>这就是HashMap基本存键值对的操作，其实在JDK1.8版本中，对数据结构做了进一步的优化，引入了红黑树，实际并非这么简单，下图是完整操作：</p>
+<img src="/2018/10/28/深入分析HashMap/2.png">
+<ol>
+<li>判断键值对数组table[i]是否为空或为null，否则执行resize()进行扩容； </li>
+<li>根据键值key计算hash值得到插入的数组索引i，如果table[i]==null，直接新建节点添加，转向6，如果table[i]不为空，转向3； </li>
+<li>判断table[i]的首个元素是否和key一样，如果相同直接覆盖value，否则转向4，这里的相同指的是hashCode以及equals； </li>
+<li>判断table[i] 是否为treeNode，即table[i] 是否是红黑树，如果是红黑树，则直接在树中插入键值对，否则转向5； </li>
+<li>遍历table[i]，判断链表长度是否大于8，大于8的话把链表转换为红黑树，在红黑树中执行插入操作，否则进行链表的插入操作；遍历过程中若发现key已经存在直接覆盖value即可； </li>
+<li>插入成功后，判断实际存在的键值对数量size是否超多了最大容量threshold，如果超过，进行扩容。 </li>
+</ol>
+<h5 id="3-get的实现"><a href="#3-get的实现" class="headerlink" title="3.get的实现"></a>3.get的实现</h5><pre><code>//获取指定key所对应的value值
+public V get(Object key) {
+    //若key==null,则直接调用getForNullKey()方法
+    if (key == null)
+        return getForNullKey();
+    //到这说明key != null,先获取key的hash值
+    int hash = hash(key.hashCode());
+    //在indexFor(int hash,int length)获取key落在Entry数组的哪个bucket桶上，获取该bucket桶上的元素e,进而遍历e的链表，找相对应的key,若找到则返回key所对应的value值，找不到则返回null
+    for (Entry&lt;K,V&gt; e = table[indexFor(hash, table.length)];e != null;e = e.next) {
+        Object k;
+        //若元素e.hash == 上面计算的hash值，并且(e.key 和入参key是同一个对象的引用，或者e.key和入参key equals相等)，
+        //则认为入参key和当前遍历的元素e的key是同一个,返回e的value值
+        if (e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k)))
+            return e.value;
     }
-
-    //聚集管理方法，增加一个子构件对象
-    public void addChild(Component child) {
-        childComponents.add(child);
-    }
-
-    //聚集管理方法，删除一个子构件对象
-    public void removeChild(int index) {
-        childComponents.remove(index);
-    }
-
-    //聚集管理方法，返回所有子构件对象
-    public List&lt;Component&gt; getChild() {
-        return childComponents;
-    }
-
-    //输出对象的自身结构
-    @Override
-    public void printStruct(String preStr) {
-        // 先把自己输出
-        System.out.println(preStr + &quot;+&quot; + this.name);
-        //如果还包含有子组件，那么就输出这些子组件对象
-        if(this.childComponents != null) {
-            //添加两个空格，表示向后缩进两个空格
-            preStr += &quot;  &quot;;
-            //输出当前对象的子对象
-            for(Component c : childComponents) {
-                //递归输出每个子对象
-                c.printStruct(preStr);
-            }
-        }        
-    }
-
+    //上面遍历了一遍也没有找到，则返回null
+    return null;
 }
-</code></pre><pre><code>//树叶构件角色类，此类将implements Conponent改为extends Conponent，其他地方无变化。
-public class Leaf extends Component {
 
-    //叶子对象的名字
-    private String name;
-
-    //构造方法，传入叶子对象的名称
-    public Leaf(String name) {
-        this.name = name;
+//获取key为null的value值，由上面putForNullKey方法可知，key为null的键值对，被放在了Entry数组table的第一个bucket桶(table[0])
+private V getForNullKey() {
+    //获取Entry数组table的第一个元素e,从e开始往下遍历，若找到元素e.key 为null的，则直接返回该元素e.value值
+    for (Entry&lt;K,V&gt; e = table[0]; e != null; e = e.next) {
+        //找到元素e.key 为null的，则直接返回该元素e.value值
+        if (e.key == null)
+            return e.value;
     }
-
-    //输出叶子对象的结构，叶子对象没有子对象，也就是输出叶子对象的名字
-    @Override
-    public void printStruct(String preStr) {
-        // TODO Auto-generated method stub
-        System.out.println(preStr + &quot;-&quot; + name);
-    }
-
+    //从table[0]开始，遍历链表一遍，没有找到key为null的，则返回null
+    return null;
 }
-</code></pre><pre><code>//客户端类的主要变化是不再区分Composite对象和Leaf对象。
-public class Client {
-    public static void main(String[]args) {
-        Component root = new Composite(&quot;服装&quot;);
-        Component c1 = new Composite(&quot;男装&quot;);
-        Component c2 = new Composite(&quot;女装&quot;);
+</code></pre><p>从上面可以看出HashMap中判断key是否相等的条件是hash值相等且equals，提起这个我要引申下，正因为如此，重写equals时也要同时覆盖hashcode，具体可以看这些帖子<a href="https://blog.csdn.net/qq_34970891/article/details/80707259" target="_blank" rel="noopener">HashMap中判断两个key是否为同一个key详解</a>、<a href="https://blog.csdn.net/java_weekly/article/details/80608231" target="_blank" rel="noopener">HashMap中key是否相等的判断</a>、<a href="https://www.cnblogs.com/chengxiao/p/6059914.html" target="_blank" rel="noopener">HashMap实现原理及源码分析中第四点</a>。</p>
+<h3 id="五、HashMap的resize（扩容操作）"><a href="#五、HashMap的resize（扩容操作）" class="headerlink" title="五、HashMap的resize（扩容操作）"></a>五、HashMap的resize（扩容操作）</h3><p>当HashMap中的元素越来越多的时候，hash冲突的几率也就越来越高，因为数组的长度是固定的。所以为了提高查询的效率，就要对HashMap的数组进行扩容，数组扩容这个操作也会出现在ArrayList中，这是一个常用的操作，而在HashMap数组扩容之后，<strong>最消耗性能的点就出现了：原数组中的数据必须重新计算其在新数组中的位置，并放进去，这就是resize</strong>。</p>
+<p>那么HashMap什么时候进行扩容呢？前面讲put操作里有提到，当HashMap中的元素个数超过数组大小*loadFactor时，就会进行数组扩容，loadFactor的默认值为0.75，这是一个折中的取值。也就是说，默认情况下，数组大小为16，那么当HashMap中元素个数超过16*0.75=12（这个值就是代码中的<strong>threshold</strong>值，也叫做临界值）的时候，就把数组的大小扩展为 2*16=32，即扩大一倍，然后重新计算每个元素在数组中的位置，而这是一个非常消耗性能的操作，所以如果我们已经预知HashMap中元素的个数，那么预设元素的个数能够有效的提高HashMap的性能。</p>
+<pre><code>/**
+*将HashMap中Entry数组table的容量扩容至新容量newCapacity,数组的扩容不但涉及到数组元素的复制，还要将原数组中的元素rehash到新的数组中，很耗时;如果能预估到放入HashMap中元素的大小，最好使用new HashMap(size)方式创建足够容量的HashMap，避免不必要的数组扩容(rehash操作)，提高效率
+*/
+void resize(int newCapacity) {
+    Entry[] oldTable = table;
+    int oldCapacity = oldTable.length;
+    //如果原数组的大小已经为允许的最大值MAXIMUM_CAPACITY了，则不能进行扩容了，这里仅仅将极限threshold设置为Integer.MAX_VALUE，然后返回
+    if (oldCapacity == MAXIMUM_CAPACITY) {
+        //将极限threshold设置为Integer.MAX_VALUE
+        threshold = Integer.MAX_VALUE;
+        return;
+    }
+    //程序走到这，说明可以进行扩容，先创建容量为newCapacity的新Entry数组newTable
+    Entry[] newTable = new Entry[newCapacity];
+    //调用tranfer(Entry[] newTable)方法，进行数组元素的移动和rehashing
+    transfer(newTable);
+    //将新数组newTable赋值给table
+    table = newTable;
+    //计算极限threshold的最新值
+    threshold = (int)(newCapacity * loadFactor);
+}
 
-        Component leaf1 = new Leaf(&quot;衬衫&quot;);
-        Component leaf2 = new Leaf(&quot;夹克&quot;);
-        Component leaf3 = new Leaf(&quot;裙子&quot;);
-        Component leaf4 = new Leaf(&quot;套装&quot;);
-
-        root.addChild(c1);
-        root.addChild(c2);
-        c1.addChild(leaf1);
-        c1.addChild(leaf2);
-        c2.addChild(leaf3);
-        c2.addChild(leaf4);
-
-        root.printStruct(&quot;&quot;);
+//将原Entry数组table中的所有键值对迁移到新Entry数组newTable上
+void transfer(Entry[] newTable) {
+    //原数组赋值给src
+    Entry[] src = table;
+    //新数组长度为newCapacity
+    int newCapacity = newTable.length;
+    //遍历原数组
+    for (int j = 0; j &lt; src.length; j++) {
+        //获取原数组中的元素(键值对),赋值给e
+        Entry&lt;K,V&gt; e = src[j];
+        //若元素e不为null
+        if (e != null) {
+            //释放旧Entry数组的对象引用（for循环后，旧的Entry数组不再引用任何对象）
+            src[j] = null;
+            //遍历元素e所对应的bucket桶内的所有元素
+            do {
+                //获取下一个元素next
+                Entry&lt;K,V&gt; next = e.next;
+                //重新计算键值对e在新数组newTable中的bucketIndex位置(即rehash操作)
+                int i = indexFor(e.hash, newCapacity);
+                //标记[1]
+                e.next = newTable[i];
+                //将当前元素e放入新数组的i位置
+                newTable[i] = e;
+                //访问下一个Entry链上的元素
+                e = next;
+            } while (e != null);
+        }
     }
 }
-</code></pre><p>可以看出，客户端无需再区分操作的是树枝对象(Composite)还是树叶对象(Leaf)了；对于客户端而言，操作的都是Component对象。</p>
-<h3 id="四、两种实现方法的选择"><a href="#四、两种实现方法的选择" class="headerlink" title="四、两种实现方法的选择"></a>四、两种实现方法的选择</h3><p><strong>这里所说的安全性组合模式是指：</strong>从客户端使用组合模式上看是否更安全，如果是安全的，那么就不会有发生误操作的可能，能访问的方法都是被支持的。</p>
-<p><strong>这里所说的透明性组合模式是指：</strong>从客户端使用组合模式上，是否需要区分到底是“树枝对象”还是“树叶对象”。如果是透明的，那就不用区分，对于客户而言，都是Compoent对象，具体的类型对于客户端而言是透明的，是无须关心的。</p>
-<p>对于组合模式而言，在安全性和透明性上，<strong>会更看重透明性</strong>，毕竟组合模式的目的是：让客户端不再区分操作的是树枝对象还是树叶对象，而是以一个统一的方式来操作。</p>
-<p>而且对于安全性的实现，需要区分是树枝对象还是树叶对象。有时候，需要将对象进行类型转换，却发现类型信息丢失了，只好强行转换，这种类型转换必然是不够安全的。</p>
-<p>因此在使用组合模式的时候，建议多采用透明性的实现方式。</p>
-<h3 id="五、组合模式总结"><a href="#五、组合模式总结" class="headerlink" title="五、组合模式总结"></a>五、组合模式总结</h3><p>组合模式使用面向对象的思想来实现树形结构的构建与处理，描述了如何将容器对象和叶子对象进行递归组合，实现简单，灵活性好。由于在软件开发中存在大量的树形结构，因此组合模式是一种使用频率较高的结构型设计模式，Java SE中的AWT和Swing包的设计就基于组合模式，在这些界面包中为用户提供了大量的容器构件（如Container）和成员构件（如Checkbox、Button和TextComponent等），其结构如图：</p>
-<img src="/2018/10/07/组合模式/4.jpg">
-<p>在图中，Component类是抽象构件，Checkbox、Button和TextComponent是叶子构件，而Container是容器构件，在AWT中包含的叶子构件还有很多，因为篇幅限制没有在图中一一列出。在一个容器构件中可以包含叶子构件，也可以继续包含容器构件，这些叶子构件和容器构件一起组成了复杂的GUI界面。</p>
-<p>除此以外，在XML解析、组织结构树处理、文件系统设计等领域，组合模式都得到了广泛应用。</p>
-<h5 id="1-主要优点"><a href="#1-主要优点" class="headerlink" title="1. 主要优点"></a>1. 主要优点</h5><p>组合模式的主要优点如下：</p>
-<p>(1)组合模式可以清楚地定义分层次的复杂对象，表示对象的全部或部分层次，它让客户端忽略了层次的差异，方便对整个层次结构进行控制。</p>
-<p>(2)客户端可以一致地使用一个组合结构或其中单个对象，不必关心处理的是单个对象还是整个组合结构，简化了客户端代码。</p>
-<p>(3)在组合模式中增加新的容器构件和叶子构件都很方便，无须对现有类库进行任何修改，符合“开闭原则”。</p>
-<p>(4)组合模式为树形结构的面向对象实现提供了一种灵活的解决方案，通过叶子对象和容器对象的递归组合，可以形成复杂的树形结构，但对树形结构的控制却非常简单。</p>
-<h5 id="2-主要缺点"><a href="#2-主要缺点" class="headerlink" title="2.主要缺点"></a>2.主要缺点</h5><p>组合模式的主要缺点如下：</p>
-<p>在增加新构件时很难对容器中的构件类型进行限制。有时候我们希望一个容器中只能有某些特定类型的对象，例如在某个文件夹中只能包含文本文件，使用组合模式时，不能依赖类型系统来施加这些约束，因为它们都来自于相同的抽象层，在这种情况下，必须通过在运行时进行类型检查来实现，这个实现过程较为复杂。</p>
-<h5 id="3-适用场景"><a href="#3-适用场景" class="headerlink" title="3.适用场景"></a>3.适用场景</h5><p>在以下情况下可以考虑使用组合模式：</p>
-<p>(1)在具有整体和部分的层次结构中，希望通过一种方式忽略整体与部分的差异，客户端可以一致地对待它们。</p>
-<p>(2)在一个使用面向对象语言开发的系统中需要处理一个树形结构。</p>
-<p>(3)在一个系统中能够分离出叶子对象和容器对象，而且它们的类型不固定，需要增加一些新的类型。</p>
+</code></pre><p>关于rehash操作，可以看看这篇帖子的第六点<a href="http://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/" target="_blank" rel="noopener">Java HashMap工作原理及实现</a>，讲得很形象，助我理解了很多，感谢作者。</p>
+<h3 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h3><p>理解完HashMap我认为需要通过一些面试题来加深印象补缺补漏，来了<a href="https://blog.csdn.net/weixin_42636552/article/details/82016183" target="_blank" rel="noopener">HashMap面试常问问题</a>、<a href="https://www.cnblogs.com/qfxydtk/p/8734784.html" target="_blank" rel="noopener">HashMap常问面试题整理</a>，这两篇还是挺好的。</p>
+<hr>
+<p>其实写这篇HashMap小总结花了我不少时间，源码分析还是比较累的吧。。接下来我可能不能保持一周两更的频率了，学校事多，最近也想做做项目练手，主要还是自己懒吧，有点吃力，不够努力。</p>
+<p>参考博文：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/21673805" target="_blank" rel="noopener">Java 8系列之重新认识HashMap</a></p>
+<p><a href="https://www.cnblogs.com/skywang12345/p/3310835.html" target="_blank" rel="noopener">Java 集合系列10之 HashMap详细介绍(源码解析)和使用示例</a> </p>
+<p><a href="https://www.cnblogs.com/xwdreamer/archive/2012/06/03/2532832.html" target="_blank" rel="noopener">深入Java集合学习系列：HashMap的实现原理</a></p>
+<p><a href="https://www.cnblogs.com/lewis0077/p/5347061.html" target="_blank" rel="noopener">HashMap 源码解析</a></p>
+<p><a href="http://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/" target="_blank" rel="noopener">Java HashMap工作原理及实现</a></p>
 
         
     
@@ -813,21 +882,13 @@ public class Client {
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/10/10/Java基本数据类型与包装类/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/10/05/外观模式/" id="post_nav-older" class="next-content">
+        <a href="/2018/10/21/Java内存模型/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
